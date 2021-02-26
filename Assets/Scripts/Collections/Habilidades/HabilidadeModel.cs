@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Collections.Habilidades
 {
-    [CreateAssetMenu(fileName = "Habilidade", menuName = "GameContent/Habilidade", order = 2)]
+    [CreateAssetMenu(fileName = "Habilidade", menuName = "GameContent/Habilidadse", order = 2)]
     public class HabilidadeModel : ScriptableObject
     {
         [field: SerializeField] public string Nome { get; private set; }

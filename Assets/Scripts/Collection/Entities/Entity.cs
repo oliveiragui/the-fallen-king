@@ -1,55 +1,80 @@
-﻿using System;
-using System.Collections;
-using Collection.Entities.Animation;
+﻿using Collection.Entities.Animation;
 using Collection.Entities.Audio;
 using Collection.Entities.Mesh;
 using Collection.Entities.Particle;
 using Collection.Entities.Physics;
+using Collection.Abilities.Collections.Habilidades;
+using Collection.Weapons;
 using Components.Move;
 using UnityEngine;
-using Utils.Extension;
 
 namespace Collection.Entities
 {
     public class Entity : MonoBehaviour
     {
+        bool _inCombat;
+
         [SerializeField] new EntityAnimation animation;
         [SerializeField] new EntityAudio audio;
         [SerializeField] EntityMesh mesh;
         [SerializeField] EntityParticle particle;
         [SerializeField] EntityPhysics physics;
         [SerializeField] EntityMove movement;
+        [SerializeField] EntityAbilityManager abilityManager;
 
-        void Start()
+        public EntityAbilityManager AbilityManager => abilityManager;
+
+        public void EquipaArma(WeaponModel weapon)
         {
-            movement.Speed = 1;
-            movement.MoveTo(new Vector3(0, 0, 0));
+            animation.TrocaController(weapon.AnimatorController);
+            mesh.SwitchWeapon(weapon);
         }
 
-        void Update()
+        public bool InCombat
         {
-            ProcessaInput();
+            get => _inCombat;
+            set
+            {
+                _inCombat = value;
+                mesh.InCombat = value;
+                if (value) animation.EquipWeapon();
+                else animation.UnequipWeapon();
+            }
+        }
+        
+
+        public void ProximoCombo(AbilityCombo combo, float attackSpeed)
+        {
+            animation.Ability.SetupCombo(combo, attackSpeed);
         }
 
-        void ProcessaInput()
+        public void UsaHabilidade(AbilityModel ability)
         {
-            var speed = new Vector2(Input.GetAxisRaw("P1KHorizontal"), Input.GetAxisRaw("P1KVertical"));
-            if (speed.magnitude > 0.1)
+            if (!AbilityManager.IsUsingAbility || abilityManager.CanSwitchAbility(ability))
             {
-                movement.Speed = 7;
-                movement.Move(speed.ToDegree() + 45);
-                animation.Run(1);
-            }
-            else
-            {
-                animation.StopRun();
-                movement.Stop();
+                animation.Ability.SetupAbility(ability);
+                AbilityManager.currentAbility = ability;
             }
 
-            if (Input.GetButtonDown("P1KAtaque1")) animation.UsaHabilidade(1, true, 1);
-            if (Input.GetButtonUp("P1KAtaque1")) animation.ParaDeConjurar();
-            
-            if (Input.GetButtonDown("P1KAtaque2")) animation.UsaHabilidade(2, false, 2);
+            animation.Ability.Use();
+        }
+
+        public void ParaDeConjurar(int abilityID)
+        {
+            animation.Ability.StopCasting(abilityID);
+        }
+
+        public void Movimenta(float speed, float direction)
+        {
+            movement.Speed = speed;
+            movement.Move(direction);
+            animation.Run(1);
+        }
+
+        public void ParaDeAndar()
+        {
+            animation.StopRun();
+            movement.Stop();
         }
     }
 }

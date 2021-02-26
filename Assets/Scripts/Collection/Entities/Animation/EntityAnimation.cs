@@ -1,4 +1,5 @@
 ﻿using System;
+using Collection.Abilities.Collections.Habilidades;
 using UnityEngine;
 
 namespace Collection.Entities.Animation
@@ -6,7 +7,23 @@ namespace Collection.Entities.Animation
     [Serializable]
     public class EntityAnimation
     {
+        public AbilityAnimation Ability => ability;
+
         [SerializeField] Animator animator;
+        [SerializeField] AbilityAnimation ability;
+
+        public EntityAnimation(Animator animator)
+        {
+            this.animator = animator;
+            ability = new AbilityAnimation(animator);
+        }
+
+        public void TrocaController(AnimatorOverrideController controller)
+        {
+            animator.Rebind();
+            animator.Update(0);
+            animator.runtimeAnimatorController = controller;
+        }
 
         public void Run(float velocidade)
         {
@@ -23,29 +40,16 @@ namespace Collection.Entities.Animation
             animator.SetTrigger(EntityAnimationParameters.Morre);
         }
 
-        public void UsaHabilidade(int habilidadeID, bool conjuravel, int combo)
-        {
-            animator.SetLayerWeight(0,0f);
-            animator.SetLayerWeight(2,1f);
-            animator.SetTrigger(EntityAnimationParameters.UsaHabilidade);
-            animator.SetInteger(EntityAnimationParameters.HabilidadeID, habilidadeID);
-            animator.SetBool(EntityAnimationParameters.Conjuravel, conjuravel);
-            animator.SetInteger(EntityAnimationParameters.ComboAtual, combo);
-        }
-
-        public void ParaDeConjurar()
-        {
-            animator.SetTrigger(EntityAnimationParameters.ParaDeConjurar);
-        }
-
         public void EquipWeapon()
         {
             animator.SetTrigger(EntityAnimationParameters.SacaArma);
+            animator.SetLayerWeight(1,1f);
         }
 
         public void UnequipWeapon()
         {
             animator.SetTrigger(EntityAnimationParameters.GuardaArma);
+            animator.SetLayerWeight(1,0f);
         }
     }
 }

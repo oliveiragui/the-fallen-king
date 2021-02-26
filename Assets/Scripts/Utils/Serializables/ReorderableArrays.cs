@@ -1,4 +1,5 @@
 ﻿using System;
+using Collection.Weapons;
 using Runtime;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace Utils.Serializables
 
     [Serializable]
     public class ReorderableStringTransformList : ReorderableArray<StringTransformTuple> { }
+    
+    [Serializable]
+    public class ReorderableWeaponPrefabs : ReorderableArray<WeaponPrefab> { }
 
     [Serializable]
     public class StringTransformTuple : StringComponentTuple<Transform> { }

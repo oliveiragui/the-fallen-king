@@ -27,9 +27,15 @@ namespace Components.Move
 
         void FixedUpdate()
         {
-            if (IsStopped) return;
-            _tr.rotation = Quaternion.Euler(0, Direction, 0);
-            _characterController.SimpleMove(_tr.forward * (Speed * Constants.StepUnit * Time.fixedDeltaTime));
+            if (!IsStopped)
+            {
+                _tr.rotation = Quaternion.Euler(0, Direction, 0);
+                _characterController.SimpleMove(_tr.forward * (Speed * Constants.StepUnit * Time.fixedDeltaTime));
+            }
+            else
+            {
+                _characterController.SimpleMove(Vector3.zero);
+            }
         }
 
         void OnEnable()
