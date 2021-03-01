@@ -1,11 +1,11 @@
-using Editor.Scripts.MyBox.Extensions.EditorExtensions;
+using EditorMyBox.Scripts.MyBox.Extensions.EditorExtensions;
 using UnityEditor;
 using UnityEngine;
 #if UNITY_EDITOR
 
 #endif
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	public class MinValueAttribute : AttributeBase
 	{

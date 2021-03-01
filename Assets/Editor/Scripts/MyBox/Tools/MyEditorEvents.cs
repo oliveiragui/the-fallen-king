@@ -5,7 +5,7 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Tools
+namespace EditorMyBox.Scripts.MyBox.Tools
 {
 	[InitializeOnLoad]
 	public class MyEditorEvents : UnityEditor.AssetModificationProcessor, IPreprocessBuildWithReport

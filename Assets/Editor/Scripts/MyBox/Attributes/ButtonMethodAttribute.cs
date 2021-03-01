@@ -8,12 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Editor.Scripts.MyBox.Extensions;
+using EditorMyBox.Scripts.MyBox.Extensions;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	[AttributeUsage(AttributeTargets.Method)]
 	public class ButtonMethodAttribute : PropertyAttribute

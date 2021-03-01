@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Extensions
+namespace EditorMyBox.Scripts.MyBox.Extensions
 {
 	public static class MyCoroutines
 	{

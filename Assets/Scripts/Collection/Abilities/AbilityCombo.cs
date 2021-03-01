@@ -1,5 +1,5 @@
 ﻿using System;
-using Editor.Scripts.MyBox.Attributes;
+using EditorMyBox.Scripts.MyBox.Attributes;
 using UnityEngine;
 
 namespace Collection.Abilities.Collections.Habilidades

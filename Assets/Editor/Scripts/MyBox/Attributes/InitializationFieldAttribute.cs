@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	/// <summary>
 	/// Field will be Read-Only in Playmode

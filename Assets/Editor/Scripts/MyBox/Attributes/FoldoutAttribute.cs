@@ -14,7 +14,7 @@ using UnityEditor;
 using UnityEngine;
 using Object = System.Object;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
     public class FoldoutAttribute : PropertyAttribute
     {

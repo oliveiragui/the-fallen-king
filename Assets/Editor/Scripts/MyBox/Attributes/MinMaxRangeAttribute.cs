@@ -4,11 +4,11 @@
 // ----------------------------------------------------------------------------
 
 using System;
-using Editor.Scripts.MyBox.Tools;
+using EditorMyBox.Scripts.MyBox.Tools;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	public class MinMaxRangeAttribute : PropertyAttribute
 	{

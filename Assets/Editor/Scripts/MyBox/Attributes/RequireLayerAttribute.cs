@@ -1,6 +1,6 @@
 using System;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	[AttributeUsage(AttributeTargets.Class)]
 	public class RequireLayerAttribute : Attribute

@@ -1,8 +1,8 @@
-﻿using Editor.Scripts.MyBox.Extensions;
+﻿using EditorMyBox.Scripts.MyBox.Extensions;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 
 

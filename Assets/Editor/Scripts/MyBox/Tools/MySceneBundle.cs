@@ -7,7 +7,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-namespace Editor.Scripts.MyBox.Tools
+namespace EditorMyBox.Scripts.MyBox.Tools
 {
 	/// <summary>
 	/// For passing objects between different scenes in Unity.

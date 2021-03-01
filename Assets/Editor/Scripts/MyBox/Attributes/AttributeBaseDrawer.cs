@@ -1,10 +1,10 @@
 #if UNITY_EDITOR
 using System.Linq;
-using Editor.Scripts.MyBox.Extensions;
+using EditorMyBox.Scripts.MyBox.Extensions;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	[CustomPropertyDrawer(typeof(AttributeBase), true)]
 	public class AttributeBaseDrawer : PropertyDrawer

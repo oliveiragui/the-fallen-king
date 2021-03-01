@@ -7,7 +7,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 
 	public class TagAttribute : PropertyAttribute

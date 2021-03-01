@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-using Editor.Scripts.MyBox.Extensions;
-using Editor.Scripts.MyBox.Extensions.EditorExtensions;
-using Editor.Scripts.MyBox.Tools;
+using EditorMyBox.Scripts.MyBox.Extensions;
+using EditorMyBox.Scripts.MyBox.Extensions.EditorExtensions;
+using EditorMyBox.Scripts.MyBox.Tools;
 using UnityEditor;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	/// <summary>
 	/// Conditionally Show/Hide field in inspector, based on some other field value 

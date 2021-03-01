@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Tools
+namespace EditorMyBox.Scripts.MyBox.Tools
 {
 	/// <summary>
 	/// This pool is used to prevent warning message spamming.

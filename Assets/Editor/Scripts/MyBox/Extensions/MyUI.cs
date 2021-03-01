@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Editor.Scripts.MyBox.Extensions
+namespace EditorMyBox.Scripts.MyBox.Extensions
 {
 	public static class MyUI
 	{

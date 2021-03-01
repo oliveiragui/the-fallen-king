@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Editor.Scripts.MyBox.Attributes
+namespace EditorMyBox.Scripts.MyBox.Attributes
 {
 	[AttributeUsage(AttributeTargets.Field)]
 	public abstract class AttributeBase : PropertyAttribute

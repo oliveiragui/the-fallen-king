@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 
-namespace Editor.Scripts.MyBox.Extensions.EditorExtensions
+namespace EditorMyBox.Scripts.MyBox.Extensions.EditorExtensions
 {
 	public static class MyEditor
 	{
