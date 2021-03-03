@@ -11,26 +11,22 @@ namespace Runtime.SerializableDictionary
 
         [SerializeField] TValueStorage[] m_values;
 
-        public SerializableDictionaryBase()
-        {
-        }
+        public SerializableDictionaryBase() { }
 
         public SerializableDictionaryBase(IDictionary<TKey, TValue> dict) : base(dict.Count)
         {
             foreach (var kvp in dict) this[kvp.Key] = kvp.Value;
         }
 
-        protected SerializableDictionaryBase(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        protected SerializableDictionaryBase(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
         public void OnAfterDeserialize()
         {
             if (m_keys != null && m_values != null && m_keys.Length == m_values.Length)
             {
                 Clear();
-                var n = m_keys.Length;
-                for (var i = 0; i < n; ++i) this[m_keys[i]] = GetValue(m_values, i);
+                int n = m_keys.Length;
+                for (int i = 0; i < n; ++i) this[m_keys[i]] = GetValue(m_values, i);
 
                 m_keys = null;
                 m_values = null;
@@ -39,11 +35,11 @@ namespace Runtime.SerializableDictionary
 
         public void OnBeforeSerialize()
         {
-            var n = Count;
+            int n = Count;
             m_keys = new TKey[n];
             m_values = new TValueStorage[n];
 
-            var i = 0;
+            int i = 0;
             foreach (var kvp in this)
             {
                 m_keys[i] = kvp.Key;
@@ -64,17 +60,11 @@ namespace Runtime.SerializableDictionary
 
     public class SerializableDictionary<TKey, TValue> : SerializableDictionaryBase<TKey, TValue, TValue>
     {
-        public SerializableDictionary()
-        {
-        }
+        public SerializableDictionary() { }
 
-        public SerializableDictionary(IDictionary<TKey, TValue> dict) : base(dict)
-        {
-        }
+        public SerializableDictionary(IDictionary<TKey, TValue> dict) : base(dict) { }
 
-        protected SerializableDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        protected SerializableDictionary(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
         protected override TValue GetValue(TValue[] storage, int i)
         {
@@ -99,17 +89,11 @@ namespace Runtime.SerializableDictionary
         SerializableDictionary<TKey, TValue, TValueStorage> : SerializableDictionaryBase<TKey, TValue, TValueStorage>
         where TValueStorage : SerializableDictionary.Storage<TValue>, new()
     {
-        public SerializableDictionary()
-        {
-        }
+        public SerializableDictionary() { }
 
-        public SerializableDictionary(IDictionary<TKey, TValue> dict) : base(dict)
-        {
-        }
+        public SerializableDictionary(IDictionary<TKey, TValue> dict) : base(dict) { }
 
-        protected SerializableDictionary(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        protected SerializableDictionary(SerializationInfo info, StreamingContext context) : base(info, context) { }
 
         protected override TValue GetValue(TValueStorage[] storage, int i)
         {

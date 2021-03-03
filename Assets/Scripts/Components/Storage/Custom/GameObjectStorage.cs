@@ -1,6 +1,6 @@
 ﻿using System;
-using Editor.Scripts.MyBox.Attributes;
 using UnityEngine;
+using Utils.MyBox.Attributes;
 using Utils.Serializables;
 
 namespace Components.Storage.Custom

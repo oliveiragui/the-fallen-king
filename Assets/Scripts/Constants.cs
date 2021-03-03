@@ -1,7 +1,4 @@
-﻿namespace DefaultNamespace
+﻿public static class Constants
 {
-    public static class Constants
-    {
-        public const int StepUnit = 56;
-    }
+    public const int StepUnit = 56;
 }

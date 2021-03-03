@@ -13,7 +13,14 @@ namespace Utils
             set => this[Animator.StringToHash(key)] = value;
         }
 
-        public void Add(string key, T value) => Add(Animator.StringToHash(key), value);
-        public bool Remove(string key) => Remove(Animator.StringToHash(key));
+        public void Add(string key, T value)
+        {
+            Add(Animator.StringToHash(key), value);
+        }
+
+        public bool Remove(string key)
+        {
+            return Remove(Animator.StringToHash(key));
+        }
     }
 }

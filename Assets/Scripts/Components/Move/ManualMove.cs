@@ -1,23 +1,16 @@
-﻿using DefaultNamespace;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Components.Move
 {
     [RequireComponent(typeof(CharacterController))]
     public class ManualMove : MonoBehaviour
     {
-        Transform _tr;
         CharacterController _characterController;
+        Transform _tr;
 
         public float Speed { get; set; }
         public float Direction { get; set; }
         public bool IsStopped { get; set; }
-
-        public void Move(float direction)
-        {
-            Direction = direction;
-            IsStopped = false;
-        }
 
         void Awake()
         {
@@ -46,6 +39,12 @@ namespace Components.Move
         void OnDisable()
         {
             _characterController.enabled = false;
+        }
+
+        public void Move(float direction)
+        {
+            Direction = direction;
+            IsStopped = false;
         }
     }
 }

@@ -4,45 +4,49 @@ namespace Components.AttributeSystem
 {
     public class Stat : Attribute
     {
-        float _total;
-
-        public Stat(float value, float multiplier = 0, float finalValue = 0) :
-            this(new RawAttribute(value, multiplier, finalValue)) { }
-
-        public Stat(RawAttribute attribute) : base(attribute)
+        public Stat(RawAttribute raw) : base(raw.Value, raw.Multiplier)
         {
-            OnValueChanged = new OnValueChangedEvent();
-            OnAttributeChanged.AddListener(attr =>
-            {
-                float difference = attr.Total - Total;
-                Total = attr.Total;
-                if (difference > 0)
-                    ApplyDamage(difference);
-                else
-                    OnValueChanged.Invoke((Total, Current));
-            });
-            Total = Final.Total;
+            OnStatChanged = new OnStatChangedEvent();
+            OnAttributeChanged.AddListener(Update);
+            UpdateTotal();
             Current = Total;
         }
 
-        public float Total
+        public float Total { get; private set; }
+        public float Current { get; private set; }
+        public OnStatChangedEvent OnStatChanged { get; }
+
+        void Update(float value, float multiplier)
         {
-            get => _total > 0 ? _total : 0;
-            set => _total = value;
+            UpdateTotal();
+            OnStatChanged.Invoke(this);
         }
 
-        public float Current { get; set; }
+        void UpdateTotal()
+        {
+            Total = Value * (1 + Multiplier);
+            if (Current > Total) Current = Total;
+        }
 
-        public OnValueChangedEvent OnValueChanged { get; }
-
-        public void ApplyDamage(float value, float multiplier = 0, bool fromTotal = false)
+        void UpdateCurrent(float value)
         {
             Current += value;
-            if (fromTotal) Current = Total * (multiplier + 1);
-            else Current *= multiplier + 1;
-            OnValueChanged.Invoke((Total, Current));
+            if (Current < 0) Current = 0;
+            if (Current > Total) Current = Total;
+        }
+
+        public void ApplyDamage(float value)
+        {
+            UpdateCurrent(value);
+            OnStatChanged.Invoke(this);
+        }
+
+        public void ApplyDamageByMultiplier(float value, bool fromTotal = false)
+        {
+            if (fromTotal) ApplyDamage(Total * value);
+            else ApplyDamage(Current * value);
         }
     }
 
-    public class OnValueChangedEvent : UnityEvent<(float total, float current)> { }
+    public class OnStatChangedEvent : UnityEvent<Stat> { }
 }

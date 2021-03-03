@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 namespace Components.Move
@@ -7,8 +6,8 @@ namespace Components.Move
     [RequireComponent(typeof(NavMeshAgent))]
     public class AutoMove : MonoBehaviour
     {
-        NavMeshAgent navMashAgent;
         bool _isStopped;
+        NavMeshAgent navMashAgent;
 
         public float Speed
         {
@@ -41,6 +40,21 @@ namespace Components.Move
             }
         }
 
+        void Awake()
+        {
+            navMashAgent = GetComponent<NavMeshAgent>();
+        }
+
+        void OnEnable()
+        {
+            navMashAgent.enabled = true;
+        }
+
+        void OnDisable()
+        {
+            navMashAgent.enabled = false;
+        }
+
         public void MoveTo(Vector3 endPoint)
         {
             navMashAgent.isStopped = false;
@@ -57,21 +71,6 @@ namespace Components.Move
         {
             StoppingDistance = stoppingDistance;
             MoveTo(endPoint, speed);
-        }
-
-        void Awake()
-        {
-            navMashAgent = GetComponent<NavMeshAgent>();
-        }
-
-        void OnEnable()
-        {
-            navMashAgent.enabled = true;
-        }
-
-        void OnDisable()
-        {
-            navMashAgent.enabled = false;
         }
     }
 }

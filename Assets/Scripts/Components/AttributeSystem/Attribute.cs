@@ -1,47 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 using UnityEngine.Events;
 
 namespace Components.AttributeSystem
 {
-    [Serializable]
-    public class Attribute
+    public class Attribute : RawAttribute
     {
-        List<RawAttribute> modifiers;
+        readonly List<RawAttribute> _modifiers;
 
-        public Attribute(float value = 0, float multiplier = 0, float finalvalue = 0) :
-            this(new RawAttribute(value, multiplier, finalvalue)) { }
-
-        public Attribute(RawAttribute attribute)
+        public Attribute(float value, float multiplier) : base(value, multiplier)
         {
-            Raw = attribute;
-            Final = attribute;
-            modifiers = new List<RawAttribute>();
+            _modifiers = new List<RawAttribute>();
             OnAttributeChanged = new AttributeChangedEvent();
         }
 
-        [field: SerializeField] public RawAttribute Raw { get; private set; }
-        public RawAttribute Final { get; private set; }
         public AttributeChangedEvent OnAttributeChanged { get; }
+
+        public void AddModifier(Attribute modifier)
+        {
+            AddModifier(modifier as RawAttribute);
+            modifier.OnAttributeChanged.AddListener(Update);
+        }
+
+        public bool RemoveModifier(Attribute modifier)
+        {
+            if (!RemoveModifier(modifier as RawAttribute)) return false;
+            modifier.OnAttributeChanged.RemoveListener(Update);
+            return true;
+        }
 
         public void AddModifier(RawAttribute modifier)
         {
-            modifiers.Add(modifier);
-            Calculate(modifier);
+            _modifiers.Add(modifier);
+            Update(modifier.Value, modifier.Multiplier);
         }
 
-        public void RemoveModifier(RawAttribute modifier)
+        public bool RemoveModifier(RawAttribute modifier)
         {
-            if (modifiers.Remove(modifier)) Calculate(-modifier);
+            if (!_modifiers.Remove(modifier)) return false;
+            Update(-modifier.Value, -modifier.Multiplier);
+            return true;
         }
 
-        void Calculate(RawAttribute modifier)
+        void Update(float value, float multiplier)
         {
-            Final += modifier;
-            OnAttributeChanged.Invoke(Final);
+            Value += value;
+            Multiplier += multiplier;
+            OnAttributeChanged.Invoke(value, multiplier);
         }
     }
 
-    public class AttributeChangedEvent : UnityEvent<RawAttribute> { }
+    public class AttributeChangedEvent : UnityEvent<float, float> { }
 }
