@@ -6,8 +6,7 @@ TagManager:
   tags:
   - MAST_Holder
   - FxTemporaire
-  - Interagivel
-  - Atingivel
+  - Hittable
   layers:
   - Default
   - TransparentFX
@@ -37,8 +36,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Entity
+  - Bullet
   - Interaction
   - Hittable
   m_SortingLayers:

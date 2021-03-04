@@ -1,6 +1,7 @@
 ﻿using Components.AttributeSystem;
 using Components.InventorySystem;
 using Entities;
+using Teams;
 using UnityEngine;
 
 namespace Characters
@@ -13,9 +14,11 @@ namespace Characters
 
         public Status Status { get; private set; }
         public Entity Entity => entity;
+        public Team Team { get; set; }
 
         void Awake()
         {
+            Team = data.DefaultTeam;
             Status = new Status(data.RawStatus);
         }
     }

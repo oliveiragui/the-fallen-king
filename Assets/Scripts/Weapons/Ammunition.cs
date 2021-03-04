@@ -10,5 +10,6 @@ namespace Weapons
         public GameObject this[int key] => Components[key];
 
         public GameObject this[string key] => Components[key];
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Components.AttributeSystem;
+using Teams;
 using UnityEngine;
 
 namespace Characters
@@ -7,6 +8,9 @@ namespace Characters
     public class CharacterData : ScriptableObject
     {
         [SerializeField] RawStatus rawStatus;
+        [SerializeField] Team defaultTeam;
+        
         public RawStatus RawStatus => rawStatus;
+        public Team DefaultTeam => defaultTeam;
     }
 }

@@ -2,12 +2,13 @@
 
 namespace Teams
 {
-    public class Team : MonoBehaviour
+    [CreateAssetMenu(fileName = "Team", menuName = "GameContent/Team", order = 1)]
+    public class Team : ScriptableObject
     {
-        // Start is called before the first frame update
-        void Start() { }
+        [SerializeField] bool playerFriend;
+        [SerializeField] bool aggressive;
 
-        // Update is called once per frame
-        void Update() { }
+        public bool PlayerFriend => playerFriend;
+        public bool Aggressive => aggressive;
     }
 }
