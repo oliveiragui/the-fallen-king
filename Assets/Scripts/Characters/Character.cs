@@ -13,8 +13,8 @@ namespace Characters
         Inventory inventory;
 
         public Status Status { get; private set; }
+        public Team Team { get; private set; }
         public Entity Entity => entity;
-        public Team Team { get; set; }
 
         void Awake()
         {

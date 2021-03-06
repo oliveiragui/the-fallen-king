@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Entities.PhysicsSystem
 {
-    public class EntityPhysics : MonoBehaviour
+    public class EntityCollision : MonoBehaviour
     {
         [SerializeField] ColliderStorage colliders;
 
@@ -18,5 +18,7 @@ namespace Entities.PhysicsSystem
             get => colliders["Hittable"].enabled;
             private set => colliders["Hittable"].enabled = value;
         }
+        
+        
     }
 }

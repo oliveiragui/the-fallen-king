@@ -1,16 +1,24 @@
 ﻿using Abilities.Collections.Habilidades;
+using Components.AttributeSystem;
 using UnityEngine;
 
 namespace Abilities
 {
-    public class Ability : MonoBehaviour
+    public class Ability 
     {
-        AbilityData data;
+        AbilityData _data;
 
-        // Start is called before the first frame update
-        void Start() { }
+        public int Id => _data.id;
+        public string Description => _data.description;
+        public RawAttribute Cooldown => _data.cooldown;
+        public AbilityCombo[] Combo => _data.combo;
+        public int MaxCombo => _data.combo.Length;
+        public bool InUse { get; set; }
 
-        // Update is called once per frame
-        void Update() { }
+        public Ability(AbilityData data)
+        {
+            _data = data;
+        }
+        
     }
 }

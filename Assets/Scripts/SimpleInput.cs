@@ -36,11 +36,21 @@ public class SimpleInput : MonoBehaviour
 
     void ProcessaInput()
     {
-        var speed = new Vector2(Input.GetAxisRaw("P1KHorizontal"), Input.GetAxisRaw("P1KVertical"));
-        if (speed.magnitude > 0.1)
-            entity.Movimenta(5, speed.ToDegree()-225);
-        else
-            entity.ParaDeAndar();
+        var velocity = new Vector2(Input.GetAxisRaw("P1KHorizontal"), Input.GetAxisRaw("P1KVertical"));
+        var mousePos = FindObjectOfType<Camera>().MouseOnPlane();
+
+        entity.playerMoveParams.direction = velocity.ToDegree() - 225;
+        entity.playerMoveParams.lookDiretion = new Vector2(mousePos.x, mousePos.z).ToDegree();
+        entity.playerMoveParams.speed = velocity.normalized.sqrMagnitude * 5;
+
+        // if (entity.movement.IsMoving && !entity.movement.AutoMovement)
+        //     entity.ParaDeAndar();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            entity.playerMoveParams.stoppingDistance = 3;
+            entity.MovimentaAte(mousePos);
+        }
 
         if (Input.GetButtonDown("P1KAtaque1")) entity.UsaHabilidade(weapon.Abilities[0]);
         else if (Input.GetButtonDown("P1KAtaque2")) entity.UsaHabilidade(weapon.Abilities[1]);

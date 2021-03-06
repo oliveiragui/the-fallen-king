@@ -16,19 +16,40 @@ MonoBehaviour:
   description: 
   canBeInterruped: 1
   canInterrupt: 0
-  baseAttributes:
-    cooldown: 1
-    range: 1
+  cooldown:
+    multiplier: 0
+    value: 1
   combo:
-  - castable: 0
+  - attributes:
+      power:
+        multiplier: 0
+        value: 0
+      range:
+        multiplier: 0
+        value: 0
+    castable: 0
     factor1: 2.5
     factor2: 0
     factor3: 0
-  - castable: 0
+  - attributes:
+      power:
+        multiplier: 0
+        value: 0
+      range:
+        multiplier: 0
+        value: 0
+    castable: 0
     factor1: 2.5
     factor2: 0
     factor3: 0
-  - castable: 0
+  - attributes:
+      power:
+        multiplier: 0
+        value: 0
+      range:
+        multiplier: 0
+        value: 0
+    castable: 0
     factor1: 2.5
     factor2: 0
     factor3: 0

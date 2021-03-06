@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CombatSystem;
+using UnityEngine;
 
 namespace Entities.Animation.Behaviours
 {

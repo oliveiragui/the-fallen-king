@@ -5,18 +5,9 @@ using UnityEngine;
 namespace Entities.Animation
 {
     [Serializable]
-    public class EntityAnimation
+    public class EntityBaseAnimation : MonoBehaviour
     {
         [SerializeField] Animator animator;
-        [SerializeField] AbilityAnimation ability;
-
-        public EntityAnimation(Animator animator)
-        {
-            this.animator = animator;
-            ability = new AbilityAnimation(animator);
-        }
-
-        public AbilityAnimation Ability => ability;
 
         public void TrocaController(AnimatorOverrideController controller)
         {
@@ -38,16 +29,6 @@ namespace Entities.Animation
         public void Die()
         {
             animator.SetTrigger(EntityAnimationParameters.Morre);
-        }
-
-        public void EquipWeapon()
-        {
-            animator.SetLayerWeight(1, 1f);
-        }
-
-        public void UnequipWeapon()
-        {
-            animator.SetLayerWeight(1, 0f);
         }
     }
 }

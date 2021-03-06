@@ -11,7 +11,7 @@ namespace Entities.Animation.Behaviours
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (entity == null) entity = animator.transform.GetComponent<Entity>();
-            entity.AbilityManager.currentAbility = null;
+            entity.currentAbility = null;
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

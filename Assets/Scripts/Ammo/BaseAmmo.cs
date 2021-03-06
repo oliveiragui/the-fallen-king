@@ -11,15 +11,15 @@ namespace Ammo
     public class BaseAmmo : MonoBehaviour
     {
         //TODO: Remover dependencia do character
-        Damage damage;
+        AbilityHit _abilityHit;
         Character character;
         [SerializeField] Rigidbody rigidbody;
 
         bool hasCollider = false;
 
-        public void Setup(Damage damage, Character character, Vector3 force)
+        public void Setup(AbilityHit abilityHit, Character character, Vector3 force)
         {
-            this.damage = damage;
+            this._abilityHit = abilityHit;
             this.character = character;
             rigidbody.AddForce(force);
         }
@@ -34,14 +34,14 @@ namespace Ammo
         {
             if (!other.CompareTag("Hittable")) return;
             if (!other.attachedRigidbody.transform.TryGetComponent(out Entity otherEntity)) return;
-            if (!otherEntity.physics.Hittable) return;
+            if (!otherEntity.collision.Hittable) return;
             if (otherEntity.associatedCharacter.Equals(character)) return;
-            if (damage == null) return;
+            if (_abilityHit == null) return;
             if (hasCollider) return;
             hasCollider = true;
-            if (otherEntity.associatedCharacter.Team.PlayerFriend == damage.team.PlayerFriend) return;
-            
-            otherEntity.CauseDamage(damage);
+            if (_abilityHit.friendlyFire && otherEntity.associatedCharacter.Team.PlayerFriend == _abilityHit.team.PlayerFriend) return;
+
+            otherEntity.ReceiveHit(_abilityHit);
             transform.parent = other.transform;
             StartCoroutine(SelfDestruction());
         }

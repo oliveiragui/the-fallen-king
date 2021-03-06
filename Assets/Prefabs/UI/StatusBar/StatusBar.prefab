@@ -118,7 +118,6 @@ MonoBehaviour:
   damageTrail: {fileID: 5342294359163727994}
   bar: {fileID: 1347554607177540456}
   total: 0
-  current: 0
 --- !u!1 &1347554609005176462
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +499,11 @@ PrefabInstance:
       propertyPath: time
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6381844405018670388, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
+        type: 3}
+      propertyPath: smoothDecrease
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f6bff5c8423d404cb6bfc16e6faff83, type: 3}
 --- !u!224 &5342294359163727998 stripped
@@ -650,6 +654,11 @@ PrefabInstance:
     - target: {fileID: 6381844405018670388, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
       propertyPath: time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6381844405018670388, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
+        type: 3}
+      propertyPath: smoothIncrease
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

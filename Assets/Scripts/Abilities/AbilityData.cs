@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Components.AttributeSystem;
+using UnityEngine;
 
 namespace Abilities
 {
@@ -7,16 +8,16 @@ namespace Abilities
         [CreateAssetMenu(fileName = "Habilidade", menuName = "GameContent/Habilidade", order = 2)]
         public class AbilityData : ScriptableObject
         {
-            [SerializeField] int id;
-            [SerializeField] string description;
-            [SerializeField] bool canBeInterruped;
-            [SerializeField] bool canInterrupt;
-            [SerializeField] AbilityAttributes baseAttributes;
-            [SerializeField] AbilityCombo[] combo;
+            [SerializeField] public int id;
+            [SerializeField] public string description;
+            [SerializeField] public bool canBeInterruped;
+            [SerializeField] public bool canInterrupt;
+            [SerializeField] public RawAttribute cooldown;
+            [SerializeField] public AbilityCombo[] combo;
 
             public int Id => id;
             public string Description => description;
-            public AbilityAttributes BaseAttributes => baseAttributes;
+            public RawAttribute Cooldown => cooldown;
             public AbilityCombo[] Combo => combo;
             public int MaxCombo => combo.Length;
 
