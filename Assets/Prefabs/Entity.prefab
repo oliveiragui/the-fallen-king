@@ -1825,11 +1825,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animation:
     animator: {fileID: 375318589159449566}
+    ability:
+      _animator: {fileID: 0}
   audio: {fileID: 375318589136233793}
   mesh: {fileID: 375318589136233792}
   particle: {fileID: 375318589136233795}
   physics: {fileID: 375318589136233794}
   movement: {fileID: 375318589136233798}
+  abilityManager:
+    currentAbility: {fileID: 0}
+    currentWeapon: {fileID: 0}
+    currentCombo: 0
 --- !u!95 &375318589159449566
 Animator:
   serializedVersion: 3
@@ -1840,7 +1846,7 @@ Animator:
   m_GameObject: {fileID: 375318589159449561}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 32562d1256a1b3b4ca9be3d6ce7adf64, type: 3}
-  m_Controller: {fileID: 9100000, guid: 52bfae369ec247340b2ac69cc979c95c, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1886,7 +1892,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375318589159449561}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38d74e74f78748b5bede71daadab8f3a, type: 3}
   m_Name: 
