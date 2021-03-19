@@ -1,4 +1,5 @@
 ﻿using System;
+using CombatSystem;
 using UnityEngine;
 
 namespace Entities.Common.Animation
@@ -42,6 +43,18 @@ namespace Entities.Common.Animation
         public void StopCombo()
         {
             animator.SetBool(EntityAnimationParameters.UsingCombo, false);
+        }
+
+        public void ReceiveHit(HitImpact impact)
+        {
+            animator.SetTrigger(EntityAnimationParameters.ReceiveHit);
+            animator.SetBool(EntityAnimationParameters.ReceivingHit, true);
+            animator.SetInteger(EntityAnimationParameters.HitImpact, (int) impact);
+        }
+
+        public void StopHit()
+        {
+            animator.SetBool(EntityAnimationParameters.ReceivingHit, false);
         }
 
         public void Use(int abilityId)

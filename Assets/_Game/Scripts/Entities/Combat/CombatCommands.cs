@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using _Game.Scripts;
 using Abilities;
 using Ammo;
 using CombatSystem;
@@ -93,6 +94,7 @@ namespace Entities.Combat
         public void ReceiveHit(AbilityHit abilityHit)
         {
             entity.defaultData.associatedCharacter.Status.Life.ApplyDamage(abilityHit.power);
+            entity.combatData.animations.ReceiveHit(abilityHit.impact);
             // outroAvatar.Particulas.TocaParticulasDeSangue();
             // Avatar.Audio.TocaSom(SlotSom.GolpeDeEspada);
         }
@@ -107,7 +109,6 @@ namespace Entities.Combat
             {
                 return new WaitWhile(() =>
                 {
-
                     entity.transform.rotation = Quaternion.Euler(0, entity.defaultData.lookDiretion, 0);
                     return entity.combatData.conjuring;
                 });
@@ -120,7 +121,7 @@ namespace Entities.Combat
         {
             AmmoStorage
                 .Arrow(transform.position + new Vector3(0, 1, 0), transform.rotation)
-                .Setup(new AbilityHit(-2, Vector3.zero, entity.defaultData.associatedCharacter.Team),
+                .Setup(new AbilityHit(-2, Vector3.zero, entity.defaultData.associatedCharacter,HitImpact.Weak),
                     entity.defaultData.associatedCharacter,
                     transform.forward.normalized * 800);
         }
@@ -138,12 +139,14 @@ namespace Entities.Combat
 
             foreach (var hit in hits)
             {
-                if (!hit.collider.attachedRigidbody.transform.TryGetComponent(out CombatEntity otherEntity)) continue;
-                if (!otherEntity.components.collision.Hittable) continue;
-                if (otherEntity.defaultData.associatedCharacter.Equals(entity.defaultData.associatedCharacter))
-                    continue;
-                otherEntity.events.onHitReceived.Invoke(new AbilityHit(-2, Vector3.zero,
-                    entity.defaultData.associatedCharacter.Team));
+                if (!hit.collider.transform.TryGetComponent(out Hittable hittable)) continue;
+                if (!hittable.combatEntity.components.collision.Hittable) continue;
+                if (hittable.combatEntity.defaultData.associatedCharacter.Equals(entity.defaultData.associatedCharacter)
+                ) continue;
+                if (hittable.combatEntity.defaultData.associatedCharacter.Team.PlayerFriend ==
+                    entity.defaultData.associatedCharacter.Team.PlayerFriend) continue;
+                hittable.combatEntity.events.onHitReceived.Invoke(new AbilityHit(-2, Vector3.zero,
+                    entity.defaultData.associatedCharacter));
             }
         }
 

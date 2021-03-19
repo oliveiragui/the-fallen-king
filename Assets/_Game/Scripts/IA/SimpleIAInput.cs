@@ -23,7 +23,7 @@ namespace IA
 
         void Start()
         {
-            weapon = new Weapon(weaponData);
+            weapon = gameObject.AddComponent<Weapon>().Setup(weaponData);
             combatCommands.EquipWeapon(weapon);
         }
 

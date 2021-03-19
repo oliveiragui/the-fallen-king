@@ -5,7 +5,10 @@ namespace Entities.Common.Animation
     public static class EntityAnimationParameters
     {
         public static readonly int Velocidade = Animator.StringToHash("Velocidade");
-
+        // Hit -------------------------
+        public static readonly int ReceiveHit = Animator.StringToHash("Recebe Hit");
+        public static readonly int ReceivingHit = Animator.StringToHash("Recebendo Hit");
+        public static readonly int HitImpact = Animator.StringToHash("Impacto do Hit");
         // HABILIDADE --------------------------
         public static readonly int HabilidadeID = Animator.StringToHash("ID habilidade");
         public static readonly int Conjuravel = Animator.StringToHash("Habilidade conjuravel");

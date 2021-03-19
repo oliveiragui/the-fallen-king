@@ -10,12 +10,10 @@ namespace Ammo
     public class BaseAmmo : MonoBehaviour
     {
         [SerializeField] Rigidbody rigidbody;
-
         //TODO: Remover dependencia do character
-        AbilityHit _abilityHit;
-        Character character;
-
-        bool hasCollider;
+        public AbilityHit AbilityHit { get; private set; }
+        public Character Character { get; private set; }
+        public bool HasCollided { get; private set; }
 
         void OnCollisionEnter(Collision other)
         {
@@ -23,27 +21,18 @@ namespace Ammo
             StartCoroutine(SelfDestruction());
         }
 
-        void OnTriggerEnter(Collider other)
+        public void Hit(CombatEntity entity)
         {
-            if (!other.CompareTag("Hittable")) return;
-            if (!other.attachedRigidbody.transform.TryGetComponent(out CombatEntity otherEntity)) return;
-            if (!otherEntity.components.collision.Hittable) return;
-            if (otherEntity.defaultData.associatedCharacter.Equals(character)) return;
-            if (_abilityHit == null) return;
-            if (hasCollider) return;
-            hasCollider = true;
-            if (_abilityHit.friendlyFire &&
-                otherEntity.defaultData.associatedCharacter.Team.PlayerFriend == _abilityHit.team.PlayerFriend) return;
-
-            otherEntity.events.onHitReceived.Invoke(_abilityHit);
-            transform.parent = other.transform;
+            HasCollided = true;
+            entity.events.onHitReceived.Invoke(AbilityHit);
+            transform.parent = entity.transform;
             StartCoroutine(SelfDestruction());
         }
 
         public void Setup(AbilityHit abilityHit, Character character, Vector3 force)
         {
-            _abilityHit = abilityHit;
-            this.character = character;
+            AbilityHit = abilityHit;
+            Character = character;
             rigidbody.AddForce(force);
         }
 

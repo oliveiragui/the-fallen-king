@@ -21,7 +21,7 @@ public class SimpleInput : MonoBehaviour
 
     void Start()
     {
-        weaponsx = weapons.Select(weapon => new Weapon(weapon)).ToArray();
+        weaponsx = weapons.Select(weapon => gameObject.AddComponent<Weapon>().Setup(weapon)).ToArray();
         _weaponCycle = SwitchWeapon();
     }
 
@@ -68,7 +68,7 @@ public class SimpleInput : MonoBehaviour
             defaultCommands.entity.data.stoppingDistance = 3;
             defaultCommands.MoveTo(mousePos);
         }
-        
+
         //if (weapon.Abilities == null) return;
 
         if (Input.GetButtonDown("P1KAtaque1")) combatCommands.UseAbility(weapon.Abilities[0]);

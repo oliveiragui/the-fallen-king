@@ -8,10 +8,11 @@ namespace Abilities
         readonly AbilityComboData _data;
         public readonly EntityAction Action;
 
-        public AbilityCombo(AbilityComboData data)
+        public AbilityCombo(AbilityComboData data, Ability ability)
         {
             _data = data;
-            if (data.action) Action = Object.Instantiate(data.action.gameObject).GetComponent<EntityAction>();
+            if (data.action)
+                Action = Object.Instantiate(data.action.gameObject, ability.transform).GetComponent<EntityAction>();
         }
 
         public RawComboAttributes Attributes => _data.attributes;
