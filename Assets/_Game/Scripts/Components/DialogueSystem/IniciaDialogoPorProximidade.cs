@@ -37,8 +37,6 @@ namespace _Game.Scripts
         {
             if (collider.gameObject == PlayerGameObject)
             {
-                Debug.Log("Entrou");
-
                 FluentManager.Instance.AddScript(GetComponent<FluentScript>());
                 over = true;
             }
@@ -48,8 +46,6 @@ namespace _Game.Scripts
         {
             if (collider.gameObject == PlayerGameObject)
             {
-                Debug.Log("Saiu");
-
                 FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
                 over = false;
             }
