@@ -1,6 +1,6 @@
-﻿using UnityEditor;
+﻿using _Game.Scripts.Utils.Serializables;
+using UnityEditor;
 using UnityEngine;
-using Utils.Serializables;
 
 namespace Utils.SerializableDictionary.Example.Editor
 {

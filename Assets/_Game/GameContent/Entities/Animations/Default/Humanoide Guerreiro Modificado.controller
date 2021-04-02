@@ -2500,7 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 0
 --- !u!1102 &-5759244080716271536
 AnimatorState:
   serializedVersion: 5
@@ -3056,7 +3056,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 7
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5176688983624024124}
   m_Solo: 0
@@ -4173,7 +4173,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 7
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 3
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5949295337606508953}
   m_Solo: 0
@@ -5218,7 +5218,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 7
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 4
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2680850792143391667}
   m_Solo: 0
@@ -5890,7 +5890,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 2
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: -5070550655766961092}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -5989,7 +5989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 4
+  id: 3
 --- !u!1109 &-1430356864572516339
 AnimatorTransition:
   m_ObjectHideFlags: 3
@@ -7222,145 +7222,145 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Em combate
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Velocidade
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Morre
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ------------- Damage
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Impacto do Hit
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Recebendo Hit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Recebe Hit
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ------------- Info Habilidade
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ID habilidade
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 1
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Habilidade conjuravel
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Velocidade da habilidade
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Combo Maximo
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 4
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ability Factor 1
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ability Factor 2
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ability Factor 3
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Cooldown 1
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Cooldown 2
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Cooldown 3
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Cooldown 4
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ----------- Habilidade runtime
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Using Combo
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Usa habilidade
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Conjurando
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Movimentacao
@@ -8461,7 +8461,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 3759574225226055701}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -8907,7 +8907,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: Impacto do Hit
-    m_EventTreshold: 1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5176688983624024124}
   m_Solo: 0
@@ -8963,9 +8963,9 @@ AnimatorStateMachine:
     second:
     - {fileID: 2721091088806020821}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 310, y: -90, z: 0}
+  m_AnyStatePosition: {x: 320, y: -80, z: 0}
   m_EntryPosition: {x: 140, y: -90, z: 0}
-  m_ExitPosition: {x: 250, y: 180, z: 0}
+  m_ExitPosition: {x: 230, y: 170, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -5949295337606508953}
 --- !u!1102 &1994443988583937617
@@ -9097,7 +9097,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 7
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 2
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4068611817481435176}
   m_Solo: 0
@@ -11138,7 +11138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 1
 --- !u!1109 &4722056052398403973
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -12527,7 +12527,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 3
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 2585300702265626931}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -12962,7 +12962,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 6
     m_ConditionEvent: ID habilidade
-    m_EventTreshold: 4
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 3717794181914340480}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -14279,7 +14279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 3
+  id: 2
 --- !u!1109 &8556939426840643658
 AnimatorTransition:
   m_ObjectHideFlags: 3

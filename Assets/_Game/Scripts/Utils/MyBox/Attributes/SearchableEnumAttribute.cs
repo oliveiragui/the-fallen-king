@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     /// <summary>
     ///     Put this attribute on a public (or SerializeField) enum in a

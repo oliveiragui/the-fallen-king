@@ -1,15 +1,16 @@
 using System;
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
+using _Game.Scripts.Utils.MyBox.Tools;
+using UnityEditor;
+using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 #if UNITY_EDITOR
-using UnityEditor;
-using UnityEditor.Experimental.SceneManagement;
-using Utils.MyBox.Extensions.EditorExtensions;
-using Utils.MyBox.Tools;
+
 #endif
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     /// <summary>
     ///     Automatically assign components from this GO to this Property.

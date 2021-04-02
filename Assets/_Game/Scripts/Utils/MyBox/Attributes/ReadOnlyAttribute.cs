@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     public class ReadOnlyAttribute : PropertyAttribute { }
 

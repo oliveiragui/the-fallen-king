@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-namespace Components.AttributeSystem
+namespace _Game.Scripts.Components.AttributeSystem
 {
     public class Stat : Attribute
     {

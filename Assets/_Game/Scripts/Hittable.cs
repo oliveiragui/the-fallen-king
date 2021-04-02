@@ -1,12 +1,10 @@
-﻿using Entities.Combat;
-using Entities.Default;
+﻿using _Game.Scripts.Entities;
 using UnityEngine;
 
 namespace _Game.Scripts
 {
     public class Hittable : MonoBehaviour
     {
-        public DefaultEntity defaultEntity;
-        public CombatEntity combatEntity;
+        public Entity entity;
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Utils.MyBox.Extensions
+namespace _Game.Scripts.Utils.MyBox.Extensions
 {
     public static class MyColor
     {

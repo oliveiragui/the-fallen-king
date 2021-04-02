@@ -1,14 +1,14 @@
-﻿using Characters;
-using UI.StatusBar;
+﻿using _Game.Scripts.Characters;
+using _Game.Scripts.UI.StatusBar;
 using UnityEngine;
 
-namespace UI
+namespace _Game.Scripts.UI
 {
     public class CharacterUIBind : MonoBehaviour
     {
         [SerializeField] Character character;
 
-        [SerializeField] StatusBarManager statusBarManager;
+        [SerializeField] Lifebar lifebar;
         [SerializeField] Vector3 statusBarPosOffset;
 
         // Start is called before the first frame update
@@ -16,8 +16,8 @@ namespace UI
         {
             character.Status.onAnyStatChanged.AddListener(status =>
             {
-                statusBarManager.Total = status.Life.Total;
-                statusBarManager.Current = status.Life.Current;
+                lifebar.Total = status.Life.Total;
+                lifebar.Current = status.Life.Current;
             });
         }
 
@@ -26,7 +26,7 @@ namespace UI
 
         void FixedUpdate()
         {
-            statusBarManager.transform.position = character.DefaultEntity.transform.position + statusBarPosOffset;
+            lifebar.transform.position = character.Entity.transform.position + statusBarPosOffset;
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System;
+using _Game.Scripts.Utils.MyBox.Attributes;
 using UnityEngine;
-using Utils.MyBox.Attributes;
 
-namespace Utils.MyBox.Extensions
+namespace _Game.Scripts.Utils.MyBox.Extensions
 {
     public static class MyMath
     {

@@ -1,20 +1,17 @@
-﻿using Entities.Combat;
-using Entities.Default;
+﻿using _Game.Scripts.Entities;
+using _Game.Scripts.Utils.Extension;
+using _Game.Scripts.Weapons;
 using UnityEngine;
-using Utils.Extension;
-using Weapons;
 
-namespace IA
+namespace _Game.Scripts.IA
 {
     public class SimpleIAInput : MonoBehaviour
     {
-        [SerializeField] DefaultEntity NPC;
-        [SerializeField] DefaultCommands defaultCommands;
+        [SerializeField] Entity entity;
+        [SerializeField] EntityCommands entityCommands;
+        
 
-        [SerializeField] CombatEntity NPCCombat;
-        [SerializeField] CombatCommands combatCommands;
-
-        [SerializeField] CombatEntity target;
+        [SerializeField] Entity target;
 
         [SerializeField] WeaponData weaponData;
         Weapon weapon;
@@ -23,15 +20,18 @@ namespace IA
 
         void Start()
         {
-            weapon = gameObject.AddComponent<Weapon>().Setup(weaponData);
-            combatCommands.EquipWeapon(weapon);
+            // weapon = gameObject.AddComponent<Weapon>().Setup(weaponData);
+            // entityCommands.EquipWeapon(weapon);
+            entity.data.associatedCharacter.Weapons.Add(weaponData);
+            entity.data.associatedCharacter.Weapons.UseWeapon(0);
+            weapon = entity.data.associatedCharacter.Weapons.WeaponInUse;
         }
 
         void FixedUpdate()
         {
             ProcessaInput();
             // if (target == null)
-            //     EncontraInimigo(NPC.transform.position, distance);
+            //     EncontraInimigo(entity.transform.position, distance);
             // else
             //
             //     InimigoDistante();
@@ -39,27 +39,27 @@ namespace IA
 
         void ProcessaInput()
         {
-            var targetDistance = target.transform.position - NPC.transform.position;
-            NPC.data.lookDiretion = new Vector2(targetDistance.x, targetDistance.z).ToDegree() + 90;
-            NPC.data.direction = NPC.data.lookDiretion;
-            NPC.data.stoppingDistance = distance;
+            var targetDistance = target.transform.position - entity.transform.position;
+            entity.data.lookDiretion = new Vector2(targetDistance.x, targetDistance.z).ToDegree() + 90;
+            entity.data.direction = entity.data.lookDiretion;
+            entity.data.stoppingDistance = distance;
 
-            if (NPCCombat.combatData.UsingCombo)
+            if (entity.data.UsingCombo)
             {
-                combatCommands.StopConjuring(weapon.Abilities[0].Id);
+                entityCommands.StopConjuring(weapon.Abilities[0]);
                 return;
             }
 
-            if (targetDistance.magnitude < NPC.data.stoppingDistance)
+            if (targetDistance.magnitude < entity.data.stoppingDistance)
             {
-                combatCommands.UseAbility(weapon.Abilities[0]);
-                defaultCommands.StopMove();
-                NPC.data.speed = 0;
+                entityCommands.UseAbility(weapon.Abilities[0]);
+                entityCommands.StopMove();
+                entity.data.speed = 0;
             }
-            else if (targetDistance.magnitude > NPC.data.stoppingDistance)
+            else if (targetDistance.magnitude > entity.data.stoppingDistance)
             {
-                NPC.data.speed = 5;
-                defaultCommands.MoveTo(target.transform.position);
+                entity.data.speed = 5;
+                entityCommands.MoveTo(target.transform.position);
             }
         }
 
@@ -67,8 +67,8 @@ namespace IA
         {
             foreach (var collider in Physics.OverlapSphere(center, radius, LayerMask.GetMask("Hittable")))
             {
-                if (!collider.attachedRigidbody.transform.TryGetComponent(out CombatEntity otherEntity)) continue;
-                if (otherEntity.transform.Equals(NPC.transform)) continue;
+                if (!collider.attachedRigidbody.transform.TryGetComponent(out Entity otherEntity)) continue;
+                if (otherEntity.transform.Equals(entity.transform)) continue;
                 target = otherEntity;
                 return;
             }
@@ -76,7 +76,7 @@ namespace IA
 
         void InimigoDistante()
         {
-            if (target && (NPC.transform.position - target.transform.position).magnitude > 10) target = null;
+            if (target && (entity.transform.position - target.transform.position).magnitude > 10) target = null;
         }
     }
 }

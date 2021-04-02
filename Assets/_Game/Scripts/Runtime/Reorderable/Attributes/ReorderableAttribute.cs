@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Runtime.Reorderable.Attributes
+namespace _Game.Scripts.Runtime.Reorderable.Attributes
 {
     public class ReorderableAttribute : PropertyAttribute
     {

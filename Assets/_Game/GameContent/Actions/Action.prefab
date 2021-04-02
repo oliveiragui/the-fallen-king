@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6425148349108251805}
   - component: {fileID: 1240665294697898280}
-  - component: {fileID: 3097921662041460302}
   - component: {fileID: 7620568686069906772}
   m_Layer: 0
   m_Name: Action
@@ -46,19 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 0}
---- !u!114 &3097921662041460302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4442478438928935191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e29819b11ddf4c659d5f6b910cf82aef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entity: {fileID: 0}
 --- !u!114 &7620568686069906772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,8 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d62b6b1cae4fc292a22ed43973c775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCommands: {fileID: 1240665294697898280}
-  combatCommands: {fileID: 3097921662041460302}
+  entityCommands: {fileID: 1240665294697898280}
   enter:
     m_PersistentCalls:
       m_Calls:

@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using UnityEngine;
 
-namespace Runtime.SerializableDictionary
+namespace _Game.Scripts.Runtime.SerializableDictionary
 {
     public abstract class SerializableDictionaryBase<TKey, TValue, TValueStorage> : Dictionary<TKey, TValue>,
         ISerializationCallbackReceiver

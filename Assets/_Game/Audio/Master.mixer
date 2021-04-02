@@ -39,7 +39,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ambient
+  m_Name: Ambience
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 28b36e790ba9e5b419da9b5be53a9a41
   m_Children: []
@@ -86,7 +86,19 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 87541db141c63b9428e4e23909f85724
+    name: MyExposedParam 4
+  - guid: 5a84dd46bf3a1914f984310ee9f0baf5
+    name: MyExposedParam 1
+  - guid: dba50eb0adc272541bc288c93b5ceddb
+    name: MyExposedParam 3
+  - guid: 71a38b8a51bc7ca4892b68a39fcd0456
+    name: MyExposedParam 2
+  - guid: 03d139dd3365d8b4091c39f3342e7482
+    name: MyExposedParam 5
+  - guid: 482170d74f4301a44afc908fa3d644fa
+    name: MyExposedParam
   m_AudioMixerGroupViews:
   - guids:
     - 47108a6f5a61898449e4aa98437f16a7

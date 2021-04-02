@@ -3,7 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Utils.MyBox.Extensions.EditorExtensions
+namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
 {
     public static class MyScriptableObject
     {

@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 #if UNITY_EDITOR
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     [InitializeOnLoad]
     public class RequireLayerOtRagAttributeHandler

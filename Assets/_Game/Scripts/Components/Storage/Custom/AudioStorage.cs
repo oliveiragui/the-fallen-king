@@ -1,9 +1,9 @@
 ﻿using System;
+using _Game.Scripts.Utils.MyBox.Attributes;
+using _Game.Scripts.Utils.Serializables;
 using UnityEngine;
-using Utils.MyBox.Attributes;
-using Utils.Serializables;
 
-namespace Components.Storage.Custom
+namespace _Game.Scripts.Components.Storage.Custom
 {
     public class AudioStorage : UnityObjectStorage<AudioSource>
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Components.CollisionSystem
+namespace _Game.Scripts.Components.CollisionSystem
 {
     public class ColliderManager : MonoBehaviour { }
 }

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using UnityEngine;
-#if UNITY_EDITOR
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
+using _Game.Scripts.Utils.MyBox.Tools;
 using UnityEditor;
 using UnityEditor.Experimental.SceneManagement;
-using Utils.MyBox.Extensions.EditorExtensions;
-using Utils.MyBox.Tools;
+using UnityEngine;
+#if UNITY_EDITOR
 
 #endif
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     /// <summary>
     ///     Apply to MonoBehaviour field to assert that this field is assigned via inspector (not null, false, empty of zero)

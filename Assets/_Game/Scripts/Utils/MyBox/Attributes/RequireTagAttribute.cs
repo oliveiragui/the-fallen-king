@@ -1,6 +1,6 @@
 using System;
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class RequireTagAttribute : Attribute

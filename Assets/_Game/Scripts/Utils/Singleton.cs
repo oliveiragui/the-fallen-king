@@ -1,7 +1,7 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
 
-namespace Utils
+namespace _Game.Scripts.Utils
 {
     public abstract class Singleton<T> : Singleton where T : MonoBehaviour
     {

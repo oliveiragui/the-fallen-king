@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     /// <summary>
     ///     Create Popup with predefined values for string, int or float property

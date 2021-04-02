@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using _Game.Scripts.Utils;
 using UnityEngine;
-using Utils;
 
-namespace Components.Storage
+namespace _Game.Scripts.Components.Storage
 {
     public class UnityObjectStorage<T> : MonoBehaviour
         where T : Object

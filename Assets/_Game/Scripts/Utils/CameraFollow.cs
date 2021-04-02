@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utils
+namespace _Game.Scripts.Utils
 {
     public class CameraFollow : MonoBehaviour
     {

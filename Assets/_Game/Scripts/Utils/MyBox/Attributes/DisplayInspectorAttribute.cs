@@ -1,8 +1,8 @@
-﻿using UnityEditor;
+﻿using _Game.Scripts.Utils.MyBox.Extensions;
+using UnityEditor;
 using UnityEngine;
-using Utils.MyBox.Extensions;
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     /// <summary>
     ///     Use to display inspector of property object

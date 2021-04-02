@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Utils.MyBox.Extensions
+namespace _Game.Scripts.Utils.MyBox.Extensions
 {
     public static class MyCollections
     {

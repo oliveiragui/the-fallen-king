@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450549113277159895}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7582383, y: 0, z: 10.32}
+  m_LocalPosition: {x: 4.51, y: 0, z: 4.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 517452448720271752}
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2181268648198527713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2417617, y: 0, z: 7.32}
+  m_LocalPosition: {x: -1.4899999, y: 0, z: 1.4600005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2181268648586191858}
@@ -86,7 +86,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3601377846744596036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2417617, y: 0, z: 10.32}
+  m_LocalPosition: {x: -1.4899999, y: 0, z: 4.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 118694072903131027}
@@ -117,7 +117,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4626172957757356848}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7582383, y: 0, z: 4.32}
+  m_LocalPosition: {x: 4.51, y: 0, z: -1.5399995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7064770853587350923}
@@ -148,7 +148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6055326242089620629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.7582383, y: 0, z: 7.32}
+  m_LocalPosition: {x: 4.51, y: 0, z: 1.4600005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 155861173231862412}
@@ -179,7 +179,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6582928118660125335}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24176168, y: 0, z: 4.32}
+  m_LocalPosition: {x: 1.5100001, y: 0, z: -1.5399995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 312672198404797575}
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6920061781089348931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24176168, y: 0, z: 7.32}
+  m_LocalPosition: {x: 1.5100001, y: 0, z: 1.4600005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 808100653868137990}
@@ -241,7 +241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7516516445609970354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.24176168, y: 0, z: 10.32}
+  m_LocalPosition: {x: 1.51, y: 0, z: 4.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6390353229769931150}
@@ -272,7 +272,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8508534075616180125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.2417617, y: 0, z: 4.32}
+  m_LocalPosition: {x: -1.4899999, y: 0, z: -1.5399995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3582016403220658079}
@@ -288,9 +288,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4492347612554765800}
-  m_Layer: 0
+  - component: {fileID: 8261786519503289682}
+  m_Layer: 27
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Stone Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8594642318752884137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.74, y: 0, z: -6.824935}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7056770974235924057}
@@ -318,6 +319,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8261786519503289682
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594642318752884137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9, y: 0.1, z: 9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &118694072902924283
 PrefabInstance:
   m_ObjectHideFlags: 0

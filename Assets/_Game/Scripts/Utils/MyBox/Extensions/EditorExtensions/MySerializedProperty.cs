@@ -7,7 +7,7 @@ using System.Reflection;
 using UnityEditor;
 using Object = UnityEngine.Object;
 
-namespace Utils.MyBox.Extensions.EditorExtensions
+namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
 {
     public static class MySerializedProperty
     {

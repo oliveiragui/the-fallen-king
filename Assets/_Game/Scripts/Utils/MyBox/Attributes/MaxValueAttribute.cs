@@ -1,12 +1,11 @@
-
-using UnityEngine;
-
-#if UNITY_EDITOR
-using Utils.MyBox.Extensions.EditorExtensions;
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
 using UnityEditor;
+using UnityEngine;
+#if UNITY_EDITOR
+
 #endif
 
-namespace Utils.MyBox.Attributes
+namespace _Game.Scripts.Utils.MyBox.Attributes
 {
     public class MaxValueAttribute : AttributeBase
     {

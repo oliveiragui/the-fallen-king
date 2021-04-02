@@ -4,7 +4,7 @@ using System.IO;
 using UnityEditor.Presets;
 using UnityEngine;
 
-namespace Utils.MyBox.Tools.AssetPresetPreprocessor
+namespace _Game.Scripts.Utils.MyBox.Tools.AssetPresetPreprocessor
 {
     public class AssetsPresetPreprocessBase : ScriptableObject
     {

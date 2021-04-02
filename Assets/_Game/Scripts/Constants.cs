@@ -1,4 +1,7 @@
-﻿public static class Constants
+﻿namespace _Game.Scripts
 {
-    public const int StepUnit = 56;
+    public static class Constants
+    {
+        public const int StepUnit = 56;
+    }
 }

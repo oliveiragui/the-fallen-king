@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Utils
+namespace _Game.Scripts.Utils
 {
     [Serializable]
     public class StringToHashDictionary<T> : Dictionary<int, T>

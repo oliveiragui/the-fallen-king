@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace Utils.MyBox.Extensions.EditorExtensions
+namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
 {
     public static class MyHandles
     {

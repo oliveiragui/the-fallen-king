@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Utils.MyBox.Extensions
+namespace _Game.Scripts.Utils.MyBox.Extensions
 {
     public static class MyUI
     {

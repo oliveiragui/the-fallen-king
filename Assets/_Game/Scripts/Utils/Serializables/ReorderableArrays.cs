@@ -1,9 +1,9 @@
 ﻿using System;
-using Runtime.Reorderable;
+using _Game.Scripts.Runtime.Reorderable;
+using _Game.Scripts.Weapons.Prefab;
 using UnityEngine;
-using Weapons.Prefab;
 
-namespace Utils.Serializables
+namespace _Game.Scripts.Utils.Serializables
 {
     [Serializable]
     public class ReorderableAudioSourceList : ReorderableArray<AudioSource> { }

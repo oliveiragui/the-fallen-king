@@ -1,8 +1,8 @@
 ﻿using System;
-using Runtime.SerializableDictionary;
+using _Game.Scripts.Runtime.SerializableDictionary;
 using UnityEngine;
 
-namespace Utils.Serializables
+namespace _Game.Scripts.Utils.Serializables
 {
     // [Serializable]
     // public class AudioSom : SerializableDictionary<SlotSom, AudioSource> { }

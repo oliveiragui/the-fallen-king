@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace Utils.MyBox.Extensions
+namespace _Game.Scripts.Utils.MyBox.Extensions
 {
     public static class MyString
     {

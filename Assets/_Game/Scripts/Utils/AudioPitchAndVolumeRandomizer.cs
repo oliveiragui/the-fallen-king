@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Utils
+namespace _Game.Scripts.Utils
 {
     [AddComponentMenu("Audio/Audio Pitch And Volume Randomizer")]
     [RequireComponent(typeof(AudioSource))]
