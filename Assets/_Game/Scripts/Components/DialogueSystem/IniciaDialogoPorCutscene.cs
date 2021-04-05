@@ -10,6 +10,7 @@ public class IniciaDialogoPorCutscene : MonoBehaviour
     bool over = false;
 
     public PlayableDirector director;
+    public bool comecaInicio;
 
 
     void Start()
@@ -27,17 +28,35 @@ public class IniciaDialogoPorCutscene : MonoBehaviour
         if (!everythingOk)
             return;
 
-        if (director.state == PlayState.Playing)
+        if (comecaInicio)
         {
-            over = true;
-            //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
-        }
+            if (director.state != PlayState.Playing)
+            {
+                over = true;
+                //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
+            }
 
-        if (over && director.state != PlayState.Playing)
+            if (over && director.state == PlayState.Playing)
+            {
+                FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
+                over = false;
+                //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
+            }
+        }
+        else
         {
-            FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
-            over = false;
-            //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
+            if (director.state == PlayState.Playing)
+            {
+                over = true;
+                //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
+            }
+
+            if (over && director.state != PlayState.Playing)
+            {
+                FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
+                over = false;
+                //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
+            }
         }
     }
 

@@ -13,9 +13,12 @@ public class DialogoPadreMulher : FluentScript
     {
         return
             Show() *
-            Write(0.5f, "Descanse 3 dias e já estará livre da tosse.").WaitForButton() *
-            Write(0.5f, "Obrigado doutor, realmente é um milagre que o senhor esteja na nossa vila!").WaitForButton() *
-            Write(0.5f, "Tchau!") *
+            Write(1.0f, "Médico:\n Você já pode entrar agora.").WaitForButton() *
+            Write(0.5f, "Mulher:\n Doutor, só queria te agradecer por tudo que você fez por mim e pelos outros! Realmente é um milagre que o senhor esteja na nossa vila!").WaitForButton() *
+            Write(0.5f, "Médico:\n Não precisa me agradecer...").WaitForButton() *
+            Write(0.5f, "Médico:\n Lembre-se de descansar por 3 dias e você já estará melhor.").WaitForButton() *
+            Write(0.5f, "Mulher:\n Amanhã eu volto para ver como está minha irmãzinha").WaitForButton() *
+            Write(0.5f, "Mulher:\n Até mais") *
             Options
             (
                 Option("") *
@@ -39,11 +42,10 @@ public class DialogoPadreMulher : FluentScript
 
     private void IniciaCutscene()
     {
-        timeline.SetActive(true);
+        if (timeline != null)
+        {
+            timeline.SetActive(true);
 
-        //if (player != null && playerAnimation != null)
-        //{
-        //    timeline.get
-        //}
+        }
     }
 }

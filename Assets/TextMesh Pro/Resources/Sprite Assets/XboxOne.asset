@@ -83,7 +83,7 @@ MonoBehaviour:
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 7
-    m_Scale: 1
+    m_Scale: 4
     m_Name: XboxOne_LB
     m_HashCode: 162957272
   - m_ElementType: 2
@@ -439,7 +439,8 @@ MonoBehaviour:
     m_AtlasIndex: 0
     sprite: {fileID: 0}
   spriteInfoList: []
-  fallbackSpriteAssets: []
+  fallbackSpriteAssets:
+  - {fileID: 0}
 --- !u!21 &4212877381337510447
 Material:
   serializedVersion: 6
