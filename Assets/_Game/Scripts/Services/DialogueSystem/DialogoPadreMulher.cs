@@ -26,10 +26,6 @@ public class DialogoPadreMulher : FluentScript
                     Do(() => IniciaCutscene()) *
                     End()
             );
-                //Hide() *
-                //Do(() => IniciaCutscene()) *
-                //End();
-
     }
 
     public override void OnFinish()
