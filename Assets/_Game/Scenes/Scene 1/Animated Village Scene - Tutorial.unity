@@ -7148,7 +7148,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &405321826
 Transform:
   m_ObjectHideFlags: 0
@@ -13222,6 +13222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6397621c8dc77484baae2d969a4d35ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onFinish:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &664376842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13310,7 +13313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &697545723
 Animator:
   serializedVersion: 3
@@ -20155,8 +20158,8 @@ GameObject:
   - component: {fileID: 1148403904}
   - component: {fileID: 1148403907}
   - component: {fileID: 1148403906}
-  - component: {fileID: 1148403905}
   - component: {fileID: 1148403908}
+  - component: {fileID: 1148403905}
   m_Layer: 0
   m_Name: Talk (Cutscene)
   m_TagString: Untagged
@@ -20187,9 +20190,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1148403903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d5576ae42d82bd40adda786af46c6bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 0fb46899809bdee4ba3e976a274d52db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeline: {fileID: 376887725}
 --- !u!114 &1148403906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22353,7 +22357,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1294126990
 Transform:
   m_ObjectHideFlags: 0
@@ -28067,7 +28071,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536646, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536647, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -28077,7 +28081,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536647, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dff912247216734e8192af245f55a14, type: 3}
@@ -33506,16 +33510,16 @@ Camera:
   m_FOVAxisMode: 1
   m_SensorSize: {x: 30, y: 30}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 41.212162
+  m_FocalLength: 38.74
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 5000
-  field of view: 40
+  field of view: 42.332478
   orthographic: 0
   orthographic size: 7
   m_Depth: -1
@@ -33540,8 +33544,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2149936783335288690}
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
-  m_LocalPosition: {x: -9.14, y: 23.030275, z: -22.89}
+  m_LocalRotation: {x: 0.048078664, y: -0.055825967, z: -0.1258583, w: 0.98930866}
+  m_LocalPosition: {x: 16.22, y: 7.3999996, z: 10.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

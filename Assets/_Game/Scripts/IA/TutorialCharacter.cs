@@ -15,7 +15,7 @@ namespace _Game.Scripts.IA
         public void Reset()
         {
             character.Status.Life.ApplyDamage(100000000000);
-            FluentManager.Instance.AddScript(GetComponent<FluentScript>());
+            //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
             FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
         }
 
@@ -26,10 +26,10 @@ namespace _Game.Scripts.IA
             return
                 Show() *
                 Write(1.0f, "Dragg:\n Você aprendeu muito, jovem.").WaitForButton() *
-                Write(0.5f, "Dragg:\n Terei que sair agora, mas na próxima juro que acabo contigo...").WaitForButton() *
-                Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila, veja o que eles precisam.")
+                Write(0.5f, "Dragg:\n Terei que ir agora, mas na próxima juro que acabo contigo...").WaitForButton() *
+                Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila.")
                     .WaitForButton() *
-                Write(0.5f, "Dragg:\n Até mais") *
+                Write(0.5f, "Dragg:\n Até mais.") *
                 Options
                 (
                     Option("") *
@@ -42,7 +42,7 @@ namespace _Game.Scripts.IA
         public override void OnFinish()
         {
             onFinish.Invoke();
-            FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
+            //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
         }
 
         public override void OnStart()

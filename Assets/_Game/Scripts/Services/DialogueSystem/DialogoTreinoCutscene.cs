@@ -12,13 +12,14 @@ public class DialogoTreinoCutscene : FluentScript
     {
         return
             Show() *
-            Write(1.0f, "Dragg:\n Vamo lá, vem com tudo!.").WaitForButton() *
-            Write(0.5f, "Dragg:\n Não vamos poder treinar por um tempo, estou indo pro [REINO_DO_SUL] encontrar um velho conhecido...") *
+            Write(1.0f, "Dragg:\n Vamo lá, vem com tudo!").WaitForButton() *
+            Write(0.5f, "Dragg:\n Não vamos poder treinar por um tempo, estou indo pro reino do sul encontrar um velho conhecido...").WaitForButton() *
+            Write(0.5f, "Dragg:\n HYAAA!") *
             Options
             (
                 Option("") *
-                    Hide() *
                     Do(() => IniciaCutscene()) *
+                    Hide() *
                     End()
             );
     }

@@ -19,11 +19,11 @@ public class DialogoTreinoBotao : FluentScript
                 Write(0.5f, "Dragg:\nVolte a falar comigo quando estiver pronto pro treino!")
             ) *
             If(() => timesVisited >= 2,
-                Write(0.5f, "Dragg:\nPra atacar aperte <sprite=\"KeyBoardAndMouse\" name=\"Mouse_Left_Key_Dark\"> ")
+                Write(0.5f, "Dragg:\nPara atacar aperte <sprite=\"KeyBoardAndMouse\" name=\"Mouse_Left_Key_Dark\"> ")
                     .WaitForButton() *
-                Write(0.5f, "Dragg:\nPra esquivar aperte <sprite=\"KeyBoardAndMouse\" name=\"Space_Key_Dark\"> ")
-                    .WaitForButton() *
-                Write(0.5f, "Dragg:\nPra trocar de arma aperte <sprite=\"KeyBoardAndMouse\" name=\"Tab_Key_Dark\"> ")
+                //Write(0.5f, "Dragg:\nPara esquivar aperte <sprite=\"KeyBoardAndMouse\" name=\"Space_Key_Dark\"> ")
+                //    .WaitForButton() *
+                Write(0.5f, "Dragg:\nPara trocar de arma aperte <sprite=\"KeyBoardAndMouse\" name=\"Tab_Key_Dark\"> ")
             ) *
 
             //If(() => timesVisited > 2,
