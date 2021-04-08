@@ -11,6 +11,12 @@ namespace _Game.Scripts.UI
         [SerializeField] MenuInputData mainMenu;
         [SerializeField] MenuInputData charMenu;
 
+        public bool PlayerCanSwitchMenu
+        {
+            get => playerCanSwitchMenu;
+            set => playerCanSwitchMenu = value;
+        }
+
         void Update()
         {
             ProcessInput();
@@ -22,7 +28,7 @@ namespace _Game.Scripts.UI
             if (Input.GetButtonDown(mainMenu.ButtonName) && mainMenu.canBeUsed) SwitchMenu(mainMenu.Index);
             if (Input.GetButtonDown(charMenu.ButtonName) && charMenu.canBeUsed) SwitchMenu(charMenu.Index);
         }
-        
+
         public void SwitchMenu(int menuIndex)
         {
             if (OpenTabIndex == menuIndex) SwitchTab(0);

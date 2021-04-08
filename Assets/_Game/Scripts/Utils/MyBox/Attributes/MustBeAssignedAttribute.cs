@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
 using _Game.Scripts.Utils.MyBox.Tools;
-using UnityEditor;
-using UnityEditor.Experimental.SceneManagement;
 using UnityEngine;
 #if UNITY_EDITOR
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
+using UnityEditor;
+using UnityEditor.Experimental.SceneManagement;
 
 #endif
 

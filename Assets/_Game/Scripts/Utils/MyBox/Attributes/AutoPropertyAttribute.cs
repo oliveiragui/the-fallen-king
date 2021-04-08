@@ -1,13 +1,13 @@
 using System;
-using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
-using _Game.Scripts.Utils.MyBox.Tools;
-using UnityEditor;
-using UnityEditor.Experimental.SceneManagement;
+
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 #if UNITY_EDITOR
-
+using UnityEditor.Experimental.SceneManagement;
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
+using _Game.Scripts.Utils.MyBox.Tools;
+using UnityEditor;
 #endif
 
 namespace _Game.Scripts.Utils.MyBox.Attributes

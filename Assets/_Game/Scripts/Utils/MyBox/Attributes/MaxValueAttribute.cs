@@ -1,7 +1,7 @@
-using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
-using UnityEditor;
 using UnityEngine;
 #if UNITY_EDITOR
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
+using UnityEditor;
 
 #endif
 

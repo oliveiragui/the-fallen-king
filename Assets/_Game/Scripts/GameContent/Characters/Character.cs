@@ -20,6 +20,8 @@ namespace _Game.Scripts.GameContent.Characters
 
         public CharacterEvents events;
 
+        bool dead;
+
         void Awake()
         {
             Team = data.DefaultTeam;
@@ -29,7 +31,14 @@ namespace _Game.Scripts.GameContent.Characters
         void Start()
         {
             events.onInstantiate.Invoke();
-            events.onDeath.AddListener(KillEntity);
+            Status.onAnyStatChanged.AddListener(status =>
+            {
+                if (!dead && status.Life.Current <= 0)
+                {
+                    events.onDeath.Invoke(this);
+                    dead = true;
+                }
+            });
         }
 
         void OnDestroy()
@@ -41,7 +50,6 @@ namespace _Game.Scripts.GameContent.Characters
         {
             entity.commands.Die();
         }
-        
     }
 
     [Serializable]

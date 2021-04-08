@@ -1,7 +1,4 @@
 ﻿using Fluent;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Dialogo_NPC_1 : FluentScript
@@ -26,9 +23,9 @@ public class Dialogo_NPC_1 : FluentScript
             );
 
     }
-    void OnTriggerExit(Collider collider)
-    {
-    }
+    // void OnTriggerExit(Collider collider)
+    // {
+    // }
 
     public override void OnFinish()
     {

@@ -34,9 +34,9 @@ public class Dialogo_NPC_2 : FluentScript
              );
 
     }
-    void OnTriggerExit(Collider collider)
-    {
-    }
+    // void OnTriggerExit(Collider collider)
+    // {
+    // }
 
     public override void OnFinish()
     {

@@ -35,7 +35,8 @@ namespace _Game.Scripts
 
         void OnTriggerEnter(Collider collider)
         {
-            if (collider.gameObject == PlayerGameObject)
+           
+            if (collider.attachedRigidbody.gameObject == PlayerGameObject)
             {
                 FluentManager.Instance.AddScript(GetComponent<FluentScript>());
                 over = true;
@@ -44,7 +45,7 @@ namespace _Game.Scripts
 
         void OnTriggerExit(Collider collider)
         {
-            if (collider.gameObject == PlayerGameObject)
+            if (collider.attachedRigidbody.gameObject == PlayerGameObject)
             {
                 FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
                 over = false;

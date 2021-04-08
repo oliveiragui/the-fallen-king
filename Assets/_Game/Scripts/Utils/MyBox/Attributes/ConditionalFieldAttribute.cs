@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
-using _Game.Scripts.Utils.MyBox.Extensions;
-using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
 using _Game.Scripts.Utils.MyBox.Tools;
-using UnityEditor;
 using UnityEngine;
 #if UNITY_EDITOR
+using _Game.Scripts.Utils.MyBox.Extensions;
+using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
+using UnityEditor;
 
 #endif
 
