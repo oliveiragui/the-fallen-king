@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Animation.Behaviours
+namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
 {
     public class HitBehaviour : StateMachineBehaviour
     {

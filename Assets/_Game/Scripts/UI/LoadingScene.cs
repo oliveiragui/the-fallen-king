@@ -28,7 +28,7 @@ namespace _Game.Scripts.UI
             yield return new WaitWhile(() =>
             {
                 bar.ApplyVariation(asyncLoad.progress - 0.1f);
-                Debug.Log(normalize(asyncLoad.progress * 1.1f));
+                //Debug.Log(normalize(asyncLoad.progress * 1.1f));
                 return !asyncLoad.isDone;
             });
         }

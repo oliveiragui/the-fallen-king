@@ -1,8 +1,8 @@
 ﻿using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.Teams;
+using _Game.Scripts.GameContent.Teams;
 using UnityEngine;
 
-namespace _Game.Scripts.Characters
+namespace _Game.Scripts.GameContent.Characters
 {
     [CreateAssetMenu(fileName = "Character", menuName = "GameContent/Character", order = 1)]
     public class CharacterData : ScriptableObject

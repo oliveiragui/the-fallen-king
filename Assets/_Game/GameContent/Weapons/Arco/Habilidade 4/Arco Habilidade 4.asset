@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114919e8d923406c9f07c57b428b7fc0, type: 3}
   m_Name: Arco Habilidade 4
   m_EditorClassIdentifier: 
-  id: 4
-  description: 
+  animationId: 0
+  description: Se esquiva
+  icon: {fileID: 21300000, guid: bd342816b57b5e84ba38a25226148b7a, type: 3}
   canBeInterruped: 0
   canInterrupt: 1
   cooldown:

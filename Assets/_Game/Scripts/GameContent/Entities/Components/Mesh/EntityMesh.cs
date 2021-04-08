@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using _Game.Scripts.Components.Storage.Custom;
-using _Game.Scripts.Weapons.Prefab;
+using _Game.Scripts.GameContent.Weapons.Prefab;
 using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Mesh
+namespace _Game.Scripts.GameContent.Entities.Components.Mesh
 {
     public class EntityMesh : MonoBehaviour
     {
@@ -45,7 +45,6 @@ namespace _Game.Scripts.Entities.Components.Mesh
             var instance = Instantiate(weaponPrefabData.gameObject, slots[weaponPrefabData.Slot].transform);
             transform.localPosition = weaponPrefabData.Position;
             instance.transform.localEulerAngles = weaponPrefabData.Rotation;
-
             return instance;
         }
 

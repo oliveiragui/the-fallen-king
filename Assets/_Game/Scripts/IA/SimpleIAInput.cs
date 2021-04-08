@@ -1,6 +1,6 @@
-﻿using _Game.Scripts.Entities;
+﻿using _Game.Scripts.GameContent.Entities;
+using _Game.Scripts.GameContent.Weapons;
 using _Game.Scripts.Utils.Extension;
-using _Game.Scripts.Weapons;
 using UnityEngine;
 
 namespace _Game.Scripts.IA
@@ -9,7 +9,6 @@ namespace _Game.Scripts.IA
     {
         [SerializeField] Entity entity;
         [SerializeField] EntityCommands entityCommands;
-        
 
         [SerializeField] Entity target;
 
@@ -22,9 +21,9 @@ namespace _Game.Scripts.IA
         {
             // weapon = gameObject.AddComponent<Weapon>().Setup(weaponData);
             // entityCommands.EquipWeapon(weapon);
-            entity.data.associatedCharacter.Weapons.Add(weaponData);
-            entity.data.associatedCharacter.Weapons.UseWeapon(0);
-            weapon = entity.data.associatedCharacter.Weapons.WeaponInUse;
+            entity.associatedCharacter.Weapons.Add(weaponData);
+            entity.associatedCharacter.Weapons.UseWeapon(0);
+            weapon = entity.associatedCharacter.Weapons.WeaponInUse;
         }
 
         void FixedUpdate()
@@ -40,25 +39,25 @@ namespace _Game.Scripts.IA
         void ProcessaInput()
         {
             var targetDistance = target.transform.position - entity.transform.position;
-            entity.data.lookDiretion = new Vector2(targetDistance.x, targetDistance.z).ToDegree() + 90;
-            entity.data.direction = entity.data.lookDiretion;
-            entity.data.stoppingDistance = distance;
+            entity.lookDiretion =
+                Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree());
+            entity.movement.StoppingDistance = distance;
 
-            if (entity.data.UsingCombo)
+            if (entity.animations.usingCombo)
             {
-                entityCommands.StopConjuring(weapon.Abilities[0]);
+                entityCommands.StopCasting(weapon.Abilities[0]);
                 return;
             }
 
-            if (targetDistance.magnitude < entity.data.stoppingDistance)
+            if (targetDistance.magnitude < entity.movement.StoppingDistance)
             {
                 entityCommands.UseAbility(weapon.Abilities[0]);
-                entityCommands.StopMove();
-                entity.data.speed = 0;
+                entityCommands.Stop();
+                entity.movement.Speed = 0;
             }
-            else if (targetDistance.magnitude > entity.data.stoppingDistance)
+            else if (targetDistance.magnitude > entity.movement.StoppingDistance)
             {
-                entity.data.speed = 5;
+                entity.movement.Speed = 5;
                 entityCommands.MoveTo(target.transform.position);
             }
         }

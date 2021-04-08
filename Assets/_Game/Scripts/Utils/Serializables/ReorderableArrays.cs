@@ -1,6 +1,6 @@
 ﻿using System;
+using _Game.Scripts.GameContent.Weapons.Prefab;
 using _Game.Scripts.Runtime.Reorderable;
-using _Game.Scripts.Weapons.Prefab;
 using UnityEngine;
 
 namespace _Game.Scripts.Utils.Serializables

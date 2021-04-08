@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Game.Scripts.Ammo
+namespace _Game.Scripts.GameContent.Ammunition
 {
     [CreateAssetMenu(fileName = "New Ammo", menuName = "GameContent/Ammo/Basic Ammo")]
     public class AmmoData : ScriptableObject

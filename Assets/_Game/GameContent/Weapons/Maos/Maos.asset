@@ -12,30 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2819ca66e2dd4ab5a439617001702cf0, type: 3}
   m_Name: Maos
   m_EditorClassIdentifier: 
-  info:
-    name: Machado
-    description: "O Machad\xE3o"
-  attributes:
-    vida:
-      <BaseValue>k__BackingField: 1
-      <Multiplier>k__BackingField: 0
-      <FinalValue>k__BackingField: 0
-    forca:
-      <BaseValue>k__BackingField: 1
-      <Multiplier>k__BackingField: 0
-      <FinalValue>k__BackingField: 0
-    agilidade:
-      <BaseValue>k__BackingField: 1
-      <Multiplier>k__BackingField: 0
-      <FinalValue>k__BackingField: 0
-    velocidade:
-      <BaseValue>k__BackingField: 1
-      <Multiplier>k__BackingField: 0
-      <FinalValue>k__BackingField: 0
-  animatorController: {fileID: 22100000, guid: e014539ed5f0fae4d82d4a8f36621926, type: 2}
-  prefabs: []
+  description: "Dizem que o melhor guerreiro \xE9 aquele que domina seus punhos melho
+    do que qualquer arma"
+  icon: {fileID: 21300000, guid: d4f5634edede200468fc1ccf30e6f3a1, type: 3}
+  ammoData: {fileID: 0}
   abilities:
   - {fileID: 11400000, guid: 3e40521afb49df34bab41d8c3425b50b, type: 2}
   - {fileID: 11400000, guid: 7a2c5fbe99cae484f95aaddb51e65e1b, type: 2}
   - {fileID: 11400000, guid: be6e3f714f28fe340b6033404366638a, type: 2}
   - {fileID: 11400000, guid: 976ce653bc478404582d9c6818da5231, type: 2}
+  status:
+    life:
+      multiplier: 0
+      value: 0
+    strength:
+      multiplier: 0
+      value: 0
+    attackSpeed:
+      multiplier: 0
+      value: 0
+    speed:
+      multiplier: 0
+      value: 0
+  animatorController: {fileID: 22100000, guid: e014539ed5f0fae4d82d4a8f36621926, type: 2}
+  prefabs:
+    alwaysOn:
+      array: []
+    idle:
+      array: []
+    inCombat:
+      array: []

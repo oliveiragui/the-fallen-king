@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114919e8d923406c9f07c57b428b7fc0, type: 3}
   m_Name: Machado Habilidade 4
   m_EditorClassIdentifier: 
-  id: 3
+  animationId: 0
   description: 
+  icon: {fileID: 21300000, guid: 1d7e1548e7fc4c74faee93a7cfe2d397, type: 3}
   canBeInterruped: 0
   canInterrupt: 1
   cooldown:

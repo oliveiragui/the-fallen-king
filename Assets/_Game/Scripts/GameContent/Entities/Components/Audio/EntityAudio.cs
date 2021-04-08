@@ -2,31 +2,23 @@
 using _Game.Scripts.Components.Storage.Custom;
 using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Audio
+namespace _Game.Scripts.GameContent.Entities.Components.Audio
 {
     [Serializable]
     public class EntityAudio : MonoBehaviour
     {
-        [SerializeField] AudioStorage audioSources;
-
-        public void Play(int id)
-        {
-            audioSources[id].Play();
-        }
-
+        [SerializeField] AudioSourceStorage audioSourceStorage;
+        
         public void Play(string id)
         {
-            audioSources[id].Play();
-        }
-
-        public void Stop(int id)
-        {
-            audioSources[id].Play();
+            if (id is null || id.Length < 1) return;
+            audioSourceStorage[id].Play();
         }
 
         public void Stop(string id)
         {
-            audioSources[id].Stop();
+            if (id is null || id.Length < 1) return;
+            audioSourceStorage[id].Stop();
         }
     }
 }

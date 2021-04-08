@@ -1,21 +1,23 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Animation.Behaviours
+namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
 {
     public class AbilityBehaviour : StateMachineBehaviour
     {
         [SerializeField] int id;
         Entity _entity;
+        
 
         public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
-            _entity.commands.SetupAbility();
+            _entity.animations.SetupAbility(_entity);
+            _entity.commands.CanReceiveMoveInput = true;
         }
 
         public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)
         {
-            _entity.commands.FinishAbility();
+            _entity.animations.FinishAbility();
         }
 
         // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

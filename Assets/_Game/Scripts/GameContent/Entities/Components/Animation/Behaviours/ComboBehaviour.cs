@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Animation.Behaviours
+namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
 {
     public class ComboBehaviour : StateMachineBehaviour
     {
@@ -13,13 +13,16 @@ namespace _Game.Scripts.Entities.Components.Animation.Behaviours
         public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
-            _entity.commands.SetupCombo(currentCombo);
+            _entity.animations.SetupCombo(currentCombo);
+            //_entity.movement.Stop();
+            //_entity.commands.CanReceiveMoveInput = false;
         }
 
         // OnStateMachineExit is called when exiting a state machine via its Exit Node
         public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)
         {
-            _entity.commands.FinishCombo();
+            _entity.animations.StopCombo();
+            //_entity.commands.CanReceiveMoveInput = true;
         }
     }
 }

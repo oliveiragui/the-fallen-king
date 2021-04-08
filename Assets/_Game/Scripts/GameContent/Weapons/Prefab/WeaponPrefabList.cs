@@ -3,7 +3,7 @@ using _Game.Scripts.Runtime.Reorderable.Attributes;
 using _Game.Scripts.Utils.Serializables;
 using UnityEngine;
 
-namespace _Game.Scripts.Weapons.Prefab
+namespace _Game.Scripts.GameContent.Weapons.Prefab
 {
     [Serializable]
     public class WeaponPrefabList

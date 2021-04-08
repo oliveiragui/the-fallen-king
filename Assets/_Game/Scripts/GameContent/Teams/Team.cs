@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Teams
+namespace _Game.Scripts.GameContent.Teams
 {
     [CreateAssetMenu(fileName = "Team", menuName = "GameContent/Team", order = 1)]
     public class Team : ScriptableObject

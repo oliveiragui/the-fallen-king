@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections;
-using _Game.Scripts.Characters;
-using _Game.Scripts.CombatSystem;
-using _Game.Scripts.Entities;
+using _Game.Scripts.Components.CombatSystem;
+using _Game.Scripts.GameContent.Entities;
 using UnityEngine;
 
-namespace _Game.Scripts.Ammo
+namespace _Game.Scripts.GameContent.Ammunition
 {
     [RequireComponent(typeof(Rigidbody))]
     public class Ammo : MonoBehaviour
@@ -33,7 +32,8 @@ namespace _Game.Scripts.Ammo
 
         void OnEnable()
         {
-            _rigidbody.ResetInertiaTensor();
+            _rigidbody.velocity = Vector3.zero;
+            _rigidbody.angularVelocity= Vector3.zero;
             _rigidbody.isKinematic = false;
         }
 
@@ -58,12 +58,17 @@ namespace _Game.Scripts.Ammo
             OnHit(entity.transform);
         }
 
-        void OnHit(Transform other)
+        void OnHit(Transform target)
         {
             HasCollided = true;
-            transform.parent = other;
-            _rigidbody.isKinematic = true;
+            AttachToTarget(target);
             SetLifeTime(data.LifeTimeOnHit);
+        }
+
+        void AttachToTarget(Transform other)
+        {
+            _rigidbody.isKinematic = true;
+            transform.parent = other;
         }
 
         public void SetLifeTime(float seconds)

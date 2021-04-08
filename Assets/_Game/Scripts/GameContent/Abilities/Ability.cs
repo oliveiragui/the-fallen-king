@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using _Game.Scripts.Abilities.Data;
 using _Game.Scripts.Components.AttributeSystem;
+using _Game.Scripts.GameContent.Abilities.Data;
 using UnityEngine;
 
-namespace _Game.Scripts.Abilities
+namespace _Game.Scripts.GameContent.Abilities
 {
     public class Ability : MonoBehaviour
     {
@@ -18,10 +18,12 @@ namespace _Game.Scripts.Abilities
             return this;
         }
 
+        public string Name => data.name;
         public int AnimationId => data.animationId;
         public string Description => data.description;
         public RawAttribute Cooldown => data.cooldown;
         public int MaxCombo => data.combo.Length;
+        public Sprite Sprite => data.icon;
         public bool InUse { get; set; }
 
         public bool canBeInterruped => data.canBeInterruped;

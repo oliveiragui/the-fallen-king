@@ -1,21 +1,29 @@
-﻿using _Game.Scripts.Entities.Components.Action;
+﻿using _Game.Scripts.GameContent.Entities.Components.Action;
 using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Animation.Behaviours
+namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
 {
     public class WalkBehaviour : StateMachineBehaviour
     {
-        EntityAction walkAction;
+        Entity entity;
 
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (!walkAction && !animator.transform.TryGetComponent(out walkAction)) return;
-            walkAction.ActionEnter();
+            if (entity == null && !animator.TryGetComponent(out entity)) return;
+            entity.movement.canMove = true;
+        }
+
+        public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            if (entity == null && !animator.TryGetComponent(out entity)) return;
+            entity.animations.Run(entity.movement.Speed);
         }
 
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (walkAction) walkAction.ActionExit();
+            if (entity == null && !animator.TryGetComponent(out entity)) return;
+            entity.movement.Stop();
+            entity.movement.canMove = false;
         }
     }
 }

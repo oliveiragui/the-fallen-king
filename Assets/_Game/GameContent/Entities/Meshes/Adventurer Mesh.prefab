@@ -815,7 +815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 457914}
   - component: {fileID: 13787026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character_Viking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1303,7 +1303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472458}
   - component: {fileID: -3544715612657020780}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Adventurer Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1342,21 +1342,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07faf51dbbe44b36b03e498a8975f628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fillWithChidren: 0
   dictionary:
-    gameObjects:
-      m_keys:
-      - Mao Esquerda
-      - Mao Direita
-      - Cintura Equerda
-      - Cintura Direita
-      - Costas
-      m_values:
-      - {fileID: 5169035704386058558}
-      - {fileID: 4022958894418530305}
-      - {fileID: 155256}
-      - {fileID: 190470}
-      - {fileID: 163716}
+    m_keys:
+    - Mao Esquerda
+    - Mao Direita
+    - Cintura Esquerda
+    - Cintura Direita
+    - Costas
+    m_values:
+    - {fileID: 8700383436234552708, guid: 41fab303abad0ef43aa44009c47203bd, type: 3}
+    - {fileID: 6859052951099007358, guid: 41fab303abad0ef43aa44009c47203bd, type: 3}
+    - {fileID: 5783756223734763179, guid: 41fab303abad0ef43aa44009c47203bd, type: 3}
+    - {fileID: 5783975868513296429, guid: 41fab303abad0ef43aa44009c47203bd, type: 3}
+    - {fileID: 5784174392052796105, guid: 41fab303abad0ef43aa44009c47203bd, type: 3}
+  fillWithChidren: 0
 --- !u!1 &150618
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 437848}
   - component: {fileID: 13739534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character_Knight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2030,7 +2029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492920}
   - component: {fileID: 13777534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character_Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2398,7 +2397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434538}
   - component: {fileID: 13705028}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character_Peasant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2763,7 +2762,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428498}
   - component: {fileID: 13774432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Character_Shopkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

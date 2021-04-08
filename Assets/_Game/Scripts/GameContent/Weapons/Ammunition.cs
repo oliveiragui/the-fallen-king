@@ -1,7 +1,7 @@
 ﻿using _Game.Scripts.Utils;
 using UnityEngine;
 
-namespace _Game.Scripts.Weapons
+namespace _Game.Scripts.GameContent.Weapons
 {
     public class Ammunition : ScriptableObject
     {

@@ -1,8 +1,8 @@
-﻿using _Game.Scripts.Abilities.Data;
-using _Game.Scripts.Entities.Components.Action;
+﻿using _Game.Scripts.GameContent.Abilities.Data;
+using _Game.Scripts.GameContent.Entities.Components.Action;
 using UnityEngine;
 
-namespace _Game.Scripts.Abilities
+namespace _Game.Scripts.GameContent.Abilities
 {
     public class AbilityCombo
     {

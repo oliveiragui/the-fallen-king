@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.Scripts.Entities.Components.Action
+namespace _Game.Scripts.GameContent.Entities.Components.Action
 {
     [Serializable]
     public class EntityAction : MonoBehaviour

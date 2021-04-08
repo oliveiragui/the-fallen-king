@@ -1,7 +1,7 @@
 ﻿using _Game.Scripts.Components.Storage.Custom;
 using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.PhysicsSystem
+namespace _Game.Scripts.GameContent.Entities.Components.PhysicsSystem
 {
     public class EntityCollision : MonoBehaviour
     {
@@ -28,12 +28,12 @@ namespace _Game.Scripts.Entities.Components.PhysicsSystem
 
         void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            floorName = DetectFloorName(hit.collider);
+            DetectFloorName(hit.collider);
         }
 
         string DetectFloorName(Component floor)
         {
-            return floor.gameObject.layer == LayerMask.NameToLayer("Floor") ?  floor.tag: null;
+            return floorName = floor.gameObject.layer == LayerMask.NameToLayer("Floor") ? floor.tag : null;
         }
     }
 }

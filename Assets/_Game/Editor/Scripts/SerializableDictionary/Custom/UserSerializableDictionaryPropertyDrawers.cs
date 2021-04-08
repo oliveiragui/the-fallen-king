@@ -1,4 +1,5 @@
-﻿using _Game.Scripts.Utils.Serializables;
+﻿using _Game.Scripts.Components.Storage.Custom;
+using _Game.Scripts.Utils.Serializables;
 using UnityEditor;
 using UnityEngine;
 

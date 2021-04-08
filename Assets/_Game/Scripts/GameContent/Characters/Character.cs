@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Linq;
 using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.Entities;
-using _Game.Scripts.Teams;
-using _Game.Scripts.Weapons;
+using _Game.Scripts.GameContent.Entities;
+using _Game.Scripts.GameContent.Teams;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.Scripts.Characters
+namespace _Game.Scripts.GameContent.Characters
 {
     public class Character : MonoBehaviour
     {
@@ -20,6 +18,8 @@ namespace _Game.Scripts.Characters
         public Entity Entity => entity;
         public CharacterWeapons Weapons => weapons;
 
+        public CharacterEvents events;
+
         void Awake()
         {
             Team = data.DefaultTeam;
@@ -28,8 +28,35 @@ namespace _Game.Scripts.Characters
 
         void Start()
         {
-            weapons.switchWeaponEvent.AddListener((weapon) => entity.commands.EquipWeapon(weapon));
+            events.onInstantiate.Invoke();
+            events.onDeath.AddListener(KillEntity);
         }
+
+        void OnDestroy()
+        {
+            events.onDestroy.Invoke();
+        }
+
+        void KillEntity(Character character)
+        {
+            entity.commands.Die();
+        }
+        
     }
 
+    [Serializable]
+    public class CharacterEvents
+    {
+        public UnityEntityEvent onEntitySummon;
+        public UnityEntityEvent onEntityDimmissed;
+        public UnityCharacterEvent onDeath;
+        public UnityEvent onInstantiate;
+        public UnityEvent onDestroy;
+    }
+
+    [Serializable]
+    public class UnityCharacterEvent : UnityEvent<Character> { }
+
+    [Serializable]
+    public class UnityEntityEvent : UnityEvent<Entity> { }
 }

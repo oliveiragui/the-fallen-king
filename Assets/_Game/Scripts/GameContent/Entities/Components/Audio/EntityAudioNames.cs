@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Entities.Components.Audio
+namespace _Game.Scripts.GameContent.Entities.Components.Audio
 {
     public static class EntityAudioNames
     {

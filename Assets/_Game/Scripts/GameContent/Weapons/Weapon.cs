@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using _Game.Scripts.Abilities;
-using _Game.Scripts.Ammo;
 using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.Weapons.Prefab;
+using _Game.Scripts.GameContent.Abilities;
+using _Game.Scripts.GameContent.Ammunition;
+using _Game.Scripts.GameContent.Weapons.Prefab;
 using UnityEngine;
 
-namespace _Game.Scripts.Weapons
+namespace _Game.Scripts.GameContent.Weapons
 {
     [Serializable]
     public class Weapon : MonoBehaviour
@@ -34,6 +33,7 @@ namespace _Game.Scripts.Weapons
             return this;
         }
 
+        public Sprite Icon => data.icon;
         public string Description => data.description;
         public RawStatus Status => data.status;
         public AnimatorOverrideController AnimatorController => data.animatorController;

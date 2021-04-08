@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Linq;
-using _Game.Scripts.Entities;
+using _Game.Scripts.GameContent.Entities;
+using _Game.Scripts.GameContent.Weapons;
 using _Game.Scripts.Utils.Extension;
-using _Game.Scripts.Weapons;
 using UnityEngine;
 
 namespace _Game.Scripts
@@ -10,18 +9,17 @@ namespace _Game.Scripts
     public class SimpleInput : MonoBehaviour
     {
         [SerializeField] Entity entity;
-
         [SerializeField] WeaponData[] weapons;
-
         [SerializeField] EntityCommands entityCommands;
-
+        Camera _camera;
         IEnumerator _weaponCycle;
 
         void Start()
         {
-            foreach (var weapon in weapons) entity.data.associatedCharacter.Weapons.Add(weapon);
-            entity.data.associatedCharacter.Weapons.UseWeapon(0);
-            entityCommands.EquipWeapon(entity.data.associatedCharacter.Weapons.WeaponInUse);
+            foreach (var weapon in weapons) entity.associatedCharacter.Weapons.Add(weapon);
+            entity.associatedCharacter.Weapons.UseWeapon(0);
+            entityCommands.EquipWeapon(entity.associatedCharacter.Weapons.WeaponInUse);
+            _camera = FindObjectOfType<Camera>();
         }
 
         void Update()
@@ -31,33 +29,34 @@ namespace _Game.Scripts
 
         void ProcessaInput()
         {
-            var velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            var mousePos = FindObjectOfType<Camera>().MouseOnPlane();
+            var weapon = entity.associatedCharacter.Weapons.WeaponInUse;
+            var mousePos = _camera.MouseOnPlane();
+            var lookDirection = mousePos - entity.transform.position;
+            entity.lookDiretion =
+                Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree());
 
-            entity.data.direction = velocity.ToDegree() - 225;
-            entity.data.lookDiretion = (new Vector2(mousePos.x, mousePos.z) -
-                                        new Vector2(entity.transform.position.x, entity.transform.position.z))
-                .ToDegree() + 90;
-            entity.data.speed = velocity.normalized.sqrMagnitude * 5;
-            // //TODO: verificar se está se movendo nos parametros
-
-            if (velocity.magnitude > 0.1)
+            if (entity.movement.AutoMove)
             {
-                entity.animations.Run(entity.data.speed);
-            }
-            else if (!entityCommands.entity.movement.AutoMovement)
-            {
-                entityCommands.StopMove();
+                if (Input.GetKeyDown(KeyCode.Z))
+                {
+                    entity.movement.Speed = 1* 5;
+                    entity.movement.StoppingDistance = 3;
+                    entity.movement.Destination = mousePos;
+                }
             }
 
-            if (Input.GetKeyDown(KeyCode.Z))
+            else
             {
-                entity.data.speed = 1 * 5;
-                entityCommands.entity.data.stoppingDistance = 3;
-                entityCommands.MoveTo(mousePos);
+                var direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                if (direction.sqrMagnitude > 0.1f)
+                {
+                    entity.movement.Speed = direction.normalized.sqrMagnitude * 5;
+                    entity.movement.Rotation = Quaternion.Euler(Vector3.up * (direction.ToDegree() + 45));
+                }
+                   
+                else entity.commands.Stop();
             }
-            var weapon = entity.data.associatedCharacter.Weapons.WeaponInUse;
-            
+
             if (Input.GetButtonDown("Fire1"))
                 entityCommands.UseAbility(weapon.Abilities[0]);
             else if (Input.GetButtonDown("Fire2"))
@@ -67,20 +66,16 @@ namespace _Game.Scripts
             else if (Input.GetButtonDown("Jump"))
                 entityCommands.UseAbility(weapon.Abilities[3]);
             if (Input.GetButtonUp("Fire1"))
-                entityCommands.StopConjuring(weapon.Abilities[0]);
+                entityCommands.StopCasting(weapon.Abilities[0]);
             if (Input.GetButtonUp("Fire2"))
-                entityCommands.StopConjuring(weapon.Abilities[1]);
+                entityCommands.StopCasting(weapon.Abilities[1]);
             if (Input.GetButtonUp("Fire3"))
-                entityCommands.StopConjuring(weapon.Abilities[2]);
+                entityCommands.StopCasting(weapon.Abilities[2]);
             if (Input.GetButtonUp("Jump"))
-                entityCommands.StopConjuring(weapon.Abilities[3]);
-
+                entityCommands.StopCasting(weapon.Abilities[3]);
             if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                entity.data.associatedCharacter.Weapons.UseNext();
-            }
-
-            //if (Input.GetKeyDown(KeyCode.Q)) abilityCommands.CombatMode(entity.inCombat);
+                entity.associatedCharacter.Weapons.UseNext();
+            if (Input.GetKeyDown(KeyCode.Q)) entity.movement.AutoMove = !entity.movement.AutoMove;
         }
     }
 }
