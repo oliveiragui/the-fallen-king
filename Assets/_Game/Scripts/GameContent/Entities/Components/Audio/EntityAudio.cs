@@ -8,7 +8,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Audio
     public class EntityAudio : MonoBehaviour
     {
         [SerializeField] AudioSourceStorage audioSourceStorage;
-        
+
         public void Play(string id)
         {
             if (id is null || id.Length < 1) return;

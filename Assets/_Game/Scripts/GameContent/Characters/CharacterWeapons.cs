@@ -12,6 +12,7 @@ namespace _Game.Scripts.GameContent.Characters
         public List<Weapon> weapons;
         [SerializeField] Weapon weaponInUse;
         public Weapon WeaponInUse { get => weaponInUse; private set => weaponInUse = value; }
+        
         public WeaponChangeEvent onWeaponChange;
 
         void Awake()
@@ -30,6 +31,7 @@ namespace _Game.Scripts.GameContent.Characters
 
         public void UseWeapon(int index)
         {
+            if (index >= weapons.Count) return;
             WeaponInUse = weapons[index];
             onWeaponChange.Invoke(WeaponInUse);
         }
@@ -63,4 +65,5 @@ namespace _Game.Scripts.GameContent.Characters
 
     [Serializable]
     public class WeaponChangeEvent : UnityEvent<Weapon> { }
+    
 }

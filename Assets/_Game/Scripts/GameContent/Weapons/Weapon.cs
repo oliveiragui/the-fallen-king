@@ -11,6 +11,8 @@ namespace _Game.Scripts.GameContent.Weapons
     [Serializable]
     public class Weapon : MonoBehaviour
     {
+        public WeaponData Data => data;
+            
         [SerializeField] WeaponData data;
         public List<Ability> Abilities;
         public AmmoData ammoData;
@@ -23,20 +25,14 @@ namespace _Game.Scripts.GameContent.Weapons
             abilitiesObject.transform.parent = transform;
 
             Abilities = new List<Ability>();
-            
-            foreach (var ability in data.abilities)
+
+            foreach (var ability in data.Abilities)
             {
                 Abilities.Add(abilitiesObject.AddComponent<Ability>().Setup(ability));
             }
 
-            ammoData = data.ammoData;
+            ammoData = data.AmmoData;
             return this;
         }
-
-        public Sprite Icon => data.icon;
-        public string Description => data.description;
-        public RawStatus Status => data.status;
-        public AnimatorOverrideController AnimatorController => data.animatorController;
-        public WeaponPrefabList Prefabs => data.prefabs;
     }
 }

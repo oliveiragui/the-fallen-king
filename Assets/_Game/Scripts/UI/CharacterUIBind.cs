@@ -1,4 +1,6 @@
-﻿using _Game.Scripts.GameContent.Characters;
+﻿using _Game.Scripts.Components.AttributeSystem;
+using _Game.Scripts.GameContent.Characters;
+using _Game.Scripts.GameContent.Weapons;
 using _Game.Scripts.UI.StatusBar;
 using UnityEngine;
 
@@ -7,16 +9,12 @@ namespace _Game.Scripts.UI
     public class CharacterUIBind : MonoBehaviour
     {
         [SerializeField] Character character;
+        [SerializeField] CharacterMenuPage characterMenuPage;
         [SerializeField] PlayerInfoHUD playerInfoHUD;
-        [SerializeField] StatusPanel statusPanel;
-        [SerializeField] WeaponSelectionTab weaponSelectionTab;
-        [SerializeField] SkillsInfoView skillsInfoView;
-
         public bool binded;
 
         void Start()
         {
-            statusPanel.UpdateUI(character.Status);
             Bind(character);
         }
 
@@ -30,33 +28,26 @@ namespace _Game.Scripts.UI
         {
             binded = true;
             character = unbindedCharacter;
-            character.Weapons.onWeaponChange.AddListener(weapon =>
-            {
-                weaponSelectionTab.UpdateUI(
-                    character.Weapons.weapons.ToArray(),
-                    character.Weapons.weapons.IndexOf(weapon)
-                );
-                skillsInfoView.UpdateUI(weapon.Abilities.ToArray());
-                playerInfoHUD.UpdateUI(weapon.Abilities.ToArray());
-            });
 
-            for (int i = 0; i < weaponSelectionTab.weaponButtons.Length && i < character.Weapons.weapons.Count; i++)
-            {
-                int k = i;
-                weaponSelectionTab.weaponButtons[i].button.onClick.AddListener(() => character.Weapons.UseWeapon(k));
-            }
-            weaponSelectionTab.nextWeaponButton.onClick.AddListener(() => character.Weapons.UseNext());
-            weaponSelectionTab.previousWeaponButton.onClick.AddListener(() => character.Weapons.UsePrevious());
+            character.Weapons.onWeaponChange.AddListener(OnWeaponChange);
+            character.Status.onAnyStatChanged.AddListener(OnStatusChange);
+            characterMenuPage.OnCharacterBind(character);
 
-            character.Status.onAnyStatChanged.AddListener(status =>
-            {
-                statusPanel.UpdateUI(status);
-                playerInfoHUD.UpdateUI(status);
-            });
-            character.Weapons.UseWeapon(character.Weapons.WeaponInUse);
-            
-            
-            
+            OnWeaponChange(character.Weapons.WeaponInUse);
+            OnStatusChange(character.Status);
+        }
+
+        void OnWeaponChange(Weapon weapon)
+        {
+            characterMenuPage.OnWeaponChange(weapon);
+            characterMenuPage.OnWeaponChange(weapon, character.Weapons.weapons);
+            playerInfoHUD.UpdateUI(weapon.Abilities.ToArray());
+        }
+
+        void OnStatusChange(Status status)
+        {
+            characterMenuPage.OnStatusChange(status);
+            playerInfoHUD.UpdateUI(status);
         }
 
         public void Unbind(Character character) { }

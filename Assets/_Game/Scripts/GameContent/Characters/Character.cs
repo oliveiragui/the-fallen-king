@@ -48,7 +48,7 @@ namespace _Game.Scripts.GameContent.Characters
 
         void KillEntity(Character character)
         {
-            entity.commands.Die();
+            entity.Die();
         }
     }
 

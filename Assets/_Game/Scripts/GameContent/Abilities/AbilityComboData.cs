@@ -1,6 +1,5 @@
 ﻿using System;
 using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.GameContent.Entities.Components.Action;
 using _Game.Scripts.Utils.MyBox.Attributes;
 using UnityEngine;
 
@@ -10,7 +9,6 @@ namespace _Game.Scripts.GameContent.Abilities.Data
     public class AbilityComboData
     {
         [SerializeField] public RawComboAttributes attributes;
-        [SerializeField] public EntityAction action;
 
         [SerializeField] public bool castable;
         [SerializeField] public float factor1;

@@ -2,36 +2,28 @@
 using _Game.Scripts.Components.AttributeSystem;
 using _Game.Scripts.GameContent.Abilities.Data;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace _Game.Scripts.GameContent.Abilities
 {
     public class Ability : MonoBehaviour
     {
-        public AbilityCombo[] Combo;
-        public AbilityCombo ComboInUse;
+        public AbilityCombo[] Combos;
+        public AbilityCombo Combo;
         [SerializeField] AbilityData data;
         
+        [SerializeField] UnityEvent onAbilityUse;
+      
+        [SerializeField] UnityEvent onCooldownEnter;
+
         public Ability Setup(AbilityData data)
         {
             this.data = data;
-            Combo = data.combo.Select(comboData => new AbilityCombo(comboData, this)).ToArray();
+            Combos = data.Combo.Select(comboData => new AbilityCombo(comboData, this)).ToArray();
+            Combo = Combos[0];
             return this;
         }
 
-        public string Name => data.name;
-        public int AnimationId => data.animationId;
-        public string Description => data.description;
-        public RawAttribute Cooldown => data.cooldown;
-        public int MaxCombo => data.combo.Length;
-        public Sprite Sprite => data.icon;
-        public bool InUse { get; set; }
-
-        public bool canBeInterruped => data.canBeInterruped;
-        public bool canInterrupt => data.canInterrupt;
-
-        public bool CanInterrupt(Ability other)
-        {
-            return canInterrupt && other.canBeInterruped;
-        }
+        public AbilityData Data => data;
     }
 }

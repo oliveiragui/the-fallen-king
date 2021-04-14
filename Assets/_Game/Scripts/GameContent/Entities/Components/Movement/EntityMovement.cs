@@ -6,17 +6,35 @@ namespace _Game.Scripts.GameContent.Entities.Components.PhysicsSystem
     public class EntityMovement : MonoBehaviour
     {
         [SerializeField] NavMeshAgent agent;
-        Transform _transform;
         [SerializeField] bool autoMove;
-        public bool canMove;
+        
+        
+        Quaternion _rotation;
+        Transform _transform;
 
         #region Properties
 
-        public Vector2 Velocity => agent.velocity;
-
         public bool IsMoving { get; private set; }
 
-        public Quaternion Rotation { get; set; }
+        public Quaternion Rotation
+        {
+            get => _rotation;
+            set
+            {
+                autoMove = false;
+                _rotation = value;
+            }
+        }
+
+        public Vector2 Velocity
+        {
+            get => agent.velocity;
+            set
+            {
+                autoMove = false;
+                agent.velocity = value;
+            }
+        }
 
         public bool AutoMove
         {
@@ -39,47 +57,16 @@ namespace _Game.Scripts.GameContent.Entities.Components.PhysicsSystem
         public Vector3 Destination
         {
             get => agent.destination;
-            set => agent.destination = value;
-        }
-
-        #endregion
-
-        #region Methods
-
-        public void Move(float speed, Quaternion rotation)
-        {
-            Rotation = rotation;
-            Speed = speed;
-        }
-
-        public void Move(Quaternion rotation)
-        {
-            Rotation = rotation;
-        }
-
-        public void MoveTo(Vector3 destination, float speed, float stoppingDistance)
-        {
-            if (!AutoMove) return;
-            Speed = speed;
-            StoppingDistance = stoppingDistance;
-            Destination = destination;
-        }
-
-        public void MoveTo(Vector3 destination, float speed)
-        {
-            if (!AutoMove) return;
-            Speed = speed;
-            Destination = destination;
-        }
-
-        public void MoveTo(Vector3 destination)
-        {
-            if (!AutoMove) return;
-            Destination = destination;
+            set
+            {
+                autoMove = true;
+                agent.destination = value;
+            }
         }
 
         public void Stop()
         {
+            autoMove = false;
             agent.velocity = Vector3.zero;
             Speed = 0;
         }
@@ -95,14 +82,12 @@ namespace _Game.Scripts.GameContent.Entities.Components.PhysicsSystem
 
         void Update()
         {
-            if (!canMove) return;
             IsMoving = agent.velocity.sqrMagnitude > 0.01f;
-            UpdatePostionAndRotation();
+            if (!AutoMove) UpdatePostionAndRotation();
         }
 
         void UpdatePostionAndRotation()
         {
-            if (AutoMove) return;
             _transform.rotation = Rotation;
             agent.velocity = _transform.forward * Speed;
         }

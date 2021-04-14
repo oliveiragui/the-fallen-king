@@ -2035,7 +2035,9 @@ MonoBehaviour:
     m_AtlasIndex: 0
     sprite: {fileID: 0}
   spriteInfoList: []
-  fallbackSpriteAssets: []
+  fallbackSpriteAssets:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!21 &5838312103084717543
 Material:
   serializedVersion: 6

@@ -4,7 +4,7 @@ namespace _Game.Scripts.Components.EventSystem
 {
     public class GameEventCaller<T, TK> : MonoBehaviour where T : GameEvent<TK>
     {
-        [SerializeField] TK data;
+        [SerializeField] protected TK data;
 
         public void SetData(TK data)
         {

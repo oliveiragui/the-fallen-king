@@ -43,7 +43,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Mesh
         GameObject Instantiate(WeaponPrefabData weaponPrefabData)
         {
             var instance = Instantiate(weaponPrefabData.gameObject, slots[weaponPrefabData.Slot].transform);
-            transform.localPosition = weaponPrefabData.Position;
+            instance.transform.localPosition = weaponPrefabData.Position;
             instance.transform.localEulerAngles = weaponPrefabData.Rotation;
             return instance;
         }

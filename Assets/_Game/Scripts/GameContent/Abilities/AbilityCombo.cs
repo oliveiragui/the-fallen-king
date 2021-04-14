@@ -1,19 +1,14 @@
 ﻿using _Game.Scripts.GameContent.Abilities.Data;
-using _Game.Scripts.GameContent.Entities.Components.Action;
-using UnityEngine;
 
 namespace _Game.Scripts.GameContent.Abilities
 {
     public class AbilityCombo
     {
         readonly AbilityComboData _data;
-        public readonly EntityAction Action;
 
         public AbilityCombo(AbilityComboData data, Ability ability)
         {
             _data = data;
-            if (data.action)
-                Action = Object.Instantiate(data.action.gameObject, ability.transform).GetComponent<EntityAction>();
         }
 
         public RawComboAttributes Attributes => _data.attributes;

@@ -10,18 +10,25 @@ namespace _Game.Scripts.GameContent.Abilities.Data
     [CreateAssetMenu(fileName = "Habilidade", menuName = "GameContent/Habilidade", order = 2)]
     public class AbilityData : ScriptableObject
     {
-        [SerializeField] public int animationId;
-        [SerializeField] public string description;
-        [SerializeField] public Sprite icon;
-        [SerializeField] public bool canBeInterruped;
-        [SerializeField] public bool canInterrupt;
-        [SerializeField] public RawAttribute cooldown;
-        [SerializeField] public AbilityComboData[] combo;
+        [SerializeField] int animationId;
+        [SerializeField] string description;
+        [SerializeField] Sprite icon;
+        [SerializeField] bool canBeInterruped;
+        [SerializeField] bool canInterrupt;
+        [SerializeField] RawAttribute cooldown;
+        [SerializeField] AbilityComboData[] combo;
 
+        public string Name => name;
         public int AnimationId => animationId;
         public string Description => description;
         public RawAttribute Cooldown => cooldown;
         public AbilityComboData[] Combo => combo;
         public int MaxCombo => combo.Length;
+        public Sprite Icon => icon;
+        
+        public bool CanInterrupt(AbilityData other)
+        {
+            return canInterrupt && other.canBeInterruped;
+        }
     }
 }

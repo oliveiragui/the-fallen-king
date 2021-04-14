@@ -8,7 +8,6 @@ namespace _Game.Scripts.IA
     public class SimpleIAInput : MonoBehaviour
     {
         [SerializeField] Entity entity;
-        [SerializeField] EntityCommands entityCommands;
 
         [SerializeField] Entity target;
 
@@ -39,26 +38,22 @@ namespace _Game.Scripts.IA
         void ProcessaInput()
         {
             var targetDistance = target.transform.position - entity.transform.position;
-            entity.lookDiretion =
-                Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree());
-            entity.movement.StoppingDistance = distance;
+            entity.lookDiretion = Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree());
+            entity.stoppingDistance = distance;
 
-            if (entity.animations.usingCombo)
+            if (entity.usingAbility)
             {
-                entityCommands.StopCasting(weapon.Abilities[0]);
-                return;
+                entity.StopCasting(0);
             }
-
-            if (targetDistance.magnitude < entity.movement.StoppingDistance)
+            else if (targetDistance.magnitude < entity.stoppingDistance)
             {
-                entityCommands.UseAbility(weapon.Abilities[0]);
-                entityCommands.Stop();
-                entity.movement.Speed = 0;
+                entity.UseAbility(0);
             }
-            else if (targetDistance.magnitude > entity.movement.StoppingDistance)
+            else if (targetDistance.magnitude > entity.stoppingDistance)
             {
-                entity.movement.Speed = 5;
-                entityCommands.MoveTo(target.transform.position);
+                entity.speed = 5;
+                entity.destination = target.transform.position;
+                entity.Move();
             }
         }
 
