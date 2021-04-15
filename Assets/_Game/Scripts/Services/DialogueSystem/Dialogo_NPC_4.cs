@@ -3,10 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
+using _Game.Scripts.GameContent.Entities;
 
 public class Dialogo_NPC_4 : FluentScript
 {
     int timesVisited = 0;
+    [SerializeField] Entity character;
+    [SerializeField] UnityEvent onStart;
+    [SerializeField] UnityEvent onFinish;
 
     public override FluentNode Create()
     {
@@ -15,24 +20,19 @@ public class Dialogo_NPC_4 : FluentScript
             Show() *
             Write(0.5f, "Vendedor:\nRapaz, não vou poder te atender, tô fechando a loja agora.").WaitForButton() *
             Write(0.5f, "Vendedor:\nTenho que ir na enfermaria, aquele médico disse que consegue dar um jeito nas minhas costas").WaitForButton() *
-            Write(0.5f, "Vendedor:\nHehehe... finalmente vou me livrar dessa maldita dor...") *
-            Options
-            (
-                Option("") *
-                    Hide() *
-                    End()
-            );
+            Write(0.5f, "Vendedor:\nHehehe... finalmente vou me livrar dessa maldita dor...").WaitForButton() *
+            Hide();
 
     }
-    // void OnTriggerExit(Collider collider)
-    // {
-    // }
 
     public override void OnFinish()
     {
+        onFinish.Invoke();
     }
 
     public override void OnStart()
     {
+        character.Stop();
+        onStart.Invoke();
     }
 }
