@@ -1513,9 +1513,9 @@ AnimatorState:
   m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: Ability Factor 1
-  m_MirrorParameter: 
+  m_MirrorParameter: ------------- Movimento
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Velocidade
 --- !u!1109 &-7428536276770472729
 AnimatorTransition:
   m_ObjectHideFlags: 3
@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 4
 --- !u!1109 &-6530516391851387968
 AnimatorTransition:
   m_ObjectHideFlags: 3
@@ -6528,7 +6528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 3
 --- !u!1102 &-628349940802717842
 AnimatorState:
   serializedVersion: 5
@@ -7183,7 +7183,7 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: Velocidade
     m_Type: 1
-    m_DefaultFloat: 0
+    m_DefaultFloat: 111111
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
@@ -10270,12 +10270,12 @@ AnimatorTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Combo Maximo
-    m_EventTreshold: 1
   - m_ConditionMode: 1
     m_ConditionEvent: Usa habilidade
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: Combo Maximo
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 5588323701371362749}
   m_DstState: {fileID: 0}
   m_Solo: 0
@@ -12441,7 +12441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 2
 --- !u!1102 &5690840920952434761
 AnimatorState:
   serializedVersion: 5
@@ -13467,7 +13467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
+  id: 1
 --- !u!1102 &7336709867426340821
 AnimatorState:
   serializedVersion: 5

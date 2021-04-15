@@ -139,6 +139,8 @@ namespace _Game.Scripts.GameContent.Entities
             animator.SetLayerWeight(1, value ? 1f : 0f);
         }
 
+        #region Ability
+        
         public void UseAbility(int abilityIndex)
         {
             if (!CanUseAbility(abilities[abilityIndex].Data)) return;
@@ -180,9 +182,10 @@ namespace _Game.Scripts.GameContent.Entities
 
         public void FinishAbility()
         {
-            animator.SetBool(AnimatorParams.Conjura, false);
             usingAbility = false;
         }
+        
+        #endregion
 
         void ReceiveHit(AbilityHit abilityHit)
         {
@@ -196,6 +199,7 @@ namespace _Game.Scripts.GameContent.Entities
             animator.SetBool(AnimatorParams.ReceivingHit, true);
             animator.SetInteger(AnimatorParams.HitImpact, (int) impact + 2);
             //TODO: Remover esse +2;
+            FinishAbility();
             movement.Stop();
         }
 
