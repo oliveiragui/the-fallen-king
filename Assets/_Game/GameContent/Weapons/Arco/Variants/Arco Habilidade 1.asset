@@ -19,7 +19,7 @@ MonoBehaviour:
   canInterrupt: 0
   cooldown:
     multiplier: 0
-    value: 2
+    value: 0.5
   combo:
   - attributes:
       power:
@@ -28,8 +28,7 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 1
-    factor1: 2
+    factor1: 1
     factor2: 2
     factor3: 2

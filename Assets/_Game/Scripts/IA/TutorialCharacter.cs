@@ -27,16 +27,10 @@ namespace _Game.Scripts.IA
                 Show() *
                 Write(1.0f, "Dragg:\n Você aprendeu muito, jovem.").WaitForButton() *
                 Write(0.5f, "Dragg:\n Terei que ir agora, mas na próxima juro que acabo contigo...").WaitForButton() *
-                Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila.")
-                    .WaitForButton() *
-                Write(0.5f, "Dragg:\n Até mais.") *
-                Options
-                (
-                    Option("") *
-                    Hide() *
-                    Do(() => IniciaCutscene()) *
-                    End()
-                );
+                Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila.").WaitForButton() *
+                Write(0.5f, "Dragg:\n Até mais.").WaitForButton() *
+                Hide() *
+                Do(() => IniciaCutscene());
         }
 
         public override void OnFinish()

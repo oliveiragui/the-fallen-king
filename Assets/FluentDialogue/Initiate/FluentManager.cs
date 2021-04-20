@@ -116,11 +116,13 @@ namespace Fluent
             FluentScripts.Add(gameAction);
 
             gameAction.Run();
+            ClosestActionUIText.GetComponent<TextMeshProUGUI>().text = "";
         }
 
         private void ActionCompleted(FluentScript fluentScript)
         {
             FluentScripts.Remove(fluentScript);
+            RecalculateUIActionText();
             // The action just completed
             // The action initiator could have been stopped from adding this action as a viable action
             // TODO

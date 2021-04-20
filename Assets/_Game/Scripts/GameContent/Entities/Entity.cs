@@ -190,7 +190,7 @@ namespace _Game.Scripts.GameContent.Entities
         void ReceiveHit(AbilityHit abilityHit)
         {
             associatedCharacter.Status.Life.ApplyDamage(abilityHit.power);
-            Debug.Log("aa");
+            //Debug.Log("aa");
             StartHit(abilityHit.impact);
         }
 

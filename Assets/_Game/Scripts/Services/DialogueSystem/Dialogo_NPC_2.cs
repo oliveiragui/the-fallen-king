@@ -3,10 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
+using _Game.Scripts.GameContent.Entities;
 
 public class Dialogo_NPC_2 : FluentScript
 {
     int timesVisited = 0;
+    [SerializeField] Entity character;
+    [SerializeField] UnityEvent onStart;
+    [SerializeField] UnityEvent onFinish;
 
     public override FluentNode Create()
     {
@@ -15,34 +20,29 @@ public class Dialogo_NPC_2 : FluentScript
             Do(() => timesVisited++) *
 
             If(() => timesVisited == 1,
-                Write(0.5f, "Vendedor:\nDo que você precisa, rapaz? O estoque de hoje já foi.") 
+                Write(0.5f, "Vendedor:\nDo que você precisa, rapaz? O estoque de hoje já foi.").WaitForButton() 
             ) *
 
             If(() => timesVisited == 2,
-                Write(0.5f, "Vendedor:\nO rapaz que traz nossos itens já deve estar fora da vila a essa altura. Volte amanhã.")
+                Write(0.5f, "Vendedor:\nO rapaz que traz nossos itens já deve estar fora da vila a essa altura. Volte amanhã.").WaitForButton()
             ) *
 
             If(() => timesVisited > 2,
-                Write(0.5f, "Vendedor:\nArgh... Por que tudo tem que ser longe da vila...")
+                Write(0.5f, "Vendedor:\nArgh... Por que tudo tem que ser longe da vila...").WaitForButton()
             ) *
 
-            Options
-            (
-                Option("") *
-                    Hide() *
-                    End()
-             );
+            Hide();
 
     }
-    // void OnTriggerExit(Collider collider)
-    // {
-    // }
 
     public override void OnFinish()
     {
+        onFinish.Invoke();
     }
 
     public override void OnStart()
     {
+        character.Stop();
+        onStart.Invoke();
     }
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2701530226136478964}
   - component: {fileID: 2701530226136478923}
-  - component: {fileID: 2287919497343149348}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -26,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2701530226136478965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.993, z: 0.485}
+  m_LocalPosition: {x: -0.001, y: -0.7241, z: 0.0015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2201820513397952432}
@@ -40,17 +39,16 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2701530226136478965}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 9
   m_Type: 2
-  m_Shape: 0
-  m_Color: {r: 0.9622642, g: 0.81150514, b: 0.54013884, a: 1}
-  m_Intensity: 1.2
-  m_Range: 10
+  m_Color: {r: 1, g: 0.93416405, b: 0.8254717, a: 1}
+  m_Intensity: 2
+  m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -83,7 +81,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
@@ -93,18 +91,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!122 &2287919497343149348
-Halo:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2701530226136478965}
-  m_Enabled: 1
-  m_Color:
-    serializedVersion: 2
-    rgba: 4283760895
-  m_Size: 1000
 --- !u!1 &2898807207828211879
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +147,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -196,7 +181,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: 14
   m_Mesh: {fileID: -5645314589329434310, guid: a5b5c77bf54511e42a2806836530781b, type: 3}
