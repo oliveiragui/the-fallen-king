@@ -1,5 +1,6 @@
 ﻿using System;
 using _Game.Scripts.GameContent.Characters;
+using _Game.Scripts.GameContent.Entities;
 using Fluent;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,13 +10,14 @@ namespace _Game.Scripts.IA
     public class TutorialCharacter : FluentScript
     {
         [SerializeField] Character character;
+        [SerializeField] Entity characterMove;
         [SerializeField] UnityEvent onStart;
         [SerializeField] UnityEvent onFinish;
 
         public void Reset()
         {
             character.Status.Life.ApplyDamage(100000000000);
-            //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
+            //FluentManager.Instance.AddScript(GetComponent<FluentScript>()); *
             FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
         }
 
@@ -27,20 +29,21 @@ namespace _Game.Scripts.IA
                 Show() *
                 Write(1.0f, "Dragg:\n Você aprendeu muito, jovem.").WaitForButton() *
                 Write(0.5f, "Dragg:\n Terei que ir agora, mas na próxima juro que acabo contigo...").WaitForButton() *
-                Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila.").WaitForButton() *
+                Write(0.5f, "Dragg:\n Acho melhor você também voltar pra casa e descansar, acabamos treinando até tarde...").WaitForButton() *
+                Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila antes de ir dormir.").WaitForButton() *
                 Write(0.5f, "Dragg:\n Até mais.").WaitForButton() *
-                Hide() *
-                Do(() => IniciaCutscene());
+                Hide();
+            
         }
 
         public override void OnFinish()
         {
             onFinish.Invoke();
-            //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
         }
 
         public override void OnStart()
         {
+            characterMove.Stop();
             onStart.Invoke();
         }
 

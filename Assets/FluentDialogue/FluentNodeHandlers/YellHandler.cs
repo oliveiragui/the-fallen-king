@@ -90,7 +90,7 @@ namespace Fluent
                 throw new UnityException("Could not find a Text UI component in the specified Yell UI");
 
             //
-            ConnectClickCallback(text.gameObject);
+            //ConnectClickCallback(text.gameObject);
 
             foreach (FluentString str in CurrentNode.Sentences)
             {

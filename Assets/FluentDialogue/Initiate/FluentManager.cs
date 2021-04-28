@@ -82,6 +82,12 @@ namespace Fluent
             }
         }
 
+        public void GetClosestActionScript(FluentScript script)
+        {
+            RemoveScript(script);
+            GetClosestAction(null);
+        }
+
         private FluentScript GetClosestAction(GameObject playerObject)
         {
             //

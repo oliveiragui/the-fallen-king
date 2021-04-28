@@ -15,10 +15,10 @@ namespace _Game.Scripts
 
         void Start()
         {
+            _camera = FindObjectOfType<Camera>();
             foreach (var weapon in weapons) entity.associatedCharacter.Weapons.Add(weapon);
             entity.associatedCharacter.Weapons.UseWeapon(0);
             entity.EquipWeapon(entity.associatedCharacter.Weapons.WeaponInUse);
-            _camera = FindObjectOfType<Camera>();
         }
 
         void Update()
