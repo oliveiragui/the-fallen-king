@@ -59,10 +59,10 @@ GameObject:
   - component: {fileID: 2191773028920443403}
   - component: {fileID: 3597864453325665231}
   - component: {fileID: 7635660551639083686}
-  - component: {fileID: 8633921167557478278}
   - component: {fileID: 7052620357858970206}
   - component: {fileID: 2610950626802292660}
   - component: {fileID: 7126147895460299385}
+  - component: {fileID: 8689670955005269511}
   m_Layer: 0
   m_Name: Default Entity
   m_TagString: Untagged
@@ -159,7 +159,7 @@ MonoBehaviour:
   animator: {fileID: 4626444849510659334}
   entityAudio: {fileID: 7052620357858970206}
   mesh: {fileID: 7635660551639083686}
-  particle: {fileID: 8633921167557478278}
+  particle: {fileID: 8689670955005269511}
   collision: {fileID: 7126147895460299385}
   movement: {fileID: 2610950626802292660}
   events:
@@ -201,19 +201,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slots: {fileID: 0}
---- !u!114 &8633921167557478278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4626444849510659329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06436394af4b4c198581821f58777a59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles: {fileID: 8800476076183781228}
 --- !u!114 &7052620357858970206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +241,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliders: {fileID: 7783376894795164328}
+--- !u!114 &8689670955005269511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4626444849510659329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b7183bde548b44fac5032d230e6dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 8800476076183781228}
 --- !u!1 &6009494082816998091
 GameObject:
   m_ObjectHideFlags: 0
