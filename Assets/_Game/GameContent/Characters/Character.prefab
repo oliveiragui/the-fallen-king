@@ -48,6 +48,22 @@ MonoBehaviour:
   onWeaponChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8457561130641199177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8004843970374068126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3048a2bc2f4b4081a8a228847e36edba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dictionary:
+    m_keys: []
+    m_values: []
+  fillWithChidren: 1
 --- !u!1 &8954430661890499821
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +387,11 @@ PrefabInstance:
       propertyPath: slots
       value: 
       objectReference: {fileID: 8701072611222382773}
+    - target: {fileID: 5276938515963619477, guid: 381bb6025a4a71641a0e87b6ad07c050,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6485742079928494108, guid: 381bb6025a4a71641a0e87b6ad07c050,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -559,3 +580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4155b2563e0b4669b7b33280b8cad5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8004843970374068126 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1614270363475766291, guid: 381bb6025a4a71641a0e87b6ad07c050,
+    type: 3}
+  m_PrefabInstance: {fileID: 8751023466049375117}
+  m_PrefabAsset: {fileID: 0}

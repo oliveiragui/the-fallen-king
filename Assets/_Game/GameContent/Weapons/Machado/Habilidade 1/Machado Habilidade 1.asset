@@ -28,7 +28,6 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
     factor1: 2.5
     factor2: 0
@@ -40,7 +39,6 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
     factor1: 2.5
     factor2: 0
@@ -52,8 +50,9 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
     factor1: 2.5
     factor2: 0
     factor3: 0
+  particleEffects:
+  - {fileID: 4262140483115222537, guid: b0c003b3f9144264988a4cdaeb17b980, type: 3}
