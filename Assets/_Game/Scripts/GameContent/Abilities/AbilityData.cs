@@ -27,7 +27,7 @@ namespace _Game.Scripts.GameContent.Abilities
         public int MaxCombo => combo.Length;
         public Sprite Icon => icon;
         public ParticleSystem[] ParticleEffects => particleEffects;
-        public bool HaveParticles => particleEffects.Length > 0;
+        public bool HaveParticles => particleEffects != null;
 
         public bool CanInterrupt(AbilityData other) => canInterrupt && other.canBeInterruped;
     }
