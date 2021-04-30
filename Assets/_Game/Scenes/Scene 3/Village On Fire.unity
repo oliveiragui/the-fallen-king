@@ -5820,12 +5820,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6809625735299666081}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1327936684 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1080439757786464663, guid: 66d90103872937945baa578d7ef517d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1887674291}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1328297362
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11380,16 +11374,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2834804186026228838, guid: 66d90103872937945baa578d7ef517d6,
-        type: 3}
-      propertyPath: playerCanSwitchMenu
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2834804186026228838, guid: 66d90103872937945baa578d7ef517d6,
-        type: 3}
-      propertyPath: tabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1327936684}
     - target: {fileID: 2857541450585164528, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
       propertyPath: m_AnchorMin.y
