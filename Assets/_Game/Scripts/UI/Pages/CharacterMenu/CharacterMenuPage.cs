@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
-using _Game.Scripts.Components.AttributeSystem;
 using _Game.Scripts.GameContent.Characters;
 using _Game.Scripts.GameContent.Weapons;
+using _Game.Scripts.Services.AttributeSystem;
+using _Game.Scripts.UI.Pages.CharacterMenu.Tabs.Inventory;
+using _Game.Scripts.UI.Pages.CharacterMenu.Tabs.WeaponSelection;
 using UnityEngine;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Pages.CharacterMenu
 {
     public class CharacterMenuPage : MonoBehaviour
     {

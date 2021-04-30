@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using _Game.Scripts.UI.Utils;
 using UnityEngine;
 
 namespace _Game.Scripts.UI
@@ -45,8 +45,8 @@ namespace _Game.Scripts.UI
     public class MenuInputData
     {
         [SerializeField] string buttonName = "";
-        [SerializeField] int index = 0;
-        public bool canBeUsed = false;
+        [SerializeField] int index;
+        public bool canBeUsed;
 
         public string ButtonName => buttonName;
         public int Index => index;

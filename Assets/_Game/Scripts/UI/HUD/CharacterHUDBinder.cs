@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using _Game.Scripts.GameContent.Characters;
 using _Game.Scripts.GameContent.Entities;
-using _Game.Scripts.UI.CharacterUI;
 using UnityEngine;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.HUD
 {
     public class CharacterHUDBinder : MonoBehaviour
     {
@@ -26,7 +25,7 @@ namespace _Game.Scripts.UI
             character.events.onEntityDimmissed.AddListener(hud.StopFollowEntity);
 
             if (character.Entity) hud.FollowEntity(character.Entity);
-            
+
             character.events.onEntitySummon.AddListener(ShowEntityHUD);
             character.events.onEntityDimmissed.AddListener(HideEntityHUD);
         }
@@ -43,13 +42,13 @@ namespace _Game.Scripts.UI
 
         public void ShowEntityHUD(Entity entity)
         {
-            var character = entity.associatedCharacter;
+            var character = entity.Character;
             if (!HUDs.ContainsKey(character)) HUDs[character].enabled = true;
         }
 
         public void HideEntityHUD(Entity entity)
         {
-            HUDs[entity.associatedCharacter].enabled = true;
+            HUDs[entity.Character].enabled = true;
         }
     }
 }

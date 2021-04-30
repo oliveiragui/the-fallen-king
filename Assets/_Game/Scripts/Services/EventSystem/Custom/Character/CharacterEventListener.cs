@@ -1,12 +1,10 @@
 ﻿using System;
-using _Game.Scripts.Components.EventSystem;
-using _Game.Scripts.GameContent.Characters;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.Scripts.Utils.Events
+namespace _Game.Scripts.Services.EventSystem.Custom.Character
 {
-    public class CharacterEventListener : MonoBehaviour, IGameEventListener<Character>
+    public class CharacterEventListener : MonoBehaviour, IGameEventListener<GameContent.Characters.Character>
     {
         // The game event instance to register to.
         public CharacterEvent GenericEvent;
@@ -24,12 +22,12 @@ namespace _Game.Scripts.Utils.Events
             GenericEvent.UnregisterListener(this);
         }
 
-        public void RaiseEvent(Character character)
+        public void RaiseEvent(GameContent.Characters.Character character)
         {
             Response.Invoke(character);
         }
     }
 
     [Serializable]
-    public class UnityCharacterEvent : UnityEvent<Character> { }
+    public class UnityCharacterEvent : UnityEvent<GameContent.Characters.Character> { }
 }

@@ -1,10 +1,9 @@
-﻿using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.UI.StatusBar;
+﻿using _Game.Scripts.Services.AttributeSystem;
+using _Game.Scripts.UI.Utils;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Pages.CharacterMenu
 {
     public class StatusPanel : MonoBehaviour
     {

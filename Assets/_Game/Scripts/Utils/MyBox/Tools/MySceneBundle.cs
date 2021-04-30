@@ -46,10 +46,7 @@ namespace _Game.Scripts.Utils.MyBox.Tools
                 PrepareSceneBundleForNextScene();
         }
 
-        static bool IsUnloadingLastScene()
-        {
-            return SceneManager.sceneCount == 2;
-        }
+        static bool IsUnloadingLastScene() => SceneManager.sceneCount == 2;
 
         static void PrepareSceneBundleForNextScene()
         {
@@ -137,10 +134,8 @@ namespace _Game.Scripts.Utils.MyBox.Tools
         /// <param name="dataKey">The identifier for the data to fetch</param>
         /// <param name="result">Result of the data (Default or null if it does not exists)</param>
         /// <returns>True if the data with the key exists.</returns>
-        public static bool TryGetStringDataFromBundle(string dataKey, out string result)
-        {
-            return currentSceneBundle.StringData.TryGetData(dataKey, out result);
-        }
+        public static bool TryGetStringDataFromBundle(string dataKey, out string result) =>
+            currentSceneBundle.StringData.TryGetData(dataKey, out result);
 
         /// <summary>
         ///     Try to fetch a float data from the bundle that was passed from the previous scene.
@@ -148,10 +143,8 @@ namespace _Game.Scripts.Utils.MyBox.Tools
         /// <param name="dataKey">The identifier for the data to fetch</param>
         /// <param name="result">Result of the data (Default or null if it does not exists)</param>
         /// <returns>True if the data with the key exists.</returns>
-        public static bool TryGetFloatDataFromBundle(string dataKey, out float result)
-        {
-            return currentSceneBundle.FloatData.TryGetData(dataKey, out result);
-        }
+        public static bool TryGetFloatDataFromBundle(string dataKey, out float result) =>
+            currentSceneBundle.FloatData.TryGetData(dataKey, out result);
 
         /// <summary>
         ///     Try to fetch an integer data from the bundle that was passed from the previous scene.
@@ -159,10 +152,8 @@ namespace _Game.Scripts.Utils.MyBox.Tools
         /// <param name="dataKey">The identifier for the data to fetch</param>
         /// <param name="result">Result of the data (Default or null if it does not exists)</param>
         /// <returns>True if the data with the key exists.</returns>
-        public static bool TryGetIntDataFromBundle(string dataKey, out int result)
-        {
-            return currentSceneBundle.IntData.TryGetData(dataKey, out result);
-        }
+        public static bool TryGetIntDataFromBundle(string dataKey, out int result) =>
+            currentSceneBundle.IntData.TryGetData(dataKey, out result);
 
         /// <summary>
         ///     Try to fetch a bool data from the bundle that was passed from the previous scene.
@@ -170,10 +161,8 @@ namespace _Game.Scripts.Utils.MyBox.Tools
         /// <param name="dataKey">The identifier for the data to fetch</param>
         /// <param name="result">Result of the data (Default or null if it does not exists)</param>
         /// <returns>True if the data with the key exists.</returns>
-        public static bool TryGetBoolDataFromBundle(string dataKey, out bool result)
-        {
-            return currentSceneBundle.BoolData.TryGetData(dataKey, out result);
-        }
+        public static bool TryGetBoolDataFromBundle(string dataKey, out bool result) =>
+            currentSceneBundle.BoolData.TryGetData(dataKey, out result);
 
         /// <summary>
         ///     Try to fetch an object data from the bundle that was passed from the previous scene.
@@ -181,10 +170,8 @@ namespace _Game.Scripts.Utils.MyBox.Tools
         /// <param name="dataKey">The identifier for the data to fetch</param>
         /// <param name="result">Result of the data (Default or null if it does not exists)</param>
         /// <returns>True if the data with the key exists.</returns>
-        public static bool TryGetObjectDataFromBundle(string dataKey, out object result)
-        {
-            return currentSceneBundle.ObjectData.TryGetData(dataKey, out result);
-        }
+        public static bool TryGetObjectDataFromBundle(string dataKey, out object result) =>
+            currentSceneBundle.ObjectData.TryGetData(dataKey, out result);
 
         #endregion
     }
@@ -244,25 +231,17 @@ namespace _Game.Scripts.Utils.MyBox.Tools
             else if (!haveDataWithSameKey) bundleData.Add(keyValuePair.Key, keyValuePair.Value);
         }
 
-        internal bool TryGetData(string dataKey, out T result)
-        {
-            return bundleData.TryGetValue(dataKey, out result);
-        }
+        internal bool TryGetData(string dataKey, out T result) => bundleData.TryGetValue(dataKey, out result);
 
         /// <summary>
         ///     True if a data with the datakey exists
         /// </summary>
         /// <param name="dataKey"></param>
         /// <returns></returns>
-        internal bool DataExists(string dataKey)
-        {
-            return bundleData.ContainsKey(dataKey);
-        }
+        internal bool DataExists(string dataKey) => bundleData.ContainsKey(dataKey);
 
-        internal Dictionary<string, T> GetBundleData()
-        {
-            return new Dictionary<string, T>(new Dictionary<string, T>(bundleData));
-        }
+        internal Dictionary<string, T> GetBundleData() =>
+            new Dictionary<string, T>(new Dictionary<string, T>(bundleData));
 
         /// <summary>
         ///     Add a bundle of data to this bundle

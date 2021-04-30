@@ -1,7 +1,7 @@
-﻿using _Game.Scripts.Components.AttributeSystem;
+﻿using _Game.Scripts.Services.AttributeSystem;
 using UnityEngine;
 
-namespace _Game.Scripts.GameContent.Abilities.Data
+namespace _Game.Scripts.GameContent.Abilities
 {
     /*
      * TODO: Separate ability responsibility from combo responsibilit
@@ -17,6 +17,7 @@ namespace _Game.Scripts.GameContent.Abilities.Data
         [SerializeField] bool canInterrupt;
         [SerializeField] RawAttribute cooldown;
         [SerializeField] AbilityComboData[] combo;
+        [SerializeField] ParticleSystem[] particleEffects;
 
         public string Name => name;
         public int AnimationId => animationId;
@@ -25,10 +26,9 @@ namespace _Game.Scripts.GameContent.Abilities.Data
         public AbilityComboData[] Combo => combo;
         public int MaxCombo => combo.Length;
         public Sprite Icon => icon;
-        
-        public bool CanInterrupt(AbilityData other)
-        {
-            return canInterrupt && other.canBeInterruped;
-        }
+        public ParticleSystem[] ParticleEffects => particleEffects;
+        public bool HaveParticles => particleEffects.Length > 0;
+
+        public bool CanInterrupt(AbilityData other) => canInterrupt && other.canBeInterruped;
     }
 }

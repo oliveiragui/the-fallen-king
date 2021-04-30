@@ -7,26 +7,17 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     Convert to a different type.
 	    /// </summary>
-	    public static R Cast<R>(this IConvertible source)
-        {
-            return (R) Convert.ChangeType(source, typeof(R));
-        }
+	    public static R Cast<R>(this IConvertible source) => (R) Convert.ChangeType(source, typeof(R));
 
 	    /// <summary>
 	    ///     Check if this is a particular type.
 	    /// </summary>
-	    public static bool Is<R>(this object source)
-        {
-            return source is R;
-        }
+	    public static bool Is<R>(this object source) => source is R;
 
 	    /// <summary>
 	    ///     Cast to a different type, exception-safe.
 	    /// </summary>
-	    public static R As<R>(this object source) where R : class
-        {
-            return source as R;
-        }
+	    public static R As<R>(this object source) where R : class => source as R;
 
 	    /// <summary>
 	    ///     Take an object and pass it as an argument to a void function.
@@ -40,10 +31,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     Take an object, pass it as an argument to a function, return the result.
 	    /// </summary>
-	    public static R Pipe<T, R>(this T argument, Func<T, R> function)
-        {
-            return function(argument);
-        }
+	    public static R Pipe<T, R>(this T argument, Func<T, R> function) => function(argument);
 
 	    /// <summary>
 	    ///     Take an object, pass it as an argument to a function, return the object.

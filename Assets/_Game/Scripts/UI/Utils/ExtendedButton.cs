@@ -4,14 +4,14 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Utils
 {
     public class ExtendedButton : Selectable, ISubmitHandler, IPointerClickHandler
     {
         [SerializeField] bool usePointerToSelect;
         public UnityEvent onClick;
         public BaseUIEvent onSelect;
-        
+
         #region pointerMethods
 
         public override void OnPointerEnter(PointerEventData eventData)
@@ -40,7 +40,7 @@ namespace _Game.Scripts.UI
             base.OnSelect(eventData);
             onSelect.Invoke(eventData);
         }
-        
+
         public void OnSubmit(BaseEventData eventData)
         {
             onClick.Invoke();

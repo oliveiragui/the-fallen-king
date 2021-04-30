@@ -20,10 +20,7 @@ namespace _Game.Scripts.Runtime.Reorderable
 
         public int Length => array.Count;
 
-        public object Clone()
-        {
-            return new List<T>(array);
-        }
+        public object Clone() => new List<T>(array);
 
         public T this[int index]
         {
@@ -35,15 +32,9 @@ namespace _Game.Scripts.Runtime.Reorderable
 
         public int Count => array.Count;
 
-        public bool Contains(T value)
-        {
-            return array.Contains(value);
-        }
+        public bool Contains(T value) => array.Contains(value);
 
-        public int IndexOf(T value)
-        {
-            return array.IndexOf(value);
-        }
+        public int IndexOf(T value) => array.IndexOf(value);
 
         public void Insert(int index, T item)
         {
@@ -70,20 +61,11 @@ namespace _Game.Scripts.Runtime.Reorderable
             this.array.CopyTo(array, arrayIndex);
         }
 
-        public bool Remove(T item)
-        {
-            return array.Remove(item);
-        }
+        public bool Remove(T item) => array.Remove(item);
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            return array.GetEnumerator();
-        }
+        public IEnumerator<T> GetEnumerator() => array.GetEnumerator();
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return array.GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => array.GetEnumerator();
 
         public void CopyFrom(IEnumerable<T> value)
         {
@@ -91,9 +73,6 @@ namespace _Game.Scripts.Runtime.Reorderable
             array.AddRange(value);
         }
 
-        public T[] ToArray()
-        {
-            return array.ToArray();
-        }
+        public T[] ToArray() => array.ToArray();
     }
 }

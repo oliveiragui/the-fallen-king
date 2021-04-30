@@ -28,7 +28,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
         {
             CacheAttributes();
 
-            bool drawn = false;
+            var drawn = false;
             for (int i = _cachedAttributes.Length - 1; i >= 0; i--)
             {
                 var ab = _cachedAttributes[i];

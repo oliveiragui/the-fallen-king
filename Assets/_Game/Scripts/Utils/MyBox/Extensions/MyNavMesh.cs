@@ -15,7 +15,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         {
             var corners = path.corners;
             float length = 0;
-            for (int i = 1; i < corners.Length; i++) length += Vector3.Distance(corners[i - 1], corners[i]);
+            for (var i = 1; i < corners.Length; i++) length += Vector3.Distance(corners[i - 1], corners[i]);
 
             return length;
         }
@@ -44,7 +44,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             rate = Mathf.Clamp01(rate);
             float length = path.GetLength();
             float elapsedRate = 0;
-            for (int i = 1; i < path.corners.Length; i++)
+            for (var i = 1; i < path.corners.Length; i++)
             {
                 var from = path.corners[i - 1];
                 var to = path.corners[i];
@@ -71,7 +71,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    public static IEnumerable<Vector3> GetPointsOnPath(this NavMeshPath path, float distance = 1)
         {
             float pieceTraversedDistance = 0;
-            for (int i = 1; i < path.corners.Length; i++)
+            for (var i = 1; i < path.corners.Length; i++)
             {
                 var from = path.corners[i - 1];
                 var to = path.corners[i];

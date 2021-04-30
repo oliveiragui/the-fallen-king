@@ -1,12 +1,9 @@
-﻿using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.GameContent.Abilities;
-using _Game.Scripts.GameContent.Characters;
-using _Game.Scripts.GameContent.Weapons;
-using _Game.Scripts.UI.Components.HUD;
-using _Game.Scripts.UI.StatusBar;
+﻿using _Game.Scripts.GameContent.Abilities;
+using _Game.Scripts.Services.AttributeSystem;
+using _Game.Scripts.UI.Utils;
 using UnityEngine;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.HUD
 {
     public class PlayerInfoHUD : MonoBehaviour
     {
@@ -27,7 +24,7 @@ namespace _Game.Scripts.UI
 
         public void UpdateUI(Ability[] abilities)
         {
-            abilityFeedback.UpdateUI(abilities);
+            abilityFeedback.OnWeaponChange(abilities);
         }
     }
 }

@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using _Game.Scripts.GameContent.Abilities;
+﻿using _Game.Scripts.GameContent.Abilities;
 using UnityEngine;
 
-namespace _Game.Scripts.UI.Components.HUD
+namespace _Game.Scripts.UI.HUD
 {
     public class AbilityFeedbackPanel : MonoBehaviour
     {
@@ -10,13 +9,12 @@ namespace _Game.Scripts.UI.Components.HUD
 
         public string[] buttonsName = {"X", "Y", "B", "A"};
 
-        public void UpdateUI(Ability[] abilities)
+        public void OnWeaponChange(Ability[] abilities)
         {
-            
-            for (int i = 0; i < abilities.Length && i < buttonsName.Length && i < abilityIcons.Length; i++)
-            {
-                abilityIcons[i].UpdateUI(abilities[i], buttonsName[i]);
-            }
+            for (var i = 0; i < abilities.Length && i < buttonsName.Length && i < abilityIcons.Length; i++)
+                abilityIcons[i].BindAbility(abilities[i], buttonsName[i]);
         }
+
+        void UpdateAndAddListener() { }
     }
 }

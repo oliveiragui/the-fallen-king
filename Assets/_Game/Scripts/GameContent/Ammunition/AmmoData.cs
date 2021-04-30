@@ -6,16 +6,16 @@ namespace _Game.Scripts.GameContent.Ammunition
     [CreateAssetMenu(fileName = "New Ammo", menuName = "GameContent/Ammo/Basic Ammo")]
     public class AmmoData : ScriptableObject
     {
-        GameObject ammoStorage;
         public float LifeTime = 10;
         public float LifeTimeOnHit = 3;
         [SerializeField] GameObject model;
+        GameObject ammoStorage;
 
-        Stack<Ammo> ammunitionStorage = new Stack<Ammo>();
+        readonly Stack<Ammo> ammunitionStorage = new Stack<Ammo>();
 
         public Ammo Instantiate(Vector3 position, Quaternion rotation)
         {
-            var ammo = (ammunitionStorage.Count > 0)
+            var ammo = ammunitionStorage.Count > 0
                 ? ammunitionStorage.Pop()
                 : Instantiate(model).GetComponent<Ammo>();
             Activate(ammo, position, rotation);
@@ -39,6 +39,7 @@ namespace _Game.Scripts.GameContent.Ammunition
                 ammoStorage = new GameObject();
                 ammoStorage.name = "Ammo Storage";
             }
+
             ammo.transform.parent = ammoStorage.transform;
             ammo.gameObject.SetActive(false);
             ammunitionStorage.Push(ammo);

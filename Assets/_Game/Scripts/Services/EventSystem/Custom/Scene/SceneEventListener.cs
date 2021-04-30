@@ -1,9 +1,8 @@
 ﻿using System;
-using _Game.Scripts.Components.EventSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.Scripts.Utils.Events
+namespace _Game.Scripts.Services.EventSystem.Custom.Scene
 {
     public class SceneEventListener : MonoBehaviour, IGameEventListener<SceneData>
     {

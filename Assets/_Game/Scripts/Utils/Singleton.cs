@@ -32,7 +32,7 @@ namespace _Game.Scripts.Utils
                             return _instance = instances[0];
                         Debug.LogWarning(
                             $"[{nameof(Singleton)}<{typeof(T)}>] There should never be more than one {nameof(Singleton)} of type {typeof(T)} in the scene, but {count} were found. The first instance found will be used, and all others will be destroyed.");
-                        for (int i = 1; i < instances.Length; i++)
+                        for (var i = 1; i < instances.Length; i++)
                             Destroy(instances[i]);
                         return _instance = instances[0];
                     }

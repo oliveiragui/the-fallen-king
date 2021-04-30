@@ -11,9 +11,14 @@ namespace _Game.Scripts.GameContent.Characters
     {
         public List<Weapon> weapons;
         [SerializeField] Weapon weaponInUse;
-        public Weapon WeaponInUse { get => weaponInUse; private set => weaponInUse = value; }
-        
+
         public WeaponChangeEvent onWeaponChange;
+
+        public Weapon WeaponInUse
+        {
+            get => weaponInUse;
+            private set => weaponInUse = value;
+        }
 
         void Awake()
         {
@@ -35,26 +40,26 @@ namespace _Game.Scripts.GameContent.Characters
             WeaponInUse = weapons[index];
             onWeaponChange.Invoke(WeaponInUse);
         }
-        
+
         public void UseWeapon(Weapon weapon)
         {
             if (weapons.IndexOf(weapon) < 0) return;
             WeaponInUse = weapon;
-            onWeaponChange.Invoke(WeaponInUse); 
+            onWeaponChange.Invoke(WeaponInUse);
         }
 
         public void UseNext()
         {
             int nextWeaponIndex = weapons.IndexOf(WeaponInUse) + 1;
-            nextWeaponIndex = (nextWeaponIndex >= weapons.Count) ? 0 : nextWeaponIndex;
-           UseWeapon(nextWeaponIndex);
+            nextWeaponIndex = nextWeaponIndex >= weapons.Count ? 0 : nextWeaponIndex;
+            UseWeapon(nextWeaponIndex);
         }
 
         public void UsePrevious()
         {
             int previousWeaponIndex = weapons.IndexOf(WeaponInUse) - 1;
-            previousWeaponIndex = (previousWeaponIndex < 0) ? weapons.Count - 1 : previousWeaponIndex;
-           UseWeapon(previousWeaponIndex);
+            previousWeaponIndex = previousWeaponIndex < 0 ? weapons.Count - 1 : previousWeaponIndex;
+            UseWeapon(previousWeaponIndex);
         }
 
         public void Unequip()
@@ -65,5 +70,4 @@ namespace _Game.Scripts.GameContent.Characters
 
     [Serializable]
     public class WeaponChangeEvent : UnityEvent<Weapon> { }
-    
 }

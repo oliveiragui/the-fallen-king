@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Game.Scripts.Components.AttributeSystem
+namespace _Game.Scripts.Services.AttributeSystem
 {
     [Serializable]
     public class RawStatus

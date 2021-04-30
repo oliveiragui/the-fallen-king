@@ -28,50 +28,33 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     key1 or key2 is pressed
         /// </summary>
-        public static bool AnyKeyDown(KeyCode key1, KeyCode key2)
-        {
-            return Input.GetKeyDown(key1) || Input.GetKeyDown(key2);
-        }
+        public static bool AnyKeyDown(KeyCode key1, KeyCode key2) => Input.GetKeyDown(key1) || Input.GetKeyDown(key2);
 
         /// <summary>
         ///     key1, key2 or key3 is pressed
         /// </summary>
-        public static bool AnyKeyDown(KeyCode key1, KeyCode key2, KeyCode key3)
-        {
-            return AnyKeyDown(key1, key2) || Input.GetKeyDown(key3);
-        }
+        public static bool AnyKeyDown(KeyCode key1, KeyCode key2, KeyCode key3) =>
+            AnyKeyDown(key1, key2) || Input.GetKeyDown(key3);
 
         /// <summary>
         ///     "A", "Left Arrow" and "Numpad 4"
         /// </summary>
-        public static bool IsLeft()
-        {
-            return AnyKeyDown(KeyCode.A, KeyCode.LeftArrow, KeyCode.Keypad4);
-        }
+        public static bool IsLeft() => AnyKeyDown(KeyCode.A, KeyCode.LeftArrow, KeyCode.Keypad4);
 
         /// <summary>
         ///     "D", "Right Arrow" and "Numpad 6"
         /// </summary>
-        public static bool IsRight()
-        {
-            return AnyKeyDown(KeyCode.D, KeyCode.RightArrow, KeyCode.Keypad6);
-        }
+        public static bool IsRight() => AnyKeyDown(KeyCode.D, KeyCode.RightArrow, KeyCode.Keypad6);
 
         /// <summary>
         ///     "W", "Up Arrow" and "Numpad 8"
         /// </summary>
-        public static bool IsUp()
-        {
-            return AnyKeyDown(KeyCode.W, KeyCode.UpArrow, KeyCode.Keypad8);
-        }
+        public static bool IsUp() => AnyKeyDown(KeyCode.W, KeyCode.UpArrow, KeyCode.Keypad8);
 
         /// <summary>
         ///     "S", "Down Arrow" and "Numpad 2"
         /// </summary>
-        public static bool IsDown()
-        {
-            return AnyKeyDown(KeyCode.S, KeyCode.DownArrow, KeyCode.Keypad2);
-        }
+        public static bool IsDown() => AnyKeyDown(KeyCode.S, KeyCode.DownArrow, KeyCode.Keypad2);
 
         /// <summary>
         ///     Roguelike movement input, where top-left is 7 and bottom-right is 3

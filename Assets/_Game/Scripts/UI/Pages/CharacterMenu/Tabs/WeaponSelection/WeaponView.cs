@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Pages.CharacterMenu.Tabs.WeaponSelection
 {
     public class WeaponView : MonoBehaviour
     {

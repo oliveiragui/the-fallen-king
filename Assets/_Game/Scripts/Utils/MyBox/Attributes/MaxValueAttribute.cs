@@ -119,7 +119,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
                     break;
             }
 
-            bool handled = false;
+            var handled = false;
             if (vector[0] > x)
             {
                 vector[0] = x;
@@ -156,7 +156,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
         bool HandleIntVectors(SerializedProperty property)
         {
-            int x = (int) _x;
+            var x = (int) _x;
             int y = _vectorValuesSet ? (int) _y : x;
             int z = _vectorValuesSet ? (int) _z : x;
 

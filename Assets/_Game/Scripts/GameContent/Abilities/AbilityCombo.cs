@@ -1,6 +1,4 @@
-﻿using _Game.Scripts.GameContent.Abilities.Data;
-
-namespace _Game.Scripts.GameContent.Abilities
+﻿namespace _Game.Scripts.GameContent.Abilities
 {
     public class AbilityCombo
     {
@@ -16,5 +14,10 @@ namespace _Game.Scripts.GameContent.Abilities
         public float Factor2 => _data.factor2;
         public float Factor1 => _data.factor1;
         public bool Castable => _data.castable;
+
+        public static implicit operator bool(AbilityCombo hit) =>
+            // assuming, that 1 is true;
+            // somehow this method should deal with value == null case
+            hit != null;
     }
 }

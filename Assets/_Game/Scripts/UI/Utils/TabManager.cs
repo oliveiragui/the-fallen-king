@@ -1,8 +1,7 @@
-﻿using _Game.Scripts.Utils.Events;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Utils
 {
     public class TabManager : MonoBehaviour
     {
@@ -16,6 +15,11 @@ namespace _Game.Scripts.UI
         {
             OpenTabIndex = firstTab;
             ResetTab(OpenTabIndex);
+        }
+
+        void OnEnable()
+        {
+            SwitchTab(firstTab);
         }
 
         void ResetTab(int index)
@@ -35,19 +39,14 @@ namespace _Game.Scripts.UI
 
         public void OpenNext()
         {
-            int nextTabIndex = (OpenTabIndex < tabs.Length - 1) ? OpenTabIndex + 1 : 0;
+            int nextTabIndex = OpenTabIndex < tabs.Length - 1 ? OpenTabIndex + 1 : 0;
             SwitchTab(nextTabIndex);
         }
 
         public void OpenPrevious()
         {
-            int nextTabIndex = (OpenTabIndex > 0) ? OpenTabIndex - 1 : tabs.Length - 1;
+            int nextTabIndex = OpenTabIndex > 0 ? OpenTabIndex - 1 : tabs.Length - 1;
             SwitchTab(nextTabIndex);
-        }
-
-        void OnEnable()
-        {
-            SwitchTab(firstTab);
         }
     }
 }

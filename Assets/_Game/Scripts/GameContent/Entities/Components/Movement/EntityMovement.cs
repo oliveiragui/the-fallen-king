@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace _Game.Scripts.GameContent.Entities.Components.PhysicsSystem
+namespace _Game.Scripts.GameContent.Entities.Components.Movement
 {
     public class EntityMovement : MonoBehaviour
     {
         [SerializeField] NavMeshAgent agent;
         [SerializeField] bool autoMove;
-        
-        
+
         Quaternion _rotation;
         Transform _transform;
 

@@ -77,7 +77,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             else _stringBuilder.Length = 0;
 
             _stringBuilder.Append("Log Array: ").Append(typeof(T).Name).Append(" (").Append(toLog.Length).Append(")\n");
-            for (int i = 0; i < toLog.Length; i++)
+            for (var i = 0; i < toLog.Length; i++)
                 _stringBuilder.Append("\n\t").Append(i.ToString().Colored(Colors.brown)).Append(": ").Append(toLog[i]);
 
             Debug.Log(_stringBuilder.ToString());
@@ -91,7 +91,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             int count = toLog.Count;
             _stringBuilder.Append("Log Array: ").Append(typeof(T).Name).Append(" (").Append(count).Append(")\n");
 
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
                 _stringBuilder.Append("\n\t" + i.ToString().Colored(Colors.brown) + ": " + toLog[i]);
 
             Debug.Log(_stringBuilder.ToString());

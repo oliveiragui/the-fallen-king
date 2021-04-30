@@ -1,14 +1,9 @@
-﻿using System;
-using _Game.Scripts.Components.EventSystem;
-using _Game.Scripts.GameContent.Characters;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace _Game.Scripts.Utils.Events
+namespace _Game.Scripts.Services.EventSystem.Custom.Character
 {
     [CreateAssetMenu(fileName = "New Character Event", menuName = "GameContent/Events/CharacterEvent")]
-    public class CharacterEvent : GameEvent<Character>
-    {
-    }
+    public class CharacterEvent : GameEvent<GameContent.Characters.Character> { }
 
     // [Serializable]
     // public class Character

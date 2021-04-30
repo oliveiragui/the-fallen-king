@@ -176,7 +176,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
                 Filter = filter;
                 Entries.Clear();
 
-                for (int i = 0; i < allItems.Length; i++)
+                for (var i = 0; i < allItems.Length; i++)
                     if (string.IsNullOrEmpty(Filter) || allItems[i].ToLower().Contains(Filter.ToLower()))
                     {
                         var entry = new Entry
@@ -327,12 +327,10 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
             EditorApplication.update -= Repaint;
         }
 
-        public override Vector2 GetWindowSize()
-        {
-            return new Vector2(base.GetWindowSize().x,
+        public override Vector2 GetWindowSize() =>
+            new Vector2(base.GetWindowSize().x,
                 Mathf.Min(600, list.MaxLength * ROW_HEIGHT +
                                EditorStyles.toolbar.fixedHeight));
-        }
 
         public override void OnGUI(Rect rect)
         {
@@ -393,7 +391,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
             var rowRect = new Rect(0, 0, scrollRect.width, ROW_HEIGHT);
 
-            for (int i = 0; i < list.Entries.Count; i++)
+            for (var i = 0; i < list.Entries.Count; i++)
             {
                 if (scrollToIndex == i &&
                     (Event.current.type == EventType.Repaint

@@ -1,10 +1,8 @@
-﻿using System.Collections;
+﻿using _Game.Scripts.Services.EventSystem.Custom.Scene;
 using _Game.Scripts.UI;
-using _Game.Scripts.Utils.Events;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace _Game.Scripts.Components
+namespace _Game.Scripts.Services
 {
     public class GameManager : MonoBehaviour
     {

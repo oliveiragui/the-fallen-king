@@ -1,8 +1,7 @@
 ﻿using System;
-using _Game.Scripts.Components.EventSystem;
 using UnityEngine;
 
-namespace _Game.Scripts.Utils.Events
+namespace _Game.Scripts.Services.EventSystem.Custom.Audio
 {
     [CreateAssetMenu(fileName = "New Audio Event", menuName = "GameContent/Events/AudioEvent")]
     public class AudioEvent : GameEvent<AudioEventData> { }

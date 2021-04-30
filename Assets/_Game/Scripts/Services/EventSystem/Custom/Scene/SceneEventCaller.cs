@@ -1,6 +1,4 @@
-﻿using _Game.Scripts.Components.EventSystem;
-
-namespace _Game.Scripts.Utils.Events
+﻿namespace _Game.Scripts.Services.EventSystem.Custom.Scene
 {
-    public class SceneEventCaller : GameEventCaller<SceneEvent,SceneData> { }
+    public class SceneEventCaller : GameEventCaller<SceneEvent, SceneData> { }
 }

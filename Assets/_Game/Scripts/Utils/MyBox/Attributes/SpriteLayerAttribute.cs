@@ -77,7 +77,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
             string layerName = SortingLayer.IDToName(property.intValue);
 
             // Return the index where on it matches.
-            for (int i = 0; i < spriteLayerNames.Length; ++i)
+            for (var i = 0; i < spriteLayerNames.Length; ++i)
                 if (spriteLayerNames[i].Equals(layerName))
                 {
                     index = i;
@@ -91,9 +91,9 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
         string[] GetSpriteLayerNames()
         {
-            string[] result = new string[SortingLayer.layers.Length];
+            var result = new string[SortingLayer.layers.Length];
 
-            for (int i = 0; i < result.Length; ++i) result[i] = SortingLayer.layers[i].name;
+            for (var i = 0; i < result.Length; ++i) result[i] = SortingLayer.layers[i].name;
 
             return result;
         }

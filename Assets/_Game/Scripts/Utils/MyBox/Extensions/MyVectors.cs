@@ -9,15 +9,9 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         // Set X
 
-        public static Vector3 SetX(this Vector3 vector, float x)
-        {
-            return new Vector3(x, vector.y, vector.z);
-        }
+        public static Vector3 SetX(this Vector3 vector, float x) => new Vector3(x, vector.y, vector.z);
 
-        public static Vector2 SetX(this Vector2 vector, float x)
-        {
-            return new Vector2(x, vector.y);
-        }
+        public static Vector2 SetX(this Vector2 vector, float x) => new Vector2(x, vector.y);
 
         public static void SetX(this Transform transform, float x)
         {
@@ -26,15 +20,9 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         // Set Y
 
-        public static Vector3 SetY(this Vector3 vector, float y)
-        {
-            return new Vector3(vector.x, y, vector.z);
-        }
+        public static Vector3 SetY(this Vector3 vector, float y) => new Vector3(vector.x, y, vector.z);
 
-        public static Vector2 SetY(this Vector2 vector, float y)
-        {
-            return new Vector2(vector.x, y);
-        }
+        public static Vector2 SetY(this Vector2 vector, float y) => new Vector2(vector.x, y);
 
         public static void SetY(this Transform transform, float y)
         {
@@ -43,10 +31,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         // Set Z
 
-        public static Vector3 SetZ(this Vector3 vector, float z)
-        {
-            return new Vector3(vector.x, vector.y, z);
-        }
+        public static Vector3 SetZ(this Vector3 vector, float z) => new Vector3(vector.x, vector.y, z);
 
         public static void SetZ(this Transform transform, float z)
         {
@@ -55,10 +40,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         // Set XY
 
-        public static Vector3 SetXY(this Vector3 vector, float x, float y)
-        {
-            return new Vector3(x, y, vector.z);
-        }
+        public static Vector3 SetXY(this Vector3 vector, float x, float y) => new Vector3(x, y, vector.z);
 
         public static void SetXY(this Transform transform, float x, float y)
         {
@@ -67,10 +49,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         // Set XZ
 
-        public static Vector3 SetXZ(this Vector3 vector, float x, float z)
-        {
-            return new Vector3(x, vector.y, z);
-        }
+        public static Vector3 SetXZ(this Vector3 vector, float x, float z) => new Vector3(x, vector.y, z);
 
         public static void SetXZ(this Transform transform, float x, float z)
         {
@@ -79,10 +58,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         // Set YZ
 
-        public static Vector3 SetYZ(this Vector3 vector, float y, float z)
-        {
-            return new Vector3(vector.x, y, z);
-        }
+        public static Vector3 SetYZ(this Vector3 vector, float y, float z) => new Vector3(vector.x, y, z);
 
         public static void SetYZ(this Transform transform, float y, float z)
         {
@@ -125,80 +101,55 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         #region Offset X/Y/Z
 
-        public static Vector3 Offset(this Vector3 vector, Vector2 offset)
-        {
-            return new Vector3(vector.x + offset.x, vector.y + offset.y, vector.z);
-        }
+        public static Vector3 Offset(this Vector3 vector, Vector2 offset) =>
+            new Vector3(vector.x + offset.x, vector.y + offset.y, vector.z);
 
-        public static Vector3 OffsetX(this Vector3 vector, float x)
-        {
-            return new Vector3(vector.x + x, vector.y, vector.z);
-        }
+        public static Vector3 OffsetX(this Vector3 vector, float x) => new Vector3(vector.x + x, vector.y, vector.z);
 
-        public static Vector2 OffsetX(this Vector2 vector, float x)
-        {
-            return new Vector2(vector.x + x, vector.y);
-        }
+        public static Vector2 OffsetX(this Vector2 vector, float x) => new Vector2(vector.x + x, vector.y);
 
         public static void OffsetX(this Transform transform, float x)
         {
             transform.position = transform.position.OffsetX(x);
         }
 
-        public static Vector2 OffsetY(this Vector2 vector, float y)
-        {
-            return new Vector2(vector.x, vector.y + y);
-        }
+        public static Vector2 OffsetY(this Vector2 vector, float y) => new Vector2(vector.x, vector.y + y);
 
-        public static Vector3 OffsetY(this Vector3 vector, float y)
-        {
-            return new Vector3(vector.x, vector.y + y, vector.z);
-        }
+        public static Vector3 OffsetY(this Vector3 vector, float y) => new Vector3(vector.x, vector.y + y, vector.z);
 
         public static void OffsetY(this Transform transform, float y)
         {
             transform.position = transform.position.OffsetY(y);
         }
 
-        public static Vector3 OffsetZ(this Vector3 vector, float z)
-        {
-            return new Vector3(vector.x, vector.y, vector.z + z);
-        }
+        public static Vector3 OffsetZ(this Vector3 vector, float z) => new Vector3(vector.x, vector.y, vector.z + z);
 
         public static void OffsetZ(this Transform transform, float z)
         {
             transform.position = transform.position.OffsetZ(z);
         }
 
-        public static Vector3 OffsetXY(this Vector3 vector, float x, float y)
-        {
-            return new Vector3(vector.x + x, vector.y + y, vector.z);
-        }
+        public static Vector3 OffsetXY(this Vector3 vector, float x, float y) =>
+            new Vector3(vector.x + x, vector.y + y, vector.z);
 
         public static void OffsetXY(this Transform transform, float x, float y)
         {
             transform.position = transform.position.OffsetXY(x, y);
         }
 
-        public static Vector2 OffsetXY(this Vector2 vector, float x, float y)
-        {
-            return new Vector2(vector.x + x, vector.y + y);
-        }
+        public static Vector2 OffsetXY(this Vector2 vector, float x, float y) =>
+            new Vector2(vector.x + x, vector.y + y);
 
-        public static Vector3 OffsetXZ(this Vector3 vector, float x, float z)
-        {
-            return new Vector3(vector.x + x, vector.y, vector.z + z);
-        }
+        public static Vector3 OffsetXZ(this Vector3 vector, float x, float z) =>
+            new Vector3(vector.x + x, vector.y, vector.z + z);
 
         public static void OffsetXZ(this Transform transform, float x, float z)
         {
             transform.position = transform.position.OffsetXZ(x, z);
         }
 
-        public static Vector3 OffsetYZ(this Vector3 vector, float y, float z)
-        {
-            return new Vector3(vector.x, vector.y + y, vector.z + z);
-        }
+        public static Vector3 OffsetYZ(this Vector3 vector, float y, float z) =>
+            new Vector3(vector.x, vector.y + y, vector.z + z);
 
         public static void OffsetYZ(this Transform transform, float y, float z)
         {
@@ -209,30 +160,22 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         #region Clamp X/Y
 
-        public static Vector3 ClampX(this Vector3 vector, float min, float max)
-        {
-            return vector.SetX(Mathf.Clamp(vector.x, min, max));
-        }
+        public static Vector3 ClampX(this Vector3 vector, float min, float max) =>
+            vector.SetX(Mathf.Clamp(vector.x, min, max));
 
-        public static Vector2 ClampX(this Vector2 vector, float min, float max)
-        {
-            return vector.SetX(Mathf.Clamp(vector.x, min, max));
-        }
+        public static Vector2 ClampX(this Vector2 vector, float min, float max) =>
+            vector.SetX(Mathf.Clamp(vector.x, min, max));
 
         public static void ClampX(this Transform transform, float min, float max)
         {
             transform.SetX(Mathf.Clamp(transform.position.x, min, max));
         }
 
-        public static Vector3 ClampY(this Vector3 vector, float min, float max)
-        {
-            return vector.SetY(Mathf.Clamp(vector.x, min, max));
-        }
+        public static Vector3 ClampY(this Vector3 vector, float min, float max) =>
+            vector.SetY(Mathf.Clamp(vector.x, min, max));
 
-        public static Vector2 ClampY(this Vector2 vector, float min, float max)
-        {
-            return vector.SetY(Mathf.Clamp(vector.x, min, max));
-        }
+        public static Vector2 ClampY(this Vector2 vector, float min, float max) =>
+            vector.SetY(Mathf.Clamp(vector.x, min, max));
 
         public static void ClampY(this Transform transform, float min, float max)
         {
@@ -243,49 +186,27 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         #region Invert
 
-        public static Vector2 InvertX(this Vector2 vector)
-        {
-            return new Vector2(-vector.x, vector.y);
-        }
+        public static Vector2 InvertX(this Vector2 vector) => new Vector2(-vector.x, vector.y);
 
-        public static Vector2 InvertY(this Vector2 vector)
-        {
-            return new Vector2(vector.x, -vector.y);
-        }
+        public static Vector2 InvertY(this Vector2 vector) => new Vector2(vector.x, -vector.y);
 
         #endregion
 
         #region Convert
 
-        public static Vector2 ToVector2(this Vector3 vector)
-        {
-            return new Vector2(vector.x, vector.y);
-        }
+        public static Vector2 ToVector2(this Vector3 vector) => new Vector2(vector.x, vector.y);
 
-        public static Vector3 ToVector3(this Vector2 vector)
-        {
-            return new Vector3(vector.x, vector.y);
-        }
+        public static Vector3 ToVector3(this Vector2 vector) => new Vector3(vector.x, vector.y);
 
-        public static Vector2 ToVector2(this Vector2Int vector)
-        {
-            return new Vector2(vector.x, vector.y);
-        }
+        public static Vector2 ToVector2(this Vector2Int vector) => new Vector2(vector.x, vector.y);
 
-        public static Vector3 ToVector3(this Vector3Int vector)
-        {
-            return new Vector3(vector.x, vector.y);
-        }
+        public static Vector3 ToVector3(this Vector3Int vector) => new Vector3(vector.x, vector.y);
 
-        public static Vector2Int ToVector2Int(this Vector2 vector)
-        {
-            return new Vector2Int(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y));
-        }
+        public static Vector2Int ToVector2Int(this Vector2 vector) =>
+            new Vector2Int(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y));
 
-        public static Vector3Int ToVector3Int(this Vector3 vector)
-        {
-            return new Vector3Int(Mathf.RoundToInt(vector.x), Mathf.RoundToInt(vector.y), Mathf.RoundToInt(vector.z));
-        }
+        public static Vector3Int ToVector3Int(this Vector3 vector) => new Vector3Int(Mathf.RoundToInt(vector.x),
+            Mathf.RoundToInt(vector.y), Mathf.RoundToInt(vector.z));
 
         #endregion
 
@@ -294,23 +215,19 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     Snap to grid of snapValue
         /// </summary>
-        public static Vector3 SnapValue(this Vector3 val, float snapValue)
-        {
-            return new Vector3(
+        public static Vector3 SnapValue(this Vector3 val, float snapValue) =>
+            new Vector3(
                 val.x.Snap(snapValue),
                 val.y.Snap(snapValue),
                 val.z.Snap(snapValue));
-        }
 
         /// <summary>
         ///     Snap to grid of snapValue
         /// </summary>
-        public static Vector2 SnapValue(this Vector2 val, float snapValue)
-        {
-            return new Vector2(
+        public static Vector2 SnapValue(this Vector2 val, float snapValue) =>
+            new Vector2(
                 val.x.Snap(snapValue),
                 val.y.Snap(snapValue));
-        }
 
         /// <summary>
         ///     Snap position to grid of snapValue
@@ -323,18 +240,14 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     Snap to one unit grid
         /// </summary>
-        public static Vector2 SnapToOne(this Vector2 vector)
-        {
-            return new Vector2(Mathf.Round(vector.x), Mathf.Round(vector.y));
-        }
+        public static Vector2 SnapToOne(this Vector2 vector) =>
+            new Vector2(Mathf.Round(vector.x), Mathf.Round(vector.y));
 
         /// <summary>
         ///     Snap to one unit grid
         /// </summary>
-        public static Vector3 SnapToOne(this Vector3 vector)
-        {
-            return new Vector3(Mathf.Round(vector.x), Mathf.Round(vector.y), Mathf.Round(vector.z));
-        }
+        public static Vector3 SnapToOne(this Vector3 vector) =>
+            new Vector3(Mathf.Round(vector.x), Mathf.Round(vector.y), Mathf.Round(vector.z));
 
         #endregion
 
@@ -345,7 +258,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             if (vectors.IsNullOrEmpty()) return Vector3.zero;
 
             float x = 0f, y = 0f, z = 0f;
-            for (int i = 0; i < vectors.Length; i++)
+            for (var i = 0; i < vectors.Length; i++)
             {
                 x += vectors[i].x;
                 y += vectors[i].y;
@@ -360,7 +273,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             if (vectors.IsNullOrEmpty()) return Vector2.zero;
 
             float x = 0f, y = 0f;
-            for (int i = 0; i < vectors.Length; i++)
+            for (var i = 0; i < vectors.Length; i++)
             {
                 x += vectors[i].x;
                 y += vectors[i].y;
@@ -419,10 +332,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             return closest;
         }
 
-        public static Vector3 GetClosest(this IEnumerable<Vector3> positions, Vector3 position)
-        {
-            return position.GetClosest(positions);
-        }
+        public static Vector3 GetClosest(this IEnumerable<Vector3> positions, Vector3 position) =>
+            position.GetClosest(positions);
 
         #endregion
 
@@ -431,58 +342,41 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     Get vector between source and destination
         /// </summary>
-        public static Vector4 To(this Vector4 source, Vector4 destination)
-        {
-            return destination - source;
-        }
+        public static Vector4 To(this Vector4 source, Vector4 destination) => destination - source;
 
         /// <summary>
         ///     Get vector between source and destination
         /// </summary>
-        public static Vector3 To(this Vector3 source, Vector3 destination)
-        {
-            return destination - source;
-        }
+        public static Vector3 To(this Vector3 source, Vector3 destination) => destination - source;
 
         /// <summary>
         ///     Get vector between source and destination
         /// </summary>
-        public static Vector2 To(this Vector2 source, Vector2 destination)
-        {
-            return destination - source;
-        }
+        public static Vector2 To(this Vector2 source, Vector2 destination) => destination - source;
 
         /// <summary>
         ///     Get vector between source and target
         /// </summary>
-        public static Vector3 To(this Component source, Component target)
-        {
-            return source.transform.position.To(target.transform.position);
-        }
+        public static Vector3 To(this Component source, Component target) =>
+            source.transform.position.To(target.transform.position);
 
         /// <summary>
         ///     Get vector between source and target
         /// </summary>
-        public static Vector3 To(this Component source, GameObject target)
-        {
-            return source.transform.position.To(target.transform.position);
-        }
+        public static Vector3 To(this Component source, GameObject target) =>
+            source.transform.position.To(target.transform.position);
 
         /// <summary>
         ///     Get vector between source and target
         /// </summary>
-        public static Vector3 To(this GameObject source, Component target)
-        {
-            return source.transform.position.To(target.transform.position);
-        }
+        public static Vector3 To(this GameObject source, Component target) =>
+            source.transform.position.To(target.transform.position);
 
         /// <summary>
         ///     Get vector between source and target
         /// </summary>
-        public static Vector3 To(this GameObject source, GameObject target)
-        {
-            return source.transform.position.To(target.transform.position);
-        }
+        public static Vector3 To(this GameObject source, GameObject target) =>
+            source.transform.position.To(target.transform.position);
 
         #endregion
     }

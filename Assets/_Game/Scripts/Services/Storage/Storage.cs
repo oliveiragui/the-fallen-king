@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using _Game.Scripts.Runtime.SerializableDictionary;
 using UnityEngine;
 
-namespace _Game.Scripts.Components.Storage
+namespace _Game.Scripts.Services.Storage
 {
     public class Storage<T, TK> : MonoBehaviour where T : SerializableDictionary<string, TK>
     {

@@ -1,13 +1,10 @@
 ﻿using System;
-using _Game.Scripts.Components.EventSystem;
 using UnityEngine;
 
-namespace _Game.Scripts.Utils.Events
+namespace _Game.Scripts.Services.EventSystem.Custom.Scene
 {
     [CreateAssetMenu(fileName = "New Scene Event", menuName = "GameContent/Events/SceneEvent")]
-    public class SceneEvent : GameEvent<SceneData>
-    {
-    }
+    public class SceneEvent : GameEvent<SceneData> { }
 
     [Serializable]
     public class SceneData

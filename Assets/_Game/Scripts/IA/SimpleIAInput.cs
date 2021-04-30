@@ -20,9 +20,9 @@ namespace _Game.Scripts.IA
         {
             // weapon = gameObject.AddComponent<Weapon>().Setup(weaponData);
             // entityCommands.EquipWeapon(weapon);
-            entity.associatedCharacter.Weapons.Add(weaponData);
-            entity.associatedCharacter.Weapons.UseWeapon(0);
-            weapon = entity.associatedCharacter.Weapons.WeaponInUse;
+            entity.Character.Weapons.Add(weaponData);
+            entity.Character.Weapons.UseWeapon(0);
+            entity.AutoMove = true;
         }
 
         void FixedUpdate()
@@ -38,23 +38,16 @@ namespace _Game.Scripts.IA
         void ProcessaInput()
         {
             var targetDistance = target.transform.position - entity.transform.position;
-            entity.lookDiretion = Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree());
-            entity.stoppingDistance = distance;
-
-            if (entity.usingAbility)
-            {
+            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
+            if (entity.AbilityInUse)
                 entity.StopCasting(0);
-            }
-            else if (targetDistance.magnitude < entity.stoppingDistance)
+            else if (targetDistance.magnitude <= distance)
             {
-                entity.UseAbility(0);
+                entity.Stop();
+                entity.RequestAbility(0);
             }
-            else if (targetDistance.magnitude > entity.stoppingDistance)
-            {
-                entity.speed = 5;
-                entity.destination = target.transform.position;
-                entity.Move();
-            }
+            else if (targetDistance.magnitude > distance)
+                entity.MoveTo(5, target.transform.position, distance);
         }
 
         void EncontraInimigo(Vector3 center, float radius)
@@ -66,11 +59,6 @@ namespace _Game.Scripts.IA
                 target = otherEntity;
                 return;
             }
-        }
-
-        void InimigoDistante()
-        {
-            if (target && (entity.transform.position - target.transform.position).magnitude > 10) target = null;
         }
     }
 }

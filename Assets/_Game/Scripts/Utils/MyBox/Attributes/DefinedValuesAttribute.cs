@@ -54,14 +54,14 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
             if (TypeMismatch(property)) return;
 
             _values = new string[_attribute.ValuesArray.Length];
-            for (int i = 0; i < _attribute.ValuesArray.Length; i++) _values[i] = _attribute.ValuesArray[i].ToString();
+            for (var i = 0; i < _attribute.ValuesArray.Length; i++) _values[i] = _attribute.ValuesArray[i].ToString();
 
             _selectedValueIndex = GetSelectedIndex(property);
         }
 
         int GetSelectedIndex(SerializedProperty property)
         {
-            for (int i = 0; i < _values.Length; i++)
+            for (var i = 0; i < _values.Length; i++)
             {
                 if (IsString && property.stringValue == _values[i]) return i;
                 if (IsInt && property.intValue == Convert.ToInt32(_values[i])) return i;

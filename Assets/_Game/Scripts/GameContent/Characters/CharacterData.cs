@@ -1,5 +1,5 @@
-﻿using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.GameContent.Teams;
+﻿using _Game.Scripts.GameContent.Teams;
+using _Game.Scripts.Services.AttributeSystem;
 using UnityEngine;
 
 namespace _Game.Scripts.GameContent.Characters

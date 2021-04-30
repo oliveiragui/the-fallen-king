@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.Components.EventSystem
+namespace _Game.Scripts.Services.EventSystem
 {
     public class GameEventCaller<T, TK> : MonoBehaviour where T : GameEvent<TK>
     {

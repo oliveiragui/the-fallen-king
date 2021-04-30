@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using _Game.Scripts.Components.Storage.Custom;
 using _Game.Scripts.GameContent.Weapons.Prefab;
+using _Game.Scripts.Services.Storage.Custom;
 using UnityEngine;
 
 namespace _Game.Scripts.GameContent.Entities.Components.Mesh
@@ -12,14 +12,14 @@ namespace _Game.Scripts.GameContent.Entities.Components.Mesh
         readonly List<GameObject> alwaysOn = new List<GameObject>();
         readonly List<GameObject> idle = new List<GameObject>();
         readonly List<GameObject> inCombat = new List<GameObject>();
-        bool _inCombat;
+        bool _combatMode;
 
-        public bool InCombat
+        public bool CombatMode
         {
-            get => _inCombat;
+            get => _combatMode;
             set
             {
-                _inCombat = value;
+                _combatMode = value;
                 foreach (var prefab in inCombat) prefab.SetActive(value);
                 foreach (var prefab in idle) prefab.SetActive(!value);
             }
@@ -30,7 +30,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Mesh
             ClearSlots();
             if (weaponPrefabs == null) return;
             FillSlots(weaponPrefabs);
-            InCombat = false;
+            CombatMode = false;
         }
 
         void FillSlots(WeaponPrefabList weaponPrefabs)

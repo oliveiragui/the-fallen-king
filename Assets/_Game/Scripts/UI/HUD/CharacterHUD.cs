@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.GameContent.Characters;
 using _Game.Scripts.GameContent.Entities;
-using _Game.Scripts.UI.StatusBar;
+using _Game.Scripts.Services.AttributeSystem;
+using _Game.Scripts.UI.Utils;
 using UnityEngine;
 
-namespace _Game.Scripts.UI.CharacterUI
+namespace _Game.Scripts.UI.HUD
 {
     public class CharacterHUD : MonoBehaviour
     {

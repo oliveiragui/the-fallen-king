@@ -1,7 +1,6 @@
 ﻿using System.Collections;
-using _Game.Scripts.Components;
-using _Game.Scripts.UI.StatusBar;
-using _Game.Scripts.Utils.Events;
+using _Game.Scripts.Services;
+using _Game.Scripts.UI.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,14 +11,14 @@ namespace _Game.Scripts.UI
         [SerializeField] GameData data;
         [SerializeField] ResizableBar bar;
 
-        public static void Load()
-        {
-            SceneManager.LoadScene("LoadScene");
-        }
-
         void Start()
         {
             StartCoroutine(LoadYourAsyncScene(data.RequestedSceneIndex));
+        }
+
+        public static void Load()
+        {
+            SceneManager.LoadScene("LoadScene");
         }
 
         IEnumerator LoadYourAsyncScene(int index)

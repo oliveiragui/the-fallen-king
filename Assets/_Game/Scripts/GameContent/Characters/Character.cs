@@ -1,7 +1,7 @@
 ﻿using System;
-using _Game.Scripts.Components.AttributeSystem;
 using _Game.Scripts.GameContent.Entities;
 using _Game.Scripts.GameContent.Teams;
+using _Game.Scripts.Services.AttributeSystem;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,14 +13,14 @@ namespace _Game.Scripts.GameContent.Characters
         [SerializeField] Entity entity;
         [SerializeField] CharacterWeapons weapons;
 
+        public CharacterEvents events;
+
+        bool dead;
+
         public Status Status { get; private set; }
         public Team Team { get; private set; }
         public Entity Entity => entity;
         public CharacterWeapons Weapons => weapons;
-
-        public CharacterEvents events;
-
-        bool dead;
 
         void Awake()
         {
@@ -48,7 +48,7 @@ namespace _Game.Scripts.GameContent.Characters
 
         void KillEntity(Character character)
         {
-            entity.Die();
+            entity.Kill();
         }
     }
 

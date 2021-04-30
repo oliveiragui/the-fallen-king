@@ -1,62 +1,60 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Fluent;
 using UnityEngine;
-using Fluent;
 using UnityEngine.Playables;
 
-public class IniciaDialogoPorCutscene : MonoBehaviour
+namespace _Game.Scripts.Services.DialogueSystem
 {
-    bool everythingOk = false;
-    bool over = false;
-
-    public PlayableDirector director;
-    public bool comecaInicio;
-
-
-    void Start()
+    public class IniciaDialogoPorCutscene : MonoBehaviour
     {
-        if (GetComponent<FluentScript>() == null)
+        public PlayableDirector director;
+        public bool comecaInicio;
+        bool everythingOk;
+        bool over;
+
+        void Start()
         {
-            Debug.LogError("You need a FluentScript component on this object to initiate FluentDialogue", this);
-            return;
+            if (GetComponent<FluentScript>() == null)
+            {
+                Debug.LogError("You need a FluentScript component on this object to initiate FluentDialogue", this);
+                return;
+            }
+
+            everythingOk = true;
         }
-        everythingOk = true;
-    }
 
-    void Update()
-    {
-        if (!everythingOk)
-            return;
-
-        if (comecaInicio)
+        void Update()
         {
-            if (director.state != PlayState.Playing)
-            {
-                over = true;
-            }
+            if (!everythingOk)
+                return;
 
-            if (over && director.state == PlayState.Playing)
+            if (comecaInicio)
             {
-                FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
-                over = false;
+                if (director.state != PlayState.Playing)
+                    over = true;
+                //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
+
+                if (over && director.state == PlayState.Playing)
+                {
+                    FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
+                    over = false;
+                    //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
+                }
+            }
+            else
+            {
+                if (director.state == PlayState.Playing)
+                    over = true;
+                //FluentManager.Instance.AddScript(GetComponent<FluentScript>());
+
+                if (over && director.state != PlayState.Playing)
+                {
+                    FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
+                    over = false;
+                    //FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
+                }
             }
         }
-        else
-        {
-            if (director.state == PlayState.Playing)
-            {
-                over = true;
-            }
 
-            if (over && director.state != PlayState.Playing)
-            {
-                FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
-                over = false;
-            }
-        }
-    }
-
-    void OnDisable()
-    {
+        void OnDisable() { }
     }
 }

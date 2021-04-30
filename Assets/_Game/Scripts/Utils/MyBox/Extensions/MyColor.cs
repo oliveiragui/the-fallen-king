@@ -19,10 +19,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     Returns new Color with Alpha set to a
         /// </summary>
-        public static Color WithAlphaSetTo(this Color color, float a)
-        {
-            return new Color(color.r, color.g, color.b, a);
-        }
+        public static Color WithAlphaSetTo(this Color color, float a) => new Color(color.r, color.g, color.b, a);
 
         /// <summary>
         ///     Set Alpha of Image.Color
@@ -47,50 +44,42 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     To string of "#b5ff4f" format
         /// </summary>
-        public static string ToHex(this Color color)
-        {
-            return string.Format("#{0:X2}{1:X2}{2:X2}", (int) (color.r * 255), (int) (color.g * 255),
+        public static string ToHex(this Color color) =>
+            string.Format("#{0:X2}{1:X2}{2:X2}", (int) (color.r * 255), (int) (color.g * 255),
                 (int) (color.b * 255));
-        }
 
         /// <summary>
         ///     Returns a color lighter than the given color.
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
-        public static Color Lighter(this Color color)
-        {
-            return new Color(
+        public static Color Lighter(this Color color) =>
+            new Color(
                 color.r + LightOffset,
                 color.g + LightOffset,
                 color.b + LightOffset,
                 color.a);
-        }
 
         /// <summary>
         ///     Returns a color darker than the given color.
         /// </summary>
         /// <param name="color"></param>
         /// <returns></returns>
-        public static Color Darker(this Color color)
-        {
-            return new Color(
+        public static Color Darker(this Color color) =>
+            new Color(
                 color.r - LightOffset,
                 color.g - LightOffset,
                 color.b - LightOffset,
                 color.a);
-        }
 
         /// <summary>
         ///     Brightness offset with 1 is brightest and -1 is darkest
         /// </summary>
-        public static Color BrightnessOffset(this Color color, float offset)
-        {
-            return new Color(
+        public static Color BrightnessOffset(this Color color, float offset) =>
+            new Color(
                 color.r + offset,
                 color.g + offset,
                 color.b + offset,
                 color.a);
-        }
     }
 }

@@ -18,6 +18,5 @@ namespace _Game.Scripts.Utils.Extension
 
             return hitdist < -1.0f ? mouseray.GetPoint(-hitdist) : Vector3.zero;
         }
-        
     }
 }

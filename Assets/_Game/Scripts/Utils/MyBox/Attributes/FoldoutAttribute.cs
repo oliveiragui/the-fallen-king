@@ -102,7 +102,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
             EditorGUILayout.Space();
 
-            for (int i = 1; i < props.Count; i++) EditorGUILayout.PropertyField(props[i], true);
+            for (var i = 1; i < props.Count; i++) EditorGUILayout.PropertyField(props[i], true);
 
             EditorGUILayout.Space();
         }
@@ -116,7 +116,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
             {
                 EditorGUI.indentLevel = 1;
 
-                for (int i = 0; i < cache.props.Count; i++)
+                for (var i = 0; i < cache.props.Count; i++)
                 {
                     EditorGUILayout.BeginVertical(StyleFramework.BoxChild);
                     EditorGUILayout.PropertyField(cache.props[i],
@@ -135,7 +135,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
             int length = EditorTypes.Get(target, out objectFields);
 
-            for (int i = 0; i < length; i++)
+            for (var i = 0; i < length; i++)
             {
                 #region FOLDERS
 
@@ -186,7 +186,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
         void HandleFoldProp(SerializedProperty prop)
         {
-            bool shouldBeFolded = false;
+            var shouldBeFolded = false;
 
             foreach (var pair in cacheFolds)
                 if (pair.Value.types.Contains(prop.name))
@@ -340,15 +340,9 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
     {
         public static FastComparable Default = new FastComparable();
 
-        public bool Equals(int x, int y)
-        {
-            return x == y;
-        }
+        public bool Equals(int x, int y) => x == y;
 
-        public int GetHashCode(int obj)
-        {
-            return obj.GetHashCode();
-        }
+        public int GetHashCode(int obj) => obj.GetHashCode();
     }
 
 #endif

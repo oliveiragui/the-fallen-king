@@ -1,7 +1,7 @@
 ﻿using _Game.Scripts.GameContent.Abilities;
 using UnityEngine;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Pages.CharacterMenu.Tabs.Inventory
 {
     public class SkillsInfoView : MonoBehaviour
     {
@@ -11,9 +11,7 @@ namespace _Game.Scripts.UI
         public void UpdateUI(Ability[] abilities)
         {
             for (var i = 0; i < abilities.Length && i < buttonsName.Length && i < skillsView.Length; i++)
-            {
-                skillsView[i].UpdateUI(abilities[i].Data,buttonsName[i]);
-            }
+                skillsView[i].UpdateUI(abilities[i].Data, buttonsName[i]);
         }
     }
 }

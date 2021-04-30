@@ -36,10 +36,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             return component.gameObject.AddComponent<T>();
         }
 
-        public static bool HasComponent<T>(this GameObject gameObject)
-        {
-            return gameObject.GetComponent<T>() != null;
-        }
+        public static bool HasComponent<T>(this GameObject gameObject) => gameObject.GetComponent<T>() != null;
 
         /// <summary>
         ///     Get all components of specified Layer in childs
@@ -54,10 +51,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     Get all components of specified Layer in childs
         /// </summary>
-        public static List<Transform> GetObjectsOfLayerInChilds(this Component component, int layer)
-        {
-            return component.gameObject.GetObjectsOfLayerInChilds(layer);
-        }
+        public static List<Transform> GetObjectsOfLayerInChilds(this Component component, int layer) =>
+            component.gameObject.GetObjectsOfLayerInChilds(layer);
 
         static void CheckChildsOfLayer(Transform transform, int layer, List<Transform> childsCache)
         {

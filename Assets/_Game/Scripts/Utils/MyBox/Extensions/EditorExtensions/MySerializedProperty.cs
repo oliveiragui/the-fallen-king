@@ -74,10 +74,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         /// <summary>
         ///     Get raw object value out of the SerializedProperty
         /// </summary>
-        public static object GetValue(this SerializedProperty property)
-        {
-            return GetFieldInfo(property).GetValue(property.serializedObject.targetObject);
-        }
+        public static object GetValue(this SerializedProperty property) =>
+            GetFieldInfo(property).GetValue(property.serializedObject.targetObject);
 
         /// <summary>
         ///     Set raw object value to the SerializedProperty
@@ -108,7 +106,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         public static SerializedProperty[] AsArray(this SerializedProperty property)
         {
             var items = new List<SerializedProperty>();
-            for (int i = 0; i < property.arraySize; i++)
+            for (var i = 0; i < property.arraySize; i++)
                 items.Add(property.GetArrayElementAtIndex(i));
             return items.ToArray();
         }
@@ -127,7 +125,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         /// </summary>
         public static IEnumerable<SerializedProperty> AsIEnumerable(this SerializedProperty property)
         {
-            for (int i = 0; i < property.arraySize; i++)
+            for (var i = 0; i < property.arraySize; i++)
                 yield return property.GetArrayElementAtIndex(i);
         }
 
@@ -139,7 +137,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
             property.arraySize = 0;
             property.serializedObject.ApplyModifiedProperties();
             property.arraySize = newElements.Length;
-            for (int i = 0; i < newElements.Length; i++)
+            for (var i = 0; i < newElements.Length; i++)
                 property.GetArrayElementAtIndex(i).objectReferenceValue = newElements[i];
 
             property.serializedObject.ApplyModifiedProperties();
@@ -173,7 +171,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
                 if (element.Contains("["))
                 {
                     string elementName = element.Substring(0, element.IndexOf("[", StringComparison.Ordinal));
-                    int index = Convert.ToInt32(element.Substring(element.IndexOf("[", StringComparison.Ordinal))
+                    var index = Convert.ToInt32(element.Substring(element.IndexOf("[", StringComparison.Ordinal))
                         .Replace("[", "").Replace("]", ""));
                     obj = GetValueAt(obj, elementName, index);
                 }

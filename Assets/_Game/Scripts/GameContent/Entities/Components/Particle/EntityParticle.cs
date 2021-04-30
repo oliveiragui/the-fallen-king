@@ -1,4 +1,4 @@
-﻿using _Game.Scripts.Components.Storage.Custom;
+﻿using _Game.Scripts.Services.Storage.Custom;
 using UnityEngine;
 
 namespace _Game.Scripts.GameContent.Entities.Components.Particle

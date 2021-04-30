@@ -346,7 +346,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
         /// </summary>
         static bool CompareAgainstValues(string propertyValueAsString, string[] compareAgainst)
         {
-            for (int i = 0; i < compareAgainst.Length; i++)
+            for (var i = 0; i < compareAgainst.Length; i++)
             {
                 bool valueMatches = compareAgainst[i] == propertyValueAsString;
 
@@ -396,7 +396,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
         {
             SerializedProperty parent = null;
 
-            for (int i = 0; i < elements.Length - 1; i++)
+            for (var i = 0; i < elements.Length - 1; i++)
             {
                 string element = elements[i];
                 int index = -1;

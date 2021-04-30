@@ -10,10 +10,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         /// <summary>
         ///     Load all ScriptableObjects of type
         /// </summary>
-        public static T[] LoadAssetsFromResources<T>() where T : ScriptableObject
-        {
-            return Resources.FindObjectsOfTypeAll<T>();
-        }
+        public static T[] LoadAssetsFromResources<T>() where T : ScriptableObject =>
+            Resources.FindObjectsOfTypeAll<T>();
 
         /// <summary>
         ///     Load all SO of type from Assets
@@ -22,7 +20,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         {
             string[] guids = AssetDatabase.FindAssets("t:" + typeof(T).Name);
             var a = new T[guids.Length];
-            for (int i = 0; i < guids.Length; i++)
+            for (var i = 0; i < guids.Length; i++)
             {
                 string path = AssetDatabase.GUIDToAssetPath(guids[i]);
                 a[i] = AssetDatabase.LoadAssetAtPath<T>(path);

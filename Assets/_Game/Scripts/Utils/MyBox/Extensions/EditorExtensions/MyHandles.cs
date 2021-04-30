@@ -20,9 +20,9 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
 
             var direction = toPos - fromPos;
             float distance = Vector3.Distance(fromPos, toPos);
-            int arrowsCount = (int) (distance / arrowsDensity);
+            var arrowsCount = (int) (distance / arrowsDensity);
             float delta = 1f / arrowsCount;
-            for (int i = 1; i <= arrowsCount; i++)
+            for (var i = 1; i <= arrowsCount; i++)
             {
                 float currentDelta = delta * i;
                 var currentPosition = Vector3.Lerp(fromPos, toPos, currentDelta);
@@ -51,7 +51,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         public static void VisualizePath(NavMeshPath path)
         {
             var corners = path.corners;
-            for (int i = 1; i < corners.Length; i++)
+            for (var i = 1; i < corners.Length; i++)
             {
                 var cornerA = corners[i - 1];
                 var cornerB = corners[i];

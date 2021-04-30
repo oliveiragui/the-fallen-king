@@ -9,10 +9,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     "Camel case string" => "CamelCaseString"
 	    /// </summary>
-	    public static string ToCamelCase(this string message)
-        {
-            return Regex.Replace(message, "([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))", "$1 ").Trim();
-        }
+	    public static string ToCamelCase(this string message) =>
+            Regex.Replace(message, "([a-z](?=[A-Z])|[A-Z](?=[A-Z][a-z]))", "$1 ").Trim();
 
 	    /// <summary>
 	    ///     "CamelCaseString" => "Camel Case String"
@@ -38,10 +36,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     Convert a string value to an Enum value.
 	    /// </summary>
-	    public static T AsEnum<T>(this string source, bool ignoreCase = true) where T : Enum
-        {
-            return (T) Enum.Parse(typeof(T), source, ignoreCase);
-        }
+	    public static T AsEnum<T>(this string source, bool ignoreCase = true) where T : Enum =>
+            (T) Enum.Parse(typeof(T), source, ignoreCase);
 
 	    /// <summary>
 	    ///     Number presented in Roman numerals
@@ -67,74 +63,47 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     Get the "message" string with the "surround" string at the both sides
 	    /// </summary>
-	    public static string SurroundedWith(this string message, string surround)
-        {
-            return surround + message + surround;
-        }
+	    public static string SurroundedWith(this string message, string surround) => surround + message + surround;
 
 	    /// <summary>
 	    ///     Get the "message" string with the "start" at the beginning and "end" at the end of the string
 	    /// </summary>
-	    public static string SurroundedWith(this string message, string start, string end)
-        {
-            return start + message + end;
-        }
+	    public static string SurroundedWith(this string message, string start, string end) => start + message + end;
 
 	    /// <summary>
 	    ///     Surround string with "color" tag
 	    /// </summary>
-	    public static string Colored(this string message, Colors color)
-        {
-            return $"<color={color}>{message}</color>";
-        }
+	    public static string Colored(this string message, Colors color) => $"<color={color}>{message}</color>";
 
 	    /// <summary>
 	    ///     Surround string with "color" tag
 	    /// </summary>
-	    public static string Colored(this string message, Color color)
-        {
-            return $"<color={color.ToHex()}>{message}</color>";
-        }
+	    public static string Colored(this string message, Color color) => $"<color={color.ToHex()}>{message}</color>";
 
 	    /// <summary>
 	    ///     Surround string with "color" tag
 	    /// </summary>
-	    public static string Colored(this string message, string colorCode)
-        {
-            return $"<color={colorCode}>{message}</color>";
-        }
+	    public static string Colored(this string message, string colorCode) => $"<color={colorCode}>{message}</color>";
 
 	    /// <summary>
 	    ///     Surround string with "size" tag
 	    /// </summary>
-	    public static string Sized(this string message, int size)
-        {
-            return $"<size={size}>{message}</size>";
-        }
+	    public static string Sized(this string message, int size) => $"<size={size}>{message}</size>";
 
 	    /// <summary>
 	    ///     Surround string with "u" tag
 	    /// </summary>
-	    public static string Underlined(this string message)
-        {
-            return $"<u>{message}</u>";
-        }
+	    public static string Underlined(this string message) => $"<u>{message}</u>";
 
 	    /// <summary>
 	    ///     Surround string with "b" tag
 	    /// </summary>
-	    public static string Bold(this string message)
-        {
-            return $"<b>{message}</b>";
-        }
+	    public static string Bold(this string message) => $"<b>{message}</b>";
 
 	    /// <summary>
 	    ///     Surround string with "i" tag
 	    /// </summary>
-	    public static string Italics(this string message)
-        {
-            return $"<i>{message}</i>";
-        }
+	    public static string Italics(this string message) => $"<i>{message}</i>";
     }
 
     /// <summary>

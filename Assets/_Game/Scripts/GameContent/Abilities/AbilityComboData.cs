@@ -1,9 +1,9 @@
 ﻿using System;
-using _Game.Scripts.Components.AttributeSystem;
+using _Game.Scripts.Services.AttributeSystem;
 using _Game.Scripts.Utils.MyBox.Attributes;
 using UnityEngine;
 
-namespace _Game.Scripts.GameContent.Abilities.Data
+namespace _Game.Scripts.GameContent.Abilities
 {
     [Serializable]
     public class AbilityComboData

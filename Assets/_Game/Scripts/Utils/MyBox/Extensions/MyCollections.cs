@@ -26,8 +26,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             }
 
             var newArray = new T[array.Length - 1];
-            int index1 = 0;
-            for (int index2 = 0; index2 < array.Length; ++index2)
+            var index1 = 0;
+            for (var index2 = 0; index2 < array.Length; ++index2)
             {
                 if (index2 == index) continue;
 
@@ -56,8 +56,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             }
 
             var newArray = new T[array.Length + 1];
-            int index1 = 0;
-            for (int index2 = 0; index2 < newArray.Length; ++index2)
+            var index1 = 0;
+            for (var index2 = 0; index2 < newArray.Length; ++index2)
             {
                 if (index2 == index) continue;
 
@@ -71,26 +71,18 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     Returns random element from collection
         /// </summary>
-        public static T GetRandom<T>(this T[] collection)
-        {
-            return collection[Random.Range(0, collection.Length)];
-        }
+        public static T GetRandom<T>(this T[] collection) => collection[Random.Range(0, collection.Length)];
 
         /// <summary>
         ///     Returns random element from collection
         /// </summary>
-        public static T GetRandom<T>(this IList<T> collection)
-        {
-            return collection[Random.Range(0, collection.Count)];
-        }
+        public static T GetRandom<T>(this IList<T> collection) => collection[Random.Range(0, collection.Count)];
 
         /// <summary>
         ///     Returns random element from collection
         /// </summary>
-        public static T GetRandom<T>(this IEnumerable<T> collection)
-        {
-            return collection.ElementAt(Random.Range(0, collection.Count()));
-        }
+        public static T GetRandom<T>(this IEnumerable<T> collection) =>
+            collection.ElementAt(Random.Range(0, collection.Count()));
 
         public static T[] GetRandomCollection<T>(this IList<T> collection, int amount)
         {
@@ -103,7 +95,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             var randoms = new T[amount];
             var indexes = Enumerable.Range(0, amount).ToList();
 
-            for (int i = 0; i < amount; i++)
+            for (var i = 0; i < amount; i++)
             {
                 int random = Random.Range(0, indexes.Count);
                 randoms[i] = collection[random];
@@ -174,7 +166,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
                 return -1;
             }
 
-            int index = 0;
+            var index = 0;
             foreach (var i in collection)
             {
                 if (Equals(i, item)) return index;

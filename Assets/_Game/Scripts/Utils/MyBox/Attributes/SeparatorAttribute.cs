@@ -48,10 +48,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
             }
         }
 
-        public override float GetHeight()
-        {
-            return Separator.WithOffset ? 36.0f : 26f;
-        }
+        public override float GetHeight() => Separator.WithOffset ? 36.0f : 26f;
     }
 
 #endif

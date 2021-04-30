@@ -1,10 +1,9 @@
-﻿using _Game.Scripts.GameContent.Weapons;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Pages.CharacterMenu.Tabs.Inventory
 {
-    public class InventoryButton: MonoBehaviour
+    public class InventoryButton : MonoBehaviour
     {
         [SerializeField] Image background;
 

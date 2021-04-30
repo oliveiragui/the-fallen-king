@@ -1,7 +1,4 @@
-﻿namespace _Game.Scripts.Components.Storage.Custom
+﻿namespace _Game.Scripts.Services.Storage.Custom
 {
-    public class TransformStorage
-    {
-        
-    }
+    public class TransformStorage { }
 }

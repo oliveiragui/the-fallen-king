@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.UI.StatusBar
+namespace _Game.Scripts.UI.Utils
 {
     public class Lifebar : MonoBehaviour
     {
@@ -37,9 +37,7 @@ namespace _Game.Scripts.UI.StatusBar
 
         void Reset()
         {
-            restorationTrail.Reset();
-            damageTrail.Reset();
-            bar.Reset();
+            restorationTrail.Variation = damageTrail.Variation = bar.Variation = 1;
         }
     }
 }

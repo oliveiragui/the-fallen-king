@@ -63,10 +63,7 @@ namespace _Game.Scripts.Utils
             source.volume = Normalize(Variation(initialVolume, randomVolumeVariation), 0, 1);
         }
 
-        static float Variation(float initialValue, float range)
-        {
-            return initialValue + Random.Range(-range, range) / 2;
-        }
+        static float Variation(float initialValue, float range) => initialValue + Random.Range(-range, range) / 2;
 
         static float Normalize(float value, float left, float right)
         {

@@ -21,10 +21,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
         ///     I.e. if something with higher order is drawn, later will be skipped
         /// </summary>
         /// <returns>false if nothing is drawn</returns>
-        public virtual bool OnGUI(Rect position, SerializedProperty property, GUIContent label)
-        {
-            return false;
-        }
+        public virtual bool OnGUI(Rect position, SerializedProperty property, GUIContent label) => false;
 
         public virtual void OnAfterGUI(Rect position, SerializedProperty property, GUIContent label) { }
 
@@ -32,10 +29,7 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
         ///     Overriding occurs just like OnGUI. Once per group, attribute with higher priority first
         /// </summary>
         /// <returns>Null if not overrided</returns>
-        public virtual float? OverrideHeight()
-        {
-            return null;
-        }
+        public virtual float? OverrideHeight() => null;
 #endif
     }
 }

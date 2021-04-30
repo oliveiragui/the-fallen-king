@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace _Game.Scripts.Components.EventSystem
+namespace _Game.Scripts.Services.EventSystem
 {
     [CreateAssetMenu(fileName = "New Game Event", menuName = "GameContent/Events/GameEvent")]
     public class GameEvent : ScriptableObject
     {
-        List<IGameEventListener> listeners = new List<IGameEventListener>();
+        readonly List<IGameEventListener> listeners = new List<IGameEventListener>();
 
         public void RegisterListener(IGameEventListener listener)
         {
@@ -26,7 +26,7 @@ namespace _Game.Scripts.Components.EventSystem
 
     public class GameEvent<T> : ScriptableObject
     {
-        List<IGameEventListener<T>> listeners = new List<IGameEventListener<T>>();
+        readonly List<IGameEventListener<T>> listeners = new List<IGameEventListener<T>>();
 
         public void RegisterListener(IGameEventListener<T> listener)
         {

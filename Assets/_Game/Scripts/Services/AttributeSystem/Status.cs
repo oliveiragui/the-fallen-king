@@ -1,6 +1,6 @@
 ﻿using UnityEngine.Events;
 
-namespace _Game.Scripts.Components.AttributeSystem
+namespace _Game.Scripts.Services.AttributeSystem
 {
     public class Status
     {

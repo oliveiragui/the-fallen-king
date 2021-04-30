@@ -18,9 +18,6 @@ namespace _Game.Scripts.Utils
             Add(Animator.StringToHash(key), value);
         }
 
-        public bool Remove(string key)
-        {
-            return Remove(Animator.StringToHash(key));
-        }
+        public bool Remove(string key) => Remove(Animator.StringToHash(key));
     }
 }

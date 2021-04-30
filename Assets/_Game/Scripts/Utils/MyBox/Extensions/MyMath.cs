@@ -19,84 +19,58 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     Snap to grid of "round" size
 	    /// </summary>
-	    public static float Snap(this float val, float round)
-        {
-            return round * Mathf.Round(val / round);
-        }
+	    public static float Snap(this float val, float round) => round * Mathf.Round(val / round);
 
 	    /// <summary>
 	    ///     Returns the sign 1/-1 evaluated at the given value.
 	    /// </summary>
-	    public static int Sign(IComparable x)
-        {
-            return x.CompareTo(0);
-        }
+	    public static int Sign(IComparable x) => x.CompareTo(0);
 
 	    /// <summary>
 	    ///     Shortcut for Mathf.Approximately
 	    /// </summary>
-	    public static bool Approximately(this float value, float compare)
-        {
-            return Mathf.Approximately(value, compare);
-        }
+	    public static bool Approximately(this float value, float compare) => Mathf.Approximately(value, compare);
 
 	    /// <summary>
 	    ///     Value is in [0, 1) range.
 	    /// </summary>
-	    public static bool InRange01(this float value)
-        {
-            return InRange(value, 0, 1);
-        }
+	    public static bool InRange01(this float value) => InRange(value, 0, 1);
 
 	    /// <summary>
 	    ///     Value is in [closedLeft, openRight) range.
 	    /// </summary>
 	    public static bool InRange<T>(this T value, T closedLeft, T openRight)
-            where T : IComparable
-        {
-            return value.CompareTo(closedLeft) >= 0 && value.CompareTo(openRight) < 0;
-        }
+            where T : IComparable =>
+            value.CompareTo(closedLeft) >= 0 && value.CompareTo(openRight) < 0;
 
 	    /// <summary>
 	    ///     Value is in a RangedFloat.
 	    /// </summary>
-	    public static bool InRange(this float value, RangedFloat range)
-        {
-            return value.InRange(range.Min, range.Max);
-        }
+	    public static bool InRange(this float value, RangedFloat range) => value.InRange(range.Min, range.Max);
 
 	    /// <summary>
 	    ///     Value is in a RangedInt.
 	    /// </summary>
-	    public static bool InRange(this int value, RangedInt range)
-        {
-            return value.InRange(range.Min, range.Max);
-        }
+	    public static bool InRange(this int value, RangedInt range) => value.InRange(range.Min, range.Max);
 
 	    /// <summary>
 	    ///     Value is in [closedLeft, closedRight] range, max-inclusive.
 	    /// </summary>
 	    public static bool InRangeInclusive<T>(this T value, T closedLeft, T closedRight)
-            where T : IComparable
-        {
-            return value.CompareTo(closedLeft) >= 0 && value.CompareTo(closedRight) <= 0;
-        }
+            where T : IComparable =>
+            value.CompareTo(closedLeft) >= 0 && value.CompareTo(closedRight) <= 0;
 
 	    /// <summary>
 	    ///     Value is in a RangedFloat, max-inclusive.
 	    /// </summary>
-	    public static bool InRangeInclusive(this float value, RangedFloat range)
-        {
-            return value.InRangeInclusive(range.Min, range.Max);
-        }
+	    public static bool InRangeInclusive(this float value, RangedFloat range) =>
+            value.InRangeInclusive(range.Min, range.Max);
 
 	    /// <summary>
 	    ///     Value is in a RangedInt, max-inclusive.
 	    /// </summary>
-	    public static bool InRangeInclusive(this int value, RangedInt range)
-        {
-            return value.InRangeInclusive(range.Min, range.Max);
-        }
+	    public static bool InRangeInclusive(this int value, RangedInt range) =>
+            value.InRangeInclusive(range.Min, range.Max);
 
 	    /// <summary>
 	    ///     Clamp value to less than min or more than max
@@ -121,10 +95,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 	    /// <summary>
 	    ///     Clamp value to less than min or more than max
 	    /// </summary>
-	    public static int NotInRange(this int num, int min, int max)
-        {
-            return (int) ((float) num).NotInRange(min, max);
-        }
+	    public static int NotInRange(this int num, int min, int max) => (int) ((float) num).NotInRange(min, max);
 
 	    /// <summary>
 	    ///     Return point A or B, closest to num

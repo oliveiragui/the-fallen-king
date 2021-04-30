@@ -1,15 +1,14 @@
 ﻿using Fluent;
 using UnityEngine;
 
-namespace _Game.Scripts
+namespace _Game.Scripts.Services.DialogueSystem
 {
-
     [RequireComponent(typeof(Collider))]
     public class IniciaDialogoPorProximidade : GameActionInitiator
     {
         public GameObject PlayerGameObject;
-        bool over = false;
-        bool everythingOk = false;
+        bool everythingOk;
+        bool over;
 
         void Start()
         {
@@ -18,6 +17,7 @@ namespace _Game.Scripts
                 Debug.LogError("You need a FluentScript component on this object to initiate FluentDialogue", this);
                 return;
             }
+
             everythingOk = true;
         }
 
@@ -26,16 +26,11 @@ namespace _Game.Scripts
             if (!everythingOk)
                 return;
 
-            if (over && Input.GetKeyDown(KeyCode.E))
-            {
-                FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
-            }
-
+            if (over && Input.GetKeyDown(KeyCode.E)) FluentManager.Instance.ExecuteAction(GetComponent<FluentScript>());
         }
 
         void OnTriggerEnter(Collider collider)
         {
-           
             if (collider.attachedRigidbody.gameObject == PlayerGameObject)
             {
                 FluentManager.Instance.AddScript(GetComponent<FluentScript>());
@@ -50,7 +45,6 @@ namespace _Game.Scripts
                 FluentManager.Instance.RemoveScript(GetComponent<FluentScript>());
                 over = false;
             }
-
         }
     }
 }

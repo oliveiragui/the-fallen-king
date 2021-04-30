@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
+namespace _Game.Scripts.GameContent.Entities.Components.Behaviours
 {
     public class WalkBehaviour : StateMachineBehaviour
     {
@@ -10,15 +10,17 @@ namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
         {
             if (entity == null && !animator.TryGetComponent(out entity)) return;
 
-            animator.SetFloat(AnimatorParams.Velocidade, entity.speed);
-            entity.movement.Speed = entity.speed;
-            if (entity.autoMove)
+            animator.SetFloat(AnimatorParams.Velocidade, entity.Speed);
+            entity.movement.Speed = entity.Speed;
+            if (entity.AutoMove)
             {
-                entity.movement.Destination = entity.destination;
-                entity.movement.StoppingDistance = entity.stoppingDistance;
+                entity.movement.Destination = entity.Destination;
+                entity.movement.StoppingDistance = entity.StoppingDistance;
             }
             else
-                entity.movement.Rotation = entity.moveDiretion;
+            {
+                entity.movement.Rotation = entity.Direction;
+            }
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using _Game.Scripts.Components.AttributeSystem;
 using _Game.Scripts.GameContent.Abilities;
 using _Game.Scripts.GameContent.Ammunition;
 using _Game.Scripts.GameContent.Weapons.Prefab;
@@ -11,11 +10,10 @@ namespace _Game.Scripts.GameContent.Weapons
     [Serializable]
     public class Weapon : MonoBehaviour
     {
-        public WeaponData Data => data;
-            
         [SerializeField] WeaponData data;
         public List<Ability> Abilities;
         public AmmoData ammoData;
+        public WeaponData Data => data;
 
         public Weapon Setup(WeaponData data)
         {
@@ -27,12 +25,12 @@ namespace _Game.Scripts.GameContent.Weapons
             Abilities = new List<Ability>();
 
             foreach (var ability in data.Abilities)
-            {
                 Abilities.Add(abilitiesObject.AddComponent<Ability>().Setup(ability));
-            }
 
             ammoData = data.AmmoData;
             return this;
         }
+        
+
     }
 }

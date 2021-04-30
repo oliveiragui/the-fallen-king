@@ -101,15 +101,12 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
 
             if (result != null)
             {
-                string message = $"{result} \nResult of Method '{method.Name}' invocation on object {target.name}";
+                var message = $"{result} \nResult of Method '{method.Name}' invocation on object {target.name}";
                 Debug.Log(message, target);
             }
         }
 
-        bool IsButtonMethod(MemberInfo memberInfo)
-        {
-            return Attribute.IsDefined(memberInfo, typeof(ButtonMethodAttribute));
-        }
+        bool IsButtonMethod(MemberInfo memberInfo) => Attribute.IsDefined(memberInfo, typeof(ButtonMethodAttribute));
 
         bool IsValidMember(MethodInfo method, MemberInfo member)
         {

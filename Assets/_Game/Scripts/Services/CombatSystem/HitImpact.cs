@@ -1,4 +1,4 @@
-﻿namespace _Game.Scripts.Components.CombatSystem
+﻿namespace _Game.Scripts.Services.CombatSystem
 {
     public enum HitImpact
     {

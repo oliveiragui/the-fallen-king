@@ -1,11 +1,11 @@
-﻿using _Game.Scripts.GameContent.Abilities.Data;
+﻿using _Game.Scripts.GameContent.Abilities;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Game.Scripts.UI
+namespace _Game.Scripts.UI.Pages.CharacterMenu.Tabs.Inventory
 {
-    public class SkillInfoView: MonoBehaviour
+    public class SkillInfoView : MonoBehaviour
     {
         public TextMeshProUGUI title;
         public TextMeshProUGUI description;
@@ -15,12 +15,11 @@ namespace _Game.Scripts.UI
         public void UpdateUI(AbilityData ability, string buttonName)
         {
             if (ability == null) return;
-            
+
             title.text = ability.Name;
             description.text = ability.Description;
             buttonIcon.text = $"<sprite=\"XboxOne\" name=\"XboxOne_{buttonName}\">";
             icon.sprite = ability.Icon;
         }
-
     }
 }

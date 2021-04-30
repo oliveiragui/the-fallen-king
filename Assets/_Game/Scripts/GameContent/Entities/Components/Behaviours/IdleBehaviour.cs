@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.Scripts.GameContent.Entities.Components.Animation.Behaviours
+namespace _Game.Scripts.GameContent.Entities.Components.Behaviours
 {
     public class IdleBehaviour : StateMachineBehaviour
     {

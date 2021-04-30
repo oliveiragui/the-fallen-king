@@ -24,8 +24,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             float sourceAspect = (float) sourceWidth / sourceHeight;
             float targetAspect = (float) targetWidth / targetHeight;
 
-            int xOffset = 0;
-            int yOffset = 0;
+            var xOffset = 0;
+            var yOffset = 0;
             float factor;
 
             if (sourceAspect > targetAspect)
@@ -43,8 +43,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
             var data = source.GetPixels32();
             var data2 = new Color32[targetWidth * targetHeight];
-            for (int y = 0; y < targetHeight; y++)
-            for (int x = 0; x < targetWidth; x++)
+            for (var y = 0; y < targetHeight; y++)
+            for (var x = 0; x < targetWidth; x++)
             {
                 var p = new Vector2(Mathf.Clamp(xOffset + x / factor, 0, sourceWidth - 1),
                     Mathf.Clamp(yOffset + y / factor, 0, sourceHeight - 1));
@@ -78,7 +78,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
             var pixels = original.GetPixels(left, down, resW, resH);
 
             if (!Mathf.Approximately(brightnessOffset, 0))
-                for (int i = 0; i < pixels.Length; i++)
+                for (var i = 0; i < pixels.Length; i++)
                     pixels[i] = pixels[i].BrightnessOffset(brightnessOffset);
 
             var result = new Texture2D(resW, resH, TextureFormat.RGB24, false);
@@ -94,8 +94,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         public static Texture2D WithSolidColor(this Texture2D original, Color color)
         {
             var target = new Texture2D(original.width, original.height);
-            for (int i = 0; i < target.width; i++)
-            for (int j = 0; j < target.height; j++)
+            for (var i = 0; i < target.width; i++)
+            for (var j = 0; j < target.height; j++)
                 target.SetPixel(i, j, color);
 
             target.Apply();

@@ -27,18 +27,13 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         /// <summary>
         ///     StartCoroutine without MonoBehaviour
         /// </summary>
-        public static Coroutine StartCoroutine(this IEnumerator coroutine)
-        {
-            return CoroutineOwner.StartCoroutine(coroutine);
-        }
+        public static Coroutine StartCoroutine(this IEnumerator coroutine) => CoroutineOwner.StartCoroutine(coroutine);
 
         /// <summary>
         ///     Start next coroutine after this one
         /// </summary>
-        public static Coroutine StartNext(this Coroutine coroutine, IEnumerator nextCoroutine)
-        {
-            return StartCoroutine(StartNextCoroutine(coroutine, nextCoroutine));
-        }
+        public static Coroutine StartNext(this Coroutine coroutine, IEnumerator nextCoroutine) =>
+            StartCoroutine(StartNextCoroutine(coroutine, nextCoroutine));
 
         /// <summary>
         ///     Stop coroutine started with MyCoroutines.StartCoroutine
@@ -60,10 +55,8 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
         ///     CoroutineGroup allows to start bunch coroutines in one group
         ///     and check the amount of running coroutines (or if there is any of them)
         /// </summary>
-        public static CoroutineGroup CreateGroup(MonoBehaviour owner = null)
-        {
-            return new CoroutineGroup(owner != null ? owner : CoroutineOwner);
-        }
+        public static CoroutineGroup CreateGroup(MonoBehaviour owner = null) =>
+            new CoroutineGroup(owner != null ? owner : CoroutineOwner);
 
         static IEnumerator StartNextCoroutine(Coroutine coroutine, IEnumerator nextCoroutine)
         {
@@ -87,14 +80,11 @@ namespace _Game.Scripts.Utils.MyBox.Extensions
 
         public bool AnyProcessing => _activeCoroutines.Count > 0;
 
-        public Coroutine StartCoroutine(IEnumerator coroutine)
-        {
-            return _owner.StartCoroutine(DoStart(coroutine));
-        }
+        public Coroutine StartCoroutine(IEnumerator coroutine) => _owner.StartCoroutine(DoStart(coroutine));
 
         public void StopAll()
         {
-            for (int i = 0; i < _activeCoroutines.Count; i++)
+            for (var i = 0; i < _activeCoroutines.Count; i++)
                 _owner.StopCoroutine(_activeCoroutines[i]);
         }
 

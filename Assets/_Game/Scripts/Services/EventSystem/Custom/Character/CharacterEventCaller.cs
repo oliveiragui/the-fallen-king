@@ -1,7 +1,4 @@
-﻿using _Game.Scripts.Components.EventSystem;
-using _Game.Scripts.GameContent.Characters;
-
-namespace _Game.Scripts.Utils.Events
+﻿namespace _Game.Scripts.Services.EventSystem.Custom.Character
 {
-    public class CharacterEventCaller : GameEventCaller<CharacterEvent,Character> { }
+    public class CharacterEventCaller : GameEventCaller<CharacterEvent, GameContent.Characters.Character> { }
 }

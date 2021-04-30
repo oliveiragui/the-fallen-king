@@ -1,13 +1,12 @@
 using System;
-
 using UnityEngine;
 using Object = UnityEngine.Object;
-
 #if UNITY_EDITOR
 using UnityEditor.Experimental.SceneManagement;
 using _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions;
 using _Game.Scripts.Utils.MyBox.Tools;
 using UnityEditor;
+
 #endif
 
 namespace _Game.Scripts.Utils.MyBox.Attributes
@@ -44,13 +43,13 @@ namespace _Game.Scripts.Utils.MyBox.Attributes
         static void CheckComponentsInScene()
         {
             var autoProperties = MyEditor.GetFieldsWithAttribute<AutoPropertyAttribute>();
-            for (int i = 0; i < autoProperties.Length; i++) FillProperty(autoProperties[i]);
+            for (var i = 0; i < autoProperties.Length; i++) FillProperty(autoProperties[i]);
         }
 
         static void CheckComponentsInPrefab(GameObject prefab)
         {
             var autoProperties = MyEditor.GetFieldsWithAttribute<AutoPropertyAttribute>(prefab);
-            for (int i = 0; i < autoProperties.Length; i++) FillProperty(autoProperties[i]);
+            for (var i = 0; i < autoProperties.Length; i++) FillProperty(autoProperties[i]);
         }
 
         static void FillProperty(MyEditor.ComponentField property)

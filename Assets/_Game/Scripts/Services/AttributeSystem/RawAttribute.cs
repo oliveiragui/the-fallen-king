@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace _Game.Scripts.Components.AttributeSystem
+namespace _Game.Scripts.Services.AttributeSystem
 {
     [Serializable]
     public class RawAttribute
@@ -27,9 +27,6 @@ namespace _Game.Scripts.Components.AttributeSystem
             protected set => this.value = value;
         }
 
-        public float CalcFactor(float attr)
-        {
-            return Value + Multiplier * attr;
-        }
+        public float CalcFactor(float attr) => Value + Multiplier * attr;
     }
 }

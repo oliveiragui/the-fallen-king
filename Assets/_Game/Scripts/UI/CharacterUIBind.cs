@@ -1,7 +1,8 @@
-﻿using _Game.Scripts.Components.AttributeSystem;
-using _Game.Scripts.GameContent.Characters;
+﻿using _Game.Scripts.GameContent.Characters;
 using _Game.Scripts.GameContent.Weapons;
-using _Game.Scripts.UI.StatusBar;
+using _Game.Scripts.Services.AttributeSystem;
+using _Game.Scripts.UI.HUD;
+using _Game.Scripts.UI.Pages.CharacterMenu;
 using UnityEngine;
 
 namespace _Game.Scripts.UI
@@ -39,6 +40,7 @@ namespace _Game.Scripts.UI
 
         void OnWeaponChange(Weapon weapon)
         {
+            if (!weapon) return;
             characterMenuPage.OnWeaponChange(weapon);
             characterMenuPage.OnWeaponChange(weapon, character.Weapons.weapons);
             playerInfoHUD.UpdateUI(weapon.Abilities.ToArray());

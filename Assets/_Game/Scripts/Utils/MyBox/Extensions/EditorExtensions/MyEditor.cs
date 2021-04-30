@@ -45,12 +45,12 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         /// </summary>
         public static void FoldSceneHierarchy()
         {
-            for (int i = 0; i < SceneManager.sceneCount; i++)
+            for (var i = 0; i < SceneManager.sceneCount; i++)
             {
                 var scene = SceneManager.GetSceneAt(i);
                 if (!scene.isLoaded) continue;
                 var roots = SceneManager.GetSceneAt(i).GetRootGameObjects();
-                for (int o = 0; o < roots.Length; o++) FoldInHierarchy(roots[o], false);
+                for (var o = 0; o < roots.Length; o++) FoldInHierarchy(roots[o], false);
             }
         }
 
@@ -126,10 +126,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
             return !withAssetName ? Path.GetDirectoryName(assetPath) : assetPath;
         }
 
-        public static bool IsPrefabInstance(this GameObject go)
-        {
-            return PrefabUtility.GetPrefabType(go) == PrefabType.Prefab;
-        }
+        public static bool IsPrefabInstance(this GameObject go) => PrefabUtility.GetPrefabType(go) == PrefabType.Prefab;
 
         #endregion
 
@@ -155,7 +152,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         static GUIContent[] GetTextures(string baseName, string postFix, int startIndex, int count)
         {
             var array = new GUIContent[count];
-            for (int i = 0; i < count; i++)
+            for (var i = 0; i < count; i++)
                 array[i] = EditorGUIUtility.IconContent(baseName + (startIndex + i) + postFix);
 
             return array;
@@ -212,7 +209,7 @@ namespace _Game.Scripts.Utils.MyBox.Extensions.EditorExtensions
         {
             var components = new List<MonoBehaviour>();
 
-            for (int i = 0; i < SceneManager.sceneCount; i++)
+            for (var i = 0; i < SceneManager.sceneCount; i++)
             {
                 var scene = SceneManager.GetSceneAt(i);
                 if (!scene.isLoaded) continue;
