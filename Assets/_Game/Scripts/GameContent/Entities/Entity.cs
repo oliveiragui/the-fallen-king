@@ -92,21 +92,9 @@ namespace _Game.Scripts.GameContent.Entities
         {
             if (AbilityInUse && AbilityInUse != data.Abilities[data.RequestedAbility]) AbilityInUse.Finish();
             data.AbilityInUse = data.Abilities[data.RequestedAbility];
-            data.AbilityInUse.Initialize(transform);
             data.AbilityInUse.Use();
             CombatMode = true;
         }
-
-        // public void ConfigAbility(Ability ability)
-        // {
-        //     var combo = ability.Combos[ability.CurrentCombo];
-        //     
-        //     animator.SetBool(AnimatorParams.Castable, combo.Castable);
-        //     animator.SetFloat(AnimatorParams.ComboFactor1, combo.Factor1 * 1);
-        //     if (!combo.Castable) return;
-        //     animator.SetFloat(AnimatorParams.ComboFactor2, combo.Factor2 * 1);
-        //     animator.SetFloat(AnimatorParams.ComboFactor3, combo.Factor3 * 1);
-        // }
 
         public void StopAbility()
         {
@@ -138,14 +126,13 @@ namespace _Game.Scripts.GameContent.Entities
             {
                 mesh.EquipWeapons = value;
                 data.CombatMode = true;
-                if(value) animator.SetTrigger(AnimatorParams.CombatMode);
+                if (value) animator.SetTrigger(AnimatorParams.CombatMode);
             }
-            
         }
-        
+
         public void PlayAbilityParticleEffect(int index)
         {
-            data.AbilityInUse.PlayParticleEffect(index);
+            particle.PlayAbilityEffect(0, index);
         }
 
         void ReceiveHit(AbilityHit abilityHit)
@@ -252,7 +239,11 @@ namespace _Game.Scripts.GameContent.Entities
         void OnWeaponChange(Weapon weapon)
         {
             data.Weapon = weapon;
-            if (weapon) mesh.SwitchWeapon(weapon.Data.Prefabs);
+            if (weapon)
+            {
+                mesh.SwitchWeapon(weapon.Data.Prefabs);
+                particle.InstantiateAbilityEffects(weapon.Abilities.ToArray());
+            }
         }
 
         void OnEnable()

@@ -13,20 +13,12 @@ namespace _Game.Scripts.GameContent.Abilities
         public CooldownEnterEvent onCooldownEnter = new CooldownEnterEvent();
 
         public AbilityCombo[] Combos;
-        ParticleSystem[] particleEffects;
 
         public AbilityData Data => data;
 
         public float Cooldown { get; private set; }
-        
+
         public int CurrentCombo { get; private set; }
-
-        public bool HaveParticleEffects => data.HaveParticles;
-
-        public void PlayParticleEffect(int index)
-        {
-            particleEffects[index]?.Play();
-        }
 
         public Ability Setup(AbilityData data)
         {
@@ -35,20 +27,14 @@ namespace _Game.Scripts.GameContent.Abilities
             return this;
         }
 
-        public void InstantiateParticles(Transform entityTransform)
+        public ParticleSystem[] InstantiateParticles(Transform entityTransform)
         {
-            particleEffects = new ParticleSystem[data.ParticleEffects.Length];
-
+            var particleEffects = new ParticleSystem[data.ParticleEffects.Length];
             for (var i = 0; i < data.ParticleEffects.Length; i++)
-            {
                 Instantiate(data.ParticleEffects[i].gameObject, entityTransform)
                     .TryGetComponent(out particleEffects[i]);
-            }
-        }
 
-        public void Initialize(Transform entityTransform)
-        {
-            if (HaveParticleEffects && particleEffects == null) InstantiateParticles(entityTransform);
+            return particleEffects;
         }
 
         public void Use()
