@@ -11,7 +11,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Behaviours
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
             _entity.StopHit();
-            _entity.EnterInCombat();
+            _entity.CombatMode = true;
         }
     }
 }

@@ -18,6 +18,8 @@ namespace _Game.Scripts.GameContent.Abilities
         public AbilityData Data => data;
 
         public float Cooldown { get; private set; }
+        
+        public int CurrentCombo { get; private set; }
 
         public bool HaveParticleEffects => data.HaveParticles;
 

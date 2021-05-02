@@ -10,7 +10,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Behaviours
         public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)
         {
             if (entity == null && !animator.TryGetComponent(out entity)) return;
-            entity.ExitCombat();
+            entity.CombatMode = false;
         }
     }
 }

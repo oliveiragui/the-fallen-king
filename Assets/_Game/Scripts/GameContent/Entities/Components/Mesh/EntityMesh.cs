@@ -12,14 +12,14 @@ namespace _Game.Scripts.GameContent.Entities.Components.Mesh
         readonly List<GameObject> alwaysOn = new List<GameObject>();
         readonly List<GameObject> idle = new List<GameObject>();
         readonly List<GameObject> inCombat = new List<GameObject>();
-        bool _combatMode;
+        bool _equipWeapons;
 
-        public bool CombatMode
+        public bool EquipWeapons
         {
-            get => _combatMode;
+            get => _equipWeapons;
             set
             {
-                _combatMode = value;
+                _equipWeapons = value;
                 foreach (var prefab in inCombat) prefab.SetActive(value);
                 foreach (var prefab in idle) prefab.SetActive(!value);
             }
@@ -30,7 +30,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Mesh
             ClearSlots();
             if (weaponPrefabs == null) return;
             FillSlots(weaponPrefabs);
-            CombatMode = false;
+            EquipWeapons = false;
         }
 
         void FillSlots(WeaponPrefabList weaponPrefabs)

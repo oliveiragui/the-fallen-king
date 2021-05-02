@@ -6,7 +6,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Movement
     public class EntityMovement : MonoBehaviour
     {
         [SerializeField] NavMeshAgent agent;
-        [SerializeField] bool autoMove;
+        [SerializeField] bool _autoMove;
 
         Quaternion _rotation;
         Transform _transform;
@@ -20,7 +20,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Movement
             get => _rotation;
             set
             {
-                autoMove = false;
+                _autoMove = false;
                 _rotation = value;
             }
         }
@@ -30,15 +30,15 @@ namespace _Game.Scripts.GameContent.Entities.Components.Movement
             get => agent.velocity;
             set
             {
-                autoMove = false;
+                _autoMove = false;
                 agent.velocity = value;
             }
         }
 
         public bool AutoMove
         {
-            get => autoMove;
-            set => autoMove = value;
+            get => _autoMove;
+            set => _autoMove = value;
         }
 
         public float Speed
@@ -58,14 +58,14 @@ namespace _Game.Scripts.GameContent.Entities.Components.Movement
             get => agent.destination;
             set
             {
-                autoMove = true;
+                _autoMove = true;
                 agent.destination = value;
             }
         }
 
         public void Stop()
         {
-            autoMove = false;
+            _autoMove = false;
             agent.velocity = Vector3.zero;
             Speed = 0;
         }

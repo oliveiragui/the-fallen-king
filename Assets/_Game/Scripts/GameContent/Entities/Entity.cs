@@ -31,7 +31,7 @@ namespace _Game.Scripts.GameContent.Entities
         #region Parameters
 
         public Ability AbilityInUse => data.AbilityInUse;
-        public bool CombatMode => data.CombatMode;
+
         public float Speed => data.speed;
         public float StoppingDistance => data.stoppingDistance;
         public Quaternion Direction => data.moveDiretion;
@@ -88,14 +88,25 @@ namespace _Game.Scripts.GameContent.Entities
             data.Move = false;
         }
 
-        public void UseRequestedAbility()
+        public void StartRequestedAbility()
         {
             if (AbilityInUse && AbilityInUse != data.Abilities[data.RequestedAbility]) AbilityInUse.Finish();
             data.AbilityInUse = data.Abilities[data.RequestedAbility];
             data.AbilityInUse.Initialize(transform);
             data.AbilityInUse.Use();
-            EnterInCombat();
+            CombatMode = true;
         }
+
+        // public void ConfigAbility(Ability ability)
+        // {
+        //     var combo = ability.Combos[ability.CurrentCombo];
+        //     
+        //     animator.SetBool(AnimatorParams.Castable, combo.Castable);
+        //     animator.SetFloat(AnimatorParams.ComboFactor1, combo.Factor1 * 1);
+        //     if (!combo.Castable) return;
+        //     animator.SetFloat(AnimatorParams.ComboFactor2, combo.Factor2 * 1);
+        //     animator.SetFloat(AnimatorParams.ComboFactor3, combo.Factor3 * 1);
+        // }
 
         public void StopAbility()
         {
@@ -120,19 +131,18 @@ namespace _Game.Scripts.GameContent.Entities
             data.ComboInUse = null;
         }
 
-        public void EnterInCombat()
+        public bool CombatMode
         {
-            data.CombatMode = true;
-            mesh.CombatMode = true;
-            animator.SetTrigger(AnimatorParams.CombatMode);
+            get => data.CombatMode;
+            set
+            {
+                mesh.EquipWeapons = value;
+                data.CombatMode = true;
+                if(value) animator.SetTrigger(AnimatorParams.CombatMode);
+            }
+            
         }
-
-        public void ExitCombat()
-        {
-            data.CombatMode = false;
-            mesh.CombatMode = false;
-        }
-
+        
         public void PlayAbilityParticleEffect(int index)
         {
             data.AbilityInUse.PlayParticleEffect(index);
