@@ -15,8 +15,8 @@ namespace _Game.Scripts
 
         void Start()
         {
-            foreach (var weapon in weapons) entity.Character.Weapons.Add(weapon);
-            entity.Character.Weapons.UseWeapon(0);
+            foreach (var weapon in weapons) entity.Character.WeaponStorage.Add(weapon);
+            entity.Character.WeaponStorage.UseWeapon(0);
             _camera = FindObjectOfType<Camera>();
         }
 
@@ -37,7 +37,7 @@ namespace _Game.Scripts
             var direction = Vector3.up * (input.ToDegree() + _camera.transform.rotation.eulerAngles.y);
             var speed = input.normalized.sqrMagnitude * 5;
 
-            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree()));
+            entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree()));
 
             if (input.sqrMagnitude > 0.1f) entity.Move(speed, Quaternion.Euler(direction));
             else entity.Stop();

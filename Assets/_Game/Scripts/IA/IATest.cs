@@ -24,8 +24,8 @@ namespace _Game.Scripts.IA
 
         void Start()
         {
-            entity.Character.Weapons.Add(weaponData);
-            entity.Character.Weapons.UseWeapon(0);
+            entity.Character.WeaponStorage.Add(weaponData);
+            entity.Character.WeaponStorage.UseWeapon(0);
             entity.AutoMove = true;
 
             minDistance = preferedDistance - maxVariation;

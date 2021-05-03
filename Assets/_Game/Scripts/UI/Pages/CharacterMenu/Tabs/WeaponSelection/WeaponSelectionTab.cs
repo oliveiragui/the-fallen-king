@@ -32,8 +32,8 @@ namespace _Game.Scripts.UI.Pages.CharacterMenu.Tabs.WeaponSelection
             //     weaponButtons[i].button.onClick.AddListener(() => character.Weapons.UseWeapon(k));
             // }
 
-            nextWeaponButton.onClick.AddListener(() => character.Weapons.UseNext());
-            previousWeaponButton.onClick.AddListener(() => character.Weapons.UsePrevious());
+            nextWeaponButton.onClick.AddListener(() => character.WeaponStorage.UseNext());
+            previousWeaponButton.onClick.AddListener(() => character.WeaponStorage.UsePrevious());
         }
     }
 }

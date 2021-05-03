@@ -4,6 +4,7 @@ using _Game.Scripts.GameContent.Teams;
 using _Game.Scripts.Services.AttributeSystem;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace _Game.Scripts.GameContent.Characters
 {
@@ -11,7 +12,11 @@ namespace _Game.Scripts.GameContent.Characters
     {
         [SerializeField] CharacterData data;
         [SerializeField] Entity entity;
-        [SerializeField] CharacterWeapons weapons;
+
+        [FormerlySerializedAs("weapons")] [SerializeField]
+        CharacterWeapons weaponStorage;
+
+        [SerializeField] CharacterAbilities abilitySystem;
 
         public CharacterEvents events;
 
@@ -20,7 +25,8 @@ namespace _Game.Scripts.GameContent.Characters
         public Status Status { get; private set; }
         public Team Team { get; private set; }
         public Entity Entity => entity;
-        public CharacterWeapons Weapons => weapons;
+        public CharacterWeapons WeaponStorage => weaponStorage;
+        public CharacterAbilities AbilitySystem => abilitySystem;
 
         void Awake()
         {
@@ -30,6 +36,9 @@ namespace _Game.Scripts.GameContent.Characters
 
         void Start()
         {
+            WeaponStorage.onWeaponChange.AddListener(AbilitySystem.OnWeaponChange);
+            AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
+            
             events.onInstantiate.Invoke();
             Status.onAnyStatChanged.AddListener(status =>
             {

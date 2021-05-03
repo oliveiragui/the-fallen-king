@@ -28,7 +28,9 @@ namespace _Game.Scripts.GameContent.Abilities
         public Sprite Icon => icon;
         public ParticleSystem[] ParticleEffects => particleEffects;
         public bool HaveParticles => particleEffects != null;
+        public bool CanInterrupt => canInterrupt;
+        public bool CanBeInterruped => canBeInterruped;
 
-        public bool CanInterrupt(AbilityData other) => canInterrupt && other.canBeInterruped;
+        public bool CanOverride(AbilityData other) => canInterrupt && other.canBeInterruped;
     }
 }

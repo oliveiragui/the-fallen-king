@@ -18,30 +18,91 @@ namespace _Game.Scripts.GameContent.Entities
     public class Entity : MonoBehaviour
     {
         [SerializeField] Animator animator;
-        [SerializeField] public EntityAudio entityAudio;
-        [SerializeField] public EntityMesh mesh;
-        [SerializeField] public EntityParticle particle;
-        [SerializeField] public EntityCollision collision;
+        [SerializeField] EntityAudio entityAudio;
+        [SerializeField] EntityMesh mesh;
+        [SerializeField] EntityParticle particle;
+        [SerializeField] EntityCollision collision;
         [SerializeField] public EntityMovement movement;
 
         public EntityEvents events;
 
-        [SerializeField] EntityData data;
-
         #region Parameters
 
-        public Ability AbilityInUse => data.AbilityInUse;
+        [SerializeField] string _floorName;
+        [SerializeField] Character _character;
 
-        public float Speed => data.speed;
-        public float StoppingDistance => data.stoppingDistance;
-        public Quaternion Direction => data.moveDiretion;
-        public Vector3 Destination => data.destination;
-        public Character Character => data.associatedCharacter;
+        int _requestedAbilityId;
+        bool _combatMode;
+        bool _canMove;
 
-        public bool AutoMove
+        bool _conjuring;
+        AbilityHit _currentHit;
+
+        public Character Character => _character;
+
+        public bool Alive { get; set; } = true;
+        Weapon Weapon { get; set; }
+        public bool AutoMove { get; set; }
+        public float Speed { get; private set; }
+        public Quaternion Direction { get; private set; }
+        public Quaternion LookDiretion { get; private set; }
+        public float StoppingDistance { get; private set; }
+        public Vector3 Destination { get; private set; }
+        public bool Ready { get; private set; }
+
+        public int RequestedAbilityId
         {
-            get => data.autoMove;
-            set => data.autoMove = value;
+            get => _requestedAbilityId;
+            set
+            {
+                _requestedAbilityId = value;
+                animator.SetInteger(AnimatorParams.RequestedAbilityID, value);
+            }
+        }
+
+        public bool CombatMode
+        {
+            get => _combatMode;
+            set
+            {
+                mesh.EquipWeapons = value;
+                animator.SetLayerWeight(1, value ? 1f : 0f);
+            }
+        }
+
+        public bool CanMove
+        {
+            get => _canMove;
+
+            set
+            {
+                animator.SetBool("Anda", value);
+                _canMove = value;
+            }
+        }
+
+        public string FloorName
+        {
+            get => _floorName;
+            set => _floorName = value;
+        }
+
+        public AbilityHit CurrentHit
+        {
+            get => _currentHit;
+            set
+            {
+                if (value)
+                {
+                    animator.SetBool(AnimatorParams.ReceivingHit, true);
+                    animator.SetInteger(AnimatorParams.HitImpact, (int) value.impact + 2);
+                }
+                else
+                {
+                    animator.SetBool(AnimatorParams.ReceivingHit, false);
+                    _currentHit = value;
+                }
+            }
         }
 
         #endregion
@@ -50,84 +111,65 @@ namespace _Game.Scripts.GameContent.Entities
 
         public void RequestAbility(int abilityIndex)
         {
-            data.RequestedAbility = abilityIndex;
-            var reqAbility = data.Abilities[abilityIndex];
+            var abSys = Character.AbilitySystem;
+            var reqAbility = Character.AbilitySystem.Abilities[abilityIndex];
+            RequestedAbilityId = reqAbility.Data.AnimationId;
+            if (!abSys.CanUseAbility(abilityIndex)) return;
 
-            if (reqAbility.Cooldown > 0) return;
-
-            if (!data.AbilityInUse || reqAbility.Equals(data.AbilityInUse))
-                animator.SetTrigger(AnimatorParams.RequestAbility);
-            else if (reqAbility.Data.CanInterrupt(data.AbilityInUse.Data))
-                animator.SetTrigger(AnimatorParams.ForceAbility);
-
-            if (!data.Conjuring) data.Conjuring = true;
+            animator.SetTrigger(reqAbility.CanOverride(abSys.AbilityInUse)
+                ? AnimatorParams.ForceAbility
+                : AnimatorParams.RequestAbility);
+            animator.SetBool(AnimatorParams.Cast, true);
         }
 
-        public void LookAt(Quaternion direction)
+        public void StartAbility()
         {
-            data.lookDiretion = direction;
-        }
-
-        public void Move(float speed, Quaternion direction)
-        {
-            data.speed = speed;
-            data.moveDiretion = direction;
-            data.Move = true;
-        }
-
-        public void MoveTo(float speed, Vector3 destination, float stoppingDistance)
-        {
-            data.speed = speed;
-            data.destination = destination;
-            data.stoppingDistance = stoppingDistance;
-            data.Move = true;
-        }
-
-        public void Stop()
-        {
-            data.Move = false;
-        }
-
-        public void StartRequestedAbility()
-        {
-            if (AbilityInUse && AbilityInUse != data.Abilities[data.RequestedAbility]) AbilityInUse.Finish();
-            data.AbilityInUse = data.Abilities[data.RequestedAbility];
-            data.AbilityInUse.Use();
+            Character.AbilitySystem.StartAbility(RequestedAbilityId - 1);
             CombatMode = true;
+            var combo = Character.AbilitySystem.AbilityInUse.CurrentCombo;
+
+            animator.SetInteger(AnimatorParams.MaxCombo, Character.AbilitySystem.AbilityInUse.Data.MaxCombo);
+            animator.SetInteger("Combo Atual", Character.AbilitySystem.AbilityInUse.CurrentComboID);
+            animator.SetBool(AnimatorParams.Castable, combo.Castable);
+            animator.SetFloat(AnimatorParams.ComboFactor1, combo.Factor1 * 1);
+            if (!combo.Castable) return;
+            animator.SetFloat(AnimatorParams.ComboFactor2, combo.Factor2 * 1);
+            animator.SetFloat(AnimatorParams.ComboFactor3, combo.Factor3 * 1);
         }
 
         public void StopAbility()
         {
-            if (AbilityInUse) AbilityInUse.Finish();
-            data.AbilityInUse = null;
+            Character.AbilitySystem.StopAbility();
         }
 
         public void StopCasting(int index)
         {
-            if (CanStopCasting(index)) data.Conjuring = false;
+            animator.SetBool(AnimatorParams.Cast, !Character.AbilitySystem.StopCasting(index));
         }
 
-        bool CanStopCasting(int i) => !data.AbilityInUse || data.Abilities[i].Equals(data.AbilityInUse);
-
-        public void UseCombo(int index)
+        public void SetRotation(Quaternion direction)
         {
-            data.ComboInUse = data.AbilityInUse.Combos[index];
+            LookDiretion = direction;
         }
 
-        public void StopCombo()
+        public void Move(float speed, Quaternion direction)
         {
-            data.ComboInUse = null;
+            Speed = speed;
+            Direction = direction;
+            CanMove = true;
         }
 
-        public bool CombatMode
+        public void MoveTo(float speed, Vector3 destination, float stoppingDistance)
         {
-            get => data.CombatMode;
-            set
-            {
-                mesh.EquipWeapons = value;
-                data.CombatMode = true;
-                if (value) animator.SetTrigger(AnimatorParams.CombatMode);
-            }
+            Speed = speed;
+            Destination = destination;
+            StoppingDistance = stoppingDistance;
+            CanMove = true;
+        }
+
+        public void Stop()
+        {
+            CanMove = false;
         }
 
         public void PlayAbilityParticleEffect(int index)
@@ -138,28 +180,28 @@ namespace _Game.Scripts.GameContent.Entities
         void ReceiveHit(AbilityHit abilityHit)
         {
             if (!abilityHit) return;
-            data.associatedCharacter.Status.Life.ApplyDamage(abilityHit.power);
-            data.CurrentHit = abilityHit;
-            data.AbilityInUse = null;
+            Character.Status.Life.ApplyDamage(abilityHit.power);
+            Character.AbilitySystem.StopAbility();
+            CurrentHit = abilityHit;
             movement.Stop();
         }
 
         public void StopHit()
         {
-            data.CurrentHit = null;
+            CurrentHit = null;
         }
 
         public void Kill()
         {
-            data.Alive = false;
+            Alive = false;
             animator.SetTrigger(AnimatorParams.Die);
         }
 
-        public void PlayFootStepSound() => entityAudio.Play(data.FloorName);
+        public void PlayFootStepSound() => entityAudio.Play(FloorName);
 
         public void PlayFootStepParticleEffect() => particle.Play("FootStep");
 
-        public void TurnToLookDirection() => movement.Rotation = data.lookDiretion;
+        public void TurnToLookDirection() => movement.Rotation = LookDiretion;
 
         public void BecomeHittable()
         {
@@ -173,10 +215,12 @@ namespace _Game.Scripts.GameContent.Entities
 
         public void RotateWhileConjuring()
         {
+            var abSys = Character.AbilitySystem;
+
             IEnumerator Rotate() => new WaitWhile(() =>
             {
-                movement.Rotation = data.lookDiretion;
-                return data.Conjuring;
+                movement.Rotation = LookDiretion;
+                return abSys.AbilityInUse.Conjuring;
             });
 
             StartCoroutine(Rotate());
@@ -186,13 +230,10 @@ namespace _Game.Scripts.GameContent.Entities
         {
             var tr = transform;
             var position = tr.position + new Vector3(0, 1, 0);
-            var hit = new AbilityHit(-2, Vector3.zero, data.associatedCharacter);
+            var hit = new AbilityHit(-2, Vector3.zero, Character);
             var force = transform.forward.normalized * 800;
 
-            data.Weapon
-                .ammoData
-                .Instantiate(position, tr.rotation)
-                .Shot(hit, force);
+            Weapon.ammoData.Instantiate(position, tr.rotation).Shot(hit, force);
         }
 
         void EsferaDeDano()
@@ -210,11 +251,11 @@ namespace _Game.Scripts.GameContent.Entities
             {
                 if (!hit.collider.attachedRigidbody.transform.TryGetComponent(out Entity otherEntity)) continue;
                 if (!otherEntity.collision.Hittable) continue;
-                if (otherEntity.data.associatedCharacter.Equals(data.associatedCharacter)) continue;
-                if (otherEntity.data.associatedCharacter.Team.PlayerFriend ==
-                    data.associatedCharacter.Team.PlayerFriend) continue;
+                if (otherEntity.Character.Equals(Character)) continue;
+                if (otherEntity.Character.Team.PlayerFriend ==
+                    Character.Team.PlayerFriend) continue;
                 otherEntity.events.onHitReceived.Invoke(new AbilityHit(-2, Vector3.zero,
-                    data.associatedCharacter));
+                    Character));
             }
         }
 
@@ -224,23 +265,24 @@ namespace _Game.Scripts.GameContent.Entities
 
         void Start()
         {
-            data.ready = true;
+            Ready = true;
             Activate();
-            OnWeaponChange(data.associatedCharacter.Weapons.WeaponInUse);
+            OnWeaponChange(Character.WeaponStorage.WeaponInUse);
             events.onHitReceived.AddListener(ReceiveHit);
         }
 
         void Activate()
         {
-            data.associatedCharacter.events.onEntitySummon.Invoke(this);
-            data.associatedCharacter.Weapons.onWeaponChange.AddListener(OnWeaponChange);
+            Character.events.onEntitySummon.Invoke(this);
+            Character.WeaponStorage.onWeaponChange.AddListener(OnWeaponChange);
         }
 
         void OnWeaponChange(Weapon weapon)
         {
-            data.Weapon = weapon;
             if (weapon)
             {
+                Weapon = weapon;
+                animator.runtimeAnimatorController = weapon.Data.AnimatorController;
                 mesh.SwitchWeapon(weapon.Data.Prefabs);
                 particle.InstantiateAbilityEffects(weapon.Abilities.ToArray());
             }
@@ -248,18 +290,19 @@ namespace _Game.Scripts.GameContent.Entities
 
         void OnEnable()
         {
-            if (data.ready) Activate();
+            if (Ready) Activate();
         }
 
         void OnDisable()
         {
-            data.associatedCharacter.events.onEntityDimmissed.Invoke(this);
-            data.associatedCharacter.Weapons.onWeaponChange.RemoveListener(OnWeaponChange);
+            Character.events.onEntityDimmissed.Invoke(this);
+            Character.WeaponStorage.onWeaponChange.RemoveListener(OnWeaponChange);
         }
 
         void OnAnimatorMove()
         {
-            if (data.AbilityInUse) movement.Speed = (animator.deltaPosition / Time.deltaTime).magnitude;
+            if (Character.AbilitySystem.AbilityInUse)
+                movement.Speed = (animator.deltaPosition / Time.deltaTime).magnitude;
         }
 
         void OnTriggerEnter(Collider other)
@@ -274,7 +317,7 @@ namespace _Game.Scripts.GameContent.Entities
             if (!body || !other.CompareTag("Bullet")) return;
             if (!body.transform.TryGetComponent(out Ammo ammo)) return;
             if (Equals(ammo.AbilityHit.origin)) return;
-            if (data.associatedCharacter.Team.PlayerFriend == ammo.AbilityHit.origin.Team.PlayerFriend) return;
+            if (Character.Team.PlayerFriend == ammo.AbilityHit.origin.Team.PlayerFriend) return;
             ammo.Hit(this);
         }
 
@@ -282,8 +325,7 @@ namespace _Game.Scripts.GameContent.Entities
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
             {
-                data.FloorName = other.tag;
-                //Debug.Log("Current floor: " + other.tag);
+                FloorName = other.tag;
             }
         }
 

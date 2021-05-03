@@ -30,11 +30,11 @@ namespace _Game.Scripts.UI
             binded = true;
             character = unbindedCharacter;
 
-            character.Weapons.onWeaponChange.AddListener(OnWeaponChange);
+            character.WeaponStorage.onWeaponChange.AddListener(OnWeaponChange);
             character.Status.onAnyStatChanged.AddListener(OnStatusChange);
             characterMenuPage.OnCharacterBind(character);
 
-            OnWeaponChange(character.Weapons.WeaponInUse);
+            OnWeaponChange(character.WeaponStorage.WeaponInUse);
             OnStatusChange(character.Status);
         }
 
@@ -42,7 +42,7 @@ namespace _Game.Scripts.UI
         {
             if (!weapon) return;
             characterMenuPage.OnWeaponChange(weapon);
-            characterMenuPage.OnWeaponChange(weapon, character.Weapons.weapons);
+            characterMenuPage.OnWeaponChange(weapon, character.WeaponStorage.weapons);
             playerInfoHUD.UpdateUI(weapon.Abilities.ToArray());
         }
 

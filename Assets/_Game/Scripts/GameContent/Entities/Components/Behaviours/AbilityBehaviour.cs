@@ -10,7 +10,7 @@ namespace _Game.Scripts.GameContent.Entities.Components.Behaviours
         public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
-            _entity.StartRequestedAbility();
+            _entity.StartAbility();
         }
 
         public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)

@@ -14,7 +14,7 @@ namespace _Game.Scripts.IA.Behaviours
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
             var position = _test.entity.transform.position;
             var direction = _test.Target.transform.position - position;
-            _test.entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
+            _test.entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
             _test.entity.RequestAbility(0);
         }
 
@@ -25,7 +25,7 @@ namespace _Game.Scripts.IA.Behaviours
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
             var position = _test.entity.transform.position;
             var direction = _test.Target.transform.position - position;
-            _test.entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
+            _test.entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
         }
 
         public override void OnStateExit(

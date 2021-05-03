@@ -20,8 +20,8 @@ namespace _Game.Scripts.IA
         {
             // weapon = gameObject.AddComponent<Weapon>().Setup(weaponData);
             // entityCommands.EquipWeapon(weapon);
-            entity.Character.Weapons.Add(weaponData);
-            entity.Character.Weapons.UseWeapon(0);
+            entity.Character.WeaponStorage.Add(weaponData);
+            entity.Character.WeaponStorage.UseWeapon(0);
             entity.AutoMove = true;
         }
 
@@ -38,8 +38,8 @@ namespace _Game.Scripts.IA
         void ProcessaInput()
         {
             var targetDistance = target.transform.position - entity.transform.position;
-            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
-            if (entity.AbilityInUse)
+            entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
+            if (entity.Character.AbilitySystem.AbilityInUse)
                 entity.StopCasting(0);
             else if (targetDistance.magnitude <= distance)
             {

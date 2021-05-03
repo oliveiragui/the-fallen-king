@@ -1,5 +1,48 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &837365205446710930
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5784939368532465812}
+  - component: {fileID: 5816215721000881443}
+  m_Layer: 0
+  m_Name: Abilities
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5784939368532465812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837365205446710930}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8954430661890499820}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5816215721000881443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837365205446710930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e961ebcf234848af4d7ab1a169c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4473324157101595086
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1555597729053977029}
+  - {fileID: 5784939368532465812}
   - {fileID: 8954430661801289803}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -112,7 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: db5538df9f6e0a940bde24f848271af6, type: 2}
   entity: {fileID: 981440034168614554}
-  weapons: {fileID: 7739522235097886816}
+  weaponStorage: {fileID: 7739522235097886816}
+  abilitySystem: {fileID: 5816215721000881443}
   events:
     onEntitySummon:
       m_PersistentCalls:
@@ -305,7 +350,7 @@ PrefabInstance:
     - target: {fileID: 375318589159449542, guid: 381bb6025a4a71641a0e87b6ad07c050,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 375318589159449542, guid: 381bb6025a4a71641a0e87b6ad07c050,
         type: 3}
@@ -540,6 +585,11 @@ PrefabInstance:
     - target: {fileID: 8425997377798448407, guid: 381bb6025a4a71641a0e87b6ad07c050,
         type: 3}
       propertyPath: associatedCharacter
+      value: 
+      objectReference: {fileID: 8954430661890499819}
+    - target: {fileID: 8425997377798448407, guid: 381bb6025a4a71641a0e87b6ad07c050,
+        type: 3}
+      propertyPath: _character
       value: 
       objectReference: {fileID: 8954430661890499819}
     - target: {fileID: 8971618016046506453, guid: 381bb6025a4a71641a0e87b6ad07c050,
