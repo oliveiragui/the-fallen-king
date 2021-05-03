@@ -9,7 +9,6 @@ using _Game.Scripts.GameContent.Entities;
 public class DialogoTreinoBotao : FluentScript
 {
     int timesVisited = 0;
-    public GameObject talkOBject;
     [SerializeField] Entity character;
     [SerializeField] UnityEvent onStart;
     [SerializeField] UnityEvent onFinish;
@@ -25,8 +24,7 @@ public class DialogoTreinoBotao : FluentScript
             ) *
             If(() => timesVisited >= 2,
                 Write(0.5f, "Dragg:\nPara atacar aperte <sprite=\"KeyBoardAndMouse\" name=\"Mouse_Left_Key_Dark\"> ").WaitForButton() *
-                Write(0.5f, "Dragg:\nPara se esquivar aperte <sprite=\"KeyBoardAndMouse\" name=\"Space_Key_Dark\"> ").WaitForButton() *
-                Do(() => talkOBject.SetActive(false))
+                Write(0.5f, "Dragg:\nPara se esquivar aperte <sprite=\"KeyBoardAndMouse\" name=\"Space_Key_Dark\"> ").WaitForButton() 
             ) *
             Hide();
     }
