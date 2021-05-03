@@ -40,7 +40,7 @@ namespace _Game.Scripts.GameContent.Characters
 
         public void OnWeaponChange(Weapon weapon)
         {
-            Abilities = weapon.Abilities;
+            if(weapon) Abilities = weapon.Abilities;
         }
     }
 }

@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 1166076966668833259}
   - {fileID: 1282642693975512575}
+  - {fileID: 414627277667560427}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -49,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: b15bcb37dab3b8c45ad3d6f21347e910, type: 2}
   entity: {fileID: 7058545168733968186}
-  weapons: {fileID: 7927797022669741445}
+  weaponStorage: {fileID: 7927797022669741445}
+  abilitySystem: {fileID: 1123420818222620494}
   events:
     onEntitySummon:
       m_PersistentCalls:
@@ -69,7 +71,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: a2e64bb5022a0464db60f15f520e35da,
               type: 2}
-            m_ObjectArgumentAssemblyTypeName: _Game.Scripts.Utils.Events.CharacterEvent,
+            m_ObjectArgumentAssemblyTypeName: _Game.Scripts.Services.EventSystem.Custom.Character.CharacterEvent,
               Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -85,7 +87,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 11400000, guid: 5f5f9000563ea3e44a3d73a9bceb4f62,
               type: 2}
-            m_ObjectArgumentAssemblyTypeName: _Game.Scripts.Utils.Events.CharacterEvent,
+            m_ObjectArgumentAssemblyTypeName: _Game.Scripts.Services.EventSystem.Custom.Character.CharacterEvent,
               Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
@@ -169,6 +171,49 @@ MonoBehaviour:
   onWeaponChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &8809981425546425344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 414627277667560427}
+  - component: {fileID: 1123420818222620494}
+  m_Layer: 0
+  m_Name: Ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &414627277667560427
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809981425546425344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1521049637797536644}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123420818222620494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8809981425546425344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1e961ebcf234848af4d7ab1a169c7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1521049637006127661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -321,6 +366,11 @@ PrefabInstance:
       propertyPath: slots
       value: 
       objectReference: {fileID: 5423570111347273141}
+    - target: {fileID: 5276938515963619477, guid: 381bb6025a4a71641a0e87b6ad07c050,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6485742079928494108, guid: 381bb6025a4a71641a0e87b6ad07c050,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -529,6 +579,11 @@ PrefabInstance:
     - target: {fileID: 8425997377798448407, guid: 381bb6025a4a71641a0e87b6ad07c050,
         type: 3}
       propertyPath: associatedCharacter
+      value: 
+      objectReference: {fileID: 1521049637797536645}
+    - target: {fileID: 8425997377798448407, guid: 381bb6025a4a71641a0e87b6ad07c050,
+        type: 3}
+      propertyPath: _character
       value: 
       objectReference: {fileID: 1521049637797536645}
     - target: {fileID: 8715611482891675172, guid: 381bb6025a4a71641a0e87b6ad07c050,
