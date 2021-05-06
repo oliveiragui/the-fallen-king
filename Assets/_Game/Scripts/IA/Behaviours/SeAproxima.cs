@@ -20,8 +20,7 @@ namespace _Game.Scripts.IA.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            var targetPos = _test.Target.transform.position;
-            _test.entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(targetPos.x, targetPos.y).ToDegree()));
+            _test.LookToTarget();
             _test.entity.Stop();
         }
     }

@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityId: 1
 --- !u!1109 &-8633615018359665401
 AnimatorTransition:
   m_ObjectHideFlags: 3
@@ -743,7 +744,7 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: 2614470590602088253}
-    m_Position: {x: 480, y: 120, z: 0}
+    m_Position: {x: 490, y: 120, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: 8304451318542451909}
     m_Position: {x: 480, y: 240, z: 0}
@@ -1926,7 +1927,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 4
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3959746045207413748}
@@ -2618,6 +2619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityId: 2
 --- !u!1102 &-5966230088059149086
 AnimatorState:
   serializedVersion: 5
@@ -3670,7 +3672,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 6427720420123212111}
-    m_Position: {x: 650, y: 80, z: 0}
+    m_Position: {x: 650, y: 70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2361240134581650119}
     m_Position: {x: 650, y: 140, z: 0}
@@ -3779,7 +3781,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 4
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 196027771571526303}
@@ -4003,7 +4005,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4352001244546415211}
@@ -4904,7 +4906,7 @@ AnimatorStateMachine:
   m_ChildStateMachines:
   - serializedVersion: 1
     m_StateMachine: {fileID: -4447391827293993483}
-    m_Position: {x: 470, y: 120, z: 0}
+    m_Position: {x: 480, y: 120, z: 0}
   - serializedVersion: 1
     m_StateMachine: {fileID: -7203100267521750370}
     m_Position: {x: 480, y: 240, z: 0}
@@ -6657,6 +6659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityId: 0
 --- !u!1109 &-586060057382729158
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -7018,7 +7021,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 3
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4635682214865786317}
@@ -7167,115 +7170,133 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Velocidade
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Anda
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ------------- Damage
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Em combate
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Impacto do Hit
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Recebendo Hit
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ------------- Info Habilidade
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Requested Ability ID
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: -1
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Combo Atual
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Habilidade conjuravel
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ability Factor 1
     m_Type: 1
     m_DefaultFloat: 1
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ability Factor 2
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ability Factor 3
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: ----------- Habilidade runtime
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Force Ability
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Request Ability
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Conjurando
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Vivo
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
+  - m_Name: Conjurando Habilidade 1
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Conjurando Habilidade 2
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Conjurando Habilidade 3
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: Conjurando Habilidade 4
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Desarmado
@@ -7877,7 +7898,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 3
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -4849826611790134188}
@@ -8424,6 +8445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityId: 0
 --- !u!1101 &726752419018182356
 AnimatorStateTransition:
   m_ObjectHideFlags: 3
@@ -8622,7 +8644,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2361240134581650119}
@@ -10148,7 +10170,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2696189639545771044}
@@ -10456,6 +10478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityId: 3
 --- !u!1109 &3253750236654910211
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -11037,7 +11060,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 3
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7666594548955034172}
@@ -11728,6 +11751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124407f77d078f5459676e4cb633d53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityId: 4
 --- !u!1102 &5001547923903630532
 AnimatorState:
   serializedVersion: 5
@@ -12851,7 +12875,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 2
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -804362231596015767}
@@ -13165,7 +13189,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 4
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3926887663734772673}
@@ -13669,7 +13693,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 817791747644748982}
@@ -14920,7 +14944,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: Conjurando
+    m_ConditionEvent: Conjurando Habilidade 1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6065655363033042368}

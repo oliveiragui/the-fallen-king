@@ -25,11 +25,9 @@ namespace _Game.Scripts.GameContent.Characters
 
         //public bool CanStopCasting(int i) => !AbilityInUse || Abilities[i].Equals(AbilityInUse);
 
-        public bool StopCasting(int id)
+        public void StopCasting(int id)
         {
-            if (AbilityInUse && !Abilities[id].Equals(AbilityInUse)) return false;
-            else Abilities[id].StopConjuring();
-            return true;
+            Abilities[id].StopConjuring();
         }
 
         public void StopAbility()

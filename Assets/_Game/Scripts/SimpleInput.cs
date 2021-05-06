@@ -37,7 +37,7 @@ namespace _Game.Scripts
             var direction = Vector3.up * (input.ToDegree() + _camera.transform.rotation.eulerAngles.y);
             var speed = input.normalized.sqrMagnitude * 5;
 
-            entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree()));
+            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree()));
 
             if (input.sqrMagnitude > 0.1f) entity.Move(speed, Quaternion.Euler(direction));
             else entity.Stop();

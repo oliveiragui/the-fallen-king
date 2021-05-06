@@ -16,7 +16,7 @@ namespace _Game.Scripts.UI
 
         void Start()
         {
-            Bind(character);
+            character.events.onInstantiate.AddListener(() => Bind(character));
         }
 
         public void Bind(Character unbindedCharacter)

@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2819ca66e2dd4ab5a439617001702cf0, type: 3}
+  m_Name: Machado Do Primeiro Boss
+  m_EditorClassIdentifier: 
+  description: "Apesar de lento, causa um dano massivo. \xC9 preciso saber atacar
+    na hora certa"
+  icon: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  ammoData: {fileID: 0}
+  abilities:
+  - {fileID: 11400000, guid: 7ed39bfdcc77639458bda0c78411f346, type: 2}
+  - {fileID: 11400000, guid: 76052721e1d7c2a4ba52b81fd9344770, type: 2}
+  - {fileID: 11400000, guid: 2fd1c1466aae9034f8876d897a9c51e7, type: 2}
+  - {fileID: 11400000, guid: e2ccdfdb99fb1be4aa20339bdbebd23c, type: 2}
+  status:
+    life:
+      multiplier: 0
+      value: 0
+    strength:
+      multiplier: 0
+      value: 0
+    attackSpeed:
+      multiplier: 0
+      value: 0
+    speed:
+      multiplier: 0
+      value: 0
+  animatorController: {fileID: 22100000, guid: fee0658fa7e910643b6dcccd0bc3bc1b, type: 2}
+  prefabs:
+    alwaysOn:
+      array: []
+    idle:
+      array:
+      - slot: Costas
+        gameObject: {fileID: 191440, guid: d249619f1f43e1e4b84b381713d899d8, type: 3}
+        position: {x: 0, y: 0, z: 0}
+        rotation: {x: 0, y: 0, z: 0}
+    inCombat:
+      array:
+      - slot: Mao Direita
+        gameObject: {fileID: 191440, guid: d249619f1f43e1e4b84b381713d899d8, type: 3}
+        position: {x: 0, y: 0, z: 0}
+        rotation: {x: -114.001, y: 0, z: -45.67499}

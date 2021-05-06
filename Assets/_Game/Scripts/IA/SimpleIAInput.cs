@@ -38,7 +38,7 @@ namespace _Game.Scripts.IA
         void ProcessaInput()
         {
             var targetDistance = target.transform.position - entity.transform.position;
-            entity.SetRotation(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
+            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
             if (entity.Character.AbilitySystem.AbilityInUse)
                 entity.StopCasting(0);
             else if (targetDistance.magnitude <= distance)

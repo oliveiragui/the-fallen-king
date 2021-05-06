@@ -3667,6 +3667,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7236239273034901317, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCharacterDestroyed
+      objectReference: {fileID: 0}
     - target: {fileID: 7358296752696360559, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
       propertyPath: m_AnchorMax.x

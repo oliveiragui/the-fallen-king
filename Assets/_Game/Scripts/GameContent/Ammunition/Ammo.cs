@@ -26,7 +26,8 @@ namespace _Game.Scripts.GameContent.Ammunition
         public void Hit(Entity entity)
         {
             if (HasCollided) return;
-            entity.events.onHitReceived.Invoke(AbilityHit);
+            entity.Hit(AbilityHit);
+            //entity.events.onHitReceived.Invoke(AbilityHit);
             OnHit(entity.transform);
         }
 

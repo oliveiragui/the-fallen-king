@@ -31,34 +31,21 @@ namespace _Game.Scripts.GameContent.Entities
         [SerializeField] string _floorName;
         [SerializeField] Character _character;
 
-        int _requestedAbilityId;
         bool _combatMode;
         bool _canMove;
-
         bool _conjuring;
-        AbilityHit _currentHit;
 
         public Character Character => _character;
 
-        public bool Alive { get; set; } = true;
+        [field: SerializeField] public bool Alive { get; set; } = true;
         Weapon Weapon { get; set; }
-        public bool AutoMove { get; set; }
-        public float Speed { get; private set; }
-        public Quaternion Direction { get; private set; }
-        public Quaternion LookDiretion { get; private set; }
-        public float StoppingDistance { get; private set; }
-        public Vector3 Destination { get; private set; }
-        public bool Ready { get; private set; }
-
-        public int RequestedAbilityId
-        {
-            get => _requestedAbilityId;
-            set
-            {
-                _requestedAbilityId = value;
-                animator.SetInteger(AnimatorParams.RequestedAbilityID, value);
-            }
-        }
+        [field: SerializeField] public bool AutoMove { get; set; }
+        [field: SerializeField] public float Speed { get; private set; }
+        [field: SerializeField] public Quaternion Direction { get; private set; }
+        [field: SerializeField] public Quaternion LookDiretion { get; private set; }
+        [field: SerializeField] public float StoppingDistance { get; private set; }
+        [field: SerializeField] public Vector3 Destination { get; private set; }
+        [field: SerializeField] public bool Ready { get; private set; }
 
         public bool CombatMode
         {
@@ -87,24 +74,6 @@ namespace _Game.Scripts.GameContent.Entities
             set => _floorName = value;
         }
 
-        public AbilityHit CurrentHit
-        {
-            get => _currentHit;
-            set
-            {
-                if (value)
-                {
-                    animator.SetBool(AnimatorParams.ReceivingHit, true);
-                    animator.SetInteger(AnimatorParams.HitImpact, (int) value.impact + 2);
-                }
-                else
-                {
-                    animator.SetBool(AnimatorParams.ReceivingHit, false);
-                    _currentHit = value;
-                }
-            }
-        }
-
         #endregion
 
         #region Methods
@@ -113,23 +82,19 @@ namespace _Game.Scripts.GameContent.Entities
         {
             var abSys = Character.AbilitySystem;
             var reqAbility = Character.AbilitySystem.Abilities[abilityIndex];
-            RequestedAbilityId = reqAbility.Data.AnimationId;
             if (!abSys.CanUseAbility(abilityIndex)) return;
 
             animator.SetTrigger(reqAbility.CanOverride(abSys.AbilityInUse)
                 ? AnimatorParams.ForceAbility
                 : AnimatorParams.RequestAbility);
-            animator.SetBool(AnimatorParams.Cast, true);
+            animator.SetInteger(AnimatorParams.RequestedAbilityID, reqAbility.Data.AnimationId);
+            animator.SetBool($"Conjurando Habilidade {reqAbility.Data.AnimationId}", true);
         }
 
-        public void StartAbility()
+        public void SetupAbility(Ability ability)
         {
-            Character.AbilitySystem.StartAbility(RequestedAbilityId - 1);
-            CombatMode = true;
-            var combo = Character.AbilitySystem.AbilityInUse.CurrentCombo;
-
-            animator.SetInteger(AnimatorParams.MaxCombo, Character.AbilitySystem.AbilityInUse.Data.MaxCombo);
-            animator.SetInteger("Combo Atual", Character.AbilitySystem.AbilityInUse.CurrentComboID);
+            var combo = ability.CurrentCombo;
+            animator.SetInteger("Combo Atual", ability.CurrentComboID);
             animator.SetBool(AnimatorParams.Castable, combo.Castable);
             animator.SetFloat(AnimatorParams.ComboFactor1, combo.Factor1 * 1);
             if (!combo.Castable) return;
@@ -137,17 +102,14 @@ namespace _Game.Scripts.GameContent.Entities
             animator.SetFloat(AnimatorParams.ComboFactor3, combo.Factor3 * 1);
         }
 
-        public void StopAbility()
-        {
-            Character.AbilitySystem.StopAbility();
-        }
-
         public void StopCasting(int index)
         {
-            animator.SetBool(AnimatorParams.Cast, !Character.AbilitySystem.StopCasting(index));
+            var ability = Character.AbilitySystem.Abilities[index];
+            ability.StopConjuring();
+            animator.SetBool($"Conjurando Habilidade {ability.Data.AnimationId}", false);
         }
 
-        public void SetRotation(Quaternion direction)
+        public void LookAt(Quaternion direction)
         {
             LookDiretion = direction;
         }
@@ -172,29 +134,29 @@ namespace _Game.Scripts.GameContent.Entities
             CanMove = false;
         }
 
-        public void PlayAbilityParticleEffect(int index)
-        {
-            particle.PlayAbilityEffect(0, index);
-        }
-
-        void ReceiveHit(AbilityHit abilityHit)
+        public void Hit(AbilityHit abilityHit)
         {
             if (!abilityHit) return;
-            Character.Status.Life.ApplyDamage(abilityHit.power);
-            Character.AbilitySystem.StopAbility();
-            CurrentHit = abilityHit;
+            events.onHitReceived.Invoke(abilityHit);
+            animator.SetBool(AnimatorParams.ReceivingHit, true);
+            animator.SetInteger(AnimatorParams.HitImpact, (int) abilityHit.impact + 2);
             movement.Stop();
         }
 
-        public void StopHit()
-        {
-            CurrentHit = null;
-        }
+        // public void StopHit()
+        // {
+        //     animator.SetBool(AnimatorParams.ReceivingHit, false);
+        // }
 
         public void Kill()
         {
             Alive = false;
             animator.SetTrigger(AnimatorParams.Die);
+        }
+
+        public void PlayAbilityParticleEffect(int index)
+        {
+            particle.PlayAbilityEffect(0, index);
         }
 
         public void PlayFootStepSound() => entityAudio.Play(FloorName);
@@ -216,6 +178,7 @@ namespace _Game.Scripts.GameContent.Entities
         public void RotateWhileConjuring()
         {
             var abSys = Character.AbilitySystem;
+            if (!abSys.AbilityInUse) return;
 
             IEnumerator Rotate() => new WaitWhile(() =>
             {
@@ -226,14 +189,14 @@ namespace _Game.Scripts.GameContent.Entities
             StartCoroutine(Rotate());
         }
 
-        void InvocaFlecha()
+        void InvocaFlecha(float angle)
         {
             var tr = transform;
             var position = tr.position + new Vector3(0, 1, 0);
             var hit = new AbilityHit(-2, Vector3.zero, Character);
-            var force = transform.forward.normalized * 800;
-
-            Weapon.ammoData.Instantiate(position, tr.rotation).Shot(hit, force);
+            var arrow = Weapon.ammoData.Instantiate(position,
+                Quaternion.Euler(Vector3.up * (tr.rotation.eulerAngles.y + angle)));
+            arrow.Shot(hit, arrow.transform.forward * 800);
         }
 
         void EsferaDeDano()
@@ -254,30 +217,15 @@ namespace _Game.Scripts.GameContent.Entities
                 if (otherEntity.Character.Equals(Character)) continue;
                 if (otherEntity.Character.Team.PlayerFriend ==
                     Character.Team.PlayerFriend) continue;
-                otherEntity.events.onHitReceived.Invoke(new AbilityHit(-2, Vector3.zero,
-                    Character));
+                otherEntity.Hit(new AbilityHit(-2, Vector3.zero, Character));
             }
         }
 
         #endregion
 
-        #region Unity Functions
-
-        void Start()
-        {
-            Ready = true;
-            Activate();
-            OnWeaponChange(Character.WeaponStorage.WeaponInUse);
-            events.onHitReceived.AddListener(ReceiveHit);
-        }
-
-        void Activate()
-        {
-            Character.events.onEntitySummon.Invoke(this);
-            Character.WeaponStorage.onWeaponChange.AddListener(OnWeaponChange);
-        }
-
-        void OnWeaponChange(Weapon weapon)
+        #region Callbacks
+        
+        public void OnWeaponChange(Weapon weapon)
         {
             if (weapon)
             {
@@ -288,15 +236,25 @@ namespace _Game.Scripts.GameContent.Entities
             }
         }
 
+        #endregion
+
+        #region Unity Functions
+
+        void Start()
+        {
+            events.onBirth.Invoke(this);
+            events.onEnabled.Invoke(this);
+            Ready = true;
+        }
+
         void OnEnable()
         {
-            if (Ready) Activate();
+            if (Ready) events.onEnabled.Invoke(this);
         }
 
         void OnDisable()
         {
-            Character.events.onEntityDimmissed.Invoke(this);
-            Character.WeaponStorage.onWeaponChange.RemoveListener(OnWeaponChange);
+            events.onDisabled.Invoke(this);
         }
 
         void OnAnimatorMove()
@@ -324,9 +282,7 @@ namespace _Game.Scripts.GameContent.Entities
         void DetectFloorName(Collider other)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
-            {
                 FloorName = other.tag;
-            }
         }
 
         #endregion
@@ -335,9 +291,21 @@ namespace _Game.Scripts.GameContent.Entities
     [Serializable]
     public class EntityEvents
     {
-        [SerializeField] public HitReceiveEvent onHitReceived;
+        public UnityEntityEvent onEnabled;
+        public UnityEntityEvent onDisabled;
+        public HitReceiveEvent onHitReceived;
+        public AbilityUseEvent startAbility;
+        public UnityEvent finishAbility;
+        public UnityEntityEvent enterCombat;
+        public UnityEntityEvent exitCombat;
+        public UnityEntityEvent onBirth;
+        public UnityEntityEvent onDeathBeginning;
+        public UnityEntityEvent onDeathEnding;
     }
 
     [Serializable]
     public class HitReceiveEvent : UnityEvent<AbilityHit> { }
+
+    [Serializable]
+    public class AbilityUseEvent : UnityEvent<int> { }
 }
