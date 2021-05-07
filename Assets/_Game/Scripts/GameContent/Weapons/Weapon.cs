@@ -15,6 +15,8 @@ namespace _Game.Scripts.GameContent.Weapons
         public AmmoData ammoData;
         public WeaponData Data => data;
 
+        public AnimatorOverrideController animatorController;
+
         public Weapon Setup(WeaponData data)
         {
             this.data = data;
@@ -24,10 +26,29 @@ namespace _Game.Scripts.GameContent.Weapons
 
             Abilities = new List<Ability>();
 
-            foreach (var ability in data.Abilities)
+            animatorController = data.AnimatorController;
+
+            for (int i = 0; i < data.Abilities.Length; i++)
+            {
+                var ability = data.Abilities[i];
+                Debug.Log(ability);
                 Abilities.Add(abilitiesObject.AddComponent<Ability>().Setup(ability));
 
+                for (int j = 0; j < ability.Combo.Length; j++)
+                {
+                    var combo = ability.Combo[j];
+                    animatorController[$"Habilidade {i+1} Combo {j+1} - 1"] = combo.beginningAnimation;
+                    if (!combo.castable) continue;
+                    animatorController[$"Habilidade {i+1} Combo {j+1} - 2"] = combo.middleAnimation;
+                    animatorController[$"Habilidade {i+1} Combo {j+1} - 3"] = combo.endAnimation;
+                }
+            }
+
             ammoData = data.AmmoData;
+
+            
+            
+            
             return this;
         }
         

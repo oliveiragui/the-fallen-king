@@ -28,10 +28,13 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: b5e033ff5c15aae48bcd9ea17143650a,
+      type: 2}
     factor1: 2
+    middleAnimation: {fileID: 0}
     factor2: 0
+    endAnimation: {fileID: 0}
     factor3: 0
   - attributes:
       power:
@@ -40,10 +43,13 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 4b6c9caabea1677489c40dcb76f8294e,
+      type: 2}
     factor1: 2
+    middleAnimation: {fileID: 0}
     factor2: 0
+    endAnimation: {fileID: 0}
     factor3: 0
   - attributes:
       power:
@@ -52,8 +58,12 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 268607b0c633e2e4a860c298d40a7f77,
+      type: 2}
     factor1: 2
+    middleAnimation: {fileID: 0}
     factor2: 0
+    endAnimation: {fileID: 0}
     factor3: 0
+  particleEffects: []

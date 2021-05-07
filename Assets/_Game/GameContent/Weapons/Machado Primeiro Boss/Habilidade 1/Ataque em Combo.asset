@@ -29,8 +29,12 @@ MonoBehaviour:
         multiplier: 0
         value: 0
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: d84973d601624974f89b777a62e65952,
+      type: 2}
     factor1: 0.4
+    middleAnimation: {fileID: 0}
     factor2: 0
+    endAnimation: {fileID: 0}
     factor3: 0
   particleEffects:
   - {fileID: 4262140483115222537, guid: b0c003b3f9144264988a4cdaeb17b980, type: 3}

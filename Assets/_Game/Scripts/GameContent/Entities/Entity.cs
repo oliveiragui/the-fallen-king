@@ -141,6 +141,7 @@ namespace _Game.Scripts.GameContent.Entities
             animator.SetBool(AnimatorParams.ReceivingHit, true);
             animator.SetInteger(AnimatorParams.HitImpact, (int) abilityHit.impact + 2);
             movement.Stop();
+            PlayParticle("Blood");
         }
 
         // public void StopHit()
@@ -151,17 +152,29 @@ namespace _Game.Scripts.GameContent.Entities
         public void Kill()
         {
             Alive = false;
-            animator.SetTrigger(AnimatorParams.Die);
+            animator.SetBool("Vivo", false);
         }
 
         public void PlayAbilityParticleEffect(int index)
         {
-            particle.PlayAbilityEffect(0, index);
+            var abSys = Character.AbilitySystem;
+            particle.PlayAbilityEffect(abSys.Abilities.IndexOf(abSys.AbilityInUse), index);
         }
+        
+        public void PlayStopParticleEffect(int index)
+        {
+            var abSys = Character.AbilitySystem;
+            particle.PlayAbilityEffect(abSys.Abilities.IndexOf(abSys.AbilityInUse), index);
+        }
+
 
         public void PlayFootStepSound() => entityAudio.Play(FloorName);
 
         public void PlayFootStepParticleEffect() => particle.Play("FootStep");
+
+        public void PlayParticle(string name) => particle.Play(name);
+
+        public void StopParticle(string name) => particle.Stop(name);
 
         public void TurnToLookDirection() => movement.Rotation = LookDiretion;
 
@@ -179,11 +192,12 @@ namespace _Game.Scripts.GameContent.Entities
         {
             var abSys = Character.AbilitySystem;
             if (!abSys.AbilityInUse) return;
+            int oi = abSys.Abilities.IndexOf(abSys.AbilityInUse) + 1;
 
             IEnumerator Rotate() => new WaitWhile(() =>
             {
                 movement.Rotation = LookDiretion;
-                return abSys.AbilityInUse.Conjuring;
+                return animator.GetBool($"Conjurando Habilidade {oi.ToString()}");
             });
 
             StartCoroutine(Rotate());
@@ -224,13 +238,20 @@ namespace _Game.Scripts.GameContent.Entities
         #endregion
 
         #region Callbacks
-        
+
+        void OnDeathBeginning(Entity entity)
+        {
+            Stop();
+            movement.enabled = false;
+            collision.Hittable = false;
+        }
+
         public void OnWeaponChange(Weapon weapon)
         {
             if (weapon)
             {
                 Weapon = weapon;
-                animator.runtimeAnimatorController = weapon.Data.AnimatorController;
+                animator.runtimeAnimatorController = weapon.animatorController;
                 mesh.SwitchWeapon(weapon.Data.Prefabs);
                 particle.InstantiateAbilityEffects(weapon.Abilities.ToArray());
             }
@@ -242,6 +263,7 @@ namespace _Game.Scripts.GameContent.Entities
 
         void Start()
         {
+            events.onDeathBeginning.AddListener(OnDeathBeginning);
             events.onBirth.Invoke(this);
             events.onEnabled.Invoke(this);
             Ready = true;

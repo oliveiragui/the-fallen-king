@@ -67,12 +67,18 @@ namespace _Game.Scripts.GameContent.Characters
             AbilitySystem.StopAbility();
         }
 
+        void OnEntityDeath(Entity entity)
+        {
+            events.onEntityDeath.Invoke(entity);
+        }
+
         void OnEntityEnabled(Entity newEntity)
         {
             WeaponStorage.onWeaponChange.AddListener(entity.OnWeaponChange);
             entity.events.startAbility.AddListener(OnStartAbility);
             entity.events.finishAbility.AddListener(OnFinishAbility);
             entity.events.onHitReceived.AddListener(OnHit);
+            entity.events.onDeathBeginning.AddListener(OnEntityDeath);
             entity.OnWeaponChange(weaponStorage.WeaponInUse);
         }
 
@@ -82,16 +88,21 @@ namespace _Game.Scripts.GameContent.Characters
             entity.events.startAbility.RemoveListener(OnStartAbility);
             entity.events.finishAbility.RemoveListener(OnFinishAbility);
             entity.events.onHitReceived.RemoveListener(OnHit);
+            entity.events.onDeathBeginning.RemoveListener(OnEntityDeath);
         }
 
         #endregion
 
         #region Unity Functions
 
-        void Start()
+        void Awake()
         {
             Team = data.DefaultTeam;
             Status = new Status(data.RawStatus);
+        }
+
+        void Start()
+        {
             WeaponStorage.onWeaponChange.AddListener(AbilitySystem.OnWeaponChange);
             Status.onAnyStatChanged.AddListener(OnAnyStatChanged);
             AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
@@ -104,8 +115,9 @@ namespace _Game.Scripts.GameContent.Characters
         {
             if (!entity) return;
             entity.events.onEnabled.AddListener(OnEntityEnabled);
-            if (entity.enabled) OnEntityEnabled(entity);
+            if (entity.enabled && entity.Ready) OnEntityEnabled(entity);
             entity.events.onDisabled.AddListener(OnEntityDisabled);
+            if (!entity.enabled) OnEntityDisabled(entity);
         }
 
         void OnEnable()

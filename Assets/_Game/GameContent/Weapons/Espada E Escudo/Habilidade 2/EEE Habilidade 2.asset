@@ -28,10 +28,13 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 37d143155a8cf524f8f93d8309907efa,
+      type: 2}
     factor1: 2
+    middleAnimation: {fileID: 0}
     factor2: 0
+    endAnimation: {fileID: 0}
     factor3: 0
   - attributes:
       power:
@@ -40,8 +43,12 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: aa5b68dce704e334486d8316ab386b3e,
+      type: 2}
     factor1: 2
+    middleAnimation: {fileID: 0}
     factor2: 0
+    endAnimation: {fileID: 0}
     factor3: 0
+  particleEffects: []

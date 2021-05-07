@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114919e8d923406c9f07c57b428b7fc0, type: 3}
+  m_Name: "Chamado Do Trov\xE3o"
+  m_EditorClassIdentifier: 
+  animationId: 3
+  description: 
+  icon: {fileID: 21300000, guid: e420c5bc93cb2604695a893500c897e3, type: 3}
+  canBeInterruped: 1
+  canInterrupt: 0
+  cooldown:
+    multiplier: 0
+    value: 1
+  combo:
+  - attributes:
+      power:
+        multiplier: 0
+        value: 0
+      range:
+        multiplier: 0
+        value: 0
+    castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 3469524a605a1bf40bfcfff139da1a52,
+      type: 2}
+    factor1: 1
+    middleAnimation: {fileID: 0}
+    factor2: 0
+    endAnimation: {fileID: 0}
+    factor3: 0
+  particleEffects:
+  - {fileID: 198109754318447844, guid: 3b016e4b4c464cd4fb79cd352141fc20, type: 3}
+  - {fileID: 198106895250101352, guid: 7290e8db780157e428f655c65cf144ec, type: 3}

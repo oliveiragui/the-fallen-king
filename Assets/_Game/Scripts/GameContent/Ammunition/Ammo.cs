@@ -11,6 +11,7 @@ namespace _Game.Scripts.GameContent.Ammunition
     {
         Rigidbody _rigidbody;
         [NonSerialized] public AmmoData data;
+        [SerializeField] GameObject trail;
 
         Coroutine DeactivationTimer;
 
@@ -21,13 +22,13 @@ namespace _Game.Scripts.GameContent.Ammunition
         {
             AbilityHit = hit;
             _rigidbody.AddForce(force);
+            trail.SetActive(true);
         }
 
         public void Hit(Entity entity)
         {
             if (HasCollided) return;
             entity.Hit(AbilityHit);
-            //entity.events.onHitReceived.Invoke(AbilityHit);
             OnHit(entity.transform);
         }
 
@@ -36,6 +37,7 @@ namespace _Game.Scripts.GameContent.Ammunition
             HasCollided = true;
             AttachToTarget(target);
             SetLifeTime(data.LifeTimeOnHit);
+            trail.SetActive(false);
         }
 
         void AttachToTarget(Transform other)

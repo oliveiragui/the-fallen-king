@@ -28,8 +28,12 @@ MonoBehaviour:
       range:
         multiplier: 0
         value: 0
-    action: {fileID: 0}
     castable: 0
+    beginningAnimation: {fileID: 7400000, guid: db7dab044f207ea4bb299d0a6343cfd2,
+      type: 2}
     factor1: 2
+    middleAnimation: {fileID: 0}
     factor2: 1
+    endAnimation: {fileID: 0}
     factor3: 1
+  particleEffects: []

@@ -11,10 +11,18 @@ namespace _Game.Scripts.GameContent.Abilities
         [SerializeField] public RawComboAttributes attributes;
 
         [SerializeField] public bool castable;
+        
+        [SerializeField] public AnimationClip beginningAnimation;
         [SerializeField] public float factor1;
 
         [ConditionalField("castable")] [SerializeField]
+        public AnimationClip middleAnimation;
+
+        [ConditionalField("castable")] [SerializeField]
         public float factor2;
+
+        [ConditionalField("castable")] [SerializeField]
+        public AnimationClip endAnimation;
 
         [ConditionalField("castable")] [SerializeField]
         public float factor3;
