@@ -1,5 +1,5 @@
-﻿using _Game.Scripts.Services.EventSystem.Custom.Scene;
-using _Game.Scripts.UI;
+﻿using _Game.GameModules.UI.Scripts;
+using _Game.Scripts.Services.EventSystem.Custom.Scene;
 using UnityEngine;
 
 namespace _Game.Scripts.Services

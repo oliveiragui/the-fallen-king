@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using _Game.Scripts.GameContent.Entities;
-using _Game.Scripts.GameContent.Weapons;
+using _Game.GameModules.Entities.Scripts;
+using _Game.GameModules.Weapons.Scripts;
 using _Game.Scripts.Utils.Extension;
 using UnityEngine;
 

@@ -1,6 +1,5 @@
 ﻿using System;
-using _Game.Scripts.GameContent.Characters;
-using _Game.Scripts.GameContent.Entities;
+using _Game.GameModules.Entities.Scripts;
 using Fluent;
 using UnityEngine;
 using UnityEngine.Events;

@@ -1,10 +1,10 @@
 ﻿using Fluent;
 using System.Collections;
 using System.Collections.Generic;
+using _Game.GameModules.Entities.Scripts;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
-using _Game.Scripts.GameContent.Entities;
 
 public class Dialogo_NPC_6 : FluentScript
 {

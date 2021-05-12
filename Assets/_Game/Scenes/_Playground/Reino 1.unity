@@ -47382,6 +47382,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4352796456586412610, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: rawCharacterStatus.life.initial
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7058545168733968186, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: autoMove
@@ -47420,7 +47425,7 @@ PrefabInstance:
     - target: {fileID: 7927797022669741445, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: weapons.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927797022669741445, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -49140,12 +49145,17 @@ PrefabInstance:
     - target: {fileID: 1521049637797536647, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1743072863297281698, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4352796456586412610, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: rawCharacterStatus.life.initial
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7058545168733968186, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -49185,7 +49195,7 @@ PrefabInstance:
     - target: {fileID: 7927797022669741445, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: weapons.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7927797022669741445, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -50233,6 +50243,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 40845364454195379, guid: b2d04e1eeecd68548bf8f5df41c36cdd,
+        type: 3}
+      propertyPath: rawCharacterStatus.life.initial
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 427972219953048152, guid: b2d04e1eeecd68548bf8f5df41c36cdd,
         type: 3}
       propertyPath: associatedCharacter

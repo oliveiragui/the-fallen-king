@@ -1,53 +1,77 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using _Game.Scripts.Utils.Serializables;
+using UnityEngine;
 using UnityEngine.Events;
 
 namespace _Game.Scripts.Services.AttributeSystem
 {
-    public class Attribute : RawAttribute
+    [Serializable]
+    public class Attribute
     {
-        readonly List<RawAttribute> _modifiers;
+        public UnityEvent attrChanged = new UnityEvent();
+        [NonSerialized] List<Attribute> _bonuses = new List<Attribute>();
 
-        public Attribute(float value, float multiplier) : base(value, multiplier)
+        [SerializeField] float initial;
+        [SerializeField] [ReadOnlyField] float total;
+        [SerializeField] [ReadOnlyField] float current;
+
+        public Attribute() : this(0) { }
+
+        public Attribute(float raw)
         {
-            _modifiers = new List<RawAttribute>();
-            OnAttributeChanged = new AttributeChangedEvent();
+            Raw = raw;
+            total = raw;
+            current = total;
         }
 
-        public AttributeChangedEvent OnAttributeChanged { get; }
-
-        public void AddModifier(Attribute modifier)
+        public float Raw
         {
-            AddModifier(modifier as RawAttribute);
-            modifier.OnAttributeChanged.AddListener(Update);
+            get => initial;
+            set => initial = Mathf.Max(value, 0);
         }
 
-        public bool RemoveModifier(Attribute modifier)
+        public float Total
         {
-            if (!RemoveModifier(modifier as RawAttribute)) return false;
-            modifier.OnAttributeChanged.RemoveListener(Update);
-            return true;
+            get => total;
+            private set
+            {
+                total = Mathf.Max(value, 0);
+                current = Mathf.Clamp(current, 0, total);
+                attrChanged.Invoke();
+            }
         }
 
-        public void AddModifier(RawAttribute modifier)
+        public float Current
         {
-            _modifiers.Add(modifier);
-            Update(modifier.Value, modifier.Multiplier);
+            get => current;
+            set
+            {
+                current = Mathf.Clamp(value, 0, total);
+                attrChanged.Invoke();
+            }
         }
 
-        public bool RemoveModifier(RawAttribute modifier)
+        public void AddBonus(Attribute bonus)
         {
-            if (!_modifiers.Remove(modifier)) return false;
-            Update(-modifier.Value, -modifier.Multiplier);
-            return true;
+            if (_bonuses.Contains(bonus)) return;
+            _bonuses.Add(bonus);
+            bonus.attrChanged.AddListener(OnAttrChanged);
+            OnAttrChanged();
         }
 
-        void Update(float value, float multiplier)
+        public void RemoveBonus(Attribute bonus)
         {
-            Value += value;
-            Multiplier += multiplier;
-            OnAttributeChanged.Invoke(value, multiplier);
+            if (!_bonuses.Contains(bonus)) return;
+            _bonuses.Remove(bonus);
+            bonus.attrChanged.RemoveListener(OnAttrChanged);
+            OnAttrChanged();
+        }
+
+        public void OnAttrChanged()
+        {
+            Total = initial + _bonuses.Sum(bonus1 => bonus1.Current);
         }
     }
-
-    public class AttributeChangedEvent : UnityEvent<float, float> { }
 }

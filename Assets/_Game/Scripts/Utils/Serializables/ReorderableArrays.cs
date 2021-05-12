@@ -1,5 +1,5 @@
 ﻿using System;
-using _Game.Scripts.GameContent.Weapons.Prefab;
+using _Game.GameModules.Weapons.Scripts.Prefab;
 using _Game.Scripts.Runtime.Reorderable;
 using UnityEngine;
 

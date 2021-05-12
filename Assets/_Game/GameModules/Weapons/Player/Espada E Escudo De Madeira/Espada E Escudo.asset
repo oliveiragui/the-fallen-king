@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2819ca66e2dd4ab5a439617001702cf0, type: 3}
+  m_Name: Espada E Escudo
+  m_EditorClassIdentifier: 
+  description: Cause um bom dano aos inimigos sem se expor
+  icon: {fileID: 21300000, guid: b97c91e8b348f3f4ebdc11f5c82182cd, type: 3}
+  ammoData: {fileID: 0}
+  animations:
+    idle: {fileID: 7400000, guid: 0391fc71a9292b14393ca039d6c5837d, type: 2}
+    walk: {fileID: 7400000, guid: 43167e6b73ff74d42886d15923532042, type: 2}
+    run: {fileID: 7400000, guid: 868e2f6ad5aef3d4f8d90c48645398fb, type: 2}
+  abilities:
+  - {fileID: 11400000, guid: e84c1ecd27b5e5a47967604b9f2f88d5, type: 2}
+  - {fileID: 11400000, guid: e84c1ecd27b5e5a47967604b9f2f88d5, type: 2}
+  - {fileID: 11400000, guid: 27f1cf93d2d27e44a9d597c416c5ac4d, type: 2}
+  - {fileID: 11400000, guid: 1ac9decfca8f4ce4e84396f299abc0ce, type: 2}
+  status:
+    life:
+      multiplier: 0
+      value: 0
+    strength:
+      multiplier: 0
+      value: 0
+    attackSpeed:
+      multiplier: 0
+      value: 0
+    speed:
+      multiplier: 0
+      value: 0
+  prefabs:
+    alwaysOn:
+      array: []
+    idle:
+      array:
+      - slot: Costas
+        gameObject: {fileID: 1220633678843950, guid: 9b47a527caf06af47a80079b9e29782a,
+          type: 3}
+        position: {x: 0.139, y: 0.251, z: 0.003}
+        rotation: {x: 0, y: 0, z: 151}
+      - slot: Costas
+        gameObject: {fileID: 1377388708257028, guid: 436f7bdc89c8a464aa388a11ee684e3f,
+          type: 3}
+        position: {x: 0, y: -0.174, z: 0}
+        rotation: {x: 0, y: 180, z: 0}
+    inCombat:
+      array:
+      - slot: Mao Direita
+        gameObject: {fileID: 1220633678843950, guid: 9b47a527caf06af47a80079b9e29782a,
+          type: 3}
+        position: {x: 0.092, y: 0.044, z: -0.028}
+        rotation: {x: -101.71, y: -13.93, z: 0}
+      - slot: Mao Esquerda
+        gameObject: {fileID: 1377388708257028, guid: 436f7bdc89c8a464aa388a11ee684e3f,
+          type: 3}
+        position: {x: 0, y: 0, z: 0}
+        rotation: {x: -90, y: 0, z: 0}

@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114919e8d923406c9f07c57b428b7fc0, type: 3}
+  m_Name: Saraivada
+  m_EditorClassIdentifier: 
+  metaData:
+    description: 
+    icon: {fileID: 0}
+  attributes:
+    range: 0
+    cooldown:
+      constant: 1
+      attributeInfluence: -0.1
+  combo:
+  - attributes:
+      power:
+        attrChanged:
+          m_PersistentCalls:
+            m_Calls: []
+        initial: 0
+        total: 0
+        current: 0
+    castable: 1
+    beginningAnimation: {fileID: 7400000, guid: ce89d8bcc261e2d4bb18326f8133b1b6,
+      type: 2}
+    factor1: 5
+    middleAnimation: {fileID: 7400000, guid: e31f48a1bceb9664e9087b367c023e1f, type: 2}
+    factor2: 5
+    endAnimation: {fileID: 7400000, guid: d60d886e4522b6644b4299f293bed5aa, type: 2}
+    factor3: 5
+  particleEffects: []
+  actions:
+  - {fileID: 11400000, guid: 26d3b86abe2969843a5b08715d74a0cd, type: 2}
+  - {fileID: 11400000, guid: 64facdf6ce680da4ab1f90937f2483d1, type: 2}
+  canBeInterruped: 0
+  canInterrupt: 0

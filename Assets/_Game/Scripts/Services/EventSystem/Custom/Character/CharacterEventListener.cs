@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace _Game.Scripts.Services.EventSystem.Custom.Character
 {
-    public class CharacterEventListener : MonoBehaviour, IGameEventListener<GameContent.Characters.Character>
+    public class CharacterEventListener : MonoBehaviour, IGameEventListener<GameModules.Characters.Scripts.Character>
     {
         // The game event instance to register to.
         public CharacterEvent GenericEvent;
@@ -22,12 +22,12 @@ namespace _Game.Scripts.Services.EventSystem.Custom.Character
             GenericEvent.UnregisterListener(this);
         }
 
-        public void RaiseEvent(GameContent.Characters.Character character)
+        public void RaiseEvent(GameModules.Characters.Scripts.Character character)
         {
             Response.Invoke(character);
         }
     }
 
     [Serializable]
-    public class UnityCharacterEvent : UnityEvent<GameContent.Characters.Character> { }
+    public class UnityCharacterEvent : UnityEvent<GameModules.Characters.Scripts.Character> { }
 }

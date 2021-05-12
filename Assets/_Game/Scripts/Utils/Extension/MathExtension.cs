@@ -11,5 +11,7 @@ namespace _Game.Scripts.Utils.Extension
         public static float ToDegree(float x, float y) => ToRad(x, y) * Mathf.Rad2Deg;
 
         public static float ToDegree(this Vector2 vector) => ToDegree(vector.x, vector.y);
+        
+        public static int Correct(this Mathf test, int value, int min, int max) => value < min ? min : value > max ? max : value;
     }
 }
