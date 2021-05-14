@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Game.GameModules.Characters.Scripts;
 using _Game.GameModules.Entities.Scripts;
 using _Game.GameModules.UI.Scripts.Utils;
@@ -6,40 +7,35 @@ using UnityEngine;
 
 namespace _Game.GameModules.UI.Scripts.HUD
 {
-    public class CharacterHUD : MonoBehaviour
+    public class CharacterHUD : MonoBehaviour, ICharacterStatusChangeListener
     {
         [SerializeField] Lifebar lifebar;
-        Coroutine followingEntity;
+        Entity entity;
 
         void Awake()
         {
-            enabled = false;
+            lifebar.gameObject.SetActive(false);
         }
 
-        public void UpdateLife(CharacterStatus characterStatus)
+        public void BindCharacter(Character character)
         {
-            lifebar.Total = characterStatus.Life.Total;
-            lifebar.Current = characterStatus.Life.Current;
+            character.Entity.events.onHitReceived.AddListener((a) => lifebar.gameObject.SetActive(true));
+            //character.events.enterInCombat.AddListener(() => lifebar.enabled = true);
+            character.events.exitCombat.AddListener(() => lifebar.enabled = false);
+            character.events.onEntityDeath.AddListener((entity2) => Destroy(gameObject));
+            character.CharacterStatus.StatusChanged.AddListener(OnStatusChange);
+            entity = character.Entity;
         }
 
-        public void FollowEntity(Entity entity)
+        public void OnStatusChange(CharacterStatus status)
         {
-            StopFollowEntity(entity);
-            followingEntity = StartCoroutine(Follow(entity));
+            lifebar.Total = status.Life.Total;
+            lifebar.Current = status.Life.Current;
         }
 
-        IEnumerator Follow(Entity entity)
+        void FixedUpdate()
         {
-            while (true)
-            {
-                transform.position = entity.transform.position;
-                yield return null;
-            }
-        }
-
-        public void StopFollowEntity(Entity entity)
-        {
-            if (followingEntity != null) StopCoroutine(followingEntity);
+            if (entity) transform.position = entity.transform.position;
         }
     }
 }

@@ -17,7 +17,6 @@ namespace _Game.GameModules.IA.Scripts
         public float preferedDistance;
         [Range(1, 10)] public float maxVariation;
         [NonSerialized] public float maxDistance;
-
         [NonSerialized] public float minDistance;
 
         public Entity Target => target;
@@ -59,7 +58,7 @@ namespace _Game.GameModules.IA.Scripts
             var targetPosition = Target.transform.position;
             var direction = targetPosition - position;
             entity.movement.Rotation = Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree());
-            entity.LookAt(entity.movement.Rotation);
+            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
         }
 
         void AnalizaDistancia(Vector3 distance)
@@ -68,9 +67,22 @@ namespace _Game.GameModules.IA.Scripts
             {
                 animator.SetBool("Muito Distante", distance.magnitude > maxDistance);
                 animator.SetBool("Muito Proximo", distance.magnitude < minDistance);
+                animator.SetBool("Alvo Atras", TargetIsBehind());
+
+                animator.SetBool("Cooldown Habilidade 1", entity.Character.AbilitySystem.Abilities[0].InCooldown);
+                animator.SetBool("Cooldown Habilidade 2", entity.Character.AbilitySystem.Abilities[1].InCooldown);
+                animator.SetBool("Cooldown Habilidade 3", entity.Character.AbilitySystem.Abilities[2].InCooldown);
+                animator.SetBool("Cooldown Habilidade 4", entity.Character.AbilitySystem.Abilities[3].InCooldown);
             }
 
             //if (target && (entity.transform.position - target.transform.position).magnitude > 10) target = null;
+        }
+
+        bool TargetIsBehind()
+        {
+            var transform1 = entity.transform;
+            var toTarget = (target.transform.position - transform1.position).normalized;
+            return Vector3.Dot(toTarget, transform1.forward) < 0;
         }
     }
 }

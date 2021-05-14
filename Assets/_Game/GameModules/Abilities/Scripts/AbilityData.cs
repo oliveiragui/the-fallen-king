@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Game.GameModules.Abilities.Scripts
 {
-    [CreateAssetMenu(fileName = "Habilidade", menuName = "GameContent/Habilidades/", order = 2)]
+    [CreateAssetMenu(fileName = "Ability", menuName = "GameContent/Ability", order = 2)]
     public class AbilityData : ScriptableObject
     {
         [SerializeField] bool canBeInterruped;

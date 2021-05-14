@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using _Game.GameModules.Abilities.Scripts;
+using _Game.GameModules.Weapons.Scripts;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace _Game.GameModules.UI.Scripts.HUD
 {
-    public class AbilityIcon : MonoBehaviour
+    public class AbilityIcon : MonoBehaviour, IWeaponChangeListener
     {
+        [SerializeField] int abilityIndex;
+        [SerializeField] string buttonName;
         [SerializeField] Image icon;
         [SerializeField] TextMeshProUGUI buttonIcon;
 
@@ -20,24 +23,30 @@ namespace _Game.GameModules.UI.Scripts.HUD
 
         Ability currentAbility;
 
-        public void BindAbility(Ability ability, string buttonName)
+        public void OnWeaponChange(Weapon weapon)
         {
             buttonIcon.text = $"<sprite=\"XboxOne\" name=\"XboxOne_{buttonName}\">";
+            var ability = weapon.Abilities[abilityIndex];
             icon.sprite = ability.Data.MetaData.Icon;
+            if (currentAbility) RemoveCurrentAbility();
+            AddAbility(ability);
+        }
 
-            if (currentAbility)
-            {
-                if (cooldownCount != null) StopCoroutine(cooldownCount);
-                currentAbility.onCooldownEnter.RemoveListener(OnCooldownEnter);
-                ability.onAbilityUse.RemoveListener(OnAbilityUse);
-            }
-
+        void AddAbility(Ability ability)
+        {
             currentAbility = ability;
             UsageIndicator.fillAmount = 0;
             ResetCooldownIndicator();
-
             ability.onAbilityUse.AddListener(OnAbilityUse);
             ability.onCooldownEnter.AddListener(OnCooldownEnter);
+        }
+
+        void RemoveCurrentAbility()
+        {
+            if (cooldownCount != null) StopCoroutine(cooldownCount);
+            currentAbility.onCooldownEnter.RemoveListener(OnCooldownEnter);
+            currentAbility.onAbilityUse.RemoveListener(OnAbilityUse);
+            currentAbility = null;
         }
 
         void OnAbilityUse()
@@ -45,6 +54,12 @@ namespace _Game.GameModules.UI.Scripts.HUD
             if (cooldownCount != null) StopCoroutine(cooldownCount);
             UsageIndicator.fillAmount = 1;
             ResetCooldownIndicator();
+        }
+
+        void ResetCooldownIndicator()
+        {
+            cooldownIndicator.fillAmount = 0;
+            cooldownTimer.text = "";
         }
 
         void OnCooldownEnter(float time)
@@ -66,12 +81,6 @@ namespace _Game.GameModules.UI.Scripts.HUD
                 return cooldown > 0;
             });
             ResetCooldownIndicator();
-        }
-
-        void ResetCooldownIndicator()
-        {
-            cooldownIndicator.fillAmount = 0;
-            cooldownTimer.text = "";
         }
     }
 }

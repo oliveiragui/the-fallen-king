@@ -1,20 +1,16 @@
 ﻿using _Game.GameModules.Abilities.Scripts;
+using _Game.GameModules.Weapons.Scripts;
 using UnityEngine;
 
 namespace _Game.GameModules.UI.Scripts.HUD
 {
-    public class AbilityFeedbackPanel : MonoBehaviour
+    public class AbilityIconsPanel : MonoBehaviour,IWeaponChangeListener
     {
         [SerializeField] AbilityIcon[] abilityIcons;
 
-        public string[] buttonsName = {"X", "Y", "B", "A"};
-
-        public void OnWeaponChange(Ability[] abilities)
+        public void OnWeaponChange(Weapon weapon)
         {
-            for (var i = 0; i < abilities.Length && i < buttonsName.Length && i < abilityIcons.Length; i++)
-                abilityIcons[i].BindAbility(abilities[i], buttonsName[i]);
+            foreach (var icon in abilityIcons) icon.OnWeaponChange(weapon);
         }
-
-        void UpdateAndAddListener() { }
     }
 }

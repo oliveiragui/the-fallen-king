@@ -10,7 +10,6 @@ namespace _Game.GameModules.Abilities.Scripts
     public class Ability : MonoBehaviour
     {
         [SerializeField] AbilityData data;
-        Timer cooldownTimer = new Timer();
 
         public UnityEvent onAbilityUse = new UnityEvent();
         public CooldownEnterEvent onCooldownEnter = new CooldownEnterEvent();
@@ -19,30 +18,35 @@ namespace _Game.GameModules.Abilities.Scripts
 
         public AbilityData Data => data;
 
-        public float Cooldown { get; private set; }
+        public float TotalCooldown { get; private set; }
+        public float RemainingCooldownTime { get; private set; }
 
         public Combo CurrentCombo => data.Combo[CurrentComboID];
         public int CurrentComboID { get; private set; }
 
         public bool Conjuring { get; private set; }
         public bool InUse { get; private set; }
-        public bool InCooldown => cooldownTimer.IsRunning;
-        public bool CanBeUsed => !cooldownTimer.IsRunning;
-        public float RemainingCooldown => cooldownTimer.RemainingTime;
+        public bool InCooldown { get; private set; }
+        public bool CanBeUsed => !InCooldown && !Blocked;
+        public bool Blocked { get; set; }
 
         public bool CanOverride(Ability other) => !other || Data.CanOverride(other.Data);
-        
-        public Ability Setup(AbilityData data) 
+
+        public Ability Setup(AbilityData data, CharacterStatus status)
         {
             this.data = data;
+            TotalCooldown = data.Cooldown.Calculate(status.Agility);
+
             return this;
         }
 
         public void Use()
         {
+            if (!CanBeUsed) return;
             onAbilityUse.Invoke();
             Conjuring = true;
             InUse = true;
+            Blocked = true;
             if (!InCooldown && _cdCoroutine != null) StopCoroutine(_cdCoroutine);
         }
 
@@ -54,15 +58,28 @@ namespace _Game.GameModules.Abilities.Scripts
         public void Finish()
         {
             InUse = false;
+            // InCooldown = true;
             if (_cdCoroutine != null) StopCoroutine(_cdCoroutine);
-            _cdCoroutine = StartCoroutine(CooldownTimer(Cooldown));
+            _cdCoroutine = StartCoroutine(CooldownTimer());
         }
 
-        IEnumerator CooldownTimer(float time)
+        IEnumerator CooldownTimer()
         {
             yield return WaitComboTransitionTime();
-            onCooldownEnter.Invoke(time);
-            yield return cooldownTimer.StartTimer(time);
+            yield return WaitCooldown();
+        }
+
+        IEnumerator WaitCooldown()
+        {
+            InCooldown = true;
+            onCooldownEnter.Invoke(data.Cooldown.Value);
+            RemainingCooldownTime = TotalCooldown;
+            yield return new WaitWhile(() =>
+            {
+                RemainingCooldownTime -= Time.deltaTime;
+                return RemainingCooldownTime > 0;
+            });
+            InCooldown = false;
         }
 
         IEnumerator WaitComboTransitionTime()
@@ -71,27 +88,6 @@ namespace _Game.GameModules.Abilities.Scripts
             if (CurrentComboID < Data.Combo.Length)
                 yield return new WaitForSeconds(1f);
             CurrentComboID = 0;
-        }
-    }
-
-    [Serializable]
-    public class Timer
-    {
-        float remainingTime;
-
-        public bool IsRunning { get; private set; }
-        public float RemainingTime => remainingTime;
-
-        public IEnumerator StartTimer(float time)
-        {
-            IsRunning = true;
-            remainingTime = time;
-            yield return new WaitWhile(() =>
-            {
-                remainingTime -= Time.deltaTime;
-                return remainingTime > 0;
-            });
-            IsRunning = false;
         }
     }
 

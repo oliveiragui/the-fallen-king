@@ -81,9 +81,11 @@ namespace _Game.GameModules.Entities.Scripts
         public void RequestAbility(int index)
         {
             var abSys = Character.AbilitySystem;
-            var reqAbility = Character.AbilitySystem.Abilities[index];
+            var reqAbility = abSys.Abilities[index];
+            
+            if (!reqAbility.CanBeUsed) return;
             if (!abSys.CanUseAbility(index)) return;
-
+            
             animator.SetTrigger(reqAbility.CanOverride(abSys.AbilityInUse)
                 ? AnimatorParams.ForceAbility
                 : AnimatorParams.RequestAbility);
@@ -93,6 +95,7 @@ namespace _Game.GameModules.Entities.Scripts
 
         public void SetupAbility(Ability ability)
         {
+            ability.Blocked = false;
             var combo = ability.CurrentCombo;
             animator.SetInteger("Combo Atual", ability.CurrentComboID);
             animator.SetBool(AnimatorParams.Castable, combo.Castable);
@@ -146,12 +149,13 @@ namespace _Game.GameModules.Entities.Scripts
 
         int HitResistanceMatrix(HitImpact impact, ImpactResistance resiliency)
         {
-            int[,] matrix = new int[4, 3]
+            int[,] matrix = new int[4, 4]
             {
-                {0, 0, 0},
-                {2, 1, 1},
-                {2, 2, 1},
-                {3, 3, 1}
+                // y - Resiliencia - weak,normal,strong,unbeatable
+                {0, 0, 0, 0},
+                {2, 1, 1, 1},
+                {2, 2, 1, 1},
+                {3, 3, 2, 1}
             };
             return matrix[(int) impact, (int) resiliency];
         }
@@ -217,7 +221,7 @@ namespace _Game.GameModules.Entities.Scripts
             if (obj is EntityCommand command) command.Execute(this);
             else Debug.Log(obj.name + " Is not a Command");
         }
-        
+
         #endregion
 
         #region Callbacks

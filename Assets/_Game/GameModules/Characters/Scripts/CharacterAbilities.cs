@@ -7,13 +7,14 @@ namespace _Game.GameModules.Characters.Scripts
 {
     public class CharacterAbilities : MonoBehaviour
     {
-        public List<Ability> Abilities { get; private set; }
+        [SerializeField] List<Ability> abilities; 
+        public List<Ability> Abilities { get => abilities; private set =>  abilities = value; }
         public Ability AbilityInUse { get; private set; }
 
         public void StartAbility(int index)
         {
             var nextAbility = Abilities[index];
-            if (AbilityInUse && AbilityInUse != nextAbility) AbilityInUse.Finish();
+            if (AbilityInUse) AbilityInUse.Finish();
             AbilityInUse = nextAbility;
             nextAbility.Use();
         }

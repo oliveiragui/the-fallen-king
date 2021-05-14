@@ -27,7 +27,7 @@ namespace _Game.GameModules.Characters.Scripts
             var weapon = new GameObject();
             weapon.name = weaponData.name;
             weapon.transform.parent = gameObject.transform;
-            weapons.Add(weapon.AddComponent<Weapon>().Setup(weaponData, entityAnimator)); //,status));
+            weapons.Add(weapon.AddComponent<Weapon>().Setup(weaponData, entityAnimator,status)); //,status));
         }
 
         public void UseWeapon(int index)

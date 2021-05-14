@@ -87,10 +87,10 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    onEntityBirth:
+    enterInCombat:
       m_PersistentCalls:
         m_Calls: []
-    onEntityDeath:
+    exitCombat:
       m_PersistentCalls:
         m_Calls: []
     startAbility:
@@ -99,7 +99,14 @@ MonoBehaviour:
     finishAbility:
       m_PersistentCalls:
         m_Calls: []
+    onEntityBirth:
+      m_PersistentCalls:
+        m_Calls: []
+    onEntityDeath:
+      m_PersistentCalls:
+        m_Calls: []
   immortal: 0
+  _combatMode: 0
 --- !u!114 &1521049637797536646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,7 +250,7 @@ MonoBehaviour:
   weapons: []
   weaponInUse: {fileID: 0}
   entityAnimator: {fileID: 9100000, guid: 1988ba9e67131ce4697e0b79ef7ed406, type: 2}
-  status: {fileID: 0}
+  status: {fileID: 4352796456586412610}
   onWeaponChange:
     m_PersistentCalls:
       m_Calls: []
@@ -290,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e961ebcf234848af4d7ab1a169c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilities: []
 --- !u!1001 &1521049637006127661
 PrefabInstance:
   m_ObjectHideFlags: 0

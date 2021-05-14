@@ -31,7 +31,26 @@ namespace _Game.GameModules.Characters.Scripts
         public CharacterAbilities AbilitySystem => abilitySystem;
         public ImpactResistance Resiliency => data.Resiliency;
 
-        public bool Ready { get; private set; }
+        [SerializeField] bool _combatMode;
+
+        public bool CombatMode
+        {
+            get => _combatMode;
+            set
+            {
+                if (value)
+                {
+                    if (!_combatMode) events.enterInCombat.Invoke();
+                }
+                else
+                {
+                    if (_combatMode) events.exitCombat.Invoke();
+                }
+
+                _combatMode = value;
+                entity.CombatMode = value;
+            }
+        }
 
         void KillEntity()
         {
@@ -39,6 +58,16 @@ namespace _Game.GameModules.Characters.Scripts
         }
 
         #region Callbacks
+
+        void OnEnterInCombat()
+        {
+            CombatMode = true;
+        }
+
+        void OnExitCombat()
+        {
+            CombatMode = false;
+        }
 
         void OnStatusChanged(CharacterStatus characterStatus)
         {
@@ -52,13 +81,14 @@ namespace _Game.GameModules.Characters.Scripts
         {
             CharacterStatus.Life.Current += (int) abilityHit.power;
             AbilitySystem.StopAbility();
+            OnEnterInCombat();
         }
 
         void OnStartAbility(int abilityIndex)
         {
             AbilitySystem.StartAbility(abilityIndex);
             entity.SetupAbility(AbilitySystem.AbilityInUse);
-            entity.CombatMode = true;
+            OnEnterInCombat();
         }
 
         void OnFinishAbility()
@@ -68,6 +98,7 @@ namespace _Game.GameModules.Characters.Scripts
 
         void OnEntityDeath(Entity entity)
         {
+            OnExitCombat();
             events.onEntityDeath.Invoke(entity);
         }
 
@@ -135,10 +166,12 @@ namespace _Game.GameModules.Characters.Scripts
     {
         public UnityEvent onInstantiate;
         public UnityEvent onDestroy;
-        public UnityEntityEvent onEntityBirth;
-        public UnityEntityEvent onEntityDeath;
+        public UnityEvent enterInCombat;
+        public UnityEvent exitCombat;
         public AbilityEvent startAbility;
         public AbilityEvent finishAbility;
+        public UnityEntityEvent onEntityBirth;
+        public UnityEntityEvent onEntityDeath;
     }
 
     [Serializable]

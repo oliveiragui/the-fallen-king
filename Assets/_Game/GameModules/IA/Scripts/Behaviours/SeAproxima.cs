@@ -11,8 +11,7 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            _test.LookToTarget();
-            _test.entity.Stop();
+            //_test.entity.Stop();
         }
 
         public override void OnStateUpdate(

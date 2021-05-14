@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 114919e8d923406c9f07c57b428b7fc0, type: 3}
+  m_Name: "Retalha\xE7\xE3o"
+  m_EditorClassIdentifier: 
+  canBeInterruped: 1
+  canInterrupt: 0
+  metaData:
+    description: 
+    icon: {fileID: 0}
+  combo:
+  - castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 282082dad4794dd45a72a4a6a26c5945,
+      type: 2}
+    factor1: 0.4
+    middleAnimation: {fileID: 0}
+    factor2: 0
+    endAnimation: {fileID: 0}
+    factor3: 0
+  - castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 8c5334b58ebfe3c4db7eba425f9ab453,
+      type: 2}
+    factor1: 0.4
+    middleAnimation: {fileID: 0}
+    factor2: 0
+    endAnimation: {fileID: 0}
+    factor3: 0
+  - castable: 0
+    beginningAnimation: {fileID: 7400000, guid: 8c5334b58ebfe3c4db7eba425f9ab453,
+      type: 2}
+    factor1: 0.4
+    middleAnimation: {fileID: 0}
+    factor2: 0
+    endAnimation: {fileID: 0}
+    factor3: 0
+  particleEffects:
+  - {fileID: 4262140483115222537, guid: fe0f46b3f1d3f894bb5ca02f98761074, type: 3}
+  - {fileID: 4262140483115222537, guid: cd413b54bf5d22343bc9a0cb3f722e68, type: 3}
+  - {fileID: 4262140483115222537, guid: 6b3f56e1a081794428288ebfd4fe3a88, type: 3}
+  range: 2
+  cooldown:
+    constant: 0
+    attributeInfluence: 0

@@ -7046,17 +7046,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168d7805d34043e99b8677fed312ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: 0
-  attribute:
-    raw: 10
-    bonuses:
-    - raw: 10
-      bonuses: []
-    - raw: 2
-      bonuses: []
-  statChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &627615931
 Transform:
   m_ObjectHideFlags: 0
@@ -7274,13 +7263,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168d7805d34043e99b8677fed312ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: 0
-  attribute:
-    raw: 10
-    bonuses: []
-  statChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &658074418
 Transform:
   m_ObjectHideFlags: 0
@@ -9009,11 +8991,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 718490375}
     m_Modifications:
+    - target: {fileID: 132496, guid: fe2f959547dcbc049ac8604389aa792b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 150176, guid: fe2f959547dcbc049ac8604389aa792b, type: 3}
       propertyPath: m_Name
       value: Player (Pivot)
       objectReference: {fileID: 0}
     - target: {fileID: 150176, guid: fe2f959547dcbc049ac8604389aa792b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 171634, guid: fe2f959547dcbc049ac8604389aa792b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -9140,7 +9130,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.17
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -9150,7 +9140,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.98
+      value: -5.13
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -17092,7 +17082,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.41
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -17102,7 +17092,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.98
+      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -17269,6 +17259,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1521049637797536646, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: db5ef8b605b4ab949a5055fd92cb03a1,
+        type: 2}
+    - target: {fileID: 1521049637797536646, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: distance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536647, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_Name
@@ -17278,6 +17279,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423498281523004486, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424472986164591810, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7058545168733968186, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -18425,6 +18436,12 @@ PrefabInstance:
       propertyPath: events.onEntityDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1521049637797536645, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: fb1f345c4b2db9e438cc5f08379ca452,
+        type: 2}
     - target: {fileID: 1521049637797536646, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: target
@@ -19600,13 +19617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 168d7805d34043e99b8677fed312ea04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: 0
-  attribute:
-    raw: 10
-    bonuses: []
-  statChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &1503832756
 Transform:
   m_ObjectHideFlags: 0
@@ -19692,7 +19702,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.26
+      value: -2.88
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -19702,7 +19712,7 @@ PrefabInstance:
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.52
+      value: -3.44
       objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536644, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -19869,6 +19879,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1521049637797536646, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: weaponData
+      value: 
+      objectReference: {fileID: 11400000, guid: db5ef8b605b4ab949a5055fd92cb03a1,
+        type: 2}
+    - target: {fileID: 1521049637797536646, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: distance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1521049637797536647, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: m_Name
@@ -19878,6 +19899,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423498281523004486, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5424472986164591810, guid: 4dff912247216734e8192af245f55a14,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7058545168733968186, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
@@ -21109,9 +21140,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa8a1f3380644dad8eed89c60014b710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: {fileID: 627615930}
-  strength: {fileID: 1503832755}
-  agility: {fileID: 658074417}
+  rawCharacterStatus:
+    life:
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
+    strength:
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
+    agility:
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
+  StatusChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1853073029
 Transform:
   m_ObjectHideFlags: 0

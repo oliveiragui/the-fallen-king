@@ -15,7 +15,7 @@ namespace _Game.GameModules.Entities.Scripts
             power.Calculate(entity.Character.CharacterStatus.Strength);
             var tr = entity.transform;
             var position = tr.position + Vector3.up;
-            var hit = new AbilityHit(-power.Value, Vector3.zero, entity.Character);
+            var hit = new AbilityHit(power.Value, Vector3.zero, entity.Character);
             var arrow = entity.Character.WeaponStorage.WeaponInUse.ammoData.Instantiate(position,
                 Quaternion.Euler(Vector3.up * (tr.rotation.eulerAngles.y + angle)));
             arrow.Shot(hit, arrow.transform.forward * 800);

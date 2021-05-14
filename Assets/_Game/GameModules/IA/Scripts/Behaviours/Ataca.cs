@@ -12,9 +12,8 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            _test.LookToTarget();
-
             _test.entity.RequestAbility(abilityId);
+            _test.LookToTarget();
         }
 
         public override void OnStateExit(

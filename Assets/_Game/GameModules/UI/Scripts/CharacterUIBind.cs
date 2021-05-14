@@ -10,7 +10,6 @@ namespace _Game.GameModules.UI.Scripts
     {
         [SerializeField] Character character;
         [SerializeField] CharacterMenuPage characterMenuPage;
-        [SerializeField] PlayerInfoHUD playerInfoHUD;
         public bool binded;
 
         void Start()
@@ -42,13 +41,11 @@ namespace _Game.GameModules.UI.Scripts
             if (!weapon) return;
             characterMenuPage.OnWeaponChange(weapon);
             characterMenuPage.OnWeaponChange(weapon, character.WeaponStorage.weapons);
-            playerInfoHUD.UpdateUI(weapon.Abilities.ToArray());
         }
 
         void OnStatusChange(CharacterStatus characterStatus)
         {
             characterMenuPage.OnStatusChange(characterStatus);
-            playerInfoHUD.UpdateUI(characterStatus);
         }
 
         public void Unbind(Character character) { }

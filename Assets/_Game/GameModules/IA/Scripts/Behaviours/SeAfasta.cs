@@ -14,8 +14,6 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
 
             var position = _test.entity.transform.position;
             var destination = (position - _test.Target.transform.position).normalized * _test.minDistance + position;
-
-            _test.LookToTarget();
             _test.entity.MoveTo(3, destination, 0.5f);
         }
 
@@ -24,7 +22,6 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            _test.LookToTarget();
             _test.entity.Stop();
         }
     }

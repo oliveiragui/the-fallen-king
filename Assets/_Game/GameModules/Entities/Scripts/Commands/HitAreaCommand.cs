@@ -32,7 +32,7 @@ namespace _Game.GameModules.Entities.Scripts
                 if (otherEntity.Character.Team.PlayerFriend ==
                     entity.Character.Team.PlayerFriend) continue;
 
-                otherEntity.Hit(new AbilityHit(-power.Value, Vector3.zero, entity.Character, impact));
+                otherEntity.Hit(new AbilityHit(power.Value, Vector3.zero, entity.Character, impact));
             }
         }
     }
