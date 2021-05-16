@@ -17,6 +17,22 @@ namespace _Game.GameModules.Entities.Scripts
 {
     public class Entity : MonoBehaviour
     {
+        static int[,] matrix = new int[4, 4]
+        {
+            /*Impact*/ //Resiliencia - weak,normal,strong,unbeatable
+            /*None*/ {0, 0, 0, 0},
+            /*Weak*/ {2, 1, 1, 1},
+            /*Normal*/ {2, 2, 1, 1},
+            /*Strong*/ {3, 3, 2, 1}
+            /*
+                * Result:
+                * 0 - nothing happens
+                * 1 - Just visual animation
+                * 2 - Interrupt current animation
+                * 3 - interrupts current animation and moves away from the Hit
+            */
+        };
+
         [SerializeField] public Animator animator;
         [SerializeField] public EntityAudio sound;
         [SerializeField] public EntityMesh mesh;
@@ -37,8 +53,8 @@ namespace _Game.GameModules.Entities.Scripts
 
         public Character Character => _character;
 
+        public bool UsingAbility { get; set; }
         [field: SerializeField] public bool Alive { get; set; } = true;
-        Weapon Weapon { get; set; }
         [field: SerializeField] public bool AutoMove { get; set; }
         [field: SerializeField] public float Speed { get; private set; }
         [field: SerializeField] public Quaternion Direction { get; private set; }
@@ -86,12 +102,6 @@ namespace _Game.GameModules.Entities.Scripts
             animator.SetBool($"Conjurando Habilidade {index}", true);
         }
 
-        public void SetupAbility(Ability ability)
-        {
-            var combo = ability.CurrentCombo;
-            SetCombo(ability.CurrentComboID, combo.Castable, combo.Factor1 * 1, combo.Factor2 * 1, combo.Factor3 * 1);
-        }
-
         public void SetCombo(int id, bool castable, float factor1, float factor2 = 1, float factor3 = 1)
         {
             animator.SetInteger("Combo Atual", id);
@@ -104,8 +114,6 @@ namespace _Game.GameModules.Entities.Scripts
 
         public void StopCasting(int index)
         {
-            var ability = Character.AbilitySystem.Abilities[index];
-            ability.StopConjuring();
             animator.SetBool($"Conjurando Habilidade {index + 1}", false);
         }
 
@@ -144,23 +152,8 @@ namespace _Game.GameModules.Entities.Scripts
             PlayParticle("Blood");
         }
 
-        int HitResistanceMatrix(HitImpact impact, ImpactResistance resiliency)
-        {
-            int[,] matrix = new int[4, 4]
-            {
-                // y - Resiliencia - weak,normal,strong,unbeatable
-                {0, 0, 0, 0},
-                {2, 1, 1, 1},
-                {2, 2, 1, 1},
-                {3, 3, 2, 1}
-            };
-            return matrix[(int) impact, (int) resiliency];
-        }
-
-        // public void StopHit()
-        // {
-        //     animator.SetBool(AnimatorParams.ReceivingHit, false);
-        // }
+        int HitResistanceMatrix(HitImpact impact, ImpactResistance resiliency) =>
+            matrix[(int) impact, (int) resiliency];
 
         public void Kill()
         {
@@ -210,13 +203,10 @@ namespace _Game.GameModules.Entities.Scripts
 
         public void OnWeaponChange(Weapon weapon)
         {
-            if (weapon)
-            {
-                Weapon = weapon;
-                animator.runtimeAnimatorController = weapon.animatorController;
-                mesh.SwitchWeapon(weapon.Data.Prefabs);
-                particle.InstantiateAbilityEffects(weapon.Abilities.ToArray());
-            }
+            if (!weapon) return;
+            animator.runtimeAnimatorController = weapon.animatorController;
+            mesh.SwitchWeapon(weapon.Data.Prefabs);
+            particle.InstantiateAbilityEffects(weapon.Abilities.ToArray());
         }
 
         #endregion
@@ -225,8 +215,7 @@ namespace _Game.GameModules.Entities.Scripts
 
         void OnAnimatorMove()
         {
-            if (Character.AbilitySystem.AbilityInUse)
-                movement.Speed = (animator.deltaPosition / Time.deltaTime).magnitude;
+            if (UsingAbility) movement.Speed = (animator.deltaPosition / Time.deltaTime).magnitude;
         }
 
         void OnTriggerEnter(Collider other)
@@ -247,8 +236,7 @@ namespace _Game.GameModules.Entities.Scripts
 
         void DetectFloorName(Collider other)
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
-                FloorName = other.tag;
+            if (other.gameObject.layer == LayerMask.NameToLayer("Floor")) FloorName = other.tag;
         }
 
         #endregion

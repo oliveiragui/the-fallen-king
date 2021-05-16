@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e961ebcf234848af4d7ab1a169c7af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilities: []
+  usingAbility: 0
 --- !u!1 &4473324157101595086
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,19 +239,17 @@ MonoBehaviour:
     onDestroy:
       m_PersistentCalls:
         m_Calls: []
-    onEntityBirth:
+    enterInCombat:
       m_PersistentCalls:
         m_Calls: []
-    onEntityDeath:
+    exitCombat:
       m_PersistentCalls:
         m_Calls: []
-    startAbility:
-      m_PersistentCalls:
-        m_Calls: []
-    finishAbility:
+    death:
       m_PersistentCalls:
         m_Calls: []
   immortal: 0
+  _combatMode: 0
 --- !u!114 &8954430661890499818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bb0a9b3a6b437db746bce3619c3afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 981440034168614554}
+  character: {fileID: 8954430661890499819}
   weapons:
   - {fileID: 11400000, guid: 6168730c4899fa2458302f856ef01f48, type: 2}
   - {fileID: 11400000, guid: 8c7b900a50ccd994d8c78601a626c1f3, type: 2}

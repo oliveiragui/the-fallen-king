@@ -39,7 +39,7 @@ namespace _Game.GameModules.IA.Scripts
         {
             var targetDistance = target.transform.position - entity.transform.position;
             entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
-            if (entity.Character.AbilitySystem.AbilityInUse)
+            if (entity.Character.AbilitySystem.usingAbility)
             {
                 entity.StopCasting(0);
             }

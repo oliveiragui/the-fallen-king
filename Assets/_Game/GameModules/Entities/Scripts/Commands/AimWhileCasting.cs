@@ -10,7 +10,7 @@ namespace _Game.GameModules.Entities.Scripts
 
         public override void Execute(Entity entity)
         {
-            if (!entity.Character.AbilitySystem.AbilityInUse) return;
+            if (!entity.Character.AbilitySystem.usingAbility) return;
             entity.movement.Rotation = entity.LookDiretion;
             entity.StartCoroutine(Rotate(entity));
         }

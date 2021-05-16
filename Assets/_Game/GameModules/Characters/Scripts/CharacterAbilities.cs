@@ -18,6 +18,11 @@ namespace _Game.GameModules.Characters.Scripts
 
         public Ability AbilityInUse { get; private set; }
         public RequestedAbilityEvent requestedAbility = new RequestedAbilityEvent();
+        public IndexedAbilityEvent startedAbility = new IndexedAbilityEvent();
+        public IndexedAbilityEvent stopCasting = new IndexedAbilityEvent();
+        public IndexedAbilityEvent stopAbility = new IndexedAbilityEvent();
+        
+        public bool usingAbility;
 
         public void RequestAbility(int index)
         {
@@ -30,25 +35,29 @@ namespace _Game.GameModules.Characters.Scripts
 
         public void StartAbility(int index)
         {
+            usingAbility = true;
             var nextAbility = Abilities[index];
             if (AbilityInUse) AbilityInUse.Finish();
             AbilityInUse = nextAbility;
             nextAbility.Use();
+            startedAbility.Invoke(index);
         }
 
         public bool CanUseAbility(int i) => Abilities[i].CanBeUsed;
 
-        //public bool CanStopCasting(int i) => !AbilityInUse || Abilities[i].Equals(AbilityInUse);
-
         public void StopCasting(int id)
         {
             Abilities[id].StopConjuring();
+            stopCasting.Invoke(id);
         }
 
         public void StopAbility()
         {
+            usingAbility = false;
             if (AbilityInUse) AbilityInUse.Finish();
+            int value = Abilities.IndexOf(AbilityInUse);
             AbilityInUse = null;
+            stopAbility.Invoke(value);
         }
 
         public void OnWeaponChange(Weapon weapon)
@@ -56,6 +65,8 @@ namespace _Game.GameModules.Characters.Scripts
             if (weapon) Abilities = weapon.Abilities;
         }
     }
+
+    public class IndexedAbilityEvent : UnityEvent<int> { }
 
     public class RequestedAbilityEvent : UnityEvent<int, bool> { }
 }

@@ -74,8 +74,11 @@ namespace _Game.GameModules.Characters.Scripts
 
         void OnStartAbility(int abilityIndex)
         {
-            AbilitySystem.StartAbility(abilityIndex);
-            entity.SetupAbility(AbilitySystem.AbilityInUse);
+            var combo = AbilitySystem.Abilities[abilityIndex].CurrentCombo;
+            entity.SetCombo(
+                AbilitySystem.Abilities[abilityIndex].CurrentComboID,
+                combo.Castable, combo.Factor1, combo.Factor2, combo.Factor3
+            );
             OnEnterInCombat();
         }
 
@@ -107,14 +110,15 @@ namespace _Game.GameModules.Characters.Scripts
             WeaponStorage.onWeaponChange.AddListener(entity.OnWeaponChange);
 
             CharacterStatus.StatusChanged.AddListener(OnStatusChanged);
-
-            entity.events.startAbilityAnimation.AddListener(OnStartAbility);
-            entity.events.endAbilityAnimation.AddListener(OnFinishAbility);
+            entity.events.startAbilityAnimation.AddListener(AbilitySystem.StartAbility);
+            entity.events.endAbilityAnimation.AddListener(AbilitySystem.StopAbility);
             entity.events.onHitReceived.AddListener(OnHit);
 
-            AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
             AbilitySystem.requestedAbility.AddListener(entity.SetNextAbility);
-            
+            AbilitySystem.startedAbility.AddListener(OnStartAbility);
+            AbilitySystem.stopCasting.AddListener(entity.StopCasting);
+
+            AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
             entity.OnWeaponChange(weaponStorage.WeaponInUse);
 
             events.onInstantiate.Invoke();

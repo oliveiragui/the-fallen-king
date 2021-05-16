@@ -35,7 +35,6 @@ namespace _Game.GameModules.Abilities.Scripts
         {
             this.data = data;
             TotalCooldown = data.Cooldown.Calculate(status.Agility);
-
             return this;
         }
 
@@ -56,7 +55,6 @@ namespace _Game.GameModules.Abilities.Scripts
         public void Finish()
         {
             InUse = false;
-            // InCooldown = true;
             if (_cdCoroutine != null) StopCoroutine(_cdCoroutine);
             _cdCoroutine = StartCoroutine(CooldownTimer());
         }
@@ -65,16 +63,9 @@ namespace _Game.GameModules.Abilities.Scripts
         {
             CurrentComboID++;
             if (CurrentComboID < Data.Combo.Length)
-            {
                 yield return new WaitForSeconds(1f);
-            }
-
             CurrentComboID = 0;
-            yield return WaitCooldown();
-        }
-
-        IEnumerator WaitCooldown()
-        {
+   
             InCooldown = true;
             onCooldownEnter.Invoke(data.Cooldown.Value);
             RemainingCooldownTime = TotalCooldown;
