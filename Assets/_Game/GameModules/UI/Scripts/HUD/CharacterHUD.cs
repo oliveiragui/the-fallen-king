@@ -22,7 +22,7 @@ namespace _Game.GameModules.UI.Scripts.HUD
             character.Entity.events.onHitReceived.AddListener((a) => lifebar.gameObject.SetActive(true));
             //character.events.enterInCombat.AddListener(() => lifebar.enabled = true);
             character.events.exitCombat.AddListener(() => lifebar.enabled = false);
-            character.events.onEntityDeath.AddListener((entity2) => Destroy(gameObject));
+            character.events.death.AddListener((entity2) => Destroy(gameObject));
             character.CharacterStatus.StatusChanged.AddListener(OnStatusChange);
             entity = character.Entity;
         }

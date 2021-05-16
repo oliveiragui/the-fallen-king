@@ -30,13 +30,15 @@ namespace _Game.GameModules.Entities.Scripts.Components.Particles
         {
             var particleEffects = new ParticleSystem[data.ParticleEffects.Length];
             for (var i = 0; i < data.ParticleEffects.Length; i++)
-                Instantiate(data.ParticleEffects[i].gameObject, abilityParticleContainer.transform).TryGetComponent(out particleEffects[i]);
+                Instantiate(data.ParticleEffects[i].gameObject, abilityParticleContainer.transform)
+                    .TryGetComponent(out particleEffects[i]);
             return particleEffects;
         }
 
-        public void Play(string id)
+        public void Play(string id, bool canContinue = true)
         {
-            defaultParticles[id].Play();
+            if (canContinue) defaultParticles[id].Play();
+            else defaultParticles[id].Stop();
         }
 
         public void Stop(string id)

@@ -51,12 +51,7 @@ namespace _Game.GameModules.Characters.Scripts
                 entity.CombatMode = value;
             }
         }
-
-        void KillEntity()
-        {
-            if (!immortal) entity.Kill();
-        }
-
+        
         #region Callbacks
 
         void OnEnterInCombat()
@@ -73,8 +68,8 @@ namespace _Game.GameModules.Characters.Scripts
         {
             if (immortal) return;
             if (dead || !(characterStatus.Life.Current <= 0)) return;
-            entity.Kill();
             dead = true;
+            events.death.Invoke(this);
         }
 
         void OnHit(AbilityHit abilityHit)
@@ -96,10 +91,10 @@ namespace _Game.GameModules.Characters.Scripts
             AbilitySystem.StopAbility();
         }
 
-        void OnEntityDeath(Entity entity)
+        void OnDeath(Character character)
         {
             OnExitCombat();
-            events.onEntityDeath.Invoke(entity);
+            entity.Kill();
         }
 
         void OnEntityEnabled(Entity newEntity)
@@ -108,7 +103,6 @@ namespace _Game.GameModules.Characters.Scripts
             entity.events.startAbility.AddListener(OnStartAbility);
             entity.events.finishAbility.AddListener(OnFinishAbility);
             entity.events.onHitReceived.AddListener(OnHit);
-            entity.events.onDeathBeginning.AddListener(OnEntityDeath);
             entity.OnWeaponChange(weaponStorage.WeaponInUse);
         }
 
@@ -118,7 +112,6 @@ namespace _Game.GameModules.Characters.Scripts
             entity.events.startAbility.RemoveListener(OnStartAbility);
             entity.events.finishAbility.RemoveListener(OnFinishAbility);
             entity.events.onHitReceived.RemoveListener(OnHit);
-            entity.events.onDeathBeginning.RemoveListener(OnEntityDeath);
         }
 
         #endregion
@@ -132,6 +125,7 @@ namespace _Game.GameModules.Characters.Scripts
 
         void Start()
         {
+            events.death.AddListener(OnDeath);
             WeaponStorage.onWeaponChange.AddListener(AbilitySystem.OnWeaponChange);
             CharacterStatus.StatusChanged.AddListener(OnStatusChanged);
             AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
@@ -168,10 +162,7 @@ namespace _Game.GameModules.Characters.Scripts
         public UnityEvent onDestroy;
         public UnityEvent enterInCombat;
         public UnityEvent exitCombat;
-        public AbilityEvent startAbility;
-        public AbilityEvent finishAbility;
-        public UnityEntityEvent onEntityBirth;
-        public UnityEntityEvent onEntityDeath;
+        public UnityCharacterEvent death;
     }
 
     [Serializable]

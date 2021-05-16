@@ -18,9 +18,9 @@ namespace _Game.GameModules.Entities.Scripts
     public class Entity : MonoBehaviour
     {
         [SerializeField] public Animator animator;
-        [SerializeField] EntityAudio entityAudio;
-        [SerializeField] EntityMesh mesh;
-        [SerializeField] EntityParticle particle;
+        [SerializeField] public EntityAudio sound;
+        [SerializeField] public EntityMesh mesh;
+        [SerializeField] public EntityParticle particle;
         [SerializeField] public EntityCollision collision;
         [SerializeField] public EntityMovement movement;
 
@@ -181,7 +181,7 @@ namespace _Game.GameModules.Entities.Scripts
             particle.PlayAbilityEffect(abilityIndex, particleIndex);
         }
 
-        public void PlayFootStepSound() => entityAudio.Play(FloorName);
+        public void PlayFootStepSound() => sound.Play(FloorName);
 
         public void PlayFootStepParticleEffect() => particle.Play("FootStep");
 
@@ -225,14 +225,7 @@ namespace _Game.GameModules.Entities.Scripts
         #endregion
 
         #region Callbacks
-
-        void OnDeathBeginning(Entity entity)
-        {
-            Stop();
-            movement.enabled = false;
-            collision.Hittable = false;
-        }
-
+        
         public void OnWeaponChange(Weapon weapon)
         {
             if (weapon)
@@ -250,8 +243,6 @@ namespace _Game.GameModules.Entities.Scripts
 
         void Start()
         {
-            events.onDeathBeginning.AddListener(OnDeathBeginning);
-            events.onBirth.Invoke(this);
             events.onEnabled.Invoke(this);
             Ready = true;
         }
@@ -305,11 +296,6 @@ namespace _Game.GameModules.Entities.Scripts
         public HitReceiveEvent onHitReceived;
         public AbilityUseEvent startAbility;
         public UnityEvent finishAbility;
-        public UnityEntityEvent enterCombat;
-        public UnityEntityEvent exitCombat;
-        public UnityEntityEvent onBirth;
-        public UnityEntityEvent onDeathBeginning;
-        public UnityEntityEvent onDeathEnding;
     }
 
     [Serializable]
