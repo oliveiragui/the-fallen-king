@@ -27,8 +27,7 @@ namespace _Game.GameModules.Abilities.Scripts
         public bool Conjuring { get; private set; }
         public bool InUse { get; private set; }
         public bool InCooldown { get; private set; }
-        public bool CanBeUsed => !InCooldown && !Blocked;
-        public bool Blocked { get; set; }
+        public bool CanBeUsed => (!InCooldown && !InUse) || (!InCooldown && InUse && CurrentComboID + 1 < Data.Combo.Length);
 
         public bool CanOverride(Ability other) => !other || Data.CanOverride(other.Data);
 
@@ -46,7 +45,6 @@ namespace _Game.GameModules.Abilities.Scripts
             onAbilityUse.Invoke();
             Conjuring = true;
             InUse = true;
-            Blocked = true;
             if (!InCooldown && _cdCoroutine != null) StopCoroutine(_cdCoroutine);
         }
 
@@ -65,7 +63,13 @@ namespace _Game.GameModules.Abilities.Scripts
 
         IEnumerator CooldownTimer()
         {
-            yield return WaitComboTransitionTime();
+            CurrentComboID++;
+            if (CurrentComboID < Data.Combo.Length)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            CurrentComboID = 0;
             yield return WaitCooldown();
         }
 
@@ -80,14 +84,6 @@ namespace _Game.GameModules.Abilities.Scripts
                 return RemainingCooldownTime > 0;
             });
             InCooldown = false;
-        }
-
-        IEnumerator WaitComboTransitionTime()
-        {
-            CurrentComboID++;
-            if (CurrentComboID < Data.Combo.Length)
-                yield return new WaitForSeconds(1f);
-            CurrentComboID = 0;
         }
     }
 

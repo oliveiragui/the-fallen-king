@@ -38,20 +38,13 @@ namespace _Game.GameModules.Characters.Scripts
             get => _combatMode;
             set
             {
-                if (value)
-                {
-                    if (!_combatMode) events.enterInCombat.Invoke();
-                }
-                else
-                {
-                    if (_combatMode) events.exitCombat.Invoke();
-                }
-
+                if (value && !_combatMode) events.enterInCombat.Invoke();
+                else if (!value && _combatMode) events.exitCombat.Invoke();
                 _combatMode = value;
                 entity.CombatMode = value;
             }
         }
-        
+
         #region Callbacks
 
         void OnEnterInCombat()
@@ -97,23 +90,6 @@ namespace _Game.GameModules.Characters.Scripts
             entity.Kill();
         }
 
-        void OnEntityEnabled(Entity newEntity)
-        {
-            WeaponStorage.onWeaponChange.AddListener(entity.OnWeaponChange);
-            entity.events.startAbility.AddListener(OnStartAbility);
-            entity.events.finishAbility.AddListener(OnFinishAbility);
-            entity.events.onHitReceived.AddListener(OnHit);
-            entity.OnWeaponChange(weaponStorage.WeaponInUse);
-        }
-
-        void OnEntityDisabled(Entity newEntity)
-        {
-            WeaponStorage.onWeaponChange.RemoveListener(entity.OnWeaponChange);
-            entity.events.startAbility.RemoveListener(OnStartAbility);
-            entity.events.finishAbility.RemoveListener(OnFinishAbility);
-            entity.events.onHitReceived.RemoveListener(OnHit);
-        }
-
         #endregion
 
         #region Unity Functions
@@ -126,31 +102,27 @@ namespace _Game.GameModules.Characters.Scripts
         void Start()
         {
             events.death.AddListener(OnDeath);
+
             WeaponStorage.onWeaponChange.AddListener(AbilitySystem.OnWeaponChange);
+            WeaponStorage.onWeaponChange.AddListener(entity.OnWeaponChange);
+
             CharacterStatus.StatusChanged.AddListener(OnStatusChanged);
+
+            entity.events.startAbilityAnimation.AddListener(OnStartAbility);
+            entity.events.endAbilityAnimation.AddListener(OnFinishAbility);
+            entity.events.onHitReceived.AddListener(OnHit);
+
             AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
+            AbilitySystem.requestedAbility.AddListener(entity.SetNextAbility);
+            
+            entity.OnWeaponChange(weaponStorage.WeaponInUse);
+
             events.onInstantiate.Invoke();
-            BindEntity();
         }
 
-        void BindEntity()
-        {
-            if (!entity) return;
-            entity.events.onEnabled.AddListener(OnEntityEnabled);
-            if (entity.enabled && entity.Ready) OnEntityEnabled(entity);
-            entity.events.onDisabled.AddListener(OnEntityDisabled);
-            if (!entity.enabled) OnEntityDisabled(entity);
-        }
+        void OnEnable() => entity.enabled = true;
 
-        void OnEnable()
-        {
-            entity.enabled = true;
-        }
-
-        void OnDisable()
-        {
-            Entity.enabled = false;
-        }
+        void OnDisable() => Entity.enabled = false;
 
         #endregion
     }

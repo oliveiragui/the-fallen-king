@@ -46,7 +46,7 @@ namespace _Game.GameModules.IA.Scripts
             else if (targetDistance.magnitude <= distance)
             {
                 entity.Stop();
-                entity.RequestAbility(0);
+                entity.Character.AbilitySystem.RequestAbility(0);
             }
             else if (targetDistance.magnitude > distance)
             {

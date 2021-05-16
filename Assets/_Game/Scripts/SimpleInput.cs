@@ -42,16 +42,16 @@ namespace _Game.Scripts
             if (input.sqrMagnitude > 0.1f) entity.Move(speed, Quaternion.Euler(direction));
             else entity.Stop();
 
-            if (Input.GetButtonDown("Fire1")) entity.RequestAbility(0);
+            if (Input.GetButtonDown("Fire1")) entity.Character.AbilitySystem.RequestAbility(0);
             if (Input.GetButtonUp("Fire1")) entity.StopCasting(0);
 
-            if (Input.GetButtonDown("Fire2")) entity.RequestAbility(1);
+            if (Input.GetButtonDown("Fire2")) entity.Character.AbilitySystem.RequestAbility(1);
             if (Input.GetButtonUp("Fire2")) entity.StopCasting(1);
 
-            if (Input.GetButtonDown("Fire3")) entity.RequestAbility(2);
+            if (Input.GetButtonDown("Fire3")) entity.Character.AbilitySystem.RequestAbility(2);
             if (Input.GetButtonUp("Fire3")) entity.StopCasting(2);
 
-            if (Input.GetButtonDown("Jump")) entity.RequestAbility(3);
+            if (Input.GetButtonDown("Jump")) entity.Character.AbilitySystem.RequestAbility(3);
             if (Input.GetButtonUp("Jump")) entity.StopCasting(3);
 
             //     if (Input.GetKeyDown(KeyCode.Escape))

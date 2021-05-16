@@ -12,7 +12,7 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            _test.entity.RequestAbility(abilityId);
+            _test.entity.Character.AbilitySystem.RequestAbility(abilityId);
             _test.LookToTarget();
         }
 

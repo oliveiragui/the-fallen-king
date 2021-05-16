@@ -10,13 +10,13 @@ namespace _Game.GameModules.Entities.Scripts.Components.Behaviours
         public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
-            _entity.events.startAbility.Invoke(abilityId - 1);
+            _entity.events.startAbilityAnimation.Invoke(abilityId - 1);
         }
 
         public override void OnStateMachineExit(Animator animator, int stateMachinePathHash)
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
-            _entity.events.finishAbility.Invoke();
+            _entity.events.endAbilityAnimation.Invoke();
         }
     }
 }

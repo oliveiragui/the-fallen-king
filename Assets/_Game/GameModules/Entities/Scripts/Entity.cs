@@ -45,7 +45,6 @@ namespace _Game.GameModules.Entities.Scripts
         [field: SerializeField] public Quaternion LookDiretion { get; private set; }
         [field: SerializeField] public float StoppingDistance { get; private set; }
         [field: SerializeField] public Vector3 Destination { get; private set; }
-        [field: SerializeField] public bool Ready { get; private set; }
 
         public bool CombatMode
         {
@@ -78,31 +77,29 @@ namespace _Game.GameModules.Entities.Scripts
 
         #region Methods
 
-        public void RequestAbility(int index)
+        public void SetNextAbility(int index, bool canOverride)
         {
-            var abSys = Character.AbilitySystem;
-            var reqAbility = abSys.Abilities[index];
-            
-            if (!reqAbility.CanBeUsed) return;
-            if (!abSys.CanUseAbility(index)) return;
-            
-            animator.SetTrigger(reqAbility.CanOverride(abSys.AbilityInUse)
+            animator.SetTrigger(canOverride
                 ? AnimatorParams.ForceAbility
                 : AnimatorParams.RequestAbility);
-            animator.SetInteger(AnimatorParams.RequestedAbilityID, index + 1);
-            animator.SetBool($"Conjurando Habilidade {index + 1}", true);
+            animator.SetInteger(AnimatorParams.RequestedAbilityID, index);
+            animator.SetBool($"Conjurando Habilidade {index}", true);
         }
 
         public void SetupAbility(Ability ability)
         {
-            ability.Blocked = false;
             var combo = ability.CurrentCombo;
-            animator.SetInteger("Combo Atual", ability.CurrentComboID);
-            animator.SetBool(AnimatorParams.Castable, combo.Castable);
-            animator.SetFloat(AnimatorParams.ComboFactor1, combo.Factor1 * 1);
-            if (!combo.Castable) return;
-            animator.SetFloat(AnimatorParams.ComboFactor2, combo.Factor2 * 1);
-            animator.SetFloat(AnimatorParams.ComboFactor3, combo.Factor3 * 1);
+            SetCombo(ability.CurrentComboID, combo.Castable, combo.Factor1 * 1, combo.Factor2 * 1, combo.Factor3 * 1);
+        }
+
+        public void SetCombo(int id, bool castable, float factor1, float factor2 = 1, float factor3 = 1)
+        {
+            animator.SetInteger("Combo Atual", id);
+            animator.SetBool(AnimatorParams.Castable, castable);
+            animator.SetFloat(AnimatorParams.ComboFactor1, factor1);
+            if (!castable) return;
+            animator.SetFloat(AnimatorParams.ComboFactor2, factor2);
+            animator.SetFloat(AnimatorParams.ComboFactor3, factor3);
         }
 
         public void StopCasting(int index)
@@ -201,21 +198,6 @@ namespace _Game.GameModules.Entities.Scripts
             collision.Hittable = false;
         }
 
-        public void RotateWhileConjuring()
-        {
-            var abSys = Character.AbilitySystem;
-            if (!abSys.AbilityInUse) return;
-            int oi = abSys.Abilities.IndexOf(abSys.AbilityInUse) + 1;
-
-            IEnumerator Rotate() => new WaitWhile(() =>
-            {
-                movement.Rotation = LookDiretion;
-                return animator.GetBool($"Conjurando Habilidade {oi.ToString()}");
-            });
-
-            StartCoroutine(Rotate());
-        }
-
         void ExecuteCommand(Object obj)
         {
             if (obj is EntityCommand command) command.Execute(this);
@@ -225,7 +207,7 @@ namespace _Game.GameModules.Entities.Scripts
         #endregion
 
         #region Callbacks
-        
+
         public void OnWeaponChange(Weapon weapon)
         {
             if (weapon)
@@ -240,22 +222,6 @@ namespace _Game.GameModules.Entities.Scripts
         #endregion
 
         #region Unity Functions
-
-        void Start()
-        {
-            events.onEnabled.Invoke(this);
-            Ready = true;
-        }
-
-        void OnEnable()
-        {
-            if (Ready) events.onEnabled.Invoke(this);
-        }
-
-        void OnDisable()
-        {
-            events.onDisabled.Invoke(this);
-        }
 
         void OnAnimatorMove()
         {
@@ -291,11 +257,9 @@ namespace _Game.GameModules.Entities.Scripts
     [Serializable]
     public class EntityEvents
     {
-        public UnityEntityEvent onEnabled;
-        public UnityEntityEvent onDisabled;
         public HitReceiveEvent onHitReceived;
-        public AbilityUseEvent startAbility;
-        public UnityEvent finishAbility;
+        public AbilityUseEvent startAbilityAnimation;
+        public UnityEvent endAbilityAnimation;
     }
 
     [Serializable]
