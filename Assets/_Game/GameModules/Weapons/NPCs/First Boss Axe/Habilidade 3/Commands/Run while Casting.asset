@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6e2a659e3a24c1fba5c350ec48294c7, type: 3}
+  m_Name: Run while Casting
+  m_EditorClassIdentifier: 
+  abilityIndex: 2
+  command: {fileID: 11400000, guid: f446d60b7c46ec64d8b5395b8dd3f5d6, type: 2}
