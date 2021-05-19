@@ -22,26 +22,26 @@ namespace _Game.GameModules.Characters.Scripts
         public CharacterEvents events;
         [SerializeField] bool immortal;
 
+        [SerializeField] bool _combatMode;
+
         bool dead;
 
         public Team Team { get; private set; }
+        public CharacterData Data => data;
         public CharacterStatus CharacterStatus => characterStatus;
         public Entity Entity => entity;
         public CharacterWeapons WeaponStorage => weaponStorage;
         public CharacterAbilities AbilitySystem => abilitySystem;
         public ImpactResistance Resiliency => data.Resiliency;
 
-        [SerializeField] bool _combatMode;
-
         public bool CombatMode
         {
-            get => _combatMode;
             set
             {
                 if (value && !_combatMode) events.enterInCombat.Invoke();
                 else if (!value && _combatMode) events.exitCombat.Invoke();
                 _combatMode = value;
-                entity.CombatMode = value;
+                entity.CombatMode(value);
             }
         }
 
@@ -77,7 +77,7 @@ namespace _Game.GameModules.Characters.Scripts
             var combo = AbilitySystem.Abilities[abilityIndex].CurrentCombo;
             entity.SetCombo(
                 AbilitySystem.Abilities[abilityIndex].CurrentComboID,
-                combo.Castable, combo.Factor1, combo.Factor2, combo.Factor3
+                combo.Castable, combo.Aim, combo.ApplyRootMovement, combo.Factor1, combo.Factor2, combo.Factor3
             );
             OnEnterInCombat();
         }
@@ -110,15 +110,18 @@ namespace _Game.GameModules.Characters.Scripts
             WeaponStorage.onWeaponChange.AddListener(entity.OnWeaponChange);
 
             CharacterStatus.StatusChanged.AddListener(OnStatusChanged);
-            entity.events.startAbilityAnimation.AddListener(AbilitySystem.StartAbility);
-            entity.events.endAbilityAnimation.AddListener(AbilitySystem.StopAbility);
-            entity.events.onHitReceived.AddListener(OnHit);
+            CharacterStatus.StatusChanged.AddListener(entity.OnStatusChange);
+
+            entity.startAbilityAnimation.AddListener(AbilitySystem.StartAbility);
+            entity.endAbilityAnimation.AddListener(AbilitySystem.StopAbility);
+            entity.hitReceived.AddListener(OnHit);
 
             AbilitySystem.requestedAbility.AddListener(entity.SetNextAbility);
             AbilitySystem.startedAbility.AddListener(OnStartAbility);
             AbilitySystem.stopCasting.AddListener(entity.StopCasting);
-
+            
             AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
+            entity.OnStatusChange(CharacterStatus);
             entity.OnWeaponChange(weaponStorage.WeaponInUse);
 
             events.onInstantiate.Invoke();

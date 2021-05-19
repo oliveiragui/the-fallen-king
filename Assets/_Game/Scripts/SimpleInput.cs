@@ -28,20 +28,21 @@ namespace _Game.Scripts
 
         void OnDisable()
         {
-            character.Entity.Stop();
+            character.Entity.StopWalking();
         }
 
         void ProcessaInput()
         {
-            var lookDirection = _camera.MouseOnPlane() - character.transform.position;
+            var lookDirection = _camera.MouseOnPlane() - character.Entity.transform.position;
             var input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             var direction = Vector3.up * (input.ToDegree() + _camera.transform.rotation.eulerAngles.y);
             var speed = input.normalized.sqrMagnitude * 5;
 
-            character.Entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree()));
+            character.Entity.LookDiretion =
+                Quaternion.Euler(Vector3.up * new Vector2(lookDirection.x, lookDirection.z).ToDegree());
 
-            if (input.sqrMagnitude > 0.1f) character.Entity.Move(speed, Quaternion.Euler(direction));
-            else character.Entity.Stop();
+            if (input.sqrMagnitude > 0.1f) character.Entity.Move(Quaternion.Euler(direction));
+            else character.Entity.StopWalking();
 
             if (Input.GetButtonDown("Fire1")) character.AbilitySystem.RequestAbility(0);
             if (Input.GetButtonUp("Fire1")) character.AbilitySystem.StopCasting(0);

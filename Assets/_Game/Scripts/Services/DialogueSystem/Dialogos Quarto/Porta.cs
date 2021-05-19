@@ -38,7 +38,7 @@ public class Porta : FluentScript
 
     public override void OnStart()
     {
-        character.Stop();
+        character.StopWalking();
         onStart.Invoke();
     }
 

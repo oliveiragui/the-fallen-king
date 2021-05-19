@@ -2,7 +2,7 @@
 using _Game.Scripts.Services.Storage.Custom;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts.Components.Audio
+namespace _Game.GameModules.Entities.Scripts
 {
     [Serializable]
     public class EntityAudio : MonoBehaviour

@@ -372,6 +372,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6381844405018670385, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abc6eab052b8b724c9db3e5ad05122a2,
+        type: 3}
     - target: {fileID: 6381844405018670387, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
       propertyPath: m_Name
@@ -524,6 +530,12 @@ PrefabInstance:
       propertyPath: m_Type
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6381844405018670385, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abc6eab052b8b724c9db3e5ad05122a2,
+        type: 3}
     - target: {fileID: 6381844405018670387, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
       propertyPath: m_Name
@@ -596,6 +608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 176288272707682657, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6381844405018670384, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
@@ -715,13 +732,19 @@ PrefabInstance:
     - target: {fileID: 6381844405018670385, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
       propertyPath: m_Color.g
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6381844405018670385, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6381844405018670385, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: abc6eab052b8b724c9db3e5ad05122a2,
+        type: 3}
     - target: {fileID: 6381844405018670387, guid: 8f6bff5c8423d404cb6bfc16e6faff83,
         type: 3}
       propertyPath: m_Name

@@ -1,50 +1,50 @@
 ﻿using System;
 using System.Collections;
-using System.Linq;
 using _Game.GameModules.Characters.Scripts;
 using UnityEngine;
 using UnityEngine.Events;
+using Attribute = _Game.Scripts.Services.AttributeSystem.Attribute;
 
 namespace _Game.GameModules.Abilities.Scripts
 {
     public class Ability : MonoBehaviour
     {
+        Coroutine _cdCoroutine;
+
         [SerializeField] AbilityData data;
 
         public UnityEvent onAbilityUse = new UnityEvent();
         public CooldownEnterEvent onCooldownEnter = new CooldownEnterEvent();
 
-        Coroutine _cdCoroutine;
-
         public AbilityData Data => data;
-
-        public float TotalCooldown { get; private set; }
-        public float RemainingCooldownTime { get; private set; }
+        public Attribute Cooldown;
 
         public Combo CurrentCombo => data.Combo[CurrentComboID];
         public int CurrentComboID { get; private set; }
 
         public bool Conjuring { get; private set; }
         public bool InUse { get; private set; }
-        public bool InCooldown { get; private set; }
-        public bool CanBeUsed => (!InCooldown && !InUse) || (!InCooldown && InUse && CurrentComboID + 1 < Data.Combo.Length);
+        public bool OnCooldown { get; private set; }
 
-        public bool CanOverride(Ability other) => !other || Data.CanOverride(other.Data);
+        public bool CanBeUsed =>
+            !OnCooldown && !InUse || !OnCooldown && InUse && CurrentComboID + 1 < Data.Combo.Length;
+
+        public bool CanOverride(Ability other) => other && Data.CanOverride(other.Data);
 
         public Ability Setup(AbilityData data, CharacterStatus status)
         {
             this.data = data;
-            TotalCooldown = data.Cooldown.Calculate(status.Agility);
+            Cooldown = new Attribute(data.Cooldown.Calculate(status.Agility));
             return this;
         }
 
         public void Use()
         {
             if (!CanBeUsed) return;
-            onAbilityUse.Invoke();
             Conjuring = true;
             InUse = true;
-            if (!InCooldown && _cdCoroutine != null) StopCoroutine(_cdCoroutine);
+            if (!OnCooldown && _cdCoroutine != null) StopCoroutine(_cdCoroutine);
+            onAbilityUse.Invoke();
         }
 
         public void StopConjuring()
@@ -65,16 +65,16 @@ namespace _Game.GameModules.Abilities.Scripts
             if (CurrentComboID < Data.Combo.Length)
                 yield return new WaitForSeconds(1f);
             CurrentComboID = 0;
-   
-            InCooldown = true;
+
+            OnCooldown = true;
             onCooldownEnter.Invoke(data.Cooldown.Value);
-            RemainingCooldownTime = TotalCooldown;
+            Cooldown.Current = Cooldown.Total;
             yield return new WaitWhile(() =>
             {
-                RemainingCooldownTime -= Time.deltaTime;
-                return RemainingCooldownTime > 0;
+                Cooldown.Current -= Time.deltaTime;
+                return Cooldown.Current > 0;
             });
-            InCooldown = false;
+            OnCooldown = false;
         }
     }
 

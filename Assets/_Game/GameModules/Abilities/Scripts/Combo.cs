@@ -7,8 +7,9 @@ namespace _Game.GameModules.Abilities.Scripts
     [Serializable]
     public class Combo
     {
-
         [SerializeField] bool castable;
+        [SerializeField] bool aim;
+        [SerializeField] bool applyRootMovement;
         [SerializeField] AnimationClip beginningAnimation;
         [SerializeField] float factor1;
 
@@ -16,7 +17,7 @@ namespace _Game.GameModules.Abilities.Scripts
         [ConditionalField("castable")] [SerializeField] float factor2;
         [ConditionalField("castable")] [SerializeField] AnimationClip endAnimation;
         [ConditionalField("castable")] [SerializeField] float factor3;
-        
+
         public float Factor3 => factor3;
         public float Factor2 => factor2;
         public float Factor1 => factor1;
@@ -24,5 +25,9 @@ namespace _Game.GameModules.Abilities.Scripts
         public AnimationClip BeginningAnimation => beginningAnimation;
         public AnimationClip MiddleAnimation => middleAnimation;
         public AnimationClip EndAnimation => endAnimation;
+
+        public bool Aim => aim;
+
+        public bool ApplyRootMovement => applyRootMovement;
     }
 }

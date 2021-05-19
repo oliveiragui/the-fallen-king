@@ -43,7 +43,7 @@ namespace _Game.Scripts.IA
 
         public override void OnStart()
         {
-            characterMove.Stop();
+            characterMove.StopWalking();
             onStart.Invoke();
         }
 

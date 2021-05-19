@@ -11,7 +11,7 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            //_test.entity.Stop();
+            //_test.entity.StopWalking();
         }
 
         public override void OnStateUpdate(
@@ -19,7 +19,7 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         )
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            _test.entity.MoveTo(3, _test.Target.transform.position, 0.5f);
+            _test.entity.MoveTo(_test.Target.transform.position);
         }
     }
 }

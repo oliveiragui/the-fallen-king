@@ -5,14 +5,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace _Game.GameModules.UI.Scripts.HUD
+namespace _Game.GameModules.UI.Scripts.HUD.Main_HUD
 {
     public class AbilityIcon : MonoBehaviour, IWeaponChangeListener
     {
         [SerializeField] int abilityIndex;
-        [SerializeField] string buttonName;
         [SerializeField] Image icon;
-        [SerializeField] TextMeshProUGUI buttonIcon;
 
         [SerializeField] Image UsageIndicator;
 
@@ -25,7 +23,7 @@ namespace _Game.GameModules.UI.Scripts.HUD
 
         public void OnWeaponChange(Weapon weapon)
         {
-            buttonIcon.text = $"<sprite=\"XboxOne\" name=\"XboxOne_{buttonName}\">";
+            if (!weapon) return;
             var ability = weapon.Abilities[abilityIndex];
             icon.sprite = ability.Data.MetaData.Icon;
             if (currentAbility) RemoveCurrentAbility();

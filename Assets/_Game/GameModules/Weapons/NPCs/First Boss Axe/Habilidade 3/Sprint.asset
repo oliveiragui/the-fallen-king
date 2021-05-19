@@ -19,14 +19,18 @@ MonoBehaviour:
     icon: {fileID: 0}
   combo:
   - castable: 1
-    beginningAnimation: {fileID: 7400000, guid: 72371e523bdcb4848995d6a493f93357,
+    aim: 0
+    applyRootMovement: 0
+    beginningAnimation: {fileID: 7400000, guid: bcba479c10a14f64e862e9d581dcfc00,
       type: 2}
-    factor1: 2
+    factor1: 1.4
     middleAnimation: {fileID: 7400000, guid: e913aab9ad270064c80a8b01222387f8, type: 2}
     factor2: 2
-    endAnimation: {fileID: 7400000, guid: 63394bd0e3818194e9183c56e7d49c49, type: 2}
-    factor3: 0.5
-  particleEffects: []
+    endAnimation: {fileID: 7400000, guid: fa36e92c7cc03c14687c9bee7f6e0cb4, type: 2}
+    factor3: 1.2
+  particleEffects:
+  - {fileID: 198109754318447844, guid: a1a17050370c25040bbe11d2dc94e436, type: 3}
+  - {fileID: 198106895250101352, guid: 4667d504e9f81d44cae6a761f0dafead, type: 3}
   range: 0
   cooldown:
     constant: 6

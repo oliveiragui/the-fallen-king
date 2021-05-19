@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts
+namespace _Game.GameModules.Entities.Scripts.Commands
 {
     [CreateAssetMenu(fileName = "Play Particle", menuName = "GameContent/Entities/Commands/Play Particle", order = 0)]
-    public class SoundPlayerCommand: EntityCommand
+    public class SoundPlayerCommand : EntityCommand
     {
         [SerializeField] string soundName;
         [SerializeField] bool play;

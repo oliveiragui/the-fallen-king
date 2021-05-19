@@ -1,10 +1,9 @@
-﻿using _Game.GameModules.Abilities.Scripts;
-using _Game.GameModules.Weapons.Scripts;
+﻿using _Game.GameModules.Weapons.Scripts;
 using UnityEngine;
 
-namespace _Game.GameModules.UI.Scripts.HUD
+namespace _Game.GameModules.UI.Scripts.HUD.Main_HUD
 {
-    public class AbilityIconsPanel : MonoBehaviour,IWeaponChangeListener
+    public class AbilityIconsPanel : MonoBehaviour, IWeaponChangeListener
     {
         [SerializeField] AbilityIcon[] abilityIcons;
 

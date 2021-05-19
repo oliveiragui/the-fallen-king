@@ -2,7 +2,7 @@
 using _Game.Scripts.Services.Storage.Custom;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts.Components.Particles
+namespace _Game.GameModules.Entities.Scripts
 {
     public class EntityParticle : MonoBehaviour
     {
@@ -20,10 +20,7 @@ namespace _Game.GameModules.Entities.Scripts.Components.Particles
         {
             foreach (Transform child in abilityParticleContainer.transform) Destroy(child.gameObject);
             AbilityParticles = new ParticleSystem[abilities.Length][];
-            for (var i = 0; i < abilities.Length; i++)
-            {
-                AbilityParticles[i] = InstantiateParticles(abilities[i].Data);
-            }
+            for (var i = 0; i < abilities.Length; i++) AbilityParticles[i] = InstantiateParticles(abilities[i].Data);
         }
 
         public ParticleSystem[] InstantiateParticles(AbilityData data)

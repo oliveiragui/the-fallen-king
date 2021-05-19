@@ -1,7 +1,7 @@
 ﻿using _Game.Scripts.Services.Storage.Custom;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts.Components.PhysicsSystem
+namespace _Game.GameModules.Entities.Scripts
 {
     public class EntityCollision : MonoBehaviour
     {

@@ -23,7 +23,7 @@ namespace _Game.GameModules.Abilities.Scripts
         public ParticleSystem[] ParticleEffects => particleEffects;
         public bool CanInterrupt => canInterrupt;
         public bool CanBeInterruped => canBeInterruped;
-        public bool CanOverride(AbilityData other) => CanInterrupt && other.CanBeInterruped;
+        public bool CanOverride(AbilityData other) => this != other && CanInterrupt && other.CanBeInterruped;
     }
 
     [Serializable]

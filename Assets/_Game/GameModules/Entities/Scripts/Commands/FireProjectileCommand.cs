@@ -2,9 +2,10 @@
 using _Game.Scripts.Services.AttributeSystem;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts
+namespace _Game.GameModules.Entities.Scripts.Commands
 {
-    [CreateAssetMenu(fileName = "Fire Projectile", menuName = "GameContent/Entities/Commands/Fire Projectile", order = 0)]
+    [CreateAssetMenu(fileName = "Fire Projectile", menuName = "GameContent/Entities/Commands/Fire Projectile",
+        order = 0)]
     public class FireProjectileCommand : EntityCommand
     {
         [SerializeField] AttributeModifier power;

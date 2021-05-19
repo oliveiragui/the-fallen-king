@@ -38,19 +38,19 @@ namespace _Game.GameModules.IA.Scripts
         void ProcessaInput()
         {
             var targetDistance = target.transform.position - entity.transform.position;
-            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree()));
+            entity.LookDiretion = Quaternion.Euler(Vector3.up * new Vector2(targetDistance.x, targetDistance.z).ToDegree());
             if (entity.Character.AbilitySystem.usingAbility)
             {
                 entity.StopCasting(0);
             }
             else if (targetDistance.magnitude <= distance)
             {
-                entity.Stop();
+                entity.StopWalking();
                 entity.Character.AbilitySystem.RequestAbility(0);
             }
             else if (targetDistance.magnitude > distance)
             {
-                entity.MoveTo(5, target.transform.position, distance);
+                entity.MoveTo(target.transform.position);
             }
         }
 

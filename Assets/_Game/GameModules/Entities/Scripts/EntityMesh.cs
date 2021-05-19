@@ -3,7 +3,7 @@ using _Game.GameModules.Weapons.Scripts.Prefab;
 using _Game.Scripts.Services.Storage.Custom;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts.Components.Mesh
+namespace _Game.GameModules.Entities.Scripts
 {
     public class EntityMesh : MonoBehaviour
     {

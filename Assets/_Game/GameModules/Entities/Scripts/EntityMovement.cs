@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 
-namespace _Game.GameModules.Entities.Scripts.Components.Movement
+namespace _Game.GameModules.Entities.Scripts
 {
     public class EntityMovement : MonoBehaviour
     {
@@ -72,7 +72,7 @@ namespace _Game.GameModules.Entities.Scripts.Components.Movement
 
         #endregion
 
-        #region Loop Functions
+        #region Looping Functions
 
         void Start()
         {

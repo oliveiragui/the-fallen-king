@@ -10,11 +10,19 @@ namespace _Game.GameModules.Characters.Scripts
         [SerializeField] RawCharacterStatus rawCharacterStatus;
         [SerializeField] Team defaultTeam;
         [SerializeField] ImpactResistance resiliency;
+        [SerializeField] CharacterLevel level;
         [SerializeField] RuntimeAnimatorController entityAnimator;
 
+        public CharacterLevel Level => level;
         public RawCharacterStatus RawCharacterStatus => rawCharacterStatus;
         public Team DefaultTeam => defaultTeam;
         public ImpactResistance Resiliency => resiliency;
         public RuntimeAnimatorController EntityAnimator => entityAnimator;
+    }
+
+    public enum CharacterLevel
+    {
+        Minion,
+        Boss
     }
 }

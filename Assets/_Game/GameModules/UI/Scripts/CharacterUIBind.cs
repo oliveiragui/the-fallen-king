@@ -1,5 +1,4 @@
 ﻿using _Game.GameModules.Characters.Scripts;
-using _Game.GameModules.UI.Scripts.HUD;
 using _Game.GameModules.UI.Scripts.Pages.CharacterMenu;
 using _Game.GameModules.Weapons.Scripts;
 using UnityEngine;

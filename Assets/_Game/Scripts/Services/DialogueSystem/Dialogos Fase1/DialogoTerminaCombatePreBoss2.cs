@@ -23,7 +23,7 @@ public class DialogoTerminaCombatePreBoss2 : FluentScript
 
     public override void OnStart()
     {
-        character.Stop();
+        character.StopWalking();
         onStart.Invoke();
     }
 }

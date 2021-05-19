@@ -30,6 +30,9 @@ namespace _Game.GameModules.IA.Scripts.Behaviours
         {
             if (!_test && !animator.transform.TryGetComponent(out _test)) return;
             _test.LookToTarget();
+            if (abilityId != 2) return;
+            if ((_test.Target.transform.position - _test.entity.transform.position).magnitude < 2)
+                _test.entity.StopCasting(abilityId);
         }
     }
 }

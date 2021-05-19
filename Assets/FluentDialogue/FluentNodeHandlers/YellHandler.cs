@@ -50,7 +50,7 @@ namespace Fluent
             // We can only have one yell response for a given handler
             if (CurrentNode != null)
             {
-                // Stop the current yell
+                // StopWalking the current yell
                 StopCoroutine("StartYell");
 
                 // Make sure it tells whoever is interested that it completed

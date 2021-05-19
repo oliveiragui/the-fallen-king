@@ -2,7 +2,7 @@
 using _Game.Scripts.Services.AttributeSystem;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts
+namespace _Game.GameModules.Entities.Scripts.Commands
 {
     [CreateAssetMenu(fileName = "Hit Area", menuName = "GameContent/Entities/Commands/Hit Area", order = 0)]
     public class HitAreaCommand : EntityCommand

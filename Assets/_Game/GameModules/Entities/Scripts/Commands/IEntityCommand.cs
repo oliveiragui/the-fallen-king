@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts
+namespace _Game.GameModules.Entities.Scripts.Commands
 {
     public interface IEntityCommand
     {

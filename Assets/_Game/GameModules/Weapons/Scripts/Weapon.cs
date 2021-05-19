@@ -17,7 +17,7 @@ namespace _Game.GameModules.Weapons.Scripts
         public AnimatorOverrideController animatorController;
         public WeaponData Data => data;
 
-        public Weapon Setup(WeaponData data, RuntimeAnimatorController entityAnimator,CharacterStatus status)
+        public Weapon Setup(WeaponData data, RuntimeAnimatorController entityAnimator, CharacterStatus status)
         {
             this.data = data;
             var abilitiesObject = new GameObject();
@@ -25,7 +25,7 @@ namespace _Game.GameModules.Weapons.Scripts
             abilitiesObject.transform.parent = transform;
 
             SetupAnimator(entityAnimator);
-            InstantiateAbilities(data.Abilities, abilitiesObject,status);
+            InstantiateAbilities(data.Abilities, abilitiesObject, status);
             ammoData = data.AmmoData;
             return this;
         }
@@ -39,12 +39,12 @@ namespace _Game.GameModules.Weapons.Scripts
             animatorController["Equipado - Idle"] = data.Animations.Idle;
         }
 
-        void InstantiateAbilities(AbilityData[] abilities, GameObject root,CharacterStatus status)
+        void InstantiateAbilities(AbilityData[] abilities, GameObject root, CharacterStatus status)
         {
             for (var i = 0; i < abilities.Length; i++)
             {
                 var ability = abilities[i];
-                Abilities.Add(root.AddComponent<Ability>().Setup(ability,status));
+                Abilities.Add(root.AddComponent<Ability>().Setup(ability, status));
 
                 var abilityIndex = (i + 1).ToString();
                 for (var j = 0; j < ability.Combo.Length; j++)

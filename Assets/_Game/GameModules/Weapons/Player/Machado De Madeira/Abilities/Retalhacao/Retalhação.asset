@@ -19,14 +19,18 @@ MonoBehaviour:
     icon: {fileID: 0}
   combo:
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: d151d895846b03945b97bb14421eb3e8,
       type: 2}
-    factor1: 2
+    factor1: 2.5
     middleAnimation: {fileID: 0}
     factor2: 0
     endAnimation: {fileID: 0}
     factor3: 0
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: 881b0517a1b01594bb7a7137498090b7,
       type: 2}
     factor1: 1.4
@@ -35,6 +39,8 @@ MonoBehaviour:
     endAnimation: {fileID: 0}
     factor3: 0
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: 8deb320636c01e54088d727af6ef793f,
       type: 2}
     factor1: 1.4
@@ -48,5 +54,5 @@ MonoBehaviour:
   - {fileID: 4262140483115222537, guid: cebf8e9bcc3bbe045b04a5f17988fef1, type: 3}
   range: 0
   cooldown:
-    constant: 1
+    constant: 0.2
     attributeInfluence: 0

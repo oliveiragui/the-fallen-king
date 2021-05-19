@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts
+namespace _Game.GameModules.Entities.Scripts.Commands
 {
-    [CreateAssetMenu(fileName = "Aim While Casting", menuName = "GameContent/Entities/Commands/Aim While Casting", order = 0)]
+    [CreateAssetMenu(fileName = "Aim While Casting", menuName = "GameContent/Entities/Commands/Aim While Casting",
+        order = 0)]
     public class AimWhileCasting : EntityCommand
     {
         [SerializeField] int abilityIndex;

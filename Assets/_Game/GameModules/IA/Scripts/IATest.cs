@@ -57,8 +57,9 @@ namespace _Game.GameModules.IA.Scripts
             var position = entity.transform.position;
             var targetPosition = Target.transform.position;
             var direction = targetPosition - position;
-            entity.movement.Rotation = Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree());
-            entity.LookAt(Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
+            entity.Direction = Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree());
+            entity.LookDiretion = (Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
+            entity.Destination = Target.transform.position;
         }
 
         void AnalizaDistancia(Vector3 distance)
@@ -69,10 +70,11 @@ namespace _Game.GameModules.IA.Scripts
                 animator.SetBool("Muito Proximo", distance.magnitude < minDistance);
                 animator.SetBool("Alvo Atras", TargetIsBehind());
 
-                animator.SetBool("Cooldown Habilidade 1", entity.Character.AbilitySystem.Abilities[0].InCooldown);
-                animator.SetBool("Cooldown Habilidade 2", entity.Character.AbilitySystem.Abilities[1].InCooldown);
-                animator.SetBool("Cooldown Habilidade 3", entity.Character.AbilitySystem.Abilities[2].InCooldown);
-                animator.SetBool("Cooldown Habilidade 4", entity.Character.AbilitySystem.Abilities[3].InCooldown);
+                for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
+                {
+                    animator.SetBool($"Cooldown Habilidade {i + 1}",
+                        entity.Character.AbilitySystem.Abilities[i].OnCooldown);
+                }
             }
 
             //if (target && (entity.transform.position - target.transform.position).magnitude > 10) target = null;

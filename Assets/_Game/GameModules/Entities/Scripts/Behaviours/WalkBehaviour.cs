@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts.Components.Behaviours
+namespace _Game.GameModules.Entities.Scripts.Behaviours
 {
     public class WalkBehaviour : StateMachineBehaviour
     {

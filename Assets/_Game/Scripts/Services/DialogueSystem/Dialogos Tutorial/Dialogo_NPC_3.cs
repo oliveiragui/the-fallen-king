@@ -44,7 +44,7 @@ public class Dialogo_NPC_3 : FluentScript
 
     public override void OnStart()
     {
-        character.Stop();
+        character.StopWalking();
         onStart.Invoke();
     }
 }

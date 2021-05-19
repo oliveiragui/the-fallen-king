@@ -26,7 +26,7 @@ namespace _Game.Scripts.Services.DialogueSystem
 
         public override void OnStart()
         {
-            character.Stop();
+            character.StopWalking();
             onStart.Invoke();
         }
     }

@@ -10,6 +10,12 @@ namespace _Game.GameModules.Characters.Scripts
     {
         [SerializeField] List<Ability> abilities;
 
+        public bool usingAbility;
+        public RequestedAbilityEvent requestedAbility = new RequestedAbilityEvent();
+        public IndexedAbilityEvent startedAbility = new IndexedAbilityEvent();
+        public IndexedAbilityEvent stopAbility = new IndexedAbilityEvent();
+        public IndexedAbilityEvent stopCasting = new IndexedAbilityEvent();
+
         public List<Ability> Abilities
         {
             get => abilities;
@@ -17,12 +23,6 @@ namespace _Game.GameModules.Characters.Scripts
         }
 
         public Ability AbilityInUse { get; private set; }
-        public RequestedAbilityEvent requestedAbility = new RequestedAbilityEvent();
-        public IndexedAbilityEvent startedAbility = new IndexedAbilityEvent();
-        public IndexedAbilityEvent stopCasting = new IndexedAbilityEvent();
-        public IndexedAbilityEvent stopAbility = new IndexedAbilityEvent();
-        
-        public bool usingAbility;
 
         public void RequestAbility(int index)
         {

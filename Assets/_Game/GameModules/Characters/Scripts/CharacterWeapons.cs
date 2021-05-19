@@ -9,7 +9,7 @@ namespace _Game.GameModules.Characters.Scripts
     [Serializable]
     public class CharacterWeapons : MonoBehaviour
     {
-        public List<Weapon> weapons  = new List<Weapon>();
+        public List<Weapon> weapons = new List<Weapon>();
         [SerializeField] Weapon weaponInUse;
         [SerializeField] RuntimeAnimatorController entityAnimator;
         [SerializeField] CharacterStatus status;
@@ -27,7 +27,7 @@ namespace _Game.GameModules.Characters.Scripts
             var weapon = new GameObject();
             weapon.name = weaponData.name;
             weapon.transform.parent = gameObject.transform;
-            weapons.Add(weapon.AddComponent<Weapon>().Setup(weaponData, entityAnimator,status)); //,status));
+            weapons.Add(weapon.AddComponent<Weapon>().Setup(weaponData, entityAnimator, status)); //,status));
         }
 
         public void UseWeapon(int index)
@@ -62,7 +62,6 @@ namespace _Game.GameModules.Characters.Scripts
         {
             UseWeapon(-1);
         }
-        
     }
 
     [Serializable]

@@ -65,7 +65,7 @@ public class Conversation16 : MyFluentDialogue
                 (
                     If(() => EnemyHealth >= 10, Write(0, "You will NEVER defeat me !!")) *
                     If(() => EnemyHealth >= 6 && EnemyHealth < 10, Write(0, "I'v been hurt!")) *
-                    If(() => EnemyHealth >= 2 && EnemyHealth < 6, Write(0, "Awwwwwwww! Stop that!")) *
+                    If(() => EnemyHealth >= 2 && EnemyHealth < 6, Write(0, "Awwwwwwww! StopWalking that!")) *
 
                     Option("Spells") *
                         Write(0, "Choose a spell") *

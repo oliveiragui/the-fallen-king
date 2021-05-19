@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.GameModules.Entities.Scripts.Components.Behaviours
+namespace _Game.GameModules.Entities.Scripts.Behaviours
 {
     public class DeathBehaviour : StateMachineBehaviour
     {
@@ -9,8 +9,8 @@ namespace _Game.GameModules.Entities.Scripts.Components.Behaviours
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (!entity && !animator.TryGetComponent(out entity)) return;
-            entity.Stop();
-            entity. movement.enabled = false;
+            entity.StopWalking();
+            entity.movement.enabled = false;
             entity.collision.Hittable = false;
         }
 

@@ -157,53 +157,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4626444849510659334}
-  entityAudio: {fileID: 7052620357858970206}
+  sound: {fileID: 0}
   mesh: {fileID: 7635660551639083686}
   particle: {fileID: 8689670955005269511}
   collision: {fileID: 7126147895460299385}
   movement: {fileID: 2610950626802292660}
-  events:
-    onEnabled:
-      m_PersistentCalls:
-        m_Calls: []
-    onDisabled:
-      m_PersistentCalls:
-        m_Calls: []
-    onHitReceived:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_MethodName: ReceiveHit
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    startAbility:
-      m_PersistentCalls:
-        m_Calls: []
-    finishAbility:
-      m_PersistentCalls:
-        m_Calls: []
-    enterCombat:
-      m_PersistentCalls:
-        m_Calls: []
-    exitCombat:
-      m_PersistentCalls:
-        m_Calls: []
-    onBirth:
-      m_PersistentCalls:
-        m_Calls: []
-    onDeathBeginning:
-      m_PersistentCalls:
-        m_Calls: []
-    onDeathEnding:
-      m_PersistentCalls:
-        m_Calls: []
+  hitReceived:
+    m_PersistentCalls:
+      m_Calls: []
+  startAbilityAnimation:
+    m_PersistentCalls:
+      m_Calls: []
+  endAbilityAnimation:
+    m_PersistentCalls:
+      m_Calls: []
   _floorName: 
   _character: {fileID: 0}
   <Alive>k__BackingField: 1
@@ -213,7 +180,8 @@ MonoBehaviour:
   <LookDiretion>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
   <StoppingDistance>k__BackingField: 0
   <Destination>k__BackingField: {x: 0, y: 0, z: 0}
-  <Ready>k__BackingField: 0
+  <Aim>k__BackingField: 0
+  <ApplyRootMovement>k__BackingField: 0
 --- !u!114 &7635660551639083686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +244,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4626444849510659329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b7183bde548b44fac5032d230e6dea, type: 3}
+  m_Script: {fileID: 11500000, guid: 0d505489bb7bf6a4eb9654f34de2d9b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   defaultParticles: {fileID: 8800476076183781228}

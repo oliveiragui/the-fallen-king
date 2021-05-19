@@ -4824,7 +4824,7 @@ GameObject:
   - component: {fileID: 4262140483115222537}
   - component: {fileID: 4260507010894014455}
   m_Layer: 0
-  m_Name: Slash 0
+  m_Name: Slash 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5100,7 +5100,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 8
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -6193,7 +6193,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 0
+        atime0: 43947
         atime1: 65535
         atime2: 65535
         atime3: 0

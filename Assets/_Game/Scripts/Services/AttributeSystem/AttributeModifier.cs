@@ -6,7 +6,7 @@ namespace _Game.Scripts.Services.AttributeSystem
     [Serializable]
     public class AttributeModifier
     {
-        [SerializeField] int constant;
+        [SerializeField] float constant;
         [SerializeField] float attributeInfluence;
         public float Value { get; private set; }
 
