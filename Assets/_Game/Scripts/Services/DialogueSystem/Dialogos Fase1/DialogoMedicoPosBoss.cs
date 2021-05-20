@@ -71,6 +71,11 @@ public class DialogoMedicoPosBoss : FluentScript
         onFinish.Invoke();
     }
 
+    public override void OnStart()
+    {
+        onStart.Invoke();
+    }
+
     private void DialogueTrigger()
     {
         dialogueTrigger.Invoke();
