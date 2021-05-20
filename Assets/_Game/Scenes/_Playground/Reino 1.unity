@@ -8505,6 +8505,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 557739029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &251374238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251374234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0505af5f9da3459d973748bee29cd147, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 336005577}
+  target: {fileID: 1272000578}
+  animator: {fileID: 251374239}
+  weaponData: {fileID: 11400000, guid: 1a62f8a0bbf0fb2448357d38ff710f3a, type: 2}
+  preferedDistance: 3
+  maxVariation: 2
 --- !u!95 &251374239
 Animator:
   serializedVersion: 3
@@ -8531,7 +8549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251374234}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5299d6c324b24a5baf5bd1990c29e2ee, type: 3}
   m_Name: 
@@ -8541,7 +8559,7 @@ MonoBehaviour:
   animator: {fileID: 251374239}
   weaponData: {fileID: 11400000, guid: 1a62f8a0bbf0fb2448357d38ff710f3a, type: 2}
   preferedDistance: 3
-  maxVariation: 3
+  maxVariation: 2
 --- !u!4 &251535932 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 403594, guid: 77c54194384c09a45b991556c9fe41a5,
@@ -17289,7 +17307,7 @@ PrefabInstance:
     - target: {fileID: 4352796456586412610, guid: 4dff912247216734e8192af245f55a14,
         type: 3}
       propertyPath: rawCharacterStatus.agility.initial
-      value: 5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 5423933248442098584, guid: 4dff912247216734e8192af245f55a14,
         type: 3}

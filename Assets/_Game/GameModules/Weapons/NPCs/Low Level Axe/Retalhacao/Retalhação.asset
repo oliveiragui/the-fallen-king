@@ -19,25 +19,31 @@ MonoBehaviour:
     icon: {fileID: 0}
   combo:
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: 282082dad4794dd45a72a4a6a26c5945,
       type: 2}
-    factor1: 0.4
+    factor1: 0.7
     middleAnimation: {fileID: 0}
     factor2: 0
     endAnimation: {fileID: 0}
     factor3: 0
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: 8c5334b58ebfe3c4db7eba425f9ab453,
       type: 2}
-    factor1: 0.4
+    factor1: 0.7
     middleAnimation: {fileID: 0}
     factor2: 0
     endAnimation: {fileID: 0}
     factor3: 0
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: 8c5334b58ebfe3c4db7eba425f9ab453,
       type: 2}
-    factor1: 0.4
+    factor1: 0.7
     middleAnimation: {fileID: 0}
     factor2: 0
     endAnimation: {fileID: 0}

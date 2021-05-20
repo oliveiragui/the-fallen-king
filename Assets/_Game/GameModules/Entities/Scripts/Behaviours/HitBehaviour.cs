@@ -13,6 +13,7 @@ namespace _Game.GameModules.Entities.Scripts.Behaviours
             if (hitImpact > 1)
             {
                 _entity.movement.Stop();
+                Debug.Log("esta parando");
             }
         }
 

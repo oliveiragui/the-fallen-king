@@ -19,9 +19,11 @@ MonoBehaviour:
     icon: {fileID: 0}
   combo:
   - castable: 0
+    aim: 0
+    applyRootMovement: 0
     beginningAnimation: {fileID: 7400000, guid: d84973d601624974f89b777a62e65952,
       type: 2}
-    factor1: 0.3
+    factor1: 0.5
     middleAnimation: {fileID: 0}
     factor2: 0
     endAnimation: {fileID: 0}
