@@ -63,7 +63,7 @@ namespace Fluent
 
         public virtual string Description()
         {
-            return "Aperte E para interagir";
+            return "";
         }
 
         /// <summary>

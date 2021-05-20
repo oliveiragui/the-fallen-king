@@ -16,9 +16,10 @@ namespace _Game.Scripts
 
         void Start()
         {
+            _camera = Camera.main;
             foreach (var weapon in weapons) character.WeaponStorage.Add(weapon);
             character.WeaponStorage.UseWeapon(0);
-            _camera = FindObjectOfType<Camera>();
+            //_camera = FindObjectOfType<Camera>();
         }
 
         void Update()
