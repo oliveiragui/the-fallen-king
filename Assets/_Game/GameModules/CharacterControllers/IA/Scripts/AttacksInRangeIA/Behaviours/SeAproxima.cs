@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace _Game.GameModules.IA.Scripts.Behaviours
+namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA.Behaviours
 {
     public class SeAproxima : StateMachineBehaviour
     {

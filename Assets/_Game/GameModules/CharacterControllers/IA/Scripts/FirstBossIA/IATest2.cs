@@ -4,9 +4,9 @@ using _Game.GameModules.Weapons.Scripts;
 using _Game.Scripts.Utils.Extension;
 using UnityEngine;
 
-namespace _Game.GameModules.IA.Scripts
+namespace _Game.GameModules.IA.Scripts.FirstBossIA
 {
-    public class IATest : MonoBehaviour
+    public class IATest2 : MonoBehaviour
     {
         public Entity entity;
         [SerializeField] Entity target;
@@ -29,6 +29,13 @@ namespace _Game.GameModules.IA.Scripts
 
             minDistance = preferedDistance - maxVariation / 2;
             maxDistance = preferedDistance + maxVariation / 2;
+            entity.Character.AbilitySystem.stopAbility.AddListener((index) =>
+            {
+                for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
+                {
+                    animator.SetBool($"Habilidade {i + 1} finalizada", true);
+                }
+            });
         }
 
         void FixedUpdate()
@@ -44,40 +51,25 @@ namespace _Game.GameModules.IA.Scripts
         void ProcessaInput()
         {
             animator.SetBool("Possui Alvo", target);
+            if (!target) return;
 
-            if (target)
-            {
-                var targetDistance = entity.transform.position - target.transform.position;
-                AnalizaDistancia(targetDistance);
-            }
-        }
-
-        public void LookToTarget()
-        {
+            var targetDistance = entity.transform.position - target.transform.position;
             var position = entity.transform.position;
             var targetPosition = Target.transform.position;
             var direction = targetPosition - position;
+
             entity.Direction = Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree());
             entity.LookDiretion = (Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
-            entity.Destination = Target.transform.position;
-        }
+            entity.Destination = targetPosition;
 
-        void AnalizaDistancia(Vector3 distance)
-        {
-            if (target)
+            animator.SetBool("Muito Distante", targetDistance.magnitude > maxDistance);
+            animator.SetBool("Muito Proximo", targetDistance.magnitude < minDistance);
+            animator.SetBool("Alvo Atras", TargetIsBehind());
+            for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
             {
-                animator.SetBool("Muito Distante", distance.magnitude > maxDistance);
-                animator.SetBool("Muito Proximo", distance.magnitude < minDistance);
-                animator.SetBool("Alvo Atras", TargetIsBehind());
-
-                for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
-                {
-                    animator.SetBool($"Cooldown Habilidade {i + 1}",
-                        entity.Character.AbilitySystem.Abilities[i].OnCooldown);
-                }
+                animator.SetBool($"Pode usar Habilidade {i + 1}",
+                    entity.Character.AbilitySystem.Abilities[i].CanBeUsed);
             }
-
-            //if (target && (entity.transform.position - target.transform.position).magnitude > 10) target = null;
         }
 
         bool TargetIsBehind()
