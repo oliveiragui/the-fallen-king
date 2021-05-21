@@ -21,14 +21,14 @@ MonoBehaviour:
   - castable: 1
     aim: 0
     applyRootMovement: 0
-    beginningAnimation: {fileID: 7400000, guid: f00ddd24267eb7f42b93d5a986c332db,
-      type: 2}
+    beginning: {fileID: 11400000, guid: 19c1929fcbe24934eabd2de161ce1a92, type: 2}
     factor1: 1.2
-    middleAnimation: {fileID: 7400000, guid: 3425d86920013ef4aa38a9c5b2bc2297, type: 2}
+    middle: {fileID: 11400000, guid: b6e5ce56b8b38204f8068e0ba85d7a14, type: 2}
     factor2: 2
-    endAnimation: {fileID: 7400000, guid: 495a47b57ed525a48b2f38f57beab4f9, type: 2}
+    ending: {fileID: 11400000, guid: ba5f39e66dc217246ba2d237f8977843, type: 2}
     factor3: 2
   particleEffects: []
+  sfx: []
   range: 7
   cooldown:
     constant: 1
