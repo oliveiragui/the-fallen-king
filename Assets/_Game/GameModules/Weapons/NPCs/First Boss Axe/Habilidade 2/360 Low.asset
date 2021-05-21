@@ -19,15 +19,17 @@ MonoBehaviour:
     icon: {fileID: 0}
   combo:
   - castable: 0
-    beginningAnimation: {fileID: 7400000, guid: 4d1f951e2cf23c94da7cf371d5b9a18f,
-      type: 2}
+    aim: 0
+    applyRootMovement: 0
+    beginning: {fileID: 11400000, guid: 54dedae83b61ade4d9e2bf04c38385c0, type: 2}
     factor1: 0.4
-    middleAnimation: {fileID: 0}
+    middle: {fileID: 0}
     factor2: 0
-    endAnimation: {fileID: 0}
+    ending: {fileID: 0}
     factor3: 0
   particleEffects:
   - {fileID: 4262140483115222537, guid: 10426ce675252f94fa5330d2ef837652, type: 3}
+  sfx: []
   range: 0
   cooldown:
     constant: 0

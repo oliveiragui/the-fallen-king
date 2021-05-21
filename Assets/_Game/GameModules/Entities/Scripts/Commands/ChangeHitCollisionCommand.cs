@@ -9,7 +9,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
 
         public override void Execute(Entity entity)
         {
-            entity.collision.Hittable = canReceiveHitted;
+            entity.Hittable = canReceiveHitted;
         }
     }
 }

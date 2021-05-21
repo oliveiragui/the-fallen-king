@@ -1,22 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Minimap : MonoBehaviour
+namespace _Game.Scripts.UI.HUD
 {
-    public Transform player;
-
-    void LateUpdate()
+    public class Minimap : MonoBehaviour
     {
-        Vector3 newPosition = player.position;
-        newPosition.y = transform.position.y;
-        transform.position = newPosition;
+        public Transform player;
 
-        //transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
-    }
+        void LateUpdate()
+        {
+            Vector3 newPosition = player.position;
+            newPosition.y = transform.position.y;
+            transform.position = newPosition;
 
-    public void SetPlayer(Transform transform)
-    {
-        player = transform;
+            //transform.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        }
+
+        public void SetPlayer(Transform transform)
+        {
+            player = transform;
+        }
     }
 }

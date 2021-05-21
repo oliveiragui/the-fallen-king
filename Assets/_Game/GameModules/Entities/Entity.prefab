@@ -364,6 +364,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2046789487008283921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4079645282799969809}
+  m_Layer: 0
+  m_Name: SFX Container
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4079645282799969809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046789487008283921}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7882754598378624702}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4076851793733223905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2623,6 +2653,11 @@ PrefabInstance:
       propertyPath: slots
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7052620357858970206, guid: af3c22cbefa82e848a1af94e8a11cb4b,
+        type: 3}
+      propertyPath: soundEffectContainer
+      value: 
+      objectReference: {fileID: 2046789487008283921}
     - target: {fileID: 7889113212835892213, guid: af3c22cbefa82e848a1af94e8a11cb4b,
         type: 3}
       propertyPath: m_Layer

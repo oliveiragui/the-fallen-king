@@ -22,6 +22,7 @@ namespace _Game.GameModules.Ammunition.Scripts
         {
             AbilityHit = hit;
             _rigidbody.AddForce(force);
+            trail.GetComponent<TrailRenderer>().Clear();
             trail.SetActive(true);
         }
 
@@ -29,15 +30,17 @@ namespace _Game.GameModules.Ammunition.Scripts
         {
             if (HasCollided) return;
             entity.Hit(AbilityHit);
-            OnHit(entity.transform);
+            OnCollision(entity.transform);
         }
 
-        void OnHit(Transform target)
+        void OnCollision(Transform target)
         {
             HasCollided = true;
             AttachToTarget(target);
             SetLifeTime(data.LifeTimeOnHit);
+            trail.GetComponent<TrailRenderer>().Clear();
             trail.SetActive(false);
+      
         }
 
         void AttachToTarget(Transform other)
@@ -67,7 +70,7 @@ namespace _Game.GameModules.Ammunition.Scripts
 
         void OnCollisionEnter(Collision other)
         {
-            OnHit(other.transform);
+            OnCollision(other.transform);
         }
 
         void OnEnable()

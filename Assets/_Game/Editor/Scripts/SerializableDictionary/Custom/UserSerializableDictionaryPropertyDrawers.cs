@@ -1,10 +1,10 @@
 ﻿using _Game.Scripts.Services.Storage.Custom;
 using _Game.Scripts.Utils.Serializables;
 using UnityEditor;
-using UnityEngine;
 
 namespace Utils.SerializableDictionary.Example.Editor
 {
+    [CustomPropertyDrawer(typeof(ScriptableAnimationEventsDictionary))]
     [CustomPropertyDrawer(typeof(StringAudioSourceDictionary))]
     [CustomPropertyDrawer(typeof(StringColliderDictionary))]
     [CustomPropertyDrawer(typeof(StringParticleDictionary))]

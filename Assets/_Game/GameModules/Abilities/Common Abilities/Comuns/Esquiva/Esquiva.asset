@@ -21,27 +21,17 @@ MonoBehaviour:
   - castable: 0
     aim: 0
     applyRootMovement: 0
-    beginningAnimation: {fileID: 7400000, guid: 4e50c23ed500f9148b3d106c52f2a003,
-      type: 2}
-    factor1: 1.5
-    middleAnimation: {fileID: 0}
+    beginning: {fileID: 11400000, guid: f35a582e51d22e04eb933559174dcb55, type: 2}
+    factor1: 2
+    middle: {fileID: 0}
     factor2: 0
-    endAnimation: {fileID: 0}
-    factor3: 0
-  - castable: 0
-    aim: 0
-    applyRootMovement: 0
-    beginningAnimation: {fileID: 7400000, guid: 4e50c23ed500f9148b3d106c52f2a003,
-      type: 2}
-    factor1: 1.5
-    middleAnimation: {fileID: 0}
-    factor2: 0
-    endAnimation: {fileID: 0}
+    ending: {fileID: 0}
     factor3: 0
   particleEffects:
   - {fileID: 1570240557083949946, guid: 378781e9189576f4cb85e2975776c38a, type: 3}
   - {fileID: 198121459679799664, guid: 0fd5c1632284b604096325ed6e49edbe, type: 3}
   - {fileID: 1570240557083949946, guid: 378781e9189576f4cb85e2975776c38a, type: 3}
+  sfx: []
   range: 0
   cooldown:
     constant: 1.5

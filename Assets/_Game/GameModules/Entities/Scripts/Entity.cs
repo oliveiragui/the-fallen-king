@@ -18,8 +18,15 @@ namespace _Game.GameModules.Entities.Scripts
         [SerializeField] public EntityAudio sound;
         [SerializeField] public EntityMesh mesh;
         [SerializeField] public EntityParticle particle;
-        [SerializeField] public EntityCollision collision;
         [SerializeField] public EntityMovement movement;
+
+        [SerializeField] Collider hitDetectionCollider;
+        
+        public bool Hittable
+        {
+            get => hitDetectionCollider.enabled;
+            set => hitDetectionCollider.enabled = value;
+        }
 
         #endregion
 
@@ -35,6 +42,7 @@ namespace _Game.GameModules.Entities.Scripts
 
         [SerializeField] string _floorName;
         [SerializeField] Character _character;
+        [SerializeField] float stoppingDistance = 1;
 
         bool _canMove;
 
@@ -43,10 +51,12 @@ namespace _Game.GameModules.Entities.Scripts
         public bool UsingAbility { get; set; }
         [field: SerializeField] public bool Alive { get; set; } = true;
         [field: SerializeField] public bool AutoMove { get; set; }
-        [field: SerializeField] public float Speed { get; private set; } 
+        [field: SerializeField] public float CharacterSpeed { get; private set; }
+        [field: SerializeField] public float AnimationSpeed { get; private set; }
+        public float Speed => CharacterSpeed + AnimationSpeed;
         [field: SerializeField] public Quaternion Direction { get; set; }
         [field: SerializeField] public Quaternion LookDiretion { get; set; }
-        [field: SerializeField] public float StoppingDistance { get; private set; } = 1;
+        public float StoppingDistance => stoppingDistance;
         [field: SerializeField] public Vector3 Destination { get; set; }
         [field: SerializeField] public bool Aim { get; private set; }
         [field: SerializeField] public bool ApplyRootMovement { get; set; }
@@ -78,17 +88,14 @@ namespace _Game.GameModules.Entities.Scripts
             animator.runtimeAnimatorController = weapon.animatorController;
             mesh.SwitchWeapon(weapon.Data.Prefabs);
             particle.InstantiateAbilityEffects(weapon.Abilities.ToArray());
+            sound.InstantiateAbilitySfx(weapon.Abilities.ToArray());
         }
 
         public void OnStatusChange(CharacterStatus status)
         {
-            Speed = status.Agility.Current;
+            CharacterSpeed = status.Agility.Current;
         }
 
-        // void OnAnimatorMove()
-        // {
-        //     if (UsingAbility) movement.Speed = (animator.deltaPosition / Time.deltaTime).magnitude;
-        // }
 
         void OnTriggerEnter(Collider other)
         {
@@ -130,7 +137,7 @@ namespace _Game.GameModules.Entities.Scripts
         )
         {
             Aim = aim;
-            ApplyRootMovement = ApplyRootMovement;
+            ApplyRootMovement = applyRootMovement;
             animator.SetInteger("Combo Atual", id);
             animator.SetBool(AnimatorParams.Castable, castable);
             animator.SetFloat(AnimatorParams.ComboFactor1, factor1);
@@ -175,24 +182,7 @@ namespace _Game.GameModules.Entities.Scripts
         {
             CanMove = false;
         }
-
-        public void Stop()
-        {
-            movement.Speed = 0;
-        }
-
-        public void PlayAbilityParticleEffect(int abilityIndex, int particleIndex)
-        {
-            particle.PlayAbilityEffect(abilityIndex, particleIndex);
-        }
-
-        public void StopAbilityParticleEffect(int abilityIndex, int particleIndex)
-        {
-            particle.PlayAbilityEffect(abilityIndex, particleIndex);
-        }
-
-        public void PlayFootStepSound() => sound.Play(FloorName);
-
+        
         public void PlayFootStepParticleEffect() => particle.Play("FootStep");
 
         public void PlayParticle(string name) => particle.Play(name);

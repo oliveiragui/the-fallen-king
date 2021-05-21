@@ -22,7 +22,6 @@ namespace _Game.GameModules.Entities.Scripts.Behaviours
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
             _entity.UsingAbility = false;
-            _entity.ApplyRootMovement = false;
             _entity.endAbilityAnimation.Invoke();
         }
     }

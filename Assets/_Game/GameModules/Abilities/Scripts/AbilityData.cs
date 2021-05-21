@@ -12,6 +12,7 @@ namespace _Game.GameModules.Abilities.Scripts
         [SerializeField] AbilityMetaData metaData;
         [SerializeField] Combo[] combo;
         [SerializeField] ParticleSystem[] particleEffects;
+        [SerializeField] AudioSource[] sfx;
         [SerializeField] int range;
         [SerializeField] AttributeModifier cooldown;
         public AttributeModifier Cooldown => cooldown;
@@ -23,6 +24,9 @@ namespace _Game.GameModules.Abilities.Scripts
         public ParticleSystem[] ParticleEffects => particleEffects;
         public bool CanInterrupt => canInterrupt;
         public bool CanBeInterruped => canBeInterruped;
+
+        public AudioSource[] Sfx => sfx;
+
         public bool CanOverride(AbilityData other) => this != other && CanInterrupt && other.CanBeInterruped;
     }
 

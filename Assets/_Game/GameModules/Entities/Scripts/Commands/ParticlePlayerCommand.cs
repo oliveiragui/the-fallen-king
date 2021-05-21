@@ -1,4 +1,5 @@
-﻿using _Game.Scripts.Utils.MyBox.Attributes;
+﻿using System;
+using _Game.Scripts.Utils.MyBox.Attributes;
 using UnityEngine;
 
 namespace _Game.GameModules.Entities.Scripts.Commands
@@ -7,35 +8,41 @@ namespace _Game.GameModules.Entities.Scripts.Commands
     public class ParticlePlayerCommand : EntityCommand
     {
         [SerializeField] bool predefinedSound;
-        [SerializeField] EntitySoundType soundType;
+        [SerializeField] EntityParticleType particleType;
         [ConditionalField("predefinedSound", true)] [SerializeField] string particleName;
-        [SerializeField] bool play;
+        [SerializeField] PlayerState state;
 
         public override void Execute(Entity entity)
         {
-            if (predefinedSound) PredefinedSoundPlay(entity);
+            if (predefinedSound) PredefinedParticlePlay(entity);
             else CustomSoundPlay(entity);
         }
 
-        void PredefinedSoundPlay(Entity entity)
+        void PredefinedParticlePlay(Entity entity)
         {
-            switch (soundType)
+            switch (particleType)
             {
-                case EntitySoundType.footstep:
-                    entity.particle.Play(entity.FloorName, play);
+                case EntityParticleType.footstep:
+                    entity.particle.Play(entity.FloorName, state == PlayerState.play);
                     break;
             }
         }
 
         void CustomSoundPlay(Entity entity)
         {
-            if (play) entity.particle.Play(particleName);
+            if (state == PlayerState.play) entity.particle.Play(particleName);
             else entity.particle.Stop(particleName);
         }
     }
 
-    public enum EntitySoundType
+    public enum EntityParticleType
     {
         footstep
+    }
+
+    public enum PlayerState
+    {
+        play,
+        stop
     }
 }

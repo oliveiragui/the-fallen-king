@@ -12,28 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114919e8d923406c9f07c57b428b7fc0, type: 3}
   m_Name: Battle Cry
   m_EditorClassIdentifier: 
-  animationId: 4
-  description: 
-  icon: {fileID: 21300000, guid: 1d7e1548e7fc4c74faee93a7cfe2d397, type: 3}
   canBeInterruped: 0
   canInterrupt: 1
-  cooldown:
-    multiplier: 0
-    value: 1
+  metaData:
+    description: 
+    icon: {fileID: 0}
   combo:
-  - attributes:
-      power:
-        multiplier: 0
-        value: 0
-      range:
-        multiplier: 0
-        value: 0
-    castable: 0
-    beginningAnimation: {fileID: 7400000, guid: 689832bd5b4137b4f842e401d3a0ee16,
-      type: 2}
+  - castable: 0
+    aim: 0
+    applyRootMovement: 0
+    beginning: {fileID: 11400000, guid: d5c8d2ccd152a6a418ad3dd208544139, type: 2}
     factor1: 2.5
-    middleAnimation: {fileID: 0}
+    middle: {fileID: 0}
     factor2: 0
-    endAnimation: {fileID: 0}
+    ending: {fileID: 0}
     factor3: 0
   particleEffects: []
+  sfx: []
+  range: 0
+  cooldown:
+    constant: 0
+    attributeInfluence: 0

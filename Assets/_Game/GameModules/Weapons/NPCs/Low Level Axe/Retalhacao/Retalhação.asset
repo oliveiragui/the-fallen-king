@@ -21,37 +21,35 @@ MonoBehaviour:
   - castable: 0
     aim: 0
     applyRootMovement: 0
-    beginningAnimation: {fileID: 7400000, guid: 282082dad4794dd45a72a4a6a26c5945,
-      type: 2}
+    beginning: {fileID: 11400000, guid: be7df07033761d7459ff1fbe23dc53be, type: 2}
     factor1: 0.7
-    middleAnimation: {fileID: 0}
+    middle: {fileID: 0}
     factor2: 0
-    endAnimation: {fileID: 0}
+    ending: {fileID: 0}
     factor3: 0
   - castable: 0
     aim: 0
     applyRootMovement: 0
-    beginningAnimation: {fileID: 7400000, guid: 8c5334b58ebfe3c4db7eba425f9ab453,
-      type: 2}
+    beginning: {fileID: 11400000, guid: 681755236cbeb0340ab0e53440f158e7, type: 2}
     factor1: 0.7
-    middleAnimation: {fileID: 0}
+    middle: {fileID: 0}
     factor2: 0
-    endAnimation: {fileID: 0}
+    ending: {fileID: 0}
     factor3: 0
   - castable: 0
     aim: 0
     applyRootMovement: 0
-    beginningAnimation: {fileID: 7400000, guid: 8c5334b58ebfe3c4db7eba425f9ab453,
-      type: 2}
+    beginning: {fileID: 11400000, guid: 681755236cbeb0340ab0e53440f158e7, type: 2}
     factor1: 0.7
-    middleAnimation: {fileID: 0}
+    middle: {fileID: 0}
     factor2: 0
-    endAnimation: {fileID: 0}
+    ending: {fileID: 0}
     factor3: 0
   particleEffects:
   - {fileID: 4262140483115222537, guid: fe0f46b3f1d3f894bb5ca02f98761074, type: 3}
   - {fileID: 4262140483115222537, guid: cd413b54bf5d22343bc9a0cb3f722e68, type: 3}
   - {fileID: 4262140483115222537, guid: 6b3f56e1a081794428288ebfd4fe3a88, type: 3}
+  sfx: []
   range: 2
   cooldown:
     constant: 0

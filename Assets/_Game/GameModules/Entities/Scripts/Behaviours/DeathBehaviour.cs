@@ -11,7 +11,7 @@ namespace _Game.GameModules.Entities.Scripts.Behaviours
             if (!entity && !animator.TryGetComponent(out entity)) return;
             entity.StopWalking();
             entity.movement.enabled = false;
-            entity.collision.Hittable = false;
+            entity.Hittable = false;
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

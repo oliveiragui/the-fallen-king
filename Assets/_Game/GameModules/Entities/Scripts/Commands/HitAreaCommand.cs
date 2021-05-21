@@ -27,7 +27,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
             foreach (var hit in hits)
             {
                 if (!hit.collider.attachedRigidbody.transform.TryGetComponent(out Entity otherEntity)) continue;
-                if (!otherEntity.collision.Hittable) continue;
+                if (!otherEntity.Hittable) continue;
                 if (otherEntity.Character.Equals(entity.Character)) continue;
                 if (otherEntity.Character.Team.PlayerFriend ==
                     entity.Character.Team.PlayerFriend) continue;
