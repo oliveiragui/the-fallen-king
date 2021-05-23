@@ -18,6 +18,10 @@ namespace _Game.GameModules.Abilities.Scripts
         [ConditionalField("castable")] [SerializeField] AnimationEventFlow ending;
         [ConditionalField("castable")] [SerializeField] float factor3;
 
+        [SerializeField] AnimationClip endingTransition;
+        [SerializeField] float factor4;
+
+        public float Factor4 => factor4;
         public float Factor3 => factor3;
         public float Factor2 => factor2;
         public float Factor1 => factor1;
@@ -32,5 +36,7 @@ namespace _Game.GameModules.Abilities.Scripts
         public AnimationEventFlow MiddleAnimation => middle;
 
         public AnimationEventFlow EndingAnimation => ending;
+
+        public AnimationClip EndingTransition => endingTransition;
     }
 }

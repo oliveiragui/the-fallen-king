@@ -10,7 +10,7 @@ namespace _Game.GameModules.Entities.Scripts.Behaviours
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if (_entity == null && !animator.transform.TryGetComponent(out _entity)) return;
-            if (hitImpact > 1) _entity.movement.Stop();
+            if (hitImpact > 1) _entity.movement.StopWalking();
         }
 
         // OnStateExit is called before OnStateExit is called on any state inside this state machine

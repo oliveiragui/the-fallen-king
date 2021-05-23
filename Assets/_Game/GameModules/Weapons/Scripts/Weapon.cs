@@ -52,9 +52,11 @@ namespace _Game.GameModules.Weapons.Scripts
                     var comboIndex = (j + 1).ToString();
                     var combo = ability.Combo[j];
                     animatorController[$"Habilidade {abilityIndex} Combo {comboIndex} - 1"] = combo.BeginningAnimation.Clip;
+                    animatorController[$"Habilidade {abilityIndex} Combo {comboIndex} - 4"] = combo.EndingTransition;
                     if (!combo.Castable) continue;
                     animatorController[$"Habilidade {abilityIndex} Combo {comboIndex} - 2"] = combo.MiddleAnimation.Clip;
                     animatorController[$"Habilidade {abilityIndex} Combo {comboIndex} - 3"] = combo.EndingAnimation.Clip;
+
                 }
             }
         }

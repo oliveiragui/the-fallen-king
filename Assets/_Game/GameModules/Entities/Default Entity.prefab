@@ -172,13 +172,13 @@ MonoBehaviour:
       m_Calls: []
   _floorName: 
   _character: {fileID: 0}
+  stoppingDistance: 1
   <Alive>k__BackingField: 1
   <AutoMove>k__BackingField: 0
   <CharacterSpeed>k__BackingField: 0
   <AnimationSpeed>k__BackingField: 0
   <Direction>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
   <LookDiretion>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
-  <StoppingDistance>k__BackingField: 0
   <Destination>k__BackingField: {x: 0, y: 0, z: 0}
   <Aim>k__BackingField: 0
   <ApplyRootMovement>k__BackingField: 0
@@ -218,11 +218,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4626444849510659329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1198ec245e640d3ad3d28a7ac3e8328, type: 3}
+  m_Script: {fileID: 11500000, guid: c62a876ee8a13714c88d50cbcfbfdfb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5053147373740734576}
-  _autoMove: 0
+  animator: {fileID: 4626444849510659334}
+  autoMove: 0
 --- !u!114 &8689670955005269511
 MonoBehaviour:
   m_ObjectHideFlags: 0

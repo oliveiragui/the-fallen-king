@@ -75,10 +75,7 @@ namespace _Game.GameModules.Characters.Scripts
         void OnStartAbility(int abilityIndex)
         {
             var combo = AbilitySystem.Abilities[abilityIndex].CurrentCombo;
-            entity.SetCombo(
-                AbilitySystem.Abilities[abilityIndex].CurrentComboID,
-                combo.Castable, combo.Aim, combo.ApplyRootMovement, combo.Factor1, combo.Factor2, combo.Factor3
-            );
+            entity.SetCombo(AbilitySystem.Abilities[abilityIndex].CurrentComboID, combo);
             OnEnterInCombat();
         }
 
@@ -119,7 +116,7 @@ namespace _Game.GameModules.Characters.Scripts
             AbilitySystem.requestedAbility.AddListener(entity.SetNextAbility);
             AbilitySystem.startedAbility.AddListener(OnStartAbility);
             AbilitySystem.stopCasting.AddListener(entity.StopCasting);
-            
+
             AbilitySystem.OnWeaponChange(weaponStorage.WeaponInUse);
             entity.OnStatusChange(CharacterStatus);
             entity.OnWeaponChange(weaponStorage.WeaponInUse);

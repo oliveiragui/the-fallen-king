@@ -20,8 +20,8 @@ namespace _Game.GameModules.Entities.Scripts
         public static readonly int Castable = Animator.StringToHash("Habilidade conjuravel");
         public static readonly int ComboFactor1 = Animator.StringToHash("Ability Factor 1");
         public static readonly int ComboFactor2 = Animator.StringToHash("Ability Factor 2");
-
         public static readonly int ComboFactor3 = Animator.StringToHash("Ability Factor 3");
+        public static readonly int ComboFactor4 = Animator.StringToHash("Ability Factor 4");
         // DANO ---------------------------------------------
 
         // ARMA ---------------------------------------------

@@ -6,73 +6,45 @@ namespace _Game.GameModules.Entities.Scripts
     public class EntityMovement : MonoBehaviour
     {
         [SerializeField] NavMeshAgent agent;
-        [SerializeField] bool _autoMove;
+        [SerializeField] Animator animator;
+        [SerializeField] bool autoMove;
 
-        Quaternion _rotation;
         Transform _transform;
-
-        #region Properties
-
-        public bool IsMoving { get; private set; }
-
-        public Quaternion Rotation
-        {
-            get => _rotation;
-            set
-            {
-                _autoMove = false;
-                _rotation = value;
-            }
-        }
-
-        public Vector2 Velocity
-        {
-            get => agent.velocity;
-            set
-            {
-                _autoMove = false;
-                agent.velocity = value;
-            }
-        }
 
         public bool AutoMove
         {
-            get => _autoMove;
-            set => _autoMove = value;
+            get => autoMove;
+            set => autoMove = value;
         }
 
-        public float Speed
+        [field: SerializeField] public bool ApplyAnimationRootMovement { get; set; }
+        public bool Walking { get; set; }
+
+        public float AnimationSpeed { get; private set; }
+        public float TotalSpeed { get; private set; }
+        public float Speed { get; set; }
+        public float StoppingDistance { get; set; }
+        public Vector3 Destination { get; set; }
+        public Quaternion Rotation { get; set; }
+
+        public void Walk(Quaternion direction)
+         {
+             Walking = true;
+             Rotation = direction;
+         }
+
+        public void WalkTo(Vector3 destination)
         {
-            get => agent.speed;
-            set => agent.speed = value;
+            Walking = true;
+            Destination = destination;
         }
 
-        public float StoppingDistance
+        public void StopWalking()
         {
-            get => agent.stoppingDistance;
-            set => agent.stoppingDistance = value;
-        }
-
-        public Vector3 Destination
-        {
-            get => agent.destination;
-            set
-            {
-                _autoMove = true;
-                agent.destination = value;
-            }
-        }
-
-        public void Stop()
-        {
-            _autoMove = false;
+            Walking = false;
             agent.velocity = Vector3.zero;
             Speed = 0;
         }
-
-        #endregion
-
-        #region Looping Functions
 
         void Start()
         {
@@ -81,16 +53,28 @@ namespace _Game.GameModules.Entities.Scripts
 
         void Update()
         {
-            IsMoving = agent.velocity.sqrMagnitude > 0.01f;
-            if (!AutoMove) UpdatePostionAndRotation();
+            //if (receivingForce) UpdateForce();
+            TotalSpeed = 0;
+            agent.stoppingDistance = StoppingDistance;
+            if (ApplyAnimationRootMovement) TotalSpeed += AnimationSpeed;
+            if (Walking)
+            {
+                TotalSpeed += Speed;
+                if (AutoMove) agent.destination = Destination;
+                else _transform.rotation = Rotation;
+            }
+
+  
+            agent.speed = TotalSpeed;
+
+            if (Walking && !AutoMove || AnimationIsMoving) agent.velocity = _transform.forward * TotalSpeed;
         }
 
-        void UpdatePostionAndRotation()
+        bool AnimationIsMoving => AnimationSpeed > 0.1;
+
+        void OnAnimatorMove()
         {
-            _transform.rotation = Rotation;
-            agent.velocity = _transform.forward * Speed;
+            AnimationSpeed = (animator.deltaPosition / Time.deltaTime).magnitude;
         }
-
-        #endregion
     }
 }

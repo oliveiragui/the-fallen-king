@@ -21,7 +21,7 @@ namespace _Game.GameModules.Entities.Scripts
         [SerializeField] public EntityMovement movement;
 
         [SerializeField] Collider hitDetectionCollider;
-        
+
         public bool Hittable
         {
             get => hitDetectionCollider.enabled;
@@ -96,7 +96,6 @@ namespace _Game.GameModules.Entities.Scripts
             CharacterSpeed = status.Agility.Current;
         }
 
-
         void OnTriggerEnter(Collider other)
         {
             DetectFloorName(other);
@@ -132,18 +131,17 @@ namespace _Game.GameModules.Entities.Scripts
             animator.SetBool($"Conjurando Habilidade {index}", true);
         }
 
-        public void SetCombo(
-            int id, bool castable, bool aim, bool applyRootMovement, float factor1, float factor2 = 1, float factor3 = 1
-        )
+        public void SetCombo(int id, Combo combo)
         {
-            Aim = aim;
-            ApplyRootMovement = applyRootMovement;
+            Aim = combo.Aim;
+            ApplyRootMovement = combo.ApplyRootMovement;
             animator.SetInteger("Combo Atual", id);
-            animator.SetBool(AnimatorParams.Castable, castable);
-            animator.SetFloat(AnimatorParams.ComboFactor1, factor1);
-            if (!castable) return;
-            animator.SetFloat(AnimatorParams.ComboFactor2, factor2);
-            animator.SetFloat(AnimatorParams.ComboFactor3, factor3);
+            animator.SetBool(AnimatorParams.Castable, combo.Castable);
+            animator.SetFloat(AnimatorParams.ComboFactor1, combo.Factor1);
+            animator.SetFloat(AnimatorParams.ComboFactor4, combo.Factor4);
+            if (!combo.Castable) return;
+            animator.SetFloat(AnimatorParams.ComboFactor2, combo.Factor2);
+            animator.SetFloat(AnimatorParams.ComboFactor3, combo.Factor3);
         }
 
         public void StopCasting(int index)
@@ -182,7 +180,7 @@ namespace _Game.GameModules.Entities.Scripts
         {
             CanMove = false;
         }
-        
+
         public void PlayFootStepParticleEffect() => particle.Play("FootStep");
 
         public void PlayParticle(string name) => particle.Play(name);

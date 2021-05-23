@@ -12,15 +12,10 @@ namespace _Game.GameModules.Entities.Scripts.Behaviours
 
             animator.SetFloat(AnimatorParams.Velocidade, entity.Speed);
             entity.movement.Speed = entity.Speed;
-            if (entity.AutoMove)
-            {
-                entity.movement.Destination = entity.Destination;
-                entity.movement.StoppingDistance = entity.StoppingDistance;
-            }
-            else
-            {
-                entity.movement.Rotation = entity.Direction;
-            }
+            entity.movement.Destination = entity.Destination;
+            entity.movement.StoppingDistance = entity.StoppingDistance;
+            entity.movement.Rotation = entity.Direction;
+            entity.movement.Walking = true;
         }
     }
 }
