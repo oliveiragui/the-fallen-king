@@ -1,28 +1,20 @@
 ﻿using UnityEngine;
 
-namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA.Behaviours
+namespace _Game.GameModules.InputControllers.IA.Scripts.AttacksInRangeIA.Behaviours
 {
-    public class SeAfasta : StateMachineBehaviour
+    public class SeAfasta : IaBehaviour
     {
-        IATest _test;
+        //IATest _test;
 
         public override void OnStateEnter(
             Animator animator, AnimatorStateInfo stateInfo, int layerIndex
         )
         {
-            if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-
+            //if (!_test && !animator.transform.TryGetComponent(out _test)) return;
+            _test.entity.InputSpeed = 1;
             var position = _test.entity.transform.position;
             var destination = (position - _test.Target.transform.position).normalized * _test.minDistance + position;
-            _test.entity.MoveTo( destination);
-        }
-
-        public override void OnStateExit(
-            Animator animator, AnimatorStateInfo stateInfo, int layerIndex
-        )
-        {
-            if (!_test && !animator.transform.TryGetComponent(out _test)) return;
-            _test.entity.StopWalking();
+            _test.entity.Destination = destination;
         }
     }
 }

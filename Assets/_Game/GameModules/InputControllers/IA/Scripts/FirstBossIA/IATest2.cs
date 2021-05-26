@@ -1,5 +1,6 @@
 ﻿using System;
 using _Game.GameModules.Entities.Scripts;
+using _Game.GameModules.IA.Scripts.AttacksInRangeIA.Behaviours;
 using _Game.GameModules.Weapons.Scripts;
 using _Game.Scripts.Utils.Extension;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace _Game.GameModules.IA.Scripts.FirstBossIA
 
         void Start()
         {
+            foreach (var behaviour in animator.GetBehaviours<BossBehaviour>()) behaviour._test = this;
             entity.Character.WeaponStorage.Add(weaponData);
             entity.Character.WeaponStorage.UseWeapon(0);
             entity.AutoMove = true;
@@ -41,6 +43,7 @@ namespace _Game.GameModules.IA.Scripts.FirstBossIA
         void FixedUpdate()
         {
             ProcessaInput();
+            entity.InputSpeed = 1;
             // if (target == null)
             //     EncontraInimigo(entity.transform.position, distance);
             // else

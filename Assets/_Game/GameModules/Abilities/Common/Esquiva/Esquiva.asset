@@ -20,18 +20,21 @@ MonoBehaviour:
   combo:
   - castable: 0
     aim: 0
-    applyRootMovement: 0
+    applyRootMovement: 1
     beginning: {fileID: 11400000, guid: f35a582e51d22e04eb933559174dcb55, type: 2}
     factor1: 2
     middle: {fileID: 0}
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
+    endingTransition: {fileID: 7400000, guid: a7b265ecde0c45044a8757c1a2db9200, type: 2}
+    factor4: 4
   particleEffects:
   - {fileID: 198121459679799664, guid: be9a7f38f305b724ea349c90c26a6753, type: 3}
   - {fileID: 1570240557083949946, guid: bddf0927289fab646a85e13e440219c7, type: 3}
   - {fileID: 1570240557083949946, guid: bddf0927289fab646a85e13e440219c7, type: 3}
-  sfx: []
+  sfx:
+  - {fileID: 3639141623438313146, guid: cf068310bba56794cb112a3bd552d26b, type: 3}
   range: 0
   cooldown:
     constant: 1.5

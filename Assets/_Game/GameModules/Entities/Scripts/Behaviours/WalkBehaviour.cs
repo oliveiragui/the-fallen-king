@@ -2,20 +2,26 @@
 
 namespace _Game.GameModules.Entities.Scripts.Behaviours
 {
-    public class WalkBehaviour : StateMachineBehaviour
+    public class WalkBehaviour : EntityBehaviour
     {
-        Entity entity;
+        public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+        {
+            entity.movement.ApplyInputMovement = true;
+        }
 
         public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            if (entity == null && !animator.TryGetComponent(out entity)) return;
+            entity.movement.InputSpeed = entity.Speed;
 
-            animator.SetFloat(AnimatorParams.Velocidade, entity.Speed);
-            entity.movement.Speed = entity.Speed;
-            entity.movement.Destination = entity.Destination;
-            entity.movement.StoppingDistance = entity.StoppingDistance;
-            entity.movement.Rotation = entity.Direction;
-            entity.movement.Walking = true;
+            if (entity.AutoMove)
+            {
+                entity.movement.StoppingDistance = entity.StoppingDistance;
+                entity.movement.Destination = entity.Destination;
+            }
+            else
+            {
+                entity.movement.Rotation = entity.Direction;
+            }
         }
     }
 }

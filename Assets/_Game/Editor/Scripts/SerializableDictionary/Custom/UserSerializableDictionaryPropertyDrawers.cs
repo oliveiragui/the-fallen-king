@@ -4,7 +4,6 @@ using UnityEditor;
 
 namespace Utils.SerializableDictionary.Example.Editor
 {
-    [CustomPropertyDrawer(typeof(ScriptableAnimationEventsDictionary))]
     [CustomPropertyDrawer(typeof(StringAudioSourceDictionary))]
     [CustomPropertyDrawer(typeof(StringColliderDictionary))]
     [CustomPropertyDrawer(typeof(StringParticleDictionary))]

@@ -20,13 +20,15 @@ MonoBehaviour:
   combo:
   - castable: 0
     aim: 0
-    applyRootMovement: 0
+    applyRootMovement: 1
     beginning: {fileID: 11400000, guid: 14842d452ca7c55458e430b8cd31a013, type: 2}
     factor1: 0.5
     middle: {fileID: 0}
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
+    endingTransition: {fileID: 7400000, guid: 295bfc21100287b4cb13ffe0b47e7c05, type: 2}
+    factor4: 0.5
   particleEffects:
   - {fileID: 4262140483115222537, guid: ad615506ea24a1e48a920a84cb9f9f57, type: 3}
   - {fileID: 4262140483115222537, guid: 3d8e637e616e120458e916cf5dfa4bfa, type: 3}

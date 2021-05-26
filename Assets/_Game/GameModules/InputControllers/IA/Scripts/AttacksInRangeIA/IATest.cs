@@ -1,5 +1,6 @@
 ﻿using System;
 using _Game.GameModules.Entities.Scripts;
+using _Game.GameModules.InputControllers.IA.Scripts.AttacksInRangeIA.Behaviours;
 using _Game.GameModules.Weapons.Scripts;
 using _Game.Scripts.Utils.Extension;
 using UnityEngine;
@@ -23,6 +24,7 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
 
         void Start()
         {
+            foreach (var behaviour in animator.GetBehaviours<IaBehaviour>()) behaviour._test = this;
             entity.Character.WeaponStorage.Add(weaponData);
             entity.Character.WeaponStorage.UseWeapon(0);
             entity.AutoMove = true;
@@ -30,7 +32,7 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
             maxDistance = preferedDistance + maxVariation / 2;
         }
 
-        void FixedUpdate()
+        void Update()
         {
             ProcessaInput();
         }
@@ -38,40 +40,20 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
         void ProcessaInput()
         {
             animator.SetBool("Possui Alvo", target);
-
+            // entity.InputSpeed = 1;
             if (target)
             {
                 var targetDistance = entity.transform.position - target.transform.position;
                 AnalizaDistancia(targetDistance);
+                AnalizaHabilidades();
             }
-        }
-
-        public void LookToTarget()
-        {
-            var position = entity.transform.position;
-            var targetPosition = Target.transform.position;
-            var direction = targetPosition - position;
-            entity.Direction = Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree());
-            entity.LookDiretion = (Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
-            entity.Destination = Target.transform.position;
         }
 
         void AnalizaDistancia(Vector3 distance)
         {
-            if (target)
-            {
-                animator.SetBool("Muito Distante", distance.magnitude > maxDistance);
-                animator.SetBool("Muito Proximo", distance.magnitude < minDistance);
-                animator.SetBool("Alvo Atras", TargetIsBehind());
-
-                for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
-                {
-                    animator.SetBool($"Cooldown Habilidade {i + 1}",
-                        entity.Character.AbilitySystem.Abilities[i].OnCooldown);
-                }
-            }
-
-            //if (target && (entity.transform.position - target.transform.position).magnitude > 10) target = null;
+            animator.SetBool("Muito Distante", distance.magnitude > maxDistance);
+            animator.SetBool("Muito Proximo", distance.magnitude < minDistance);
+            animator.SetBool("Alvo Atras", TargetIsBehind());
         }
 
         bool TargetIsBehind()
@@ -79,6 +61,28 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
             var transform1 = entity.transform;
             var toTarget = (target.transform.position - transform1.position).normalized;
             return Vector3.Dot(toTarget, transform1.forward) < 0;
+        }
+
+        void AnalizaHabilidades()
+        {
+            for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
+            {
+                animator.SetBool($"Cooldown Habilidade {i + 1}",
+                    entity.Character.AbilitySystem.Abilities[i].OnCooldown);
+            }
+        }
+
+        public void MoveTo(Vector3 target)
+        {
+            var direction = target - entity.transform.position;
+            entity.Direction = Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree());
+            entity.Destination = target;
+        }
+
+        public void LookTo(Vector3 target)
+        {
+            var direction = target - entity.transform.position;
+            entity.LookDiretion = (Quaternion.Euler(Vector3.up * new Vector2(direction.x, direction.z).ToDegree()));
         }
     }
 }

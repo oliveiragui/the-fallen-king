@@ -23,10 +23,12 @@ MonoBehaviour:
     applyRootMovement: 0
     beginning: {fileID: 11400000, guid: 0e6acf5f42e204449b96ab86fa0d4e12, type: 2}
     factor1: 5
-    middle: {fileID: 11400000, guid: a36701f6730c9a94bad6842652ad643d, type: 2}
+    middle: {fileID: 11400000, guid: 3dd850ef59c9e9e4ab7bb58dff1d7714, type: 2}
     factor2: 5
-    ending: {fileID: 11400000, guid: 3dd850ef59c9e9e4ab7bb58dff1d7714, type: 2}
+    ending: {fileID: 11400000, guid: a36701f6730c9a94bad6842652ad643d, type: 2}
     factor3: 5
+    endingTransition: {fileID: 7400000, guid: 6b43c2eec34dada49999638237f94884, type: 2}
+    factor4: 5
   particleEffects: []
   sfx: []
   range: 0

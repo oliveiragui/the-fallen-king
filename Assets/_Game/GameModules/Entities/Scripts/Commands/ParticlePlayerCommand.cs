@@ -8,7 +8,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
     public class ParticlePlayerCommand : EntityCommand
     {
         [SerializeField] bool predefinedSound;
-        [SerializeField] EntityParticleType particleType;
+        [ConditionalField("predefinedSound")]   [SerializeField] EntityParticleType particleType;
         [ConditionalField("predefinedSound", true)] [SerializeField] string particleName;
         [SerializeField] PlayerState state;
 

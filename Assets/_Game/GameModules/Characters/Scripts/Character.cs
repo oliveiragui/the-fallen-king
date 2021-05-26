@@ -41,7 +41,7 @@ namespace _Game.GameModules.Characters.Scripts
                 if (value && !_combatMode) events.enterInCombat.Invoke();
                 else if (!value && _combatMode) events.exitCombat.Invoke();
                 _combatMode = value;
-                entity.CombatMode(value);
+                entity.CombatMode = true;
             }
         }
 
@@ -87,7 +87,7 @@ namespace _Game.GameModules.Characters.Scripts
         void OnDeath(Character character)
         {
             OnExitCombat();
-            entity.Kill();
+            entity.Alive = false;
         }
 
         #endregion

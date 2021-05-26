@@ -6,21 +6,21 @@ namespace _Game.GameModules.Entities.Scripts.Commands
         order = 0)]
     public class Move : EntityCommand
     {
-        //[SerializeField] bool autoMove;
+        [SerializeField] bool allowInputModifier;
         [SerializeField] float modifier;
-        
+
         public override void Execute(Entity entity)
         {
-            entity.movement.Speed = entity.Speed * modifier;
+            entity.movement.ApplyInputMovement = true;
+            entity.movement.InputSpeed = (allowInputModifier ? entity.Speed : entity.CharacterSpeed) * modifier;
             if (entity.AutoMove)
             {
-                entity.movement.Destination = entity.Destination;
                 entity.movement.StoppingDistance = entity.StoppingDistance;
+                entity.movement.Destination = entity.Destination;
             }
-            else
-            {
-                entity.movement.Rotation = entity.Direction;
-            }
+            else entity.movement.Rotation = entity.Direction;
+
+            Debug.Log(modifier +" " +entity.CharacterSpeed+" " +entity.movement.InputSpeed);
         }
     }
 }

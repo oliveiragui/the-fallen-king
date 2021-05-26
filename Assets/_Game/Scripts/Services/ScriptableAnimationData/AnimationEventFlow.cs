@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using _Game.Scripts.Runtime.Reorderable;
+using _Game.Scripts.Runtime.Reorderable.Attributes;
 using _Game.Scripts.Utils.Serializables;
 using UnityEngine;
 
@@ -8,7 +12,7 @@ namespace _Game.GameModules.Entities.Scripts
     public class AnimationEventFlow : ScriptableObject
     {
         [SerializeField] AnimationClip clip;
-        [SerializeField] ScriptableAnimationEventsDictionary events;
+        [Reorderable] [SerializeField] Test events;
         [NonSerialized] bool _addedEvents = false;
 
         public AnimationClip Clip
@@ -25,11 +29,36 @@ namespace _Game.GameModules.Entities.Scripts
         {
             foreach (var evt in events)
             {
-                var unityEvent = evt.Value.CreateEvent();
-                unityEvent.time = evt.Key;
+                if (!clip || !evt.ScriptableEvent) return;
+                var unityEvent = evt.ScriptableEvent.CreateEvent();
+                unityEvent.time = clip.length * evt.PercentageTime / 100;
                 clip.AddEvent(unityEvent);
                 _addedEvents = true;
             }
+        }
+    }
+
+    [Serializable]
+    public class Test : ReorderableArray<TimedScriptableAnimationEvent> { }
+
+    [Serializable]
+    public class TimedScriptableAnimationEvent : ISerializationCallbackReceiver
+    {
+        [SerializeField] [HideInInspector] string name;
+        [SerializeField] [Range(0, 100)] float percentageTime;
+        [SerializeField] AnimationEventCreator scriptableEvent;
+
+        public float PercentageTime => percentageTime;
+        public AnimationEventCreator ScriptableEvent => scriptableEvent;
+
+        public void OnBeforeSerialize()
+        {
+            name = scriptableEvent ? scriptableEvent.name : "";
+        }
+
+        public void OnAfterDeserialize()
+        {
+            //     throw new NotImplementedException();
         }
     }
 }

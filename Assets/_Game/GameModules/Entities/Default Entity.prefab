@@ -224,6 +224,7 @@ MonoBehaviour:
   agent: {fileID: 5053147373740734576}
   animator: {fileID: 4626444849510659334}
   autoMove: 0
+  <ApplyAnimationRootMovement>k__BackingField: 0
 --- !u!114 &8689670955005269511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +332,7 @@ GameObject:
   - component: {fileID: 3354866421841630418}
   m_Layer: 0
   m_Name: Stone Floor
-  m_TagString: Untagged
+  m_TagString: Stone Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,7 +560,7 @@ GameObject:
   - component: {fileID: 6371909306965561131}
   m_Layer: 0
   m_Name: Dirt Floor
-  m_TagString: Untagged
+  m_TagString: Dirt Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78344de1c49f43a8a35fc4a9e5742ccf, type: 3}
+  m_Name: Fast standing melee attack 360 high
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: 2f984ede331548944ace79492223b90e, type: 2}
+  events:
+    array:
+    - name: Play Ability Particle 2
+      percentageTime: 18.1
+      scriptableEvent: {fileID: 11400000, guid: d25fa3ad387f4344ea75fabab6dfcc71,
+        type: 2}
+    - name: Play Ability Sound 2
+      percentageTime: 20.4
+      scriptableEvent: {fileID: 11400000, guid: 2953357a9ce6b4b468383d046bcf067b,
+        type: 2}
+    - name: Hit Area 2
+      percentageTime: 27.8
+      scriptableEvent: {fileID: 11400000, guid: 9ba530ec6da633641a911de4c3942ee0,
+        type: 2}

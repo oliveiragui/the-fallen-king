@@ -11,7 +11,10 @@ ModelImporter:
     second: Sword and shield end
   - first:
       74: 2993299861170555479
-    second: Sword and shield middle
+    second: NPC Sword and shield middle
+  - first:
+      74: -5005621662783604521
+    second: NPC TRANSITION Sword and shield
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -99,11 +102,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Sword and shield middle
+      name: NPC Sword and shield middle
       takeName: mixamo.com
       internalID: 0
       firstFrame: 3.6
-      lastFrame: 35.1
+      lastFrame: 28.8
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -113,11 +116,40 @@ ModelImporter:
       loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
-      loopBlendPositionY: 0
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: NPC TRANSITION Sword and shield
+      takeName: mixamo.com
+      internalID: 0
+      firstFrame: 28.8
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

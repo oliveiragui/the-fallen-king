@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78344de1c49f43a8a35fc4a9e5742ccf, type: 3}
   m_Name: Sprint
   m_EditorClassIdentifier: 
-  clip: {fileID: 7400000, guid: e913aab9ad270064c80a8b01222387f8, type: 2}
+  clip: {fileID: 7400000, guid: 929fd028b7a78b242b1e5f4b0a7ae221, type: 2}
   events:
-    m_keys: []
-    m_values: []
+    array:
+    - name: Run while Casting
+      percentageTime: 0
+      scriptableEvent: {fileID: 11400000, guid: 51e9e71b2a06ffb4384fedb5c0bcd031,
+        type: 2}

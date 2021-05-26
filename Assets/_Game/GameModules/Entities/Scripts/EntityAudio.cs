@@ -13,19 +13,19 @@ namespace _Game.GameModules.Entities.Scripts
         
         AudioSource[][] abilitySfx = new AudioSource[4][];
 
-        public void PlayAbilityEffect(int abilityIndex, int particleIndex)
+        public void PlayAbilitySFX(int abilityIndex, int particleIndex)
         {
             abilitySfx[abilityIndex][particleIndex].Play();
         }
 
-        public void InstantiateAbilitySfx(Ability[] abilities)
+        public void InstantiateAbilitySFX(Ability[] abilities)
         {
             foreach (Transform child in soundEffectContainer.transform) Destroy(child.gameObject);
             abilitySfx = new AudioSource[abilities.Length][];
-            for (var i = 0; i < abilities.Length; i++) abilitySfx[i] = InstantiateSfx(abilities[i].Data);
+            for (var i = 0; i < abilities.Length; i++) abilitySfx[i] = InstantiateSFX(abilities[i].Data);
         }
         
-        public AudioSource[] InstantiateSfx(AbilityData data)
+        public AudioSource[] InstantiateSFX(AbilityData data)
         {
             var sfxs = new AudioSource[data.Sfx.Length];
             for (var i = 0; i < data.Sfx.Length; i++)

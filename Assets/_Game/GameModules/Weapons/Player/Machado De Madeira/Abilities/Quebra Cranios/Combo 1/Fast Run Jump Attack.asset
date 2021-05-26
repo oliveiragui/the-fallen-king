@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78344de1c49f43a8a35fc4a9e5742ccf, type: 3}
+  m_Name: Fast Run Jump Attack
+  m_EditorClassIdentifier: 
+  clip: {fileID: 7400000, guid: a3d78cc9382c803498dec8d1275cee22, type: 2}
+  events:
+    array:
+    - name: Move
+      percentageTime: 0
+      scriptableEvent: {fileID: 11400000, guid: 96db82265c159254a84455e077a89dc6,
+        type: 2}
+    - name: StopMove
+      percentageTime: 78.2
+      scriptableEvent: {fileID: 11400000, guid: c30c41d7631df8d4d85b713e6e5ef66b,
+        type: 2}
+    - name: Play Ability Particle 1
+      percentageTime: 7.1
+      scriptableEvent: {fileID: 11400000, guid: 7094ffa58735b0a47bea120146ab7a87,
+        type: 2}
+    - name: Play Ability Particle 2
+      percentageTime: 80.5
+      scriptableEvent: {fileID: 11400000, guid: d25fa3ad387f4344ea75fabab6dfcc71,
+        type: 2}
+    - name: Play Ability Sound 1
+      percentageTime: 26.5
+      scriptableEvent: {fileID: 11400000, guid: dd208644b76cd494bb53661da2597612,
+        type: 2}
+    - name: Play Ability Sound 2
+      percentageTime: 77.8
+      scriptableEvent: {fileID: 11400000, guid: 2953357a9ce6b4b468383d046bcf067b,
+        type: 2}
+    - name: Hit Area
+      percentageTime: 78.2
+      scriptableEvent: {fileID: 11400000, guid: e927af69ec7418b45b3920b25fd73b1a,
+        type: 2}

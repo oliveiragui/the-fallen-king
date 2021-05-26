@@ -27,6 +27,8 @@ MonoBehaviour:
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
+    endingTransition: {fileID: 7400000, guid: d786e59f4c59ee04e9178ba09c92351b, type: 2}
+    factor4: 0.7
   - castable: 0
     aim: 0
     applyRootMovement: 0
@@ -36,6 +38,8 @@ MonoBehaviour:
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
+    endingTransition: {fileID: 7400000, guid: 065a48998ecff0a40b4da79e44bf57f2, type: 2}
+    factor4: 0.7
   - castable: 0
     aim: 0
     applyRootMovement: 0
@@ -45,6 +49,8 @@ MonoBehaviour:
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
+    endingTransition: {fileID: 7400000, guid: 065a48998ecff0a40b4da79e44bf57f2, type: 2}
+    factor4: 0.7
   particleEffects:
   - {fileID: 4262140483115222537, guid: fe0f46b3f1d3f894bb5ca02f98761074, type: 3}
   - {fileID: 4262140483115222537, guid: cd413b54bf5d22343bc9a0cb3f722e68, type: 3}

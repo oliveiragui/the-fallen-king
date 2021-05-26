@@ -22,40 +22,43 @@ MonoBehaviour:
     aim: 0
     applyRootMovement: 1
     beginning: {fileID: 11400000, guid: 295d398cf3e93b7479e3bdbb24090719, type: 2}
-    factor1: 2
+    factor1: 2.5
     middle: {fileID: 0}
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
     endingTransition: {fileID: 7400000, guid: 9ca2a696198ac714e85c133ed1285bb1, type: 2}
-    factor4: 2
+    factor4: 5
   - castable: 0
     aim: 0
     applyRootMovement: 1
     beginning: {fileID: 11400000, guid: fcd20ae75c35d8149b5d51ce4033eca6, type: 2}
-    factor1: 2
+    factor1: 2.5
     middle: {fileID: 0}
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
     endingTransition: {fileID: 7400000, guid: 22ab5aa5dc6e47a4cac2ccc41c158447, type: 2}
-    factor4: 2
+    factor4: 5
   - castable: 0
     aim: 0
     applyRootMovement: 1
-    beginning: {fileID: 11400000, guid: fcd20ae75c35d8149b5d51ce4033eca6, type: 2}
-    factor1: 2
+    beginning: {fileID: 11400000, guid: e4720eebaccca734ebc231d8163216b8, type: 2}
+    factor1: 2.5
     middle: {fileID: 0}
     factor2: 0
     ending: {fileID: 0}
     factor3: 0
-    endingTransition: {fileID: 7400000, guid: 22ab5aa5dc6e47a4cac2ccc41c158447, type: 2}
-    factor4: 2
+    endingTransition: {fileID: 7400000, guid: 4ae4b5b92448f8645ad7c92f136c11c4, type: 2}
+    factor4: 5
   particleEffects:
   - {fileID: 4262140483115222537, guid: b0c003b3f9144264988a4cdaeb17b980, type: 3}
   - {fileID: 4262140483115222537, guid: 8acc39e98cf670145932c370463ddd38, type: 3}
   - {fileID: 4262140483115222537, guid: cebf8e9bcc3bbe045b04a5f17988fef1, type: 3}
-  sfx: []
+  sfx:
+  - {fileID: 5085393599553519047, guid: 15ffc833c7c5db44ab36c27fdbe25c45, type: 3}
+  - {fileID: 339585558681844041, guid: bc1cbb33bf67bfe41bda790fc7b7e420, type: 3}
+  - {fileID: 9122685609448156795, guid: efc6803794e413c449449bab7ffd814f, type: 3}
   range: 0
   cooldown:
     constant: 0.2
