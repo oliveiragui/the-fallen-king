@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: 106b73cff01dd79439ad069784ea69fa, type: 2}
   events:
-    array: []
+    array:
+    - name: Fire Projectile
+      percentageTime: 0
+      scriptableEvent: {fileID: 11400000, guid: 6028e7cd5bfa5704ea2e5dd15ea72158,
+        type: 2}

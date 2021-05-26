@@ -14,4 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: 26ac6a73916e1e74aae202066ab717bf, type: 2}
   events:
-    array: []
+    array:
+    - name: Hit Area 2
+      percentageTime: 65
+      scriptableEvent: {fileID: 11400000, guid: 7f56ee40b0c3b044ca0af4aa31c3d5b7,
+        type: 2}
+    - name: Play Ability Particle 2
+      percentageTime: 65
+      scriptableEvent: {fileID: 11400000, guid: d25fa3ad387f4344ea75fabab6dfcc71,
+        type: 2}

@@ -46,6 +46,7 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
                 var targetDistance = entity.transform.position - target.transform.position;
                 AnalizaDistancia(targetDistance);
                 AnalizaHabilidades();
+                LookTo(target.transform.position);
             }
         }
 

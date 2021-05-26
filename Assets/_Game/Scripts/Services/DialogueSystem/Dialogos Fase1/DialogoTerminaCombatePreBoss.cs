@@ -13,6 +13,8 @@ public class DialogoTerminaCombatePreBoss : FluentScript
     [SerializeField] UnityEvent onFinish;
     [SerializeField] UnityEvent dialogueTrigger;
     private int enemyDeathCount = 0;
+    [SerializeField] int numberOfEnemies = 5;
+    
     public override FluentNode Create()
     {
         return
@@ -41,7 +43,7 @@ public class DialogoTerminaCombatePreBoss : FluentScript
     {
         enemyDeathCount++;
 
-        if (enemyDeathCount == 5)
+        if (enemyDeathCount >= numberOfEnemies)
             DialogueTrigger();
     }
 

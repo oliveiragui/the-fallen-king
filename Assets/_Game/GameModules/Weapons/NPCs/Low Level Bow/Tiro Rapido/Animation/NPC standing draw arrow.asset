@@ -14,4 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip: {fileID: 7400000, guid: ac92cd3b63dd33b4897c2749101b6166, type: 2}
   events:
-    array: []
+    array:
+    - name: Aim While Casting
+      percentageTime: 0
+      scriptableEvent: {fileID: 11400000, guid: 4faa0e966224a6e4ab83082d1e0fad25,
+        type: 2}
