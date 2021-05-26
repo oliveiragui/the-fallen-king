@@ -26,10 +26,9 @@ namespace _Game.GameModules.Entities.Scripts
             }
         }
 
-        [field: SerializeField] public float AnimationSpeed { get; private set; }
-        [field: SerializeField] public float InputSpeed { get; set; }
-
-        [field: SerializeField] public bool ApplyAnimationRootMovement { get; set; }
+        public float AnimationSpeed { get; private set; }
+        public float InputSpeed { get; set; }
+        public bool ApplyAnimationRootMovement { get; set; }
 
         public bool ApplyInputMovement
         {

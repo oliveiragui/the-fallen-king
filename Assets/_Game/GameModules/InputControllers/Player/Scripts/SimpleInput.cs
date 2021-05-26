@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using _Game.GameModules.Characters.Scripts;
 using _Game.GameModules.Entities.Scripts;
 using _Game.GameModules.Weapons.Scripts;
@@ -25,6 +26,11 @@ namespace _Game.Scripts
         void Update()
         {
             ProcessaInput();
+        }
+
+        void OnDisable()
+        {
+            character.Entity.InputSpeed = 0;
         }
 
         void ProcessaInput()

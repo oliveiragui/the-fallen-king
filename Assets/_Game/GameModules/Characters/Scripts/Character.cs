@@ -67,8 +67,8 @@ namespace _Game.GameModules.Characters.Scripts
 
         void OnHit(AbilityHit abilityHit)
         {
-            CharacterStatus.Life.Current += (int) abilityHit.power;
-            AbilitySystem.StopAbility();
+            CharacterStatus.Life.Current += abilityHit.power;
+            if (ImpactMatrix.Calc(abilityHit.impact,Data.Resiliency) > 1) AbilitySystem.StopAbility();
             OnEnterInCombat();
         }
 

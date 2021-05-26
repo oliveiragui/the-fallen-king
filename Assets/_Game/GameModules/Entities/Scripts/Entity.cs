@@ -35,9 +35,9 @@ namespace _Game.GameModules.Entities.Scripts
         #region Parameters
 
         [SerializeField] Character _character;
-        [SerializeField] string _floorName;
-        [SerializeField] float stoppingDistance = 1;
-        [SerializeField] float _inputSpeed;
+        [SerializeField] string _floorName = "Wood Floor";
+        float stoppingDistance = 1;
+        float _inputSpeed;
 
         public Character Character => _character;
 
@@ -45,12 +45,12 @@ namespace _Game.GameModules.Entities.Scripts
 
         public bool UsingAbility { get; set; }
 
-        [field: SerializeField] public bool AutoMove { get; set; }
-        [field: SerializeField] public Quaternion Direction { get; set; }
-        [field: SerializeField] public Quaternion LookDiretion { get; set; }
-        [field: SerializeField] public Vector3 Destination { get; set; }
-        [field: SerializeField] public bool Aim { get; private set; }
-        [field: SerializeField] public float CharacterSpeed { get; private set; }
+        public bool AutoMove { get; set; }
+        public Quaternion Direction { get; set; }
+        public Quaternion LookDiretion { get; set; }
+        public Vector3 Destination { get; set; }
+        public bool Aim { get; private set; }
+        public float CharacterSpeed { get; private set; }
 
         public bool Hittable
         {
@@ -130,6 +130,7 @@ namespace _Game.GameModules.Entities.Scripts
             animator.SetTrigger("Recebe Hit");
             animator.SetInteger(AnimatorParams.HitImpact, ImpactMatrix.Calc(abilityHit.impact, Character.Resiliency));
             particle.Play("Blood");
+            sound.PlayHitSound(abilityHit.type);
         }
 
         void DetectFloorName(Collider other)
@@ -140,7 +141,7 @@ namespace _Game.GameModules.Entities.Scripts
         void ExecuteCommand(Object obj)
         {
             if (obj is EntityCommand command) command.Execute(this);
-            else Debug.Log(obj.name + " Is not a Command");
+            else Debug.Log("Obj Is not a Command");
         }
 
         #endregion
@@ -187,7 +188,6 @@ namespace _Game.GameModules.Entities.Scripts
 
         void Update()
         {
-            
             animator.SetFloat("Velocidade", InputSpeed);
         }
 

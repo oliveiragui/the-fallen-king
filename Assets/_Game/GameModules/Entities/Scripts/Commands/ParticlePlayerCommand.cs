@@ -23,7 +23,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
             switch (particleType)
             {
                 case EntityParticleType.footstep:
-                    entity.particle.Play(entity.FloorName, state == PlayerState.play);
+                    entity.particle.Play("FootStep", state == PlayerState.play);
                     break;
             }
         }

@@ -10,8 +10,9 @@ namespace _Game.GameModules.Entities.Scripts
     {
         [SerializeField] AudioSourceStorage audioSourceStorage;
         [SerializeField] GameObject soundEffectContainer;
-        
+
         AudioSource[][] abilitySfx = new AudioSource[4][];
+        AudioSource[] hits;
 
         public void PlayAbilitySFX(int abilityIndex, int particleIndex)
         {
@@ -24,7 +25,7 @@ namespace _Game.GameModules.Entities.Scripts
             abilitySfx = new AudioSource[abilities.Length][];
             for (var i = 0; i < abilities.Length; i++) abilitySfx[i] = InstantiateSFX(abilities[i].Data);
         }
-        
+
         public AudioSource[] InstantiateSFX(AbilityData data)
         {
             var sfxs = new AudioSource[data.Sfx.Length];
@@ -33,7 +34,12 @@ namespace _Game.GameModules.Entities.Scripts
                     .TryGetComponent(out sfxs[i]);
             return sfxs;
         }
-        
+
+        public void PlayHitSound(HitType hitType)
+        {
+            if (hitType == HitType.None) return;
+            audioSourceStorage[$"Hit: {hitType.ToString()}"].Play();
+        }
 
         public void Play(string id)
         {

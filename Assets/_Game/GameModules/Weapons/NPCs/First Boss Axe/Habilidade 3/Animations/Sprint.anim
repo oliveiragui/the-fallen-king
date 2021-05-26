@@ -32018,20 +32018,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events:
-  - time: 0.16666667
-    functionName: ExecuteCommand
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: e2057e6ecd48c464fa58de54800042ec,
-      type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.36666667
-    functionName: ExecuteCommand
-    data: 
-    objectReferenceParameter: {fileID: 11400000, guid: e2057e6ecd48c464fa58de54800042ec,
-      type: 2}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
+  m_Events: []

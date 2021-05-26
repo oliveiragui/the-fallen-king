@@ -9,6 +9,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
     {
         [SerializeField] AttributeModifier power;
         [SerializeField] HitImpact impact;
+        [SerializeField] HitType type;
         [SerializeField] float radius;
         [SerializeField] Vector3 positionOffset;
 
@@ -32,7 +33,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
                 if (otherEntity.Character.Team.PlayerFriend ==
                     entity.Character.Team.PlayerFriend) continue;
 
-                otherEntity.Hit(new AbilityHit(power.Value, Vector3.zero, entity.Character, impact));
+                otherEntity.Hit(new AbilityHit(power.Value, Vector3.zero, entity.Character, impact, type));
             }
         }
     }

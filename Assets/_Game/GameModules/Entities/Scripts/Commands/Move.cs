@@ -19,8 +19,6 @@ namespace _Game.GameModules.Entities.Scripts.Commands
                 entity.movement.Destination = entity.Destination;
             }
             else entity.movement.Rotation = entity.Direction;
-
-            Debug.Log(modifier +" " +entity.CharacterSpeed+" " +entity.movement.InputSpeed);
         }
     }
 }

@@ -9,6 +9,8 @@ namespace _Game.GameModules.Entities.Scripts.Commands
     public class FireProjectileCommand : EntityCommand
     {
         [SerializeField] AttributeModifier power;
+        [SerializeField] HitImpact impact;
+        [SerializeField] HitType type;
         [SerializeField] float angle;
 
         public override void Execute(Entity entity)
@@ -16,7 +18,7 @@ namespace _Game.GameModules.Entities.Scripts.Commands
             power.Calculate(entity.Character.CharacterStatus.Strength);
             var tr = entity.transform;
             var position = tr.position + Vector3.up;
-            var hit = new AbilityHit(power.Value, Vector3.zero, entity.Character);
+            var hit = new AbilityHit(power.Value, Vector3.zero, entity.Character, impact, type);
             var arrow = entity.Character.WeaponStorage.WeaponInUse.ammoData.Instantiate(position,
                 Quaternion.Euler(Vector3.up * (tr.rotation.eulerAngles.y + angle)));
             arrow.Shot(hit, arrow.transform.forward * 800);
