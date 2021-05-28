@@ -382,6 +382,23 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 950414016112337374, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: hudCanvas
+      value: 
+      objectReference: {fileID: 2717954639682499166}
+    - target: {fileID: 950414016112337374, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: bossHud
+      value: 
+      objectReference: {fileID: 2576671519509373432, guid: 642d34abef44fcf4da2177e23983e019,
+        type: 3}
+    - target: {fileID: 950414016112337374, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: minionHud
+      value: 
+      objectReference: {fileID: 7269974851799610328, guid: a39375fcb1842754f9936b3dc119f6e0,
+        type: 3}
     - target: {fileID: 1015984815738143234, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -636,6 +653,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1456635772276933862, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCharacterInstantiated
       objectReference: {fileID: 0}
     - target: {fileID: 1498893601707701183, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
@@ -3669,6 +3691,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7236239273034901317, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7236239273034901317, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnCharacterDestroyed
       objectReference: {fileID: 0}
@@ -4297,3 +4324,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db4b4da22da453180db4281f0a81640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2717954639682499166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6371021425682711119, guid: 66d90103872937945baa578d7ef517d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 9066440268745469969}
+  m_PrefabAsset: {fileID: 0}
