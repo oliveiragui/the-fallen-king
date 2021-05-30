@@ -40,12 +40,10 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
         void ProcessaInput()
         {
             animator.SetBool("Possui Alvo", target);
-            // entity.InputSpeed = 1;
             if (target)
             {
                 var targetDistance = entity.transform.position - target.transform.position;
                 AnalizaDistancia(targetDistance);
-                AnalizaHabilidades();
                 LookTo(target.transform.position);
             }
         }
@@ -54,24 +52,8 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
         {
             animator.SetBool("Muito Distante", distance.magnitude > maxDistance);
             animator.SetBool("Muito Proximo", distance.magnitude < minDistance);
-            animator.SetBool("Alvo Atras", TargetIsBehind());
         }
-
-        bool TargetIsBehind()
-        {
-            var transform1 = entity.transform;
-            var toTarget = (target.transform.position - transform1.position).normalized;
-            return Vector3.Dot(toTarget, transform1.forward) < 0;
-        }
-
-        void AnalizaHabilidades()
-        {
-            for (var i = 0; i < entity.Character.AbilitySystem.Abilities.Count; i++)
-            {
-                animator.SetBool($"Cooldown Habilidade {i + 1}",
-                    entity.Character.AbilitySystem.Abilities[i].OnCooldown);
-            }
-        }
+        
 
         public void MoveTo(Vector3 target)
         {

@@ -12,6 +12,7 @@ namespace _Game.GameModules.Characters.Scripts
     {
         [SerializeField] CharacterData data;
         [SerializeField] Entity entity;
+        [SerializeField] GameObject pivot;
         [SerializeField] CharacterStatus characterStatus;
 
         [FormerlySerializedAs("weapons")] [SerializeField]
@@ -26,6 +27,7 @@ namespace _Game.GameModules.Characters.Scripts
 
         bool dead;
 
+        public GameObject Pivot => pivot;
         public Team Team { get; private set; }
         public CharacterData Data => data;
         public CharacterStatus CharacterStatus => characterStatus;

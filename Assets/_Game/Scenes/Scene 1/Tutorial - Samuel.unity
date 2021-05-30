@@ -38239,6 +38239,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 197600210}
     m_Modifications:
+    - target: {fileID: 4715026131446589265, guid: 74a610ec5f715ff44b5f860006a8c7e8,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2116449696}
     - target: {fileID: 4715026131446589276, guid: 74a610ec5f715ff44b5f860006a8c7e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45154,6 +45159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4155b2563e0b4669b7b33280b8cad5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &2116449696 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8954430661801289803, guid: b2d04e1eeecd68548bf8f5df41c36cdd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064470283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &2149936783335288688
 Camera:
   m_ObjectHideFlags: 0
