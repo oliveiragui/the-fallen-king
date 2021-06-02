@@ -12,8 +12,8 @@ namespace _Game.GameModules.Characters.Scripts
     {
         [SerializeField] CharacterData data;
         [SerializeField] Entity entity;
-        [SerializeField] GameObject pivot;
         [SerializeField] CharacterStatus characterStatus;
+        [SerializeField] CharacterPivotController pivotController;
 
         [FormerlySerializedAs("weapons")] [SerializeField]
         CharacterWeapons weaponStorage;
@@ -26,8 +26,7 @@ namespace _Game.GameModules.Characters.Scripts
         [SerializeField] bool _combatMode;
 
         bool dead;
-
-        public GameObject Pivot => pivot;
+        
         public Team Team { get; private set; }
         public CharacterData Data => data;
         public CharacterStatus CharacterStatus => characterStatus;
@@ -45,6 +44,11 @@ namespace _Game.GameModules.Characters.Scripts
                 _combatMode = value;
                 entity.CombatMode = true;
             }
+        }
+
+        public void UsePivot(bool value)
+        {
+            pivotController.UsePivot(value);
         }
 
         #region Callbacks
@@ -70,7 +74,7 @@ namespace _Game.GameModules.Characters.Scripts
         void OnHit(AbilityHit abilityHit)
         {
             CharacterStatus.Life.Current += abilityHit.power;
-            if (ImpactMatrix.Calc(abilityHit.impact,Data.Resiliency) > 1) AbilitySystem.StopAbility();
+            if (ImpactMatrix.Calc(abilityHit.impact, Data.Resiliency) > 1) AbilitySystem.StopAbility();
             OnEnterInCombat();
         }
 

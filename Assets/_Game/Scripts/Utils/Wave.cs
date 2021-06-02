@@ -19,8 +19,7 @@ namespace _Game.Scripts.Utils
         {
             foreach (var character in characters)
             {
-                character.Pivot.SetActive(false);
-                character.Entity.gameObject.SetActive(true);
+                character.UsePivot(false);
                 character.events.death.AddListener(OnCharacterDeath);
             }
 

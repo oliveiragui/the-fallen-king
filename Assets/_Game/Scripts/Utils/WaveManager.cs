@@ -8,6 +8,7 @@ namespace _Game.Scripts.Utils
         [SerializeField] List<Wave> waves;
         int currentWave;
         bool isStopped;
+        [SerializeField] Collider a;
 
         void PlayInSequence()
         {

@@ -253,6 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8954430661890499820}
   - component: {fileID: 8954430661890499819}
+  - component: {fileID: 1497604441215145873}
   m_Layer: 0
   m_Name: Default Character
   m_TagString: Untagged
@@ -295,6 +296,7 @@ MonoBehaviour:
   data: {fileID: 0}
   entity: {fileID: 2452443686493279221}
   characterStatus: {fileID: 40845364454195379}
+  pivotController: {fileID: 1497604441215145873}
   weaponStorage: {fileID: 7739522235097886816}
   abilitySystem: {fileID: 5816215721000881443}
   events:
@@ -315,6 +317,21 @@ MonoBehaviour:
         m_Calls: []
   immortal: 0
   _combatMode: 0
+--- !u!114 &1497604441215145873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954430661890499821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70a6c79ca9cd4820819b827b5c419d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 8954430661890499819}
+  pivot: {fileID: 147405175979600738}
+  controller: {fileID: 1040403785823638805}
 --- !u!1001 &6262241481778034402
 PrefabInstance:
   m_ObjectHideFlags: 0
