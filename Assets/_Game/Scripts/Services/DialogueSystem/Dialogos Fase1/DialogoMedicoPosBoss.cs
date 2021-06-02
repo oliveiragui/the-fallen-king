@@ -35,7 +35,7 @@ public class DialogoMedicoPosBoss : FluentScript
             Write(2.5f, "Pirin:\nOs Legisladores descobriram que o Rei possui um filho mais velho, mas ele é bastardo. A história vazada por eles é que, há 20 anos atrás, o Rei teve seu primeiro filho em um romance com uma das enfermeiras do castelo.").WaitForButton() *
             Write(2.5f, "Pirin:\nO óbvio é que esse filho não poderia vir ao público, para não prejudicar a imagem do Rei e a relação com os outros reinos.").WaitForButton() *
             Write(2.5f, "Pirin:\nO Rei amava de verdade a mulher e a criança, e em suas viagens sempre dava um jeito de estar com eles de maneira escondida, mas eles não podiam viver no castelo para ninguém descobrir.").WaitForButton() *
-            Write(2.5f, "Pirin:\nO Rei também tem teve outros filhos de sangue real, mas isso pouco importa, e os Legisladores sabem disso, por que a sucessão do trono é direito do filho mais velho.").WaitForButton() *
+            Write(2.5f, "Pirin:\nO Rei também teve outros filhos de sangue real, mas isso pouco importa, e os Legisladores sabem disso, por que a sucessão do trono é direito do filho mais velho.").WaitForButton() *
             Write(2.5f, "Pirin:\nO General Labahn fazia parte do grupo de 6 generais sob controle direto da nobreza ligada a familia do segundo filho do Rei.").WaitForButton() *
             Write(2.5f, "Pirin:\nRecentemente, os Legisladores anunciaram que o primogênito do Rei fazia parte do grupo deles, e que quando assumisse o trono, iria renunciar a monarquia.").WaitForButton() *
             Write(2.5f, "Pirin:\nOs 6 generais descobriram onde era o esconderijo dos Legisladores, recolheram seus nomes, profissões... Muitos estão em fuga ou escondidos no reino.").WaitForButton() *

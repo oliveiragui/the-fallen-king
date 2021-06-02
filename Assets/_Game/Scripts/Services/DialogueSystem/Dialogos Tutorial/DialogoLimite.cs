@@ -19,8 +19,8 @@ public class DialogoLimite : FluentScript
             Options
             (
             Option("Sim") *
-             Hide() *
              Do(() => AtivaGameObject(timeline)) *
+             Hide() *
              End() *
 
              Option("Não") *
