@@ -14,6 +14,12 @@ namespace _Game.Scripts.Services
             LoadingScene.Load();
         }
 
+        public void RequestScene(int index)
+        {
+            data.RequestedSceneIndex = index;
+            LoadingScene.Load();
+        }
+
         public void ExitGame()
         {
             Application.Quit();

@@ -26,7 +26,6 @@ namespace _Game.GameModules.UI.Scripts
         {
             if (!playerCanSwitchMenu) return;
             if (Input.GetButtonDown(mainMenu.ButtonName) && mainMenu.canBeUsed) SwitchMenu(mainMenu.Index);
-            if (Input.GetButtonDown(charMenu.ButtonName) && charMenu.canBeUsed) SwitchMenu(charMenu.Index);
         }
 
         public void SwitchMenu(int menuIndex)

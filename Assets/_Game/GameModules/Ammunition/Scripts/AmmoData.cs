@@ -15,9 +15,15 @@ namespace _Game.GameModules.Ammunition.Scripts
 
         public Ammo Instantiate(Vector3 position, Quaternion rotation)
         {
-            var ammo = ammunitionStorage.Count > 0
-                ? ammunitionStorage.Pop()
-                : Instantiate(model).GetComponent<Ammo>();
+            Ammo ammo;
+            if (ammunitionStorage.Count > 0)
+            {
+                var test = ammunitionStorage.Pop();
+                if (test) ammo = test;
+                else ammo = Instantiate(model).GetComponent<Ammo>();
+            }
+            else ammo = Instantiate(model).GetComponent<Ammo>();
+
             Activate(ammo, position, rotation);
             ammo.SetLifeTime(LifeTime);
             return ammo;
