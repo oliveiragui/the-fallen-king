@@ -976,6 +976,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Marketscene
       objectReference: {fileID: 0}
+    - target: {fileID: 8882586102995880057, guid: 7706b7d69baf35946855786a52d10224,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17b8bc7afaa2449419efaf3fdba41837, type: 2}
+    - target: {fileID: 8882586103830000256, guid: 7706b7d69baf35946855786a52d10224,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 17b8bc7afaa2449419efaf3fdba41837, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7706b7d69baf35946855786a52d10224, type: 3}
 --- !u!4 &6809625734585158039 stripped

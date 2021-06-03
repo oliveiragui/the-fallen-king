@@ -63,6 +63,11 @@ namespace _Game.GameModules.Characters.Scripts
             CombatMode = false;
         }
 
+        public void Cure()
+        {
+            characterStatus.Life.Current += 99999;
+        }
+
         void OnStatusChanged(CharacterStatus characterStatus)
         {
             if (immortal) return;

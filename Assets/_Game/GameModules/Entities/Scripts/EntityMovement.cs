@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.AI;
 
 namespace _Game.GameModules.Entities.Scripts
@@ -11,6 +12,7 @@ namespace _Game.GameModules.Entities.Scripts
 
         [SerializeField] NavMeshAgent agent;
         [SerializeField] Animator animator;
+        
 
         bool _autoMove;
 
@@ -70,6 +72,16 @@ namespace _Game.GameModules.Entities.Scripts
         void Start()
         {
             _transform = agent.transform;
+        }
+
+        void OnEnable()
+        {
+            agent.enabled = true;
+        }
+
+        void OnDisable()
+        {
+            agent.enabled = false;
         }
 
         void Update()
