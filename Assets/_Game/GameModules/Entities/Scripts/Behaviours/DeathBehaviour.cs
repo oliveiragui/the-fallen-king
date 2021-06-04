@@ -6,6 +6,9 @@ namespace _Game.GameModules.Entities.Scripts.Behaviours
     {
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            entity.movement.InputSpeed = 0;
+            entity.movement.ApplyInputMovement = false;
+            entity.movement.ApplyAnimationRootMovement = false;
             entity.movement.enabled = false;
             entity.Hittable = false;
         }

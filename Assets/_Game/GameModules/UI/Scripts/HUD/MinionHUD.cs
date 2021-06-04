@@ -17,7 +17,8 @@ namespace _Game.GameModules.UI.Scripts.HUD
 
         void FixedUpdate()
         {
-            if (entity) transform.position = entity.transform.position;
+            if (!entity) return; 
+            transform.position = entity.transform.position;
         }
 
         public void OnStatusChange(CharacterStatus status)
@@ -30,6 +31,7 @@ namespace _Game.GameModules.UI.Scripts.HUD
         {
             character.Entity.hitReceived.AddListener(a => lifebar.gameObject.SetActive(true));
             character.events.death.AddListener(entity2 => Destroy(gameObject));
+            character.events.exitCombat.AddListener(() => lifebar.gameObject.SetActive(false));
             character.CharacterStatus.StatusChanged.AddListener(OnStatusChange);
             entity = character.Entity;
         }
