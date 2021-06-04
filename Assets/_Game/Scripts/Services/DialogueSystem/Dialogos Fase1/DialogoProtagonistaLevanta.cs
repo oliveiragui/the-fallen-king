@@ -24,7 +24,7 @@ public class DialogoProtagonistaLevanta : FluentScript
             Write("Pirin:\nVocê ligou bem os pontos. Eu não sou apenas um dos Legisladores, como também sou um dos co-fundadores. " +
                             "Minha mãe é a mesma enfermeira por quem o Rei se apaixonou. Eu sou Pirin, herdeiro do trono do Reino do Norte.").WaitForButton() *
             Write("Pirin:\nMuito prazer, jovem mercenário. Poderia me dizer seu nome?").WaitForButton() *
-            Write("Meu nome é Sieg.").WaitForButton() *
+            Write("Meu nome é PLAYER_PRINCIPAL.").WaitForButton() *
             Write("Pirin:\nEu tenho outra pergunta pra te fazer. O exército já sabe que eu estou nessa vila, aparentemente, logo eles devem checar o que acontenceu.").WaitForButton() *
             Write("Pirin:\nPreciso chegar ao Reino do Sul, temos alguns aliados a nossa causa que podem nos ajudar na batalha.").WaitForButton() *
             Write("Pirin:\nVocê levantaria sua espada pela causa dos Legisladores? O pagamento é garantido, claro.").WaitForButton() *
