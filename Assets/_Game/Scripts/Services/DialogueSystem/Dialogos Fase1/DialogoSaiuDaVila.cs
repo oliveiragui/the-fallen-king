@@ -11,13 +11,13 @@ public class DialogoSaiuDaVila : FluentScript
     {
         return
             Show() *
-            Write("PLAYER_PRINCIPAL:\nE aí, está pronto?").WaitForButton() *
+            Write("Sieg:\nE aí, está pronto?").WaitForButton() *
             Write("Pirin:\nImpossível dizer, com tudo que nos aguarda no futuro...").WaitForButton() *
-            Write("PLAYER_PRINCIPAL:\nEu estava falando das suas coisas. Conseguiu recolher seus pertences?").WaitForButton() *
+            Write("Sieg:\nEu estava falando das suas coisas. Conseguiu recolher seus pertences?").WaitForButton() *
             Write("Pirin:\nAh. Minhas coisas. Sim. Estou pronto... E você?").WaitForButton() *
-            Write("PLAYER_PRINCIPAL:\nEu tenho minhas armas, e agora um médico me acompanhando... Eu acho que não posso esperar por muito mais que isso.").WaitForButton() *
+            Write("Sieg:\nEu tenho minhas armas, e agora um médico me acompanhando... Eu acho que não posso esperar por muito mais que isso.").WaitForButton() *
             Write("Pirin:\nPeço perdão por te envolver numa guerra que não é sua.").WaitForButton() *
-            Write("PLAYER_PRINCIPAL:\nSou um mercenário, eu ganho dinheiro lutando as batalhas dos outros. Não se preocupe.").WaitForButton() *
+            Write("Sieg:\nSou um mercenário, eu ganho dinheiro lutando as batalhas dos outros. Não se preocupe.").WaitForButton() *
             Write("Pirin:\nÉ verdade... Bom, vamos indo, teremos que passar pela floresta ainda.").WaitForButton() *
             Do(() => IniciaCutscene()) *
             Hide();
