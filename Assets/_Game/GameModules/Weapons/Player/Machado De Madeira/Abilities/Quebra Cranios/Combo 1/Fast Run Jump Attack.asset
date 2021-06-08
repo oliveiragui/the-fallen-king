@@ -19,21 +19,21 @@ MonoBehaviour:
       percentageTime: 0
       scriptableEvent: {fileID: 11400000, guid: 96db82265c159254a84455e077a89dc6,
         type: 2}
-    - name: StopMove
-      percentageTime: 78.2
-      scriptableEvent: {fileID: 11400000, guid: c30c41d7631df8d4d85b713e6e5ef66b,
-        type: 2}
     - name: Play Ability Particle 1
       percentageTime: 7.1
       scriptableEvent: {fileID: 11400000, guid: 7094ffa58735b0a47bea120146ab7a87,
         type: 2}
-    - name: Play Ability Particle 2
-      percentageTime: 80.5
-      scriptableEvent: {fileID: 11400000, guid: d25fa3ad387f4344ea75fabab6dfcc71,
+    - name: Become Unhittable
+      percentageTime: 25
+      scriptableEvent: {fileID: 11400000, guid: 960ec39b6ed7ed14a839c77a5fe3f9c3,
         type: 2}
     - name: Play Ability Sound 1
       percentageTime: 26.5
       scriptableEvent: {fileID: 11400000, guid: dd208644b76cd494bb53661da2597612,
+        type: 2}
+    - name: StopMove
+      percentageTime: 78.2
+      scriptableEvent: {fileID: 11400000, guid: c30c41d7631df8d4d85b713e6e5ef66b,
         type: 2}
     - name: Play Ability Sound 2
       percentageTime: 77.8
@@ -42,4 +42,16 @@ MonoBehaviour:
     - name: Hit Area
       percentageTime: 78.2
       scriptableEvent: {fileID: 11400000, guid: e927af69ec7418b45b3920b25fd73b1a,
+        type: 2}
+    - name: Hit Area
+      percentageTime: 78.2
+      scriptableEvent: {fileID: 11400000, guid: e927af69ec7418b45b3920b25fd73b1a,
+        type: 2}
+    - name: Play Ability Particle 2
+      percentageTime: 80.5
+      scriptableEvent: {fileID: 11400000, guid: d25fa3ad387f4344ea75fabab6dfcc71,
+        type: 2}
+    - name: Become Hittable
+      percentageTime: 100
+      scriptableEvent: {fileID: 11400000, guid: ebd83a4af5885544a95603a47624eb4f,
         type: 2}

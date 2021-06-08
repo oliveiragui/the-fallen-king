@@ -9,8 +9,8 @@ namespace _Game.Scripts.Utils
     public class Wave : MonoBehaviour
     {
         [SerializeField] Character[] characters;
-        [SerializeField] UnityEvent start;
-        [SerializeField] UnityEvent end;
+        [SerializeField] public UnityEvent start;
+        [SerializeField] public UnityEvent end;
         [SerializeField] int deadCharacters;
 
         public bool IsRunning { get; private set; }
@@ -22,7 +22,6 @@ namespace _Game.Scripts.Utils
                 character.UsePivot(false);
                 character.events.death.AddListener(OnCharacterDeath);
             }
-
             IsRunning = true;
             start.Invoke();
         }

@@ -173,6 +173,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 40845364454195379, guid: 888ef6b209dfb8a44bac41e7186d5a14,
+        type: 3}
+      propertyPath: rawCharacterStatus.strength.initial
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6724269923917127219, guid: 888ef6b209dfb8a44bac41e7186d5a14,
         type: 3}
       propertyPath: m_Sprite

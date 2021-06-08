@@ -302,7 +302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2297308550207671447
 Transform:
   m_ObjectHideFlags: 0
@@ -1464,8 +1464,8 @@ MonoBehaviour:
   target: {fileID: 0}
   animator: {fileID: 7505569796796055219}
   weaponData: {fileID: 11400000, guid: db5ef8b605b4ab949a5055fd92cb03a1, type: 2}
-  preferedDistance: 2
-  maxVariation: 4
+  preferedDistance: 1.5
+  maxVariation: 1
 --- !u!1 &3645660193327656729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,7 +2209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8847514811963883132
 Transform:
   m_ObjectHideFlags: 0
@@ -3038,7 +3038,7 @@ PrefabInstance:
     - target: {fileID: 40845364454195379, guid: 888ef6b209dfb8a44bac41e7186d5a14,
         type: 3}
       propertyPath: rawCharacterStatus.agility.initial
-      value: 5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 147405175979600738, guid: 888ef6b209dfb8a44bac41e7186d5a14,
         type: 3}
@@ -3292,10 +3292,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7071883945172366061}
     m_Modifications:
+    - target: {fileID: 5783875217353547919, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5784232805267336867, guid: 41fab303abad0ef43aa44009c47203bd,
         type: 3}
       propertyPath: m_Name
       value: Knight Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784310373235001169, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5787384255293844419, guid: 41fab303abad0ef43aa44009c47203bd,
         type: 3}
