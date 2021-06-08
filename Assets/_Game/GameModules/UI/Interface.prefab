@@ -2036,12 +2036,12 @@ PrefabInstance:
     - target: {fileID: 988802278755696957, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
       propertyPath: m_Value
-      value: 1
+      value: 0.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 988802278755696957, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
       propertyPath: m_Size
-      value: 0.3278846
+      value: 0.38025796
       objectReference: {fileID: 0}
     - target: {fileID: 1116818818982455659, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
@@ -2788,6 +2788,11 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4135017427299846510, guid: a9064d7802eeb174996c2152fba7e02a,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287207076
+      objectReference: {fileID: 0}
     - target: {fileID: 4236238459132595274, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3003,16 +3008,23 @@ PrefabInstance:
     - target: {fileID: 5329277399467229485, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
       propertyPath: m_text
-      value: "Cr\xE9ditos\n\n\u2014 Programa\xE7\xE3o \u2014\r\n\r\nGuilherme Macedo\r\nSamuel
-        Cabral\r\n\r\n\u2014 Game Design \u2014\r\n\r\nGuilherme Macedo\r\nSamuel
-        Cabral\r\n\r\n\u2014 Arte \u2014\r\n\r\nGuilherme Macedo\r\nSamuel Cabral\r\n\r\n\u2014
-        Trilha Sonora \u2014\r\n\r\nGuilherme Macedo\r\nSamuel Cabral\r\n\r\n\u2014
+      value: "\u2014 Programa\xE7\xE3o \u2014\r\n\r\nGuilherme Macedo\r\nSamuel Cabral\r\n\r\nFluent
+        Dialogue \r\nde Reyn (Unity Asset Store)\r\n\r\n\u2014 Game Design \u2014\r\n\r\nGuilherme
+        Macedo\r\nSamuel Cabral\r\n\r\n\u2014 Arte \u2014\r\nPolygon Adventure\r\nPolygon
+        Knights\r\nPolygon Particle Fx \r\nde Sinty Studio (Unity Asset Store)\r\n\r\nLowpoly
+        Medieval Characters\r\nde Polytope Studio (Unity Asset Store)\r\n\r\nModular
+        Village Collection\r\nde Keith at Fertile Soil Productions  (Itch.io)\r\n\r\nFantasy
+        Sound Library \r\nde Little Robot Sound Factory (Open Game Art)\r\n\r\n\xEDcones
+        das armas e habilidadades \r\nde Game-icons.net\r\n\r\nAnima\xE7\xF5es \r\nde
+        Mixamo\r\n\r\n\u2014 Trilha Sonora \u2014\r\nNature Sound FX \r\nde Lumino
+        (Unity Asset Store)\r\n\r\nColossal Boss Battle Theme\r\nDefying Commodus\r\nYou
+        Were My Brother (Live Orchestra)\r\nde Matthew Pablo (Open Game Art)\r\n\r\n\u2014
         Agradecimentos \u2014\r\n\r\n\u2014 Professores \u2014\r\n\r\nAlexandre De
-        Souza Vasconcelos\r\nGilles Pedroza Leite\r\nSaulo De Oliveira Machado\r\n\r\n\u2014
-        Testers \u2014\r\n\r\nBruno Tramontana\r\nDaniel Figueiredo da Silva\r\nGabriele\r\nItalo
-        Lima Ribeiro\r\nLucas de Oliveira Alfindo\r\nLucas Torres Costa\r\nMatheus
-        Santos Lima\r\nVinicius Aristides Ribeiro\r\nWillian de Almeida\r\n\r\nSENAC
-        S\xC3O PAULO\r\n"
+        Souza Vasconcelos\r\nGilles Pedroza Leite\r\nSaulo De Oliveira Machado\r\nAdalberto
+        Bosco Castro Pereira\r\nRafael Lucio de Mattos\r\n\r\n\u2014 Testers \u2014\r\n\r\nBruno
+        Tramontana\r\nDaniel Figueiredo da Silva\r\nGabriele\r\nItalo Lima Ribeiro\r\nLucas
+        de Oliveira Alfindo\r\nLucas Torres Costa\r\nMatheus Santos Lima\r\nVinicius
+        Aristides Ribeiro\r\nWillian de Almeida\r\n\r\nSENAC S\xC3O PAULO"
       objectReference: {fileID: 0}
     - target: {fileID: 5329277399467229485, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
@@ -3036,6 +3048,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -6443558505881545600, guid: 5764af9119414344c97b4431582091ae,
         type: 2}
+    - target: {fileID: 5329277399467229485, guid: a9064d7802eeb174996c2152fba7e02a,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287207076
+      objectReference: {fileID: 0}
     - target: {fileID: 5360752334319840919, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -3271,6 +3288,11 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6039126289469763734, guid: a9064d7802eeb174996c2152fba7e02a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6562848738245703670, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -3460,6 +3482,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Efeitos Sonoros
+      objectReference: {fileID: 0}
+    - target: {fileID: 7717649149136291749, guid: a9064d7802eeb174996c2152fba7e02a,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287207076
       objectReference: {fileID: 0}
     - target: {fileID: 7735835188946552761, guid: a9064d7802eeb174996c2152fba7e02a,
         type: 3}
