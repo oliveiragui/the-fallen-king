@@ -28,7 +28,6 @@ namespace _Game.GameModules.IA.Scripts.FirstBossIA
             entity.Character.WeaponStorage.Add(weaponData);
             entity.Character.WeaponStorage.UseWeapon(0);
             entity.AutoMove = true;
-
             minDistance = preferedDistance - maxVariation / 2;
             maxDistance = preferedDistance + maxVariation / 2;
             entity.Character.AbilitySystem.stopAbility.AddListener((index) =>
@@ -38,6 +37,7 @@ namespace _Game.GameModules.IA.Scripts.FirstBossIA
                     animator.SetBool($"Habilidade {i + 1} finalizada", true);
                 }
             });
+            entity.CombatMode = true;
         }
 
         void FixedUpdate()

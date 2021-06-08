@@ -62,6 +62,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8023343166052089842}
     m_Modifications:
+    - target: {fileID: 3254242731458240637, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
+        type: 3}
+      propertyPath: m_text
+      value: <sprite="KeyboardAndMouse" name="Mouse_Left_Key_Dark">
+      objectReference: {fileID: 0}
     - target: {fileID: 5179093067342438982, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}
       propertyPath: m_Name
@@ -130,7 +135,7 @@ PrefabInstance:
     - target: {fileID: 5179093067342438983, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5179093067342438983, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}
@@ -204,6 +209,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8023343166052089842}
     m_Modifications:
+    - target: {fileID: 3254242731458240637, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
+        type: 3}
+      propertyPath: m_text
+      value: <sprite="KeyboardAndMouse" name="Mouse_Right_Key_Dark">
+      objectReference: {fileID: 0}
     - target: {fileID: 5179093067342438982, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}
       propertyPath: m_Name
@@ -346,6 +356,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8023343166052089842}
     m_Modifications:
+    - target: {fileID: 3254242731458240637, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
+        type: 3}
+      propertyPath: m_text
+      value: <sprite="KeyboardAndMouse" name="Space_Key_Dark">
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254242731458240637, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
+        type: 3}
+      propertyPath: m_margin.y
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254242731458240637, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3254242731458240637, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5179093067342438982, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}
       propertyPath: m_Name
@@ -414,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 5179093067342438983, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5179093067342438983, guid: 86e2a94e9ad7ee847b74e386b28f4fdb,
         type: 3}

@@ -21,7 +21,7 @@ namespace _Game.GameModules.UI.Scripts.Utils
 
         IEnumerator SmoothVariation(float initial, float final)
         {
-            float runningTime = 0;
+            float runningTime = 0.001f;
             while (runningTime < time)
             {
                 Variation = Mathf.SmoothStep(initial, final, runningTime);

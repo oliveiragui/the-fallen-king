@@ -57,10 +57,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2937153338700262014}
     m_Modifications:
+    - target: {fileID: 5783698591572257679, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5783875217353547919, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5784232805267336867, guid: 41fab303abad0ef43aa44009c47203bd,
         type: 3}
       propertyPath: m_Name
       value: Knight Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784385676427640789, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784391364830285427, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5787384255293844419, guid: 41fab303abad0ef43aa44009c47203bd,
         type: 3}
@@ -116,6 +136,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787384255293844419, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787384255293844419, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5787384255293844419, guid: 41fab303abad0ef43aa44009c47203bd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41fab303abad0ef43aa44009c47203bd, type: 3}

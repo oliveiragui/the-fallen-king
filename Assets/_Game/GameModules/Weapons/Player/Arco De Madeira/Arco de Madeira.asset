@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Arco de Madeira
   m_EditorClassIdentifier: 
   description: "\xF3tima arma para atacar inimigos a uma dist\xE2ncia segura"
-  icon: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
+  icon: {fileID: 21300000, guid: 62ba4ec00396aa74eb8dec30fb282ab8, type: 3}
   ammoData: {fileID: 11400000, guid: eca9ad1f150b9a344b50286a3e7e4dd2, type: 2}
   animations:
     idle: {fileID: 7400000, guid: af119f9280e367f4eb1f20ba3712f376, type: 2}
@@ -22,21 +22,29 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: c755965fb9f9b504ea18035a84e522e0, type: 2}
   - {fileID: 11400000, guid: 15fd9f799ebf70040a3a0d168453c80a, type: 2}
-  - {fileID: 11400000, guid: c755965fb9f9b504ea18035a84e522e0, type: 2}
   - {fileID: 11400000, guid: 1ac9decfca8f4ce4e84396f299abc0ce, type: 2}
-  status:
+  characterStatus:
     life:
-      multiplier: 0
-      value: 0
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
     strength:
-      multiplier: 0
-      value: 0
-    attackSpeed:
-      multiplier: 0
-      value: 0
-    speed:
-      multiplier: 0
-      value: 0
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
+    agility:
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
   prefabs:
     alwaysOn:
       array:

@@ -23,7 +23,7 @@ namespace _Game.GameModules.UI.Scripts.Utils
             set
             {
                 _current = value;
-                float variation = _current / total;
+                float variation = _current / (total + 0.00001f);
                 restorationTrail.ApplyVariation(variation);
                 damageTrail.ApplyVariation(variation);
                 bar.ApplyVariation(variation);
@@ -32,12 +32,7 @@ namespace _Game.GameModules.UI.Scripts.Utils
 
         void Awake()
         {
-            _current = total;
-        }
-
-        void Reset()
-        {
-            restorationTrail.Variation = damageTrail.Variation = bar.Variation = 1;
+            Current = Total;
         }
     }
 }

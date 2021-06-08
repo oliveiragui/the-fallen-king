@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description: "Apesar de lento, causa um dano massivo. \xC9 preciso saber atacar
     na hora certa"
-  icon: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  icon: {fileID: 21300000, guid: d847307b9e6905b40b3b08ee5254d4f7, type: 3}
   ammoData: {fileID: 0}
   animations:
     idle: {fileID: 7400000, guid: a20f7e1d5e2118147b8134ae9104519b, type: 2}
@@ -23,21 +23,29 @@ MonoBehaviour:
   abilities:
   - {fileID: 11400000, guid: 000edf5046b53174bb0943b198a72aa5, type: 2}
   - {fileID: 11400000, guid: 816463d0fd4ab4b4683647233c48cd3a, type: 2}
-  - {fileID: 11400000, guid: 816463d0fd4ab4b4683647233c48cd3a, type: 2}
   - {fileID: 11400000, guid: 1ac9decfca8f4ce4e84396f299abc0ce, type: 2}
-  status:
+  characterStatus:
     life:
-      multiplier: 0
-      value: 0
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
     strength:
-      multiplier: 0
-      value: 0
-    attackSpeed:
-      multiplier: 0
-      value: 0
-    speed:
-      multiplier: 0
-      value: 0
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
+    agility:
+      attrChanged:
+        m_PersistentCalls:
+          m_Calls: []
+      initial: 0
+      total: 0
+      current: 0
   prefabs:
     alwaysOn:
       array: []

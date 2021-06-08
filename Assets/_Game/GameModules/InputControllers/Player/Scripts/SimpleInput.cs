@@ -56,8 +56,7 @@ namespace _Game.Scripts
             if (Input.GetButtonDown("Fire3")) character.AbilitySystem.RequestAbility(2);
             if (Input.GetButtonUp("Fire3")) character.AbilitySystem.StopCasting(2);
 
-            if (Input.GetButtonDown("Jump")) character.AbilitySystem.RequestAbility(3);
-            if (Input.GetButtonUp("Jump")) character.AbilitySystem.StopCasting(3);
+  
 
             if (Input.GetKeyUp(KeyCode.Q)) character.WeaponStorage.UseNext();
 

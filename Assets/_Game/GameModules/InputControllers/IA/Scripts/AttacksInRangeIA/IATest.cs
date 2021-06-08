@@ -30,6 +30,7 @@ namespace _Game.GameModules.IA.Scripts.AttacksInRangeIA
             entity.AutoMove = true;
             minDistance = preferedDistance - maxVariation / 2;
             maxDistance = preferedDistance + maxVariation / 2;
+            entity.CombatMode = true;
         }
 
         void Update()
