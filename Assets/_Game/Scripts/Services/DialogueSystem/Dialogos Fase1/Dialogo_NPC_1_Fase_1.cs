@@ -15,7 +15,7 @@ public class Dialogo_NPC_1_Fase_1 : FluentScript
         return
             Show() *
             Write(0.5f, "Homem:\nQuerida, o médico disse que vai ficar tudo bem, descanse o quanto puder").WaitForButton() *
-            Write(0.5f, "Mulher:\nCof Cof Cof").WaitForButton() *
+            Write(0.5f, "Mulher:\nCof... Cof... Cof...").WaitForButton() *
             Write(0.5f, "Homem:\nEu não sei o que eu faria sem você...").WaitForButton() *
             Hide();
     }

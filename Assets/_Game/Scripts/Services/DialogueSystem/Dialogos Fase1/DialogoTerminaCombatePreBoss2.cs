@@ -12,8 +12,8 @@ public class DialogoTerminaCombatePreBoss2 : FluentScript
     public override FluentNode Create()
     {
         return
-             Yell(3.0f, "Ótimo. E olha o tamanho dele...") *
-             Yell(3.0f, "Quem são esses caras!?");
+             Yell(3.0f, "Sieg:\nÓtimo. E olha o tamanho dele...") *
+             Yell(3.0f, "Sieg:\nQuem são esses caras!?");
     }
 
     public override void OnFinish()
