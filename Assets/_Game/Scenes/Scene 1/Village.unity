@@ -8898,6 +8898,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: loadingScreens.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: prefabHelper
+      value: Village
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: loadingScreens.Array.data[3]
+      value: 
+      objectReference: {fileID: 7153641550970790342, guid: 70aa2e1d48dab354a99c81543d4ca459,
+        type: 3}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: loadingScreens.Array.data[5]
+      value: 
+      objectReference: {fileID: 7153641550970790342, guid: 3bdf94cbd57ed214da9f66e8fff61402,
+        type: 3}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: loadingScreens.Array.data[8]
+      value: 
+      objectReference: {fileID: 7153641550970790342, guid: 99d5ee0a06691b0438107c887b6823ce,
+        type: 3}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: selectedLoadingIndex
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4100693795563688521, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44895,6 +44928,18 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6158084648580144606, guid: 66d90103872937945baa578d7ef517d6, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 66d90103872937945baa578d7ef517d6, type: 3}
+--- !u!114 &1887674292 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 279039586168482060, guid: 66d90103872937945baa578d7ef517d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1887674291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acbae1b08e054007b7f23e3da9d3c669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1893114908
 GameObject:
   m_ObjectHideFlags: 0
@@ -48185,11 +48230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: changeScene.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 460620554}
+      objectReference: {fileID: 1887674292}
     - target: {fileID: 6420072802402169344, guid: bc4a246b21dcb4640aa17d5db76f0c70,
         type: 3}
       propertyPath: changeScene.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: Load
       objectReference: {fileID: 0}
     - target: {fileID: 6420072802402169344, guid: bc4a246b21dcb4640aa17d5db76f0c70,
         type: 3}

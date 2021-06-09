@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1570240557083949946}
   - component: {fileID: 1562959565230158384}
   m_Layer: 0
-  m_Name: FootStep
+  m_Name: FootStep 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
