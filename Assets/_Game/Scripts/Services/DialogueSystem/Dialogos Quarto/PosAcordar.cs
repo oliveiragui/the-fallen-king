@@ -13,10 +13,10 @@ public class PosAcordar : FluentScript
     {
         return
             Show() *
-            Write(0.25f, "Isso não foi um pesadelo...").WaitForButton() *
-            Write(0.25f, "Ainda estou ouvindo gritos.").WaitForButton() *
-            Write(0.25f, "Cof... cof... fumaça...").WaitForButton() *
-            Write(0.25f, "O que tá acontecendo na vila?!").WaitForButton() *
+            Write(0.25f, "Sieg:\nIsso não foi um pesadelo...").WaitForButton() *
+            Write(0.25f, "Sieg:\nAinda estou ouvindo gritos.").WaitForButton() *
+            Write(0.25f, "Sieg:\nCof... cof... fumaça...").WaitForButton() *
+            Write(0.25f, "Sieg:\nO que tá acontecendo na vila?!").WaitForButton() *
             Hide();
     }
 

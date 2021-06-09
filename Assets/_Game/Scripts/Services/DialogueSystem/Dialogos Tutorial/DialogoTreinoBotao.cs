@@ -23,8 +23,7 @@ public class DialogoTreinoBotao : FluentScript
                 Write(0.5f, "Dragg:\nVolte a falar comigo quando estiver pronto pro treino!").WaitForButton()
             ) *
             If(() => timesVisited >= 2,
-                Write(0.5f, "Dragg:\nPara atacar aperte <sprite=\"KeyBoardAndMouse\" name=\"Mouse_Left_Key_Dark\"> ").WaitForButton() *
-                Write(0.5f, "Dragg:\nPara se esquivar aperte <sprite=\"KeyBoardAndMouse\" name=\"Space_Key_Dark\"> ").WaitForButton() 
+                Write(0.5f, "Dragg:\nNão se esqueça do que te ensinei!").WaitForButton()
             ) *
             Hide();
     }

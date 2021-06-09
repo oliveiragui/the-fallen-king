@@ -23,11 +23,11 @@ public class DialogoMedicoPosBoss : FluentScript
             Write(2.5f, "Médico:\nVocê parece estar acordado.").WaitForButton() *
             Write(2.5f, "Médico:\nO que você fez foi bem impressionante, digo, derrotar o General Labahn." +
                         " Pra alguém que tinha inalado tanta fumaça do incêndio, você resistiu muito bem.").WaitForButton() *
-            Write(2.5f, "Você é o médico... O quê? Você conhecia aquele grandão?").WaitForButton() *
+            Write(2.5f, "Sieg:\nVocê é o médico... O quê? Você conhecia aquele grandão?").WaitForButton() *
             Write(2.5f, "Médico:\nPermita-me introduzir meu nome primeiro. Eu sou Pirin, do Reino do Norte, o mesmo lugar do exército que você acabou de enfrentar.").WaitForButton() *
             Write(2.5f, "Pirin:\nAntes de você começar a me questionar, e aproveitando que você está em repouso, vou te contar o que está acontecendo...").WaitForButton() *
             Write(2.5f, "Pirin:\nAqueles soldados que você enfrentou são do exército real do Reino do Norte, e o general Labahn é um dos 8 generais do exército.").WaitForButton() *
-            Write(2.5f, "Certo. Então por que eles atacaram a vila? Nós nem somos afiliados a Reino nenhum!").WaitForButton() *
+            Write(2.5f, "Sieg:\nCerto. Então por que eles atacaram a vila? Nós nem somos afiliados a Reino nenhum!").WaitForButton() *
             Write(2.5f, "Pirin:\nEu vou chegar lá. O Reino do Norte está passando por uma crise nesse momento. O Rei está adoecido e, pra falar a verdade, ele mal consegue se comunicar." +
                                                  " Logo seu sucessor deve ser anunciado.").WaitForButton() *
             Write(2.5f, "Pirin:\nApesar do Rei não ser uma figura mal vista pelo povo, há uma oposição a família real, um grupo chamado Legisladores. " +
@@ -41,9 +41,9 @@ public class DialogoMedicoPosBoss : FluentScript
             Write(2.5f, "Pirin:\nOs 6 generais descobriram onde era o esconderijo dos Legisladores, recolheram seus nomes, profissões... Muitos estão em fuga ou escondidos no reino.").WaitForButton() *
             Do(() => AtivaGameObject(camera1)) *
             Write(3.0f, "Pirin:\nO exército tem destruído muitas cidades e vilas buscando os membros que fugiram, a monarquia está disposta ao que for para destruir o sonho dos Legisladores...").WaitForButton() *
-            Write(2.5f, "Então o que aconteceu aqui...").WaitForButton() *
+            Write(2.5f, "Sieg:\nEntão o que aconteceu aqui...").WaitForButton() *
             Write(2.5f, "Pirin:\nExatamente. Essa vila também foi pega no meio desse caos todo...").WaitForButton() *
-            Write(2.5f, "Eu diria que você é um dos Legisladores...").WaitForButton() *
+            Write(2.5f, "Sieg:\nEu diria que você é um dos Legisladores...").WaitForButton() *
             Do(() => AtivaGameObject(camera2)) *
             Write(2.5f, "Pirin:\nEles mataram meus amigos... a nobreza tem negado tratamento médico e comida para o povo enquanto a perseguição perdura...").WaitForButton() *
             Write(2.5f, "Pirin:\nVocê não está errado, eu sou um membro dos Legisladores. Bem, é um pouco mais complicado que isso...").WaitForButton() *
@@ -51,7 +51,7 @@ public class DialogoMedicoPosBoss : FluentScript
             Write(2.5f, "Pirin:\nEu sempre tive um dom para medicina, minha mãe era uma enfermeira, ela me ensinou muito bem sobre como tratar cada paciente, mas não posso dizer o mesmo sobre combate. " +
                                                  "Se o exército tivesse me achado antes de você derrota-los, é provável que eu seria capturado").WaitForButton() *
             Do(() => AtivaGameObject(camera3)) *
-            Write(2.5f, "Você disse que sua mãe era enfermeira. Quer dizer que você...").WaitForButton() *
+            Write(2.5f, "Sieg:\nVocê disse que sua mãe era enfermeira. Quer dizer que você...").WaitForButton() *
             Write(1.5f, "Pirin:\nOh...").WaitForButton() *
             Do(() => AtivaGameObject(timeline)) *
             Hide();

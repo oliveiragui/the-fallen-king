@@ -12,7 +12,7 @@ public class DialogoPosBoss : FluentScript
     public override FluentNode Create()
     {
         return
-             Yell(3.0f, "Cof... Cof... A fumaça tá me deixando meio tonto...") *
+             Yell(3.0f, "Sieg:\nCof... Cof... A fumaça tá me deixando meio tonto...") *
              Do(() => AtivaGameObject(timeline));
     }
 
