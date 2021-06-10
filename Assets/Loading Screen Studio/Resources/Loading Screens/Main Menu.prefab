@@ -18,6 +18,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 51009ac8b97da8b4fb305df5130def4a,
         type: 3}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: enablePressAnyKey
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3790185792406861694, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_SizeDelta.x

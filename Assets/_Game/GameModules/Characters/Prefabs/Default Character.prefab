@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 8954430661890499820}
   - component: {fileID: 8954430661890499819}
   - component: {fileID: 1497604441215145873}
+  - component: {fileID: 7164882685327876669}
   m_Layer: 0
   m_Name: Default Character
   m_TagString: Untagged
@@ -308,13 +309,35 @@ MonoBehaviour:
         m_Calls: []
     enterInCombat:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7164882685327876669}
+          m_MethodName: StartCount
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     exitCombat:
       m_PersistentCalls:
         m_Calls: []
     death:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 7164882685327876669}
+          m_MethodName: Score
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   immortal: 0
   _combatMode: 0
 --- !u!114 &1497604441215145873
@@ -332,6 +355,24 @@ MonoBehaviour:
   character: {fileID: 8954430661890499819}
   pivot: {fileID: 147405175979600738}
   controller: {fileID: 1040403785823638805}
+--- !u!114 &7164882685327876669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8954430661890499821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7518b716524ff194228fec658082d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreValue: 100
+  discountPerTime: 1
+  discountRate: 2
+  pointScored:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &6262241481778034402
 PrefabInstance:
   m_ObjectHideFlags: 0
