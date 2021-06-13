@@ -1820,7 +1820,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5342961960331409483}
   - component: {fileID: 2036056307266601327}
-  - component: {fileID: 906957770891106418}
   m_Layer: 0
   m_Name: TMP SubMeshUI [OpenSans-Light SDF Material + OpenSans-Bold SDF Atlas]
   m_TagString: Untagged
@@ -1855,33 +1854,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4268493069933872428}
   m_CullTransparentMesh: 0
---- !u!114 &906957770891106418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4268493069933872428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_fontAsset: {fileID: 11400000, guid: dd5dd1ac72c726244a3a06735fdc5ed1, type: 2}
-  m_spriteAsset: {fileID: 0}
-  m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
-  m_isDefaultMaterial: 0
-  m_padding: 0
-  m_TextComponent: {fileID: 6402454058863060852}
-  m_materialReferenceIndex: 1
 --- !u!1 &4516656033387623370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3688,7 +3660,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1355394021527019352}
   - component: {fileID: 5245309689517854096}
-  - component: {fileID: 4259624451769511352}
   m_Layer: 0
   m_Name: TMP SubMeshUI [OpenSans-Light SDF Material + OpenSans-Bold SDF Atlas]
   m_TagString: Untagged
@@ -3723,33 +3694,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7329535502352419566}
   m_CullTransparentMesh: 0
---- !u!114 &4259624451769511352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7329535502352419566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_fontAsset: {fileID: 11400000, guid: dd5dd1ac72c726244a3a06735fdc5ed1, type: 2}
-  m_spriteAsset: {fileID: 0}
-  m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
-  m_isDefaultMaterial: 0
-  m_padding: 1.25
-  m_TextComponent: {fileID: 6402454058863060852}
-  m_materialReferenceIndex: 1
 --- !u!1 &7472495661153916411
 GameObject:
   m_ObjectHideFlags: 0
@@ -4595,7 +4539,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4607,9 +4551,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 40
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -4866,7 +4810,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -4878,9 +4822,9 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 514
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -5528,7 +5472,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5196844351681573596}
   - component: {fileID: 465922047603325195}
-  - component: {fileID: 9006862151842547643}
   m_Layer: 0
   m_Name: TMP SubMeshUI [OpenSans-Light SDF Material + OpenSans-Bold SDF Atlas]
   m_TagString: Untagged
@@ -5563,30 +5506,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9176962374923995735}
   m_CullTransparentMesh: 0
---- !u!114 &9006862151842547643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9176962374923995735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_fontAsset: {fileID: 11400000, guid: dd5dd1ac72c726244a3a06735fdc5ed1, type: 2}
-  m_spriteAsset: {fileID: 0}
-  m_material: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
-  m_isDefaultMaterial: 0
-  m_padding: 0
-  m_TextComponent: {fileID: 6402454058863060852}
-  m_materialReferenceIndex: 1

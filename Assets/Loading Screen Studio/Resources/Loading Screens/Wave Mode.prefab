@@ -9,6 +9,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
       propertyPath: titleObjText
       value: Vale do Vazio
       objectReference: {fileID: 0}
@@ -18,6 +33,141 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8fc6c85097bc03342ab326dc0679d0ac,
         type: 3}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: titleObjDescText
+      value: "Sieg anda tendo pesadelos com a invas\xE3o de um ex\xE9rcito estrangeiro
+        na vila..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: enablePressAnyKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: useSpecificKey
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: pakCountdownTimer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: forceCanvasGroup
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7317336848966019948}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_alpha
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onBeginEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7153641550970790342}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: onFinishEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: fadingAnimationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: pakText
+      value: "Aperte um bot\xE3o para continuar"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintList.Array.data[0]
+      value: "Voc\xEA pode pular os di\xE1logos ao pressionar <sprite=\"KeyBoardAndMouse\"
+        name=\"Space_Text_Key_Dark\">"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintTimerValue
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: enableRandomHints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintList.Array.data[1]
+      value: 'Lembre-se: Sieg possui um machado e um arco, troque sua arma ao pressionar
+        <sprite="KeyBoardAndMouse" name="Q_Text_Key_Dark">'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintList.Array.data[2]
+      value: "Voc\xEA pode pular os di\xE1logos ao pressionar <sprite=\"KeyBoardAndMouse\"
+        name=\"Space_Text_Key_Dark\">"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintList.Array.data[3]
+      value: "Voc\xEA pode pular os di\xE1logos ao pressionar <sprite=\"KeyBoardAndMouse\"
+        name=\"Space_Text_Key_Dark\">"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940865213517249530, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -89.00012
+      objectReference: {fileID: 0}
     - target: {fileID: 3790185792406861694, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -108,6 +258,21 @@ PrefabInstance:
       propertyPath: m_text
       value: Vale do Vazio
       objectReference: {fileID: 0}
+    - target: {fileID: 5592592545954519599, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592592545954519599, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592592545954519599, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5876158208474409648, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -117,6 +282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5884594608096461225, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6086183287495358191, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
@@ -143,16 +313,77 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6461385051511656928, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_text
+      value: "Sieg anda tendo pesadelos com a invas\xE3o de um ex\xE9rcito estrangeiro
+        na vila..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483947107059348335, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483947107059348335, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483947107059348335, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565290764274488267, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565290764274488267, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565290764274488267, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5372549
+      objectReference: {fileID: 0}
     - target: {fileID: 7652303618029495527, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 8fc6c85097bc03342ab326dc0679d0ac,
         type: 3}
+    - target: {fileID: 8825738737626307505, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825738737626307505, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825738737626307505, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_IgnoreParentGroups
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825738737626307505, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8985211846813716763, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_Name
       value: Wave Mode
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098749252777075040, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_text
+      value: "Aperte um bot\xE3o para continuar"
       objectReference: {fileID: 0}
     - target: {fileID: 9185097013300248749, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
@@ -166,3 +397,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8416320cd2873d4695a9c1b48837c07, type: 3}
+--- !u!1 &7153641550970790342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8985211846813716763, guid: c8416320cd2873d4695a9c1b48837c07,
+    type: 3}
+  m_PrefabInstance: {fileID: 2303368589985460445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &7317336848966019948 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 8825738737626307505, guid: c8416320cd2873d4695a9c1b48837c07,
+    type: 3}
+  m_PrefabInstance: {fileID: 2303368589985460445}
+  m_PrefabAsset: {fileID: 0}

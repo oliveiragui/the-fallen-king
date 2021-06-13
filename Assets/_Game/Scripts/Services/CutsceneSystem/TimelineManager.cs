@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Michsky.LSS;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class TimelineManager : MonoBehaviour
 {
-    private bool fix = false;
-    public GameObject playerPivot;
-    public RuntimeAnimatorController playerAnim;
-    public GameObject player;
-    public PlayableDirector director;
-
+    public GameObject timelines;
+    
     void OnEnable()
     {
         //playerAnim = playerAnimator.runtimeAnimatorController;
@@ -19,11 +16,9 @@ public class TimelineManager : MonoBehaviour
 
     void Update()
     {
-        if (director.state != PlayState.Playing)
+        if (LoadingScreen.enableFading && timelines != null)
         {
-            //player.SetActive(true);
-            //player.transform.SetPositionAndRotation(playerPivot.transform.position, playerPivot.transform.rotation);
-            //fix = true;
+            timelines.SetActive(true);
         }
     }
 }

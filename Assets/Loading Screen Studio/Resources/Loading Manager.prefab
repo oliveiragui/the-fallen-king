@@ -43,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691872b4669c9ee45847d2d10286d82f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabHelper: Playful
+  prefabHelper: Wave Mode
   enableTrigger: 0
   onTriggerExit: 0
   onlyLoadWithTag: 0
+  startLoadingAtStart: 0
   objectTag: 
   sceneName: 
   dontDestroyOnLoad: []
@@ -54,7 +55,11 @@ MonoBehaviour:
   - {fileID: 6498329938164979471, guid: a6d6d28fbef5e6f4aa3e250d402fdc36, type: 3}
   - {fileID: 395881036633011262, guid: 95a7792292d18714aa328b4f7a725165, type: 3}
   - {fileID: 8643118620972578112, guid: da9ecdb2e25bea342b5be62a75cc51e7, type: 3}
+  - {fileID: 7153641550970790342, guid: 70aa2e1d48dab354a99c81543d4ca459, type: 3}
   - {fileID: 8448866507439987890, guid: 54f98e891bed80f4684d3cf5e66899b5, type: 3}
+  - {fileID: 7153641550970790342, guid: 3bdf94cbd57ed214da9f66e8fff61402, type: 3}
   - {fileID: 8985211846813716763, guid: 2e032f973bfa7da4b95039db5496ee9a, type: 3}
-  selectedLoadingIndex: 3
+  - {fileID: 8985211846813716763, guid: c8416320cd2873d4695a9c1b48837c07, type: 3}
+  - {fileID: 7153641550970790342, guid: 99d5ee0a06691b0438107c887b6823ce, type: 3}
+  selectedLoadingIndex: 8
   selectedTagIndex: 0

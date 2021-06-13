@@ -15,20 +15,7 @@ public class Porta : FluentScript
 
     public override FluentNode Create()
     {
-        return
-            Show() *
-            Write(0.25f, "Sair da casa?").WaitForButton() *
-            Options
-            (
-                Option("Sim") *
-                    Hide() *
-                    Do(() => ChangeScene()) *
-                    End() *
-
-                Option("Não") *
-                    Hide() *
-                    End()
-             );
+        return Do(() => ChangeScene());
     }
 
     public override void OnFinish()

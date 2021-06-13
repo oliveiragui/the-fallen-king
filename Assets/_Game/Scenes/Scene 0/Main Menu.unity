@@ -20020,7 +20020,7 @@ PrefabInstance:
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: prefabHelper
-      value: Main Menu
+      value: Wave Mode
       objectReference: {fileID: 0}
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
@@ -20043,7 +20043,32 @@ PrefabInstance:
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: selectedLoadingIndex
-      value: 3
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: enableTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: onlyLoadWithTag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: objectTag
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: onTriggerExit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: startLoadingAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4100693795563688521, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}

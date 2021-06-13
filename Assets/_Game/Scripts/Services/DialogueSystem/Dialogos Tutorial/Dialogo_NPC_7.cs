@@ -17,21 +17,10 @@ public class Dialogo_NPC_7 : FluentScript
     {
         return
             Show() *
-            Do(() => timesVisited++) *
-
-            If(() => timesVisited == 1,
-                Write(0.5f, "Médico:\n...").WaitForButton()
-            ) *
-
-            If(() => timesVisited == 2,
-                Write(0.5f, "Médico:\nNão posso te ajudar agora.").WaitForButton()
-            ) *
-
-            If(() => timesVisited > 2,
-                Write(0.5f, "Médico:\n(Essas pessoas estão morrendo de gripe? Lá no reino não vemos uma morte por gripe há décadas...)").WaitForButton() *
-                Write(0.5f, "Médico:\nPor favor, preciso focar nos doentes.").WaitForButton()
-            ) *
-
+            Write(0.5f, "Médico:\n...").WaitForButton() *
+            Write(0.5f, "Médico:\nNão posso te ajudar agora.").WaitForButton() *
+            Write(0.5f, "Médico:\n(Essas pessoas estão morrendo de gripe? Lá no reino não vemos uma morte por gripe há décadas...)").WaitForButton() *
+            Write(0.5f, "Médico:\nPor favor, preciso focar nos doentes.").WaitForButton() *
             Hide();
 
     }

@@ -17,18 +17,9 @@ public class Cama : FluentScript
         return
             Show() *
             Write(0.25f, "Você se sente mais cansado que o normal.").WaitForButton() *
-            Write(0.25f, "Deseja dormir?").WaitForButton() *
-            Options
-            (
-                Option("Sim") *
-                    Hide() *
-                    Do(() => IniciaCutscene()) *
-                    End() *
-
-                Option("Não") *
-                    Hide() *
-                    End()
-             );
+            Write(0.25f, "Sieg:\nAcho melhor eu dormir...").WaitForButton() *
+            Do(() => IniciaCutscene()) *
+            Hide();
     }
 
     public override void OnFinish()

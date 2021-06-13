@@ -13,20 +13,7 @@ public class DialogoLimite : FluentScript
 
     public override FluentNode Create()
     {
-        return
-            Show() *
-            Write(0.25f, "Sair da vila?").WaitForButton() *
-            Options
-            (
-            Option("Sim") *
-             Do(() => AtivaGameObject(timeline)) *
-             Hide() *
-             End() *
-
-             Option("Não") *
-             Hide() *
-             End()
-            );
+        return Do(() => AtivaGameObject(timeline));
     }
     
     private void AtivaGameObject(GameObject gameObject)

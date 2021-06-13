@@ -16,7 +16,7 @@ namespace _Game.Scripts.Services.DialogueSystem
             Show() *
             Write(0.5f, "Padre:\nMinhas preces foram atendidas... Ninguém mais precisa morrer doente...").WaitForButton() *
             Write(0.5f, "Padre:\nMeu Deus, finalmente há cura na nossa vila...").WaitForButton() *
-            Write(0.5f, "Vendedor:\nÉ um milagre... esse médico estar aqui... só pode ser um milagre...").WaitForButton() *
+            Write(0.5f, "Padre:\nÉ um milagre... esse médico estar aqui... só pode ser um milagre...").WaitForButton() *
             Hide();
 
         public override void OnFinish()

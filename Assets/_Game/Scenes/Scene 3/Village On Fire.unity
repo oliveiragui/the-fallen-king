@@ -5186,7 +5186,7 @@ PrefabInstance:
         type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1179634834}
+      objectReference: {fileID: 0}
     - target: {fileID: 4715026131446589276, guid: 74a610ec5f715ff44b5f860006a8c7e8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13346,7 +13346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &518564588
 Transform:
   m_ObjectHideFlags: 0
@@ -13456,6 +13456,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4796694355057272916, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: timelines
+      value: 
+      objectReference: {fileID: 518564587}
     - target: {fileID: 5214313222051623696, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: m_Name
@@ -37469,7 +37474,7 @@ PrefabInstance:
     - target: {fileID: 2130085335015142631, guid: c694a72ae9665cd4a9680092fd51c39e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2619899365690745062, guid: c694a72ae9665cd4a9680092fd51c39e,
         type: 3}
