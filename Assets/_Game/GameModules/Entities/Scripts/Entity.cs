@@ -158,6 +158,7 @@ namespace _Game.GameModules.Entities.Scripts
             animator.Rebind();
             foreach (var entityBehaviour in animator.GetBehaviours<EntityBehaviour>()) entityBehaviour.entity = this;
             animator.Update(0f);
+            CombatMode = true;
         }
 
         public void OnStatusChange(CharacterStatus status)

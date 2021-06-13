@@ -12335,6 +12335,8 @@ PlayableDirector:
     value: {fileID: 2068867093}
   - key: {fileID: 4578095524105763826, guid: 0ab39cc7f29958645b1e97fd3bda65e4, type: 2}
     value: {fileID: 944684338}
+  - key: {fileID: -2473593706878839070, guid: 0ab39cc7f29958645b1e97fd3bda65e4, type: 2}
+    value: {fileID: 943614093}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &476152421
@@ -16595,7 +16597,7 @@ Camera:
   m_FOVAxisMode: 1
   m_SensorSize: {x: 30, y: 30}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 40
+  m_FocalLength: 40.119324
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -16604,7 +16606,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 41.11209
+  field of view: 41
   orthographic: 0
   orthographic size: 7
   m_Depth: -1
@@ -21235,6 +21237,8 @@ GameObject:
   m_Component:
   - component: {fileID: 943614091}
   - component: {fileID: 943614092}
+  - component: {fileID: 943614093}
+  - component: {fileID: 943614094}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -21292,6 +21296,41 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1951720639}
+--- !u!95 &943614093
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943614090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &943614094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943614090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4700f9f03ad19f94baf0367cb7a9c988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Width: 2
+  m_Damping: 1
+  m_MinFOV: 2
+  m_MaxFOV: 41
 --- !u!1 &944684338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9107590158663873013, guid: 218c4c160bd5114428f4e7dda62a8f3b,
@@ -30416,7 +30455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: -20, y: 22, z: -20}
+  m_FollowOffset: {x: -25, y: 23, z: -25}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -36551,6 +36590,28 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828152426}
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 173014040}
+        m_MethodName: set_CombatMode
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1179634843}
+        m_MethodName: set_CombatMode
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
