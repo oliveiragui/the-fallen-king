@@ -13,6 +13,7 @@ namespace _Game.Scripts.Services.ScoreSystem
         public int scoreIndex;
         public List<RankingElement> ranking;
         public ScoreMarkEvent rankingModified;
+        public RankingElement lastScore;
 
         void Start()
         {
@@ -22,17 +23,17 @@ namespace _Game.Scripts.Services.ScoreSystem
 
         public void Score(Score score)
         {
-            var newScore = new RankingElement
+            lastScore = new RankingElement
             {
                 score = score,
                 date = DateTime.Now.ToString(CultureInfo.CurrentCulture),
             };
             
-            ranking.Add(newScore);
+            ranking.Add(lastScore);
             if (ranking.Count > 10) ranking = ranking.GetRange(0, ranking.Count);
             ranking.Sort((a, b) => b.score.points - a.score.points);
 
-            scoreIndex = ranking.IndexOf(newScore);
+            scoreIndex = ranking.IndexOf(lastScore);
             SaveData();
             rankingModified.Invoke(this);
         }

@@ -159,6 +159,7 @@ namespace _Game.GameModules.Entities.Scripts
             foreach (var entityBehaviour in animator.GetBehaviours<EntityBehaviour>()) entityBehaviour.entity = this;
             animator.Update(0f);
             CombatMode = true;
+            Hittable = true;
         }
 
         public void OnStatusChange(CharacterStatus status)

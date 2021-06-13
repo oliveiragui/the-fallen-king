@@ -37,6 +37,7 @@ namespace _Game.GameModules.UI.Scripts.HUD.Main_HUD
             ResetCooldownIndicator();
             ability.onAbilityUse.AddListener(OnAbilityUse);
             ability.onCooldownEnter.AddListener(OnCooldownEnter);
+            if (ability.OnCooldown) OnCooldownEnter(ability.Cooldown.Current);
         }
 
         void RemoveCurrentAbility()
@@ -56,6 +57,7 @@ namespace _Game.GameModules.UI.Scripts.HUD.Main_HUD
 
         void ResetCooldownIndicator()
         {
+            if (cooldownCount != null) StopCoroutine(cooldownCount);
             cooldownIndicator.fillAmount = 0;
             cooldownTimer.text = "";
         }
@@ -63,7 +65,7 @@ namespace _Game.GameModules.UI.Scripts.HUD.Main_HUD
         void OnCooldownEnter(float time)
         {
             if (cooldownCount != null) StopCoroutine(cooldownCount);
-            if (isActiveAndEnabled) StartCoroutine(CooldownTimer(time));
+            if (isActiveAndEnabled) cooldownCount = StartCoroutine(CooldownTimer(time));
             else UsageIndicator.fillAmount = 0;
         }
 
