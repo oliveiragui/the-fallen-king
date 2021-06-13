@@ -4,11 +4,12 @@ using _Game.Scripts.Utils.MyBox.Attributes;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace _Game.Scripts.Utils
+namespace _Game.Scripts.Services.ScoreSystem
 {
-    public class ScoreCounter : MonoBehaviour
+    public class ScoreCalculator : MonoBehaviour
     {
         [SerializeField] int scoreValue;
+        [SerializeField] int bonus;
         [SerializeField] bool discountPerTime;
         [ConditionalField("discountPerTime")] [SerializeField] int discountRate;
         public PointScoredEvent pointScored;
@@ -16,6 +17,12 @@ namespace _Game.Scripts.Utils
         int _currentScore;
 
         Coroutine cr;
+
+        public int Bonus
+        {
+            get => bonus;
+            set => bonus = value;
+        }
 
         IEnumerator Discount()
         {
@@ -39,7 +46,7 @@ namespace _Game.Scripts.Utils
         public void Score()
         {
             if (cr != null) StopCoroutine(cr);
-            pointScored.Invoke(_currentScore);
+            pointScored.Invoke(_currentScore + Bonus);
         }
     }
 
