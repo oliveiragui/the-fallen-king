@@ -6232,7 +6232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &145954878
 Transform:
   m_ObjectHideFlags: 0
@@ -6338,7 +6338,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &162479201
 Transform:
   m_ObjectHideFlags: 0
@@ -13716,7 +13716,17 @@ PrefabInstance:
     - target: {fileID: 7014882118765562773, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: start.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Village On Fire
+      value: Village On Fire Finished
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014882118765562773, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: start.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014882118765562773, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: start.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ef8aca8e3e46242bc1007bcdf993db, type: 3}
@@ -16686,7 +16696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &718490375
 Transform:
   m_ObjectHideFlags: 0
@@ -16759,8 +16769,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 725044086}
-  m_LocalRotation: {x: 0.26274803, y: 0.36688116, z: -0.10883368, w: 0.8857296}
-  m_LocalPosition: {x: 9.489342, y: 0, z: -26.281452}
+  m_LocalRotation: {x: 0.2583214, y: 0.36663356, z: -0.10672804, w: 0.8873889}
+  m_LocalPosition: {x: 1.0343418, y: 0.1060009, z: 0.7465477}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 517595272}
@@ -16854,7 +16864,7 @@ Camera:
   m_FOVAxisMode: 1
   m_SensorSize: {x: 30, y: 30}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 40.119324
+  m_FocalLength: 41.212162
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -16863,7 +16873,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 41
+  field of view: 40
   orthographic: 0
   orthographic size: 7
   m_Depth: -1
@@ -19149,7 +19159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &810921156
 Transform:
   m_ObjectHideFlags: 0
@@ -20088,7 +20098,7 @@ PrefabInstance:
     - target: {fileID: 8954430661890499818, guid: b2d04e1eeecd68548bf8f5df41c36cdd,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8954430661890499819, guid: b2d04e1eeecd68548bf8f5df41c36cdd,
         type: 3}
@@ -20163,7 +20173,7 @@ PrefabInstance:
     - target: {fileID: 8954430661890499821, guid: b2d04e1eeecd68548bf8f5df41c36cdd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5475063066287661178, guid: b2d04e1eeecd68548bf8f5df41c36cdd, type: 3}
@@ -20187,7 +20197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 846788370}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846788372}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6bb0a9b3a6b437db746bce3619c3afa, type: 3}
   m_Name: 
@@ -21581,7 +21591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &943614091
 Transform:
   m_ObjectHideFlags: 0
@@ -21716,7 +21726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1972005300028338, guid: cff4a9e403d4b9c4884a361d209cbd47, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4275407962391974, guid: cff4a9e403d4b9c4884a361d209cbd47, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22792,7 +22802,7 @@ PrefabInstance:
     - target: {fileID: 1039647801474349165, guid: 7cdd295ec3bbbb847a78312db51b8c85,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1039647801623703031, guid: 7cdd295ec3bbbb847a78312db51b8c85,
         type: 3}
@@ -29816,17 +29826,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 59873701}
-        m_MethodName: ChangeScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Village On Fire Finished
-          m_BoolArgument: 1
-        m_CallState: 2
   dialogueTrigger:
     m_PersistentCalls:
       m_Calls: []
@@ -31920,7 +31919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1140319769
 Transform:
   m_ObjectHideFlags: 0
@@ -34052,7 +34051,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 150176, guid: fe2f959547dcbc049ac8604389aa792b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 472458, guid: fe2f959547dcbc049ac8604389aa792b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35852,7 +35851,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1416379802
 Transform:
   m_ObjectHideFlags: 0
@@ -40298,7 +40297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1565848383
 Transform:
   m_ObjectHideFlags: 0
@@ -40589,7 +40588,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1584531661
 Transform:
   m_ObjectHideFlags: 0
@@ -44019,7 +44018,7 @@ PrefabInstance:
     - target: {fileID: 5512560752492834846, guid: a6527e2fce5729142b0a6ed7c22b8d3f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5512560752493106468, guid: a6527e2fce5729142b0a6ed7c22b8d3f,
         type: 3}
@@ -48531,7 +48530,7 @@ PrefabInstance:
     - target: {fileID: 1543216753092369487, guid: ca014879105e38940824f2aeca60623c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1543216753092788225, guid: ca014879105e38940824f2aeca60623c,
         type: 3}
