@@ -10607,6 +10607,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1694130942126896516, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1748117362835419424, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
       propertyPath: start.m_PersistentCalls.m_Calls.Array.size
@@ -16013,7 +16018,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481863667}
-  m_LocalRotation: {x: 0.6425282, y: 0.16697195, z: -0.14628296, w: 0.7334025}
+  m_LocalRotation: {x: 0.6425282, y: 0.16697192, z: -0.14628293, w: 0.7334025}
   m_LocalPosition: {x: 8.201, y: 1.0900002, z: 0.502}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

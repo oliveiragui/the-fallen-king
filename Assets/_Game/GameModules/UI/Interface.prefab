@@ -117,7 +117,7 @@ MonoBehaviour:
     description: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente
       Norte.  N\xE3o tem filia\xE7\xE3o com nenhum dos Reinos."
     cover: {fileID: 21300000, guid: 8c9e8e6887dbbbe478a641d36abf4e79, type: 3}
-  - name: Vila Skult
+  - name: Casa Do Sieg
     sceneName: Sieg House
     progress: 33
     description: "Com o dinheiro que ganha nas miss\xF5es da guilda, Sieg contruiu
@@ -292,10 +292,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 3
+    m_Right: 3
+    m_Top: 3
+    m_Bottom: 3
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -368,10 +368,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 7
+    m_Right: 7
+    m_Top: 7
+    m_Bottom: 7
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -949,8 +949,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287207076
+  m_fontColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -967,8 +967,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2321,7 +2321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8719326322177111205
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2337,10 +2337,10 @@ RectTransform:
   m_Father: {fileID: 3758753564874188411}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -273}
+  m_SizeDelta: {x: 344, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5057376523067943086
 CanvasRenderer:
@@ -2444,8 +2444,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4287207076
+  m_fontColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2685,7 +2685,7 @@ PrefabInstance:
     - target: {fileID: 7810970140630753944, guid: 20be9a91793929c4a81800c1b2306b65,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7810970140630753945, guid: 20be9a91793929c4a81800c1b2306b65,
         type: 3}
