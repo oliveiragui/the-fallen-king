@@ -27,7 +27,7 @@ namespace _Game.Scripts.IA
         {
             return
                 Show() *
-                Write(1.0f, "Dragg:\n Você aprendeu muito, jovem.").WaitForButton() *
+                Write(1.0f, "Dragg:\n Você aprendeu muito, Sieg.").WaitForButton() *
                 Write(0.5f, "Dragg:\n Terei que ir agora, mas na próxima juro que acabo contigo...").WaitForButton() *
                 Write(0.5f, "Dragg:\n Acho melhor você também voltar pra casa e descansar, acabamos treinando até tarde...").WaitForButton() *
                 Write(0.5f, "Dragg:\n Aproveite para conversar com as pessoas da vila antes de ir dormir.").WaitForButton() *

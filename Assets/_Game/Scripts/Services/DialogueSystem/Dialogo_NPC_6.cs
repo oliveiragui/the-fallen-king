@@ -16,7 +16,7 @@ namespace _Game.Scripts.Services.DialogueSystem
             Show() *
             Write(0.5f, "Mulher:\nOh meu bem, nós encontramos alguém que poderia ter te curado.").WaitForButton() *
             Write(0.5f, "Mulher:\nAh, se ao menos você visse como estamos melhores...").WaitForButton() *
-            Write(0.5f, "Vendedor:\nEu tenho tanta saudades...").WaitForButton() *
+            Write(0.5f, "Mulher:\nEu tenho tanta saudades...").WaitForButton() *
             Hide();
 
         public override void OnFinish()

@@ -15,21 +15,7 @@ public class PortaEntrada : FluentScript
 
     public override FluentNode Create()
     {
-        return
-            Show() *
-            Write(0.25f, "Entrar em casa?").WaitForButton() *
-            Options
-            (
-                Option("Sim") *
-                    Hide() *
-                    Do(() => AtivaGameObject(timeline)) *
-                    Do(() => ChangeScene()) *
-                    End() *
-
-                Option("Não") *
-                    Hide() *
-                    End()
-             );
+        return Do(() => ChangeScene());
     }
 
     private void AtivaGameObject(GameObject gameObject)

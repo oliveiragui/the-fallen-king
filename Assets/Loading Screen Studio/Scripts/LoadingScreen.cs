@@ -62,7 +62,7 @@ namespace Michsky.LSS
         public Slider pakCountdownSlider;
         public KeyCode keyCode = KeyCode.Space;
         public bool useSpecificKey = false;
-        private bool enableFading = false;
+        public static bool enableFading = false;
         [Tooltip("Second(s)")] 
         [Range(1, 30)] public int pakCountdownTimer = 5;
 
@@ -167,7 +167,7 @@ namespace Michsky.LSS
                 processLoading = false;
             }
         }
-
+        
         void Update()
         {
             if (processLoading == true && forceCanvasGroup == true)

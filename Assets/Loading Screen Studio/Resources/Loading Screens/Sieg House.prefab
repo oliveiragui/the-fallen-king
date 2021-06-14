@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: titleObjText
-      value: Sieg House
+      value: Casa do Sieg
       objectReference: {fileID: 0}
     - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
@@ -18,6 +18,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5c649360867220b4597f6a6288929e74,
         type: 3}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: titleObjDescText
+      value: "Com o dinheiro que ganha nas miss\xF5es da guilda, Sieg contruiu uma
+        casa na sua vila natal."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: hintList.Array.data[1]
+      value: "Ao pressionar <sprite=\"KeyBoardAndMouse\" name=\"Mouse_Right_Text_Key_Dark\">
+        Siega usa seus golpes especiais. S\xE3o muito \xFAteis quando h\xE1 v\xE1rios
+        inimigos"
+      objectReference: {fileID: 0}
     - target: {fileID: 3790185792406861694, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -106,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 5455906870261641971, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_text
-      value: Sieg House
+      value: Casa do Sieg
       objectReference: {fileID: 0}
     - target: {fileID: 5876158208474409648, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
@@ -142,6 +155,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6461385051511656928, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_text
+      value: "Com o dinheiro que ganha nas miss\xF5es da guilda, Sieg contruiu uma
+        casa na sua vila natal."
       objectReference: {fileID: 0}
     - target: {fileID: 7652303618029495527, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
