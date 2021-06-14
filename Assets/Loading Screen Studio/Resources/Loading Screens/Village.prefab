@@ -5308,7 +5308,7 @@ MonoBehaviour:
   enableRandomHints: 1
   enableRandomImages: 0
   enablePressAnyKey: 1
-  forceCanvasGroup: 0
+  forceCanvasGroup: 1
   fadingAnimationSpeed: 2
   onBeginEvents:
     m_PersistentCalls:
@@ -5327,8 +5327,8 @@ CanvasGroup:
   m_GameObject: {fileID: 8985211846813716763}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &9026192902265881996
 GameObject:

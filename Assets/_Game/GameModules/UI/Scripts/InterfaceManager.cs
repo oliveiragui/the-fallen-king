@@ -10,6 +10,7 @@ namespace _Game.GameModules.UI.Scripts
         [SerializeField] bool playerCanSwitchMenu;
         [SerializeField] MenuInputData mainMenu;
         [SerializeField] MenuInputData charMenu;
+        
 
         public bool PlayerCanSwitchMenu
         {

@@ -2329,6 +2329,30 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1748117362835419424, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: storiesScene.Array.data[0].description
+      value: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente
+        Norte.  N\xE3o tem filia\xE7\xE3o com nenhum dos Reinos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748117362835419424, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: storiesScene.Array.data[1].description
+      value: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente
+        Norte.  N\xE3o tem filia\xE7\xE3o com nenhum dos Reinos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748117362835419424, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: storiesScene.Array.data[3].description
+      value: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente
+        Norte.  N\xE3o tem filia\xE7\xE3o com nenhum dos Reinos."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748117362835419424, guid: 66d90103872937945baa578d7ef517d6,
+        type: 3}
+      propertyPath: storiesScene.Array.data[4].description
+      value: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente
+        Norte.  N\xE3o tem filia\xE7\xE3o com nenhum dos Reinos."
+      objectReference: {fileID: 0}
     - target: {fileID: 1769465392496221316, guid: 66d90103872937945baa578d7ef517d6,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -22188,12 +22212,12 @@ PrefabInstance:
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: loadingScreens.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: prefabHelper
-      value: Wave Mode
+      value: Village Volta
       objectReference: {fileID: 0}
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
@@ -22211,7 +22235,7 @@ PrefabInstance:
         type: 3}
       propertyPath: loadingScreens.Array.data[8]
       value: 
-      objectReference: {fileID: 7153641550970790342, guid: 99d5ee0a06691b0438107c887b6823ce,
+      objectReference: {fileID: 8985211846813716763, guid: d9edfa36721cde44cba3a0d00007978c,
         type: 3}
     - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
@@ -22243,6 +22267,12 @@ PrefabInstance:
       propertyPath: startLoadingAtStart
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1161735287355492243, guid: f0ef8aca8e3e46242bc1007bcdf993db,
+        type: 3}
+      propertyPath: loadingScreens.Array.data[9]
+      value: 
+      objectReference: {fileID: 7153641550970790342, guid: 99d5ee0a06691b0438107c887b6823ce,
+        type: 3}
     - target: {fileID: 4100693795563688521, guid: f0ef8aca8e3e46242bc1007bcdf993db,
         type: 3}
       propertyPath: m_LocalPosition.x

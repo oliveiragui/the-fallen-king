@@ -48,6 +48,11 @@ PrefabInstance:
       propertyPath: enableTitle
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1498656897169856882, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: forceCanvasGroup
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3790185792406861694, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_SizeDelta.x

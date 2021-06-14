@@ -121,6 +121,16 @@ PrefabInstance:
       propertyPath: m_text
       value: Casa do Sieg
       objectReference: {fileID: 0}
+    - target: {fileID: 5592592545954519599, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5592592545954519599, guid: c8416320cd2873d4695a9c1b48837c07,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5876158208474409648, guid: c8416320cd2873d4695a9c1b48837c07,
         type: 3}
       propertyPath: m_AnchorMax.x

@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4287207076
   m_fontColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2716,7 +2716,7 @@ RectTransform:
   - {fileID: 1940865213517249530}
   - {fileID: 8842669528076568264}
   m_Father: {fileID: 6363976026364133986}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3251,7 +3251,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press <b>ANY KEY</b> to continue
+  m_text: "Aperte um bot\xE3o para continuar"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5764af9119414344c97b4431582091ae, type: 2}
   m_sharedMaterial: {fileID: -6443558505881545600, guid: 5764af9119414344c97b4431582091ae,
@@ -3395,7 +3395,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4287207076
   m_fontColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -3978,8 +3978,8 @@ RectTransform:
   m_Children:
   - {fileID: 5267955621521232747}
   - {fileID: 8715671280815615566}
-  - {fileID: 7542628632663427597}
   - {fileID: 6129772535814711382}
+  - {fileID: 7542628632663427597}
   m_Father: {fileID: 4589185960108218928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4516,7 +4516,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Village
+  m_text: Vila Skult
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5764af9119414344c97b4431582091ae, type: 2}
   m_sharedMaterial: {fileID: -6443558505881545600, guid: 5764af9119414344c97b4431582091ae,
@@ -4526,7 +4526,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4287207076
   m_fontColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -4864,9 +4864,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A little bit description here. Type anything you want!
-
-    Supports multi-line.'
+  m_text: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente Norte.
+    \nN\xE3o tem filia\xE7\xE3o com nenhum dos Reinos.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5764af9119414344c97b4431582091ae, type: 2}
   m_sharedMaterial: {fileID: -6443558505881545600, guid: 5764af9119414344c97b4431582091ae,
@@ -5264,12 +5263,10 @@ MonoBehaviour:
   spinnerColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   statusColor: {r: 0.6431373, g: 0.5882353, b: 0.5372549, a: 1}
   pakColor: {r: 1, g: 1, b: 1, a: 1}
-  titleObjText: Village
-  titleObjDescText: 'A little bit description here. Type anything you want!
-
-    Supports
-    multi-line.'
-  pakText: Press <b>ANY KEY</b> to continue
+  titleObjText: Vila Skult
+  titleObjDescText: "Uma vila pac\xEDfica escondida nas montanhas, situada no continente
+    Norte. \nN\xE3o tem filia\xE7\xE3o com nenhum dos Reinos.\n"
+  pakText: "Aperte um bot\xE3o para continuar"
   canvasGroup: {fileID: 5592592545954519599}
   statusObj: {fileID: 8684886121569478810}
   titleObj: {fileID: 5455906870261641971}
@@ -5279,13 +5276,12 @@ MonoBehaviour:
   spinnerParent: {fileID: 7773159839332226880}
   hintsText: {fileID: 960974237441301790}
   changeHintWithTimer: 1
-  hintTimerValue: 4.5
+  hintTimerValue: 3.5
   hintList:
-  - You can tweak or customize the layout from loading screen prefab.
-  - Tired of the current loading screen? You can easily change it from Loading Manager.
-  - You can easily create Loading Manager from <b>Tools > Loading Screen Studio</b>.
-  - Sorry to keep you waiting, we know you hate loading screens. Believe me, I hate
-    it too.
+  - "Voc\xEA pode pular os di\xE1logos ao pressionar <sprite=\"KeyBoardAndMouse\"
+    name=\"Space_Text_Key_Dark\">"
+  - Use a esquiva ao pressionar <sprite="KeyBoardAndMouse" name="Space_Text_Key_Dark">
+    quando estiver em apuros
   imageObject: {fileID: 7652303618029495527}
   fadingAnimator: {fileID: 3155620098223776844}
   ImageList:
@@ -5301,9 +5297,9 @@ MonoBehaviour:
   pakTextObj: {fileID: 9098749252777075040}
   pakCountdownLabel: {fileID: 5666105301607451770}
   pakCountdownSlider: {fileID: 3954564447280517562}
-  keyCode: 32
-  useSpecificKey: 0
-  pakCountdownTimer: 5
+  keyCode: 0
+  useSpecificKey: 1
+  pakCountdownTimer: 7
   virtualLoadingTimer: 8
   enableVirtualLoading: 0
   enableTitle: 1
@@ -5311,9 +5307,9 @@ MonoBehaviour:
   enableStatusLabel: 1
   enableRandomHints: 1
   enableRandomImages: 0
-  enablePressAnyKey: 0
-  forceCanvasGroup: 0
-  fadingAnimationSpeed: 1.5
+  enablePressAnyKey: 1
+  forceCanvasGroup: 1
+  fadingAnimationSpeed: 2
   onBeginEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -5331,8 +5327,8 @@ CanvasGroup:
   m_GameObject: {fileID: 8985211846813716763}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &9026192902265881996
 GameObject:
@@ -5487,7 +5483,7 @@ RectTransform:
   - {fileID: 4110461424679055377}
   - {fileID: 111482335442863577}
   m_Father: {fileID: 6363976026364133986}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5502,7 +5498,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9096845533826570616}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
